@@ -13,7 +13,7 @@ export default function(input) {
     throw(`Expected parameter Array, received ${typeof input}`);
   }
 
-  const trie = create([...input]);
+  let trie = create([...input]);
 
   return {
     /**
@@ -21,6 +21,13 @@ export default function(input) {
     */
     dump(spacer = 0) {
       return utils.stringify(trie, spacer);
+    },
+
+    /**
+     * Get a string representation of the trie
+    */
+    load(obj = {}) {
+      trie = obj;
     },
 
     /**

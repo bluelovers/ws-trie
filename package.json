@@ -12,7 +12,8 @@
     "test-coverage": "jest --coverage",
     "test-watch": "jest --watch",
     "commit": "git-cz",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,7 @@
     "words"
   ],
   "files": [
-    "dist",
+    "src",
     "README.md"
   ],
   "author": "Lyndsey Browning <lbrowning86@gmail.com> (http://lyndseyb.co.uk/)",
