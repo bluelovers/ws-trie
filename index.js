@@ -36,7 +36,7 @@ function trieToRegExpSource(data, options = {}) {
                 return;
             }
             walk_result =
-                _quotemeta(_key) + _walk_trie(trie[_key], _key);
+                _quotemeta(_key, options) + _walk_trie(trie[_key], _key);
             // When we have more than one key, `insert` references
             // the alternative regexp group, otherwise it points to
             // the char class group.
@@ -90,13 +90,16 @@ function _to_regex(alt_group, char_class, end) {
     return result;
 }
 exports._to_regex = _to_regex;
-function _quotemeta(phrase) {
+function _quotemeta(phrase, options = {}) {
     if (!_is_phrase_valid(phrase)) {
         return phrase;
     }
-    return phrase
-        .replace(/([\t\n\f\r\\\$\(\)\*\+\-\.\?\[\]\^\{\|\}])/g, '\\$1')
-        .replace(/[^\x20-\x7E]/g, jsesc);
+    let s = phrase
+        .replace(/([\t\n\f\r\\\$\(\)\*\+\-\.\?\[\]\^\{\|\}])/g, '\\$1');
+    if (!options.disableEscaped) {
+        s = s.replace(/[^\x20-\x7E]/g, jsesc);
+    }
+    return s;
 }
 exports._quotemeta = _quotemeta;
 function _is_phrase_valid(phrase) {
