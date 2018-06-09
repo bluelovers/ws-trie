@@ -42,3 +42,4 @@ __tests__/**/*.d.ts
 __tests__/*.js
 __tests__/*.d.ts
 __tests__/temp*
+/package-lock.json
