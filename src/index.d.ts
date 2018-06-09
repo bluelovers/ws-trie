@@ -1,5 +1,6 @@
 import { ITrieRaw } from './create';
 import { END_VALUE } from './config';
+import trieToRegExp, { IOptionsAll as ITrieToRegExpOptionsAll, IOptions as ITrieToRegExpOptions } from 'trie-regex';
 export declare const SYM_RAW: unique symbol;
 export declare type IInput<T> = string[];
 export declare type IInputMap<T> = [string, T][];
@@ -69,6 +70,8 @@ export declare class Trie<T = typeof END_VALUE> {
      * @returns Array
      */
     getSubAnagrams(letters: string): string[];
+    toRegExp<R = RegExp>(flags?: string, options?: ITrieToRegExpOptions): R;
+    toRegExp<R>(flags?: string, options?: ITrieToRegExpOptionsAll<R>): ReturnType<typeof trieToRegExp>;
 }
 export declare function createTrie<T = typeof END_VALUE>(input: string[], ...argv: any[]): Trie<T>;
 export default createTrie;

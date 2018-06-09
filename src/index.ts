@@ -1,11 +1,13 @@
+
 import create, { ITrieRaw } from './create';
 import append from './append';
 import checkPrefix from './checkPrefix';
 import recursePrefix from './recursePrefix';
-import utils, { split, throwMsg } from './utils';
+import utils, { isEndpoint, isString, split, throwMsg } from './utils';
 import config, { END_VALUE } from './config';
 import permutations from './permutations';
 import recurseRandomWord from './recurseRandomWord';
+import trieToRegExp, { IOptionsAll as ITrieToRegExpOptionsAll, IOptions as ITrieToRegExpOptions } from 'trie-regex';
 
 const PERMS_MIN_LEN = config.PERMS_MIN_LEN;
 
@@ -260,6 +262,30 @@ export class Trie<T = typeof END_VALUE>
 			type: 'sub-anagram',
 		});
 	}
+
+	toRegExp<R = RegExp>(flags?: string, options?: ITrieToRegExpOptions): R
+	toRegExp<R>(flags?: string, options?: ITrieToRegExpOptionsAll<R>): ReturnType<typeof trieToRegExp>
+	toRegExp<R>(flags?, options?)
+	{
+		if (!flags || !isString(flags))
+		{
+			flags = 'u';
+		}
+
+		options = Object.assign({
+			disableEscaped: true,
+			isEndpoint,
+
+			jsescOptions: {
+				'es6': true,
+				'minimal': false,
+			},
+
+		}, options);
+
+		return trieToRegExp<R>(this.tree(), flags, options);
+	}
+
 }
 
 export function createTrie<T = typeof END_VALUE>(input: string[], ...argv)

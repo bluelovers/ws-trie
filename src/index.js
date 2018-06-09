@@ -8,6 +8,7 @@ const utils_1 = require("./utils");
 const config_1 = require("./config");
 const permutations_1 = require("./permutations");
 const recurseRandomWord_1 = require("./recurseRandomWord");
+const trie_regex_1 = require("trie-regex");
 const PERMS_MIN_LEN = config_1.default.PERMS_MIN_LEN;
 exports.SYM_RAW = Symbol('trie');
 class Trie {
@@ -166,6 +167,20 @@ class Trie {
         return permutations_1.default(letters, this[exports.SYM_RAW], {
             type: 'sub-anagram',
         });
+    }
+    toRegExp(flags, options) {
+        if (!flags || !utils_1.isString(flags)) {
+            flags = 'u';
+        }
+        options = Object.assign({
+            disableEscaped: true,
+            isEndpoint: utils_1.isEndpoint,
+            jsescOptions: {
+                'es6': true,
+                'minimal': false,
+            },
+        }, options);
+        return trie_regex_1.default(this.tree(), flags, options);
     }
 }
 exports.Trie = Trie;
