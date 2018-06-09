@@ -26,6 +26,12 @@ declare module 'trie-prefix-tree2/src' {
             /**
                 * Get a string representation of the trie
                 */
+            load(obj: ITrieRaw<T>): this;
+            load<R>(obj: ITrieRaw<R>): this;
+            load(obj: any): this;
+            /**
+                * Get a string representation of the trie
+                */
             dump(spacer?: string | number): string;
             /**
                 * Add a new word to the trie
@@ -39,12 +45,17 @@ declare module 'trie-prefix-tree2/src' {
                 * Check a prefix is valid
                 * @returns Boolean
                 */
-            isPrefix(prefix: string): boolean;
+            isPrefix(prefix: string): prefix is string;
             /**
                 * Get a list of all words in the trie with the given prefix
                 * @returns Array
                 */
             getPrefix(strPrefix: string, sorted?: boolean): string[];
+            /**
+                * Get a random word in the trie with the given prefix
+                * @returns String
+                */
+            getRandomWordWithPrefix(strPrefix?: string): string;
             /**
                 * Count the number of words with the given prefixSearch
                 * @returns Number
@@ -60,6 +71,7 @@ declare module 'trie-prefix-tree2/src' {
                 * @returns Boolean
                 */
             hasWord(word: string): boolean;
+            isAnagrams(letters: string): letters is string;
             /**
                 * Get a list of valid anagrams that can be made from the given letters
                 * @returns Array
@@ -115,6 +127,12 @@ declare module 'trie-prefix-tree2/src/index' {
             /**
                 * Get a string representation of the trie
                 */
+            load(obj: ITrieRaw<T>): this;
+            load<R>(obj: ITrieRaw<R>): this;
+            load(obj: any): this;
+            /**
+                * Get a string representation of the trie
+                */
             dump(spacer?: string | number): string;
             /**
                 * Add a new word to the trie
@@ -128,12 +146,17 @@ declare module 'trie-prefix-tree2/src/index' {
                 * Check a prefix is valid
                 * @returns Boolean
                 */
-            isPrefix(prefix: string): boolean;
+            isPrefix(prefix: string): prefix is string;
             /**
                 * Get a list of all words in the trie with the given prefix
                 * @returns Array
                 */
             getPrefix(strPrefix: string, sorted?: boolean): string[];
+            /**
+                * Get a random word in the trie with the given prefix
+                * @returns String
+                */
+            getRandomWordWithPrefix(strPrefix?: string): string;
             /**
                 * Count the number of words with the given prefixSearch
                 * @returns Number
@@ -149,6 +172,7 @@ declare module 'trie-prefix-tree2/src/index' {
                 * @returns Boolean
                 */
             hasWord(word: string): boolean;
+            isAnagrams(letters: string): letters is string;
             /**
                 * Get a list of valid anagrams that can be made from the given letters
                 * @returns Array
