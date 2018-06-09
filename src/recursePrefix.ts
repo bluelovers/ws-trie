@@ -1,4 +1,4 @@
-import config from './config';
+import config, { END_WORD } from './config';
 import { ITrie, ITrieNode, ITrieRaw } from './create';
 
 // sort items as they're being found
@@ -28,7 +28,7 @@ export function recursePrefix<T>(node: ITrie<T>, prefix: string, sorted: boolean
 	for (const branch in node)
 	{
 		// @ts-ignore
-		if (branch === config.END_WORD)
+		if (branch === END_WORD)
 		{
 			if (sorted)
 			{

@@ -19,7 +19,7 @@ function recursePrefix(node, prefix, sorted, prefixes = []) {
     let word = prefix;
     for (const branch in node) {
         // @ts-ignore
-        if (branch === config_1.default.END_WORD) {
+        if (branch === config_1.END_WORD) {
             if (sorted) {
                 pushInOrder(word, prefixes);
             }

@@ -1,4 +1,5 @@
 import config from './config';
+import { hasEndpoint } from './utils';
 
 export function permutations(letters, trie, opts = {
 	type: 'anagram',
@@ -15,7 +16,8 @@ export function permutations(letters, trie, opts = {
 	{
 		const wordIsEmpty = word.length === 0;
 		const wordFound = words.includes(prefix);
-		const endWordFound = node[config.END_WORD] === 1;
+		//const endWordFound = node[config.END_WORD] === 1;
+		const endWordFound = hasEndpoint(node);
 
 		if (wordIsEmpty && endWordFound && !wordFound)
 		{

@@ -2,6 +2,9 @@ import UString from 'uni-string';
 import config, { END_WORD } from './config';
 import { ITrie, ITrieNode } from './create';
 
+export const ZWJ = 0x200d;
+export const ZWJ_STR = '\u200d';
+
 export function isString(word: string, msg = 'parameter string'): word is string
 {
 	if (typeof word !== 'string' || word === '')

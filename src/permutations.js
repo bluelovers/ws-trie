@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const config_1 = require("./config");
+const utils_1 = require("./utils");
 function permutations(letters, trie, opts = {
     type: 'anagram',
 }) {
@@ -11,7 +11,8 @@ function permutations(letters, trie, opts = {
     const permute = (word, node, prefix = '') => {
         const wordIsEmpty = word.length === 0;
         const wordFound = words.includes(prefix);
-        const endWordFound = node[config_1.default.END_WORD] === 1;
+        //const endWordFound = node[config.END_WORD] === 1;
+        const endWordFound = utils_1.hasEndpoint(node);
         if (wordIsEmpty && endWordFound && !wordFound) {
             words.push(prefix);
         }

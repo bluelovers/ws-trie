@@ -1,4 +1,6 @@
 import { ITrie, ITrieNode } from './create';
+export declare const ZWJ = 8205;
+export declare const ZWJ_STR = "\u200D";
 export declare function isString(word: string, msg?: string): word is string;
 export declare type ISplitOptions = {
     toLowerCase?: boolean;
