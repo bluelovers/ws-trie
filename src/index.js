@@ -24,6 +24,10 @@ class Trie {
     tree() {
         return this[exports.SYM_RAW];
     }
+    load(obj) {
+        this[exports.SYM_RAW] = obj;
+        return this;
+    }
     /**
      * Get a string representation of the trie
      */

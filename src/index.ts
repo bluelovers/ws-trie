@@ -41,6 +41,19 @@ export class Trie<T = typeof END_VALUE>
 	/**
 	 * Get a string representation of the trie
 	 */
+	load(obj: ITrieRaw<T>): this
+	load<R>(obj: ITrieRaw<R>): this
+	load(obj): this
+	load(obj)
+	{
+		this[SYM_RAW] = obj;
+
+		return this;
+	}
+
+	/**
+	 * Get a string representation of the trie
+	 */
 	dump(spacer: string | number = 0)
 	{
 		return utils.stringify(this[SYM_RAW], spacer);

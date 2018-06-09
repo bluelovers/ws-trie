@@ -13,6 +13,12 @@ export declare class Trie<T = typeof END_VALUE> {
     /**
      * Get a string representation of the trie
      */
+    load(obj: ITrieRaw<T>): this;
+    load<R>(obj: ITrieRaw<R>): this;
+    load(obj: any): this;
+    /**
+     * Get a string representation of the trie
+     */
     dump(spacer?: string | number): string;
     /**
      * Add a new word to the trie
