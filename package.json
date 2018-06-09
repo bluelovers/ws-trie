@@ -3,8 +3,15 @@
   "version": "1.0.0",
   "description": "Create and modify trie prefix structures, extract word lists including anagrams and sub-anagrams",
   "keywords": [
+    "add",
+    "data",
     "javascript",
+    "remove",
+    "structure",
+    "tree",
+    "tree-structure",
     "trie",
+    "trie-structure",
     "words"
   ],
   "homepage": "https://github.com/bluelovers/trie-prefix-tree#readme",
@@ -20,9 +27,10 @@
   "main": "index.js",
   "types": "trie-prefix-tree2.d.ts",
   "scripts": {
+    "commit": "git-cz",
     "dts-bundle": "node ./script/dts-bundle",
-    "test": "npx mocha-benchmark2 \"__tests__/**/*.js\"",
-    "commit": "git-cz"
+    "prepublish": "npx sort-package-json && npm run dts-bundle && npm run test",
+    "test": "npx mocha-benchmark2 \"__tests__/**/*.js\""
   },
   "config": {
     "ghooks": {
