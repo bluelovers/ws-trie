@@ -6,3 +6,39 @@ dist
 package
 package */
 *.tgz
+### git2 template
+.idea
+
+~ci.list.txt
+~ci.log.txt
+~ci.errors.txt
+
+*.stackdump
+*.bak
+*.old
+
+package-lock.json
+
+test/**/*.js
+test/**/*.d.ts
+test/*.js
+test/*.d.ts
+test/temp*
+
+tests/**/*.js
+tests/**/*.d.ts
+tests/*.js
+tests/*.d.ts
+tests/temp*
+### git2 template
+
+
+
+
+
+
+__tests__/**/*.js
+__tests__/**/*.d.ts
+__tests__/*.js
+__tests__/*.d.ts
+__tests__/temp*

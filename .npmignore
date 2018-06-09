@@ -1,0 +1,40 @@
+# Created by .ignore support plugin (hsz.mobi)
+### npm template
+.idea
+
+~ci.list.txt
+~ci.log.txt
+~ci.errors.txt
+
+*.stackdump
+*.bak
+*.old
+
+tsconfig.json
+#package-lock.json
+
+test
+
+.github
+.gitkeep
+
+/.*
+/global.d.ts
+/__tests__/
+/trie.jpg
+/.travis.yml
+### npm template
+
+
+
+#package-lock.json
+
+__tests__
+
+
+
+.travis.yml
+*.jpg
+*.jpeg
+*.png
+*.bmp
