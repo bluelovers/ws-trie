@@ -1,6 +1,6 @@
 {
   "name": "trie-prefix-tree2",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "Create and modify trie prefix structures, extract word lists including anagrams and sub-anagrams",
   "keywords": [
     "javascript",
@@ -19,15 +19,13 @@
   "author": "Lyndsey Browning <lbrowning86@gmail.com> (http://lyndseyb.co.uk/)",
   "main": "src/index.js",
   "types": "trie-prefix-tree2.d.ts",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
+    "test": "npx mocha-benchmark2 \"__tests__/**/*.js\"",
     "commit": "git-cz"
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm run lint && npm run test"
+      "pre-commit": "npm run test"
     }
   },
   "devDependencies": {
