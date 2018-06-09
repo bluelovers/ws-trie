@@ -10,6 +10,7 @@ describe('Trie', () =>
 
 		try
 		{
+			// @ts-ignore
 			trie(input);
 		}
 		catch (error)

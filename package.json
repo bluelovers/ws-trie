@@ -2,32 +2,35 @@
   "name": "trie-prefix-tree2",
   "version": "0.0.0-development",
   "description": "Create and modify trie prefix structures, extract word lists including anagrams and sub-anagrams",
-  "main": "src/index.js",
-  "types": "trie-prefix-tree2.d.ts",
-  "scripts": {
-    "commit": "git-cz"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/lyndseybrowning/trie-prefix-tree"
-  },
   "keywords": [
     "javascript",
     "trie",
     "words"
   ],
-  "author": "Lyndsey Browning <lbrowning86@gmail.com> (http://lyndseyb.co.uk/)",
-  "license": "MIT",
+  "homepage": "https://github.com/bluelovers/trie-prefix-tree#readme",
   "bugs": {
-    "url": "https://github.com/lyndseybrowning/trie-prefix/issues"
+    "url": "https://github.com/bluelovers/trie-prefix-tree/issues"
   },
-  "homepage": "https://github.com/lyndseybrowning/trie-prefix#readme",
-  "devDependencies": {
-    "ghooks": "2.0.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/trie-prefix-tree.git"
+  },
+  "license": "MIT",
+  "author": "Lyndsey Browning <lbrowning86@gmail.com> (http://lyndseyb.co.uk/)",
+  "main": "src/index.js",
+  "types": "trie-prefix-tree2.d.ts",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "commit": "git-cz"
   },
   "config": {
     "ghooks": {
       "pre-commit": "npm run lint && npm run test"
     }
+  },
+  "devDependencies": {
+    "ghooks": "2.0.0"
   }
 }

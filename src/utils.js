@@ -14,5 +14,9 @@ function stringify(obj, spacer = 2) {
     return JSON.stringify(obj, null, spacer);
 }
 exports.stringify = stringify;
+function throwMsg(expected, received) {
+    return `Expected ${expected}, received ${received}`;
+}
+exports.throwMsg = throwMsg;
 const utils = require("./utils");
 exports.default = utils;

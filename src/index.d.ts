@@ -26,12 +26,17 @@ export declare class Trie<T = typeof END_VALUE> {
      * Check a prefix is valid
      * @returns Boolean
      */
-    isPrefix(prefix: string): boolean;
+    isPrefix(prefix: string): prefix is string;
     /**
      * Get a list of all words in the trie with the given prefix
      * @returns Array
      */
     getPrefix(strPrefix: string, sorted?: boolean): string[];
+    /**
+     * Get a random word in the trie with the given prefix
+     * @returns String
+     */
+    getRandomWordWithPrefix(strPrefix?: string): string;
     /**
      * Count the number of words with the given prefixSearch
      * @returns Number
@@ -47,6 +52,7 @@ export declare class Trie<T = typeof END_VALUE> {
      * @returns Boolean
      */
     hasWord(word: string): boolean;
+    isAnagrams(letters: string): letters is string;
     /**
      * Get a list of valid anagrams that can be made from the given letters
      * @returns Array

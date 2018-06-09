@@ -17,5 +17,10 @@ export function stringify(obj?, spacer: number | string = 2)
 	return JSON.stringify(obj, null, spacer);
 }
 
+export function throwMsg(expected, received)
+{
+	return `Expected ${expected}, received ${received}`;
+}
+
 import * as utils from './utils';
 export default utils;

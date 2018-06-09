@@ -1,12 +1,5 @@
 # Trie Prefix Tree
 
-[![Travis Build](https://img.shields.io/travis/lyndseybrowning/trie-prefix-tree.svg?style=flat-square)](https://travis-ci.org/lyndseybrowning/trie-prefix-tree)
-[![codecov coverage](https://img.shields.io/codecov/c/github/lyndseybrowning/trie-prefix-tree.svg?style=flat-square)](https://codecov.io/github/lyndseybrowning/trie-prefix-tree)
-[![version](https://img.shields.io/npm/v/trie-prefix-tree.svg?style=flat-square)](http://npm.im/trie-prefix-tree)
-[![downloads](https://img.shields.io/npm/dm/trie-prefix-tree.svg?style=flat-square)](http://npm-stat.com/charts.html?package=trie-prefix-tree&from=2015-08-01)
-[![MIT License](https://img.shields.io/npm/l/trie-prefix-tree.svg?style=flat-square)](http://opensource.org/licenses/MIT)
-[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
-
 This is a [Trie](https://en.wikipedia.org/wiki/Trie) implementation written in JavaScript, with insert and remove capability. It can be used to search a predefined dictionary for prefixes, check a prefix exists and retrieve a list of anagrams and sub-anagrams based on given letters.
 
 ## What is a Trie?
@@ -23,30 +16,8 @@ Pull down dependencies:
 npm install
 ```
 
-This project uses [Jest](https://facebook.github.io/jest/) for unit testing and [ESLint](http://eslint.org/) for linting.
-
-To run combined linting & unit tests:
-
 ```
 npm test
-```
-
-To run linting:
-
-```
-npm run lint
-```
-
-Run tests in watch mode:
-
-```
-npm run test-watch
-```
-
-Get code coverage report:
-
-```
-npm run test-coverage
 ```
 
 ## How to Use
@@ -54,7 +25,7 @@ npm run test-coverage
 To use the Trie, install and save it to your package dependencies:
 
 ```
-npm install trie-prefix-tree --save
+npm install trie-prefix-tree2
 ```
 
 To create a new Trie:
@@ -87,10 +58,14 @@ myTrie.dump(2); // equivalent of JSON.stringify(obj, null, 2);
 myTrie.tree();
 ```
 
+addWord
+
 ```javascript
 // add a new word to the Trie
 myTrie.addWord('lion');
 ```
+
+removeWord
 
 ```javascript
 // remove an existing word from the Trie
@@ -111,10 +86,14 @@ myTrie.isPrefix('do'); // true
 myTrie.isPrefix('z'); // false
 ```
 
+countPrefix
+
 ```javascript
 // count prefixes
 myTrie.countPrefix('c'); // 2
 ```
+
+getPrefix
 
 ```javascript
 // get an array of words with the passed in prefix
@@ -127,7 +106,17 @@ myTrie.getPrefix('c'); // ['cat', 'cats']
 myTrie.getPrefix('c', false); // ['cat', 'cats']
 ```
 
-Other:
+getRandomWordWithPrefix
+
+```javascript
+// get a random word at a prefix
+myTrie.getRandomWordWithPrefix('c'); // 'cat'
+myTrie.getRandomWordWithPrefix('c'); // 'cats'
+```
+
+### Other:
+
+getWords
 
 ```javascript
 // retrieve a full list of words in the Trie
@@ -140,16 +129,22 @@ myTrie.getWords(); // ['cat', 'cats', 'elephant', 'lion', 'tiger']
 myTrie.getWords(false); // ['cat', 'cats', 'elephant', 'tiger', 'lion']
 ```
 
+hasWord
+
 ```javascript
 // check if a word exists in the Trie
 myTrie.hasWord('elephant'); // true
 myTrie.hasWord('zoo'); // false
 ```
 
+getAnagrams
+
 ```javascript
 // generate a list of valid anagrams from the given letters
 myTrie.getAnagrams('act'); // ['cat'];
 ```
+
+getSubAnagrams
 
 ```javascript
 // generate a list of valid sub-anagrams from the given letters

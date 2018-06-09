@@ -7,12 +7,13 @@ const recursePrefix_1 = require("./recursePrefix");
 const utils_1 = require("./utils");
 const config_1 = require("./config");
 const permutations_1 = require("./permutations");
+const recurseRandomWord_1 = require("./recurseRandomWord");
 const PERMS_MIN_LEN = config_1.default.PERMS_MIN_LEN;
 exports.SYM_RAW = Symbol('trie');
 class Trie {
     constructor(input, ...argv) {
         if (!Array.isArray(input)) {
-            throw (`Expected parameter Array, received ${typeof input}`);
+            throw (utils_1.throwMsg('parameter Array', typeof input));
         }
         const trie = create_1.default([...input], ...argv);
         this[exports.SYM_RAW] = trie;
@@ -34,7 +35,7 @@ class Trie {
      */
     addWord(word) {
         if (typeof word !== 'string' || word === '') {
-            throw (`Expected parameter string, received ${typeof word}`);
+            throw (utils_1.throwMsg('parameter string', typeof word));
         }
         const reducer = (...params) => {
             // @ts-ignore
@@ -49,7 +50,7 @@ class Trie {
      */
     removeWord(word) {
         if (typeof word !== 'string' || word === '') {
-            throw (`Expected parameter string, received ${typeof word}`);
+            throw (utils_1.throwMsg('parameter string', typeof word));
         }
         const { prefixFound, prefixNode } = checkPrefix_1.default(this[exports.SYM_RAW], word);
         if (prefixFound) {
@@ -63,7 +64,7 @@ class Trie {
      */
     isPrefix(prefix) {
         if (typeof prefix !== 'string' || prefix === '') {
-            throw (`Expected string prefix, received ${typeof prefix}`);
+            throw (utils_1.throwMsg('string prefix', typeof prefix));
         }
         const { prefixFound } = checkPrefix_1.default(this[exports.SYM_RAW], prefix);
         return prefixFound;
@@ -74,16 +75,30 @@ class Trie {
      */
     getPrefix(strPrefix, sorted = true) {
         if (typeof strPrefix !== 'string' || strPrefix === '') {
-            throw (`Expected string prefix, received ${typeof strPrefix}`);
+            throw (utils_1.throwMsg('string prefix', typeof strPrefix));
         }
         if (typeof sorted !== 'boolean') {
-            throw (`Expected sort parameter as boolean, received ${typeof sorted}`);
+            throw (utils_1.throwMsg('sort parameter as boolean', typeof sorted));
         }
         if (!this.isPrefix(strPrefix)) {
             return [];
         }
         const { prefixNode } = checkPrefix_1.default(this[exports.SYM_RAW], strPrefix);
         return recursePrefix_1.default(prefixNode, strPrefix, sorted);
+    }
+    getRandomWordWithPrefix(...argv) {
+        let strPrefix;
+        if (argv.length) {
+            strPrefix = argv[0];
+            if (!this.isPrefix(strPrefix)) {
+                return '';
+            }
+        }
+        else {
+            strPrefix = '';
+        }
+        const { prefixNode } = checkPrefix_1.default(this[exports.SYM_RAW], strPrefix);
+        return recurseRandomWord_1.default(prefixNode, strPrefix);
     }
     /**
      * Count the number of words with the given prefixSearch
@@ -99,7 +114,7 @@ class Trie {
      */
     getWords(sorted = true) {
         if (typeof sorted !== 'boolean') {
-            throw (`Expected sort parameter as boolean, received ${typeof sorted}`);
+            throw (utils_1.throwMsg('sort parameter as boolean', typeof sorted));
         }
         return recursePrefix_1.default(this[exports.SYM_RAW], '', sorted);
     }
@@ -109,7 +124,7 @@ class Trie {
      */
     hasWord(word) {
         if (typeof word !== 'string') {
-            throw (`Expected string word, received ${typeof word}`);
+            throw (utils_1.throwMsg('string word', typeof word));
         }
         const { prefixFound, prefixNode } = checkPrefix_1.default(this[exports.SYM_RAW], word);
         if (prefixFound) {
@@ -118,17 +133,22 @@ class Trie {
         }
         return false;
     }
+    isAnagrams(letters) {
+        if (typeof letters !== 'string') {
+            throw (utils_1.throwMsg('string letters', typeof letters));
+        }
+        if (letters.length < PERMS_MIN_LEN) {
+            throw (utils_1.throwMsg(`at least ${PERMS_MIN_LEN} letters`, letters.length));
+        }
+        // @ts-ignore
+        return letters;
+    }
     /**
      * Get a list of valid anagrams that can be made from the given letters
      * @returns Array
      */
     getAnagrams(letters) {
-        if (typeof letters !== 'string') {
-            throw (`Anagrams expected string letters, received ${typeof letters}`);
-        }
-        if (letters.length < PERMS_MIN_LEN) {
-            throw (`getAnagrams expects at least ${PERMS_MIN_LEN} letters`);
-        }
+        this.isAnagrams(letters);
         return permutations_1.default(letters, this[exports.SYM_RAW], {
             type: 'anagram',
         });
@@ -138,12 +158,7 @@ class Trie {
      * @returns Array
      */
     getSubAnagrams(letters) {
-        if (typeof letters !== 'string') {
-            throw (`Expected string letters, received ${typeof letters}`);
-        }
-        if (letters.length < PERMS_MIN_LEN) {
-            throw (`getSubAnagrams expects at least ${PERMS_MIN_LEN} letters`);
-        }
+        this.isAnagrams(letters);
         return permutations_1.default(letters, this[exports.SYM_RAW], {
             type: 'sub-anagram',
         });

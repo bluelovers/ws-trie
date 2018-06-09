@@ -2,9 +2,10 @@ import create, { ITrieRaw } from './create';
 import append from './append';
 import checkPrefix from './checkPrefix';
 import recursePrefix from './recursePrefix';
-import utils from './utils';
+import utils, { throwMsg } from './utils';
 import config, { END_VALUE } from './config';
 import permutations from './permutations';
+import recurseRandomWord from './recurseRandomWord';
 
 const PERMS_MIN_LEN = config.PERMS_MIN_LEN;
 
@@ -21,7 +22,7 @@ export class Trie<T = typeof END_VALUE>
 	{
 		if (!Array.isArray(input))
 		{
-			throw(`Expected parameter Array, received ${typeof input}`);
+			throw(throwMsg('parameter Array', typeof input));
 		}
 
 		const trie = create<T>([...input], ...argv);
@@ -52,7 +53,7 @@ export class Trie<T = typeof END_VALUE>
 	{
 		if (typeof word !== 'string' || word === '')
 		{
-			throw(`Expected parameter string, received ${typeof word}`);
+			throw(throwMsg('parameter string', typeof word));
 		}
 
 		const reducer = (...params) =>
@@ -74,7 +75,7 @@ export class Trie<T = typeof END_VALUE>
 	{
 		if (typeof word !== 'string' || word === '')
 		{
-			throw(`Expected parameter string, received ${typeof word}`);
+			throw(throwMsg('parameter string', typeof word));
 		}
 
 		const { prefixFound, prefixNode } = checkPrefix(this[SYM_RAW], word);
@@ -91,11 +92,11 @@ export class Trie<T = typeof END_VALUE>
 	 * Check a prefix is valid
 	 * @returns Boolean
 	 */
-	isPrefix(prefix: string)
+	isPrefix(prefix: string): prefix is string
 	{
 		if (typeof prefix !== 'string' || prefix === '')
 		{
-			throw(`Expected string prefix, received ${typeof prefix}`);
+			throw(throwMsg('string prefix', typeof prefix));
 		}
 
 		const { prefixFound } = checkPrefix(this[SYM_RAW], prefix);
@@ -111,12 +112,12 @@ export class Trie<T = typeof END_VALUE>
 	{
 		if (typeof strPrefix !== 'string' || strPrefix === '')
 		{
-			throw(`Expected string prefix, received ${typeof strPrefix}`);
+			throw(throwMsg('string prefix', typeof strPrefix));
 		}
 
 		if (typeof sorted !== 'boolean')
 		{
-			throw(`Expected sort parameter as boolean, received ${typeof sorted}`);
+			throw(throwMsg('sort parameter as boolean', typeof sorted));
 		}
 
 		if (!this.isPrefix(strPrefix))
@@ -127,6 +128,34 @@ export class Trie<T = typeof END_VALUE>
 		const { prefixNode } = checkPrefix(this[SYM_RAW], strPrefix);
 
 		return recursePrefix(prefixNode, strPrefix, sorted);
+	}
+
+	/**
+	 * Get a random word in the trie with the given prefix
+	 * @returns String
+	 */
+	getRandomWordWithPrefix(strPrefix?: string): string
+	getRandomWordWithPrefix(...argv): string
+	{
+		let strPrefix: string;
+
+		if (argv.length)
+		{
+			strPrefix = argv[0];
+
+			if (!this.isPrefix(strPrefix))
+			{
+				return '';
+			}
+		}
+		else
+		{
+			strPrefix = '';
+		}
+
+		const { prefixNode } = checkPrefix(this[SYM_RAW], strPrefix);
+
+		return recurseRandomWord(prefixNode, strPrefix);
 	}
 
 	/**
@@ -148,7 +177,7 @@ export class Trie<T = typeof END_VALUE>
 	{
 		if (typeof sorted !== 'boolean')
 		{
-			throw(`Expected sort parameter as boolean, received ${typeof sorted}`);
+			throw(throwMsg('sort parameter as boolean', typeof sorted));
 		}
 		return recursePrefix<T>(this[SYM_RAW], '', sorted);
 	}
@@ -161,7 +190,7 @@ export class Trie<T = typeof END_VALUE>
 	{
 		if (typeof word !== 'string')
 		{
-			throw(`Expected string word, received ${typeof word}`);
+			throw(throwMsg('string word', typeof word));
 		}
 
 		const { prefixFound, prefixNode } = checkPrefix<T>(this[SYM_RAW], word);
@@ -175,21 +204,29 @@ export class Trie<T = typeof END_VALUE>
 		return false;
 	}
 
+	isAnagrams(letters: string): letters is string
+	{
+		if (typeof letters !== 'string')
+		{
+			throw(throwMsg('string letters', typeof letters));
+		}
+
+		if (letters.length < PERMS_MIN_LEN)
+		{
+			throw(throwMsg(`at least ${PERMS_MIN_LEN} letters`, letters.length));
+		}
+
+		// @ts-ignore
+		return letters
+	}
+
 	/**
 	 * Get a list of valid anagrams that can be made from the given letters
 	 * @returns Array
 	 */
 	getAnagrams(letters: string)
 	{
-		if (typeof letters !== 'string')
-		{
-			throw(`Anagrams expected string letters, received ${typeof letters}`);
-		}
-
-		if (letters.length < PERMS_MIN_LEN)
-		{
-			throw(`getAnagrams expects at least ${PERMS_MIN_LEN} letters`);
-		}
+		this.isAnagrams(letters);
 
 		return permutations(letters, this[SYM_RAW], {
 			type: 'anagram',
@@ -202,15 +239,7 @@ export class Trie<T = typeof END_VALUE>
 	 */
 	getSubAnagrams(letters: string)
 	{
-		if (typeof letters !== 'string')
-		{
-			throw(`Expected string letters, received ${typeof letters}`);
-		}
-
-		if (letters.length < PERMS_MIN_LEN)
-		{
-			throw(`getSubAnagrams expects at least ${PERMS_MIN_LEN} letters`);
-		}
+		this.isAnagrams(letters);
 
 		return permutations(letters, this[SYM_RAW], {
 			type: 'sub-anagram',
