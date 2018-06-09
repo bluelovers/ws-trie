@@ -30,11 +30,11 @@ npm install trie-prefix-tree2
 
 To create a new Trie:
 
-```javascript
-var trie = require('trie-prefix-tree');
+```ts
+var trie = require('trie-prefix-tree2').trie;
 
 // using ES2015 Modules
-import trie from 'trie-prefix-tree';
+import trie from 'trie-prefix-tree2';
 ```
 
 Instantiate the Trie:
