@@ -1,6 +1,6 @@
 {
   "name": "trie-regex",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Create a regular expression from trie like object",
   "keywords": [
     "data",
@@ -32,7 +32,6 @@
   },
   "dependencies": {
     "jsesc": "^2.5.1",
-    "string-natural-compare": "^2.0.2",
-    "trie-prefix-tree": "^1.5.0"
+    "string-natural-compare": "^2.0.2"
   }
 }

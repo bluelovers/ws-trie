@@ -16,7 +16,12 @@ let arr = ['trea', 'tr2a', 'trie', '1', 'foobar', 'foobaz', 'foozap', 'fooza', '
 
 let t1 = trie(arr).tree();
 
-console.log(trieToRegExp(t1));
+console.log(trieToRegExp(t1, {
+	isEndpoint(value, key, trie)
+	{
+		return (key === '$') && (value === 1);
+	}
+}));
 
 let t2 = {
 	"1": {

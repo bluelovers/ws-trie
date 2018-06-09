@@ -5,7 +5,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const jsesc = require("jsesc");
 const naturalCompare = require("string-natural-compare");
-const config_1 = require("trie-prefix-tree/dist/config");
+//import { END_WORD } from 'trie-prefix-tree/dist/config';
+const END_WORD = '$$';
 function trieToRegExp(data, flags, options) {
     if (typeof flags == 'object') {
         [flags, options] = [options, flags];
@@ -15,7 +16,7 @@ function trieToRegExp(data, flags, options) {
     if (options.createRegExp) {
         return options.createRegExp(source, flags);
     }
-    return new RegExp(source, flags || '');
+    return new RegExp(source, flags || 'u');
 }
 exports.trieToRegExp = trieToRegExp;
 function trieToRegExpSource(data, options = {}) {
@@ -23,7 +24,8 @@ function trieToRegExpSource(data, options = {}) {
         return Object.keys(trie);
     };
     options.isEndpoint = options.isEndpoint || function (value, key, trie) {
-        return (key === config_1.END_WORD) && (trie[key] === 1);
+        //return (key === END_WORD) && (trie[key] === 1);
+        return (key === END_WORD);
     };
     options.toRegexString = options.toRegexString || _to_regex;
     const _fn_push = [].push;
@@ -97,7 +99,12 @@ function _quotemeta(phrase, options = {}) {
     let s = phrase
         .replace(/([\t\n\f\r\\\$\(\)\*\+\-\.\?\[\]\^\{\|\}])/g, '\\$1');
     if (!options.disableEscaped) {
-        s = s.replace(/[^\x20-\x7E]/g, jsesc);
+        let jo = Object.assign({
+            'es6': true,
+        }, options.jsescOptions);
+        s = s.replace(/[^\x20-\x7E]+/ug, function (s) {
+            return jsesc(s, jo);
+        });
     }
     return s;
 }

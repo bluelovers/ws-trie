@@ -4,7 +4,9 @@
 
 import * as jsesc from 'jsesc';
 import * as naturalCompare from 'string-natural-compare';
-import { END_WORD } from 'trie-prefix-tree/dist/config';
+//import { END_WORD } from 'trie-prefix-tree/dist/config';
+
+const END_WORD = '$$';
 
 export type IOptions = {
 	getKeys?(value, key?, data?, root?: boolean): string[],
@@ -12,11 +14,18 @@ export type IOptions = {
 	toRegexString?(alt_group, char_class, end): string,
 
 	disableEscaped?: boolean,
+
+	jsescOptions?: {
+		es6?: boolean,
+		minimal?: boolean,
+	}
 };
 
 export type IOptionsPlus<T = RegExp> = {
 	createRegExp<T>(source: string, flags?): T
 };
+
+export type IOptionsAll<T = RegExp> = IOptions & IOptionsPlus<T>;
 
 export function trieToRegExp<T>(data, options: IOptions & IOptionsPlus<T>, flags?: string): T
 export function trieToRegExp<T>(data, flags?: string, options?: IOptions & IOptionsPlus<T>): T
@@ -38,7 +47,7 @@ export function trieToRegExp(data, flags?, options?)
 		return options.createRegExp(source, flags);
 	}
 
-	return new RegExp(source, flags || '');
+	return new RegExp(source, flags || 'u');
 }
 
 export function trieToRegExpSource(data, options: IOptions = {}): string
@@ -50,7 +59,8 @@ export function trieToRegExpSource(data, options: IOptions = {}): string
 
 	options.isEndpoint = options.isEndpoint || function (value, key, trie)
 	{
-		return (key === END_WORD) && (trie[key] === 1);
+		//return (key === END_WORD) && (trie[key] === 1);
+		return (key === END_WORD);
 	};
 
 	options.toRegexString = options.toRegexString || _to_regex;
@@ -164,7 +174,15 @@ export function _quotemeta(phrase: string, options: IOptions = {})
 
 	if (!options.disableEscaped)
 	{
-		s = s.replace(/[^\x20-\x7E]/g, jsesc);
+		let jo = Object.assign({
+			'es6': true,
+			//'minimal': true,
+		}, options.jsescOptions);
+
+		s = s.replace(/[^\x20-\x7E]+/ug, function (s)
+		{
+			return jsesc(s, jo);
+		});
 	}
 
 	return s;

@@ -1,12 +1,20 @@
+/**
+ * Created by user on 2018/6/8/008.
+ */
 export declare type IOptions = {
-    getKeys?(value, key?, data?, root?: boolean): string[];
-    isEndpoint?(value, key, trie): boolean;
-    toRegexString?(alt_group, char_class, end): string;
+    getKeys?(value: any, key?: any, data?: any, root?: boolean): string[];
+    isEndpoint?(value: any, key: any, trie: any): boolean;
+    toRegexString?(alt_group: any, char_class: any, end: any): string;
     disableEscaped?: boolean;
+    jsescOptions?: {
+        es6?: boolean;
+        minimal?: boolean;
+    };
 };
 export declare type IOptionsPlus<T = RegExp> = {
-    createRegExp<T>(source: string, flags?): T;
+    createRegExp<T>(source: string, flags?: any): T;
 };
+export declare type IOptionsAll<T = RegExp> = IOptions & IOptionsPlus<T>;
 export declare function trieToRegExp<T>(data: any, options: IOptions & IOptionsPlus<T>, flags?: string): T;
 export declare function trieToRegExp<T>(data: any, flags?: string, options?: IOptions & IOptionsPlus<T>): T;
 export declare function trieToRegExp<T = RegExp>(data: any, options: IOptions): T;
