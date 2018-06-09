@@ -2,7 +2,7 @@ import create, { ITrieRaw } from './create';
 import append from './append';
 import checkPrefix from './checkPrefix';
 import recursePrefix from './recursePrefix';
-import utils, { throwMsg } from './utils';
+import utils, { split, throwMsg } from './utils';
 import config, { END_VALUE } from './config';
 import permutations from './permutations';
 import recurseRandomWord from './recurseRandomWord';
@@ -75,7 +75,9 @@ export class Trie<T = typeof END_VALUE>
 			return append(...params);
 		};
 
-		const input = word.toLowerCase().split('');
+
+
+		const input = split(word.toLowerCase());
 		input.reduce(reducer, this[SYM_RAW]);
 
 		return this;

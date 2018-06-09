@@ -45,7 +45,7 @@ class Trie {
             // @ts-ignore
             return append_1.default(...params);
         };
-        const input = word.toLowerCase().split('');
+        const input = utils_1.split(word.toLowerCase());
         input.reduce(reducer, this[exports.SYM_RAW]);
         return this;
     }

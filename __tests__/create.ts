@@ -10,11 +10,12 @@ describe('Creating the Trie', () =>
 
 		try
 		{
+			// @ts-ignore
 			create(input);
 		}
 		catch (error)
 		{
-			expect(error).to.equal(expected);
+			expect(error).to.deep.equal(expected);
 		}
 	});
 

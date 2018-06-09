@@ -10,6 +10,7 @@ describe('Retrieving a full list of words in the trie', () =>
 	{
 		expect(() =>
 		{
+			// @ts-ignore
 			trie(input).getWords('');
 		}).to.throw();
 	});

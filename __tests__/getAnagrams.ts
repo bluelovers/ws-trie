@@ -7,6 +7,7 @@ describe('Finding valid anagrams from the Trie given a set of letters', () =>
 
 	it('throws an error when no letters are passed', () =>
 	{
+		// @ts-ignore
 		expect(() => data.getAnagrams()).to.throw();
 	});
 

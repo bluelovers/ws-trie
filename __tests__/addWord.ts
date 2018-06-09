@@ -24,5 +24,5 @@ describe('Adding a word to the trie', () =>
 
 	// @ts-ignore
 	expect(() => trie(input).addWord()).to.throw();
-	expect(actual.dump()).to.equal(expected);
+	expect(actual.dump()).to.deep.equal(expected);
 });

@@ -37,6 +37,9 @@
       "pre-commit": "npm run test"
     }
   },
+  "dependencies": {
+    "uni-string": "^1.0.2"
+  },
   "devDependencies": {
     "ghooks": "2.0.0"
   }
