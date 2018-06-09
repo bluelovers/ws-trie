@@ -5,13 +5,13 @@ describe('Utility methods', () =>
 
 	describe('copying objects', () =>
 	{
-		const input = {
+		const input = Object.freeze({
 			a: {
 				b: {
 					c: {}
 				}
 			}
-		};
+		});
 		let copied = utils.objectCopy(input);
 
 		it('deep copies an object', () =>

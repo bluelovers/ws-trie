@@ -41,28 +41,28 @@ describe('Retrieving the Trie', () =>
 	it('returns a string representation of the trie object structure', () =>
 	{
 		const input = ['dog', 'dogs', 'donut'];
-		const actual = trie(input).dump();
-		const expected = JSON.stringify({
-			d: {
-				o: {
-					g: {
-						[END_WORD]: END_VALUE,
-						s: {
-							[END_WORD]: END_VALUE
-						}
-					},
-					n: {
-						u: {
-							t: {
-								[END_WORD]: END_VALUE
-							}
-						}
-					}
-				}
-			}
-		});
+		const actual = trie(input);
 
-		expect(actual).to.equal(expected);
+		let data = actual.tree();
+
+		expect(data)
+			.to.have.nested.property('d.o.g')
+			.to.have.property(END_WORD)
+		;
+
+		expect(data)
+			.to.have.nested.property('d.o.g.s')
+			.to.have.property(END_WORD)
+		;
+
+		expect(data)
+			.to.have.nested.property('d.o.n.u.t')
+			.to.have.property(END_WORD)
+		;
+
+		expect(actual.dump()).to.be.a('string');
+
+		expect(JSON.parse(actual.dump())).to.be.deep.equal(data);
 	});
 });
 
@@ -71,27 +71,21 @@ describe('Retrieving the RAW Trie tree', () =>
 	it('returns the raw trie object structure', () =>
 	{
 		const input = ['dog', 'dogs', 'donut'];
-		const actual = JSON.stringify(trie(input).tree());
-		const expected = JSON.stringify({
-			d: {
-				o: {
-					g: {
-						[END_WORD]: END_VALUE,
-						s: {
-							[END_WORD]: END_VALUE
-						}
-					},
-					n: {
-						u: {
-							t: {
-								[END_WORD]: END_VALUE
-							}
-						}
-					}
-				}
-			}
-		});
+		const actual = trie(input).tree();
 
-		expect(actual).to.equal(expected);
+		expect(actual)
+			.to.have.nested.property('d.o.g')
+			.to.have.property(END_WORD)
+		;
+
+		expect(actual)
+			.to.have.nested.property('d.o.g.s')
+			.to.have.property(END_WORD)
+		;
+
+		expect(actual)
+			.to.have.nested.property('d.o.n.u.t')
+			.to.have.property(END_WORD)
+		;
 	});
 });
