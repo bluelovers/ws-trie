@@ -1,5 +1,6 @@
-export declare function checkPrefix(prefixNode: any, prefix: string): {
+import { ITrie, ITrieNode } from './create';
+export declare function checkPrefix<T>(prefixNode: ITrie<T>, prefix: string): {
     prefixFound: boolean;
-    prefixNode: any;
+    prefixNode: ITrieNode<T>;
 };
 export default checkPrefix;

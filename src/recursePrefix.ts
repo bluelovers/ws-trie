@@ -1,8 +1,9 @@
 import config from './config';
+import { ITrie, ITrieNode, ITrieRaw } from './create';
 
 // sort items as they're being found
 // to prevent slow .sort() in NodeJs
-export function pushInOrder(word, prefixes)
+export function pushInOrder<T>(word: T, prefixes: T[])
 {
 	let i = 0;
 
@@ -20,7 +21,7 @@ export function pushInOrder(word, prefixes)
 	return prefixes;
 }
 
-export function recursePrefix(node, prefix, sorted, prefixes = [])
+export function recursePrefix<T>(node: ITrie<T>, prefix: string, sorted: boolean, prefixes: string[] = []): string[]
 {
 	let word = prefix;
 

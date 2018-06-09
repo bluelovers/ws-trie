@@ -1,54 +1,62 @@
-export declare function Trie(input: any): {
+import { ITrieRaw } from './create';
+import { END_VALUE } from './config';
+export declare const SYM_RAW: unique symbol;
+export declare type IInput<T> = string[];
+export declare type IInputMap<T> = [string, T][];
+export declare class Trie<T = typeof END_VALUE> {
+    [SYM_RAW]: ITrieRaw<T>;
+    constructor(input: IInput<T>, ...argv: any[]);
     /**
      * Get the generated raw trie object
      */
-    tree(): import("./create").ITrieRaw<{}>;
+    tree(): ITrieRaw<T>;
     /**
      * Get a string representation of the trie
      */
-    dump(spacer?: number): string;
+    dump(spacer?: string | number): string;
     /**
      * Add a new word to the trie
      */
-    addWord(word: any): any;
+    addWord(word: string): this;
     /**
      * Remove an existing word from the trie
      */
-    removeWord(word: any): any;
+    removeWord(word: string): this;
     /**
      * Check a prefix is valid
      * @returns Boolean
      */
-    isPrefix(prefix: any): boolean;
+    isPrefix(prefix: string): boolean;
     /**
      * Get a list of all words in the trie with the given prefix
      * @returns Array
      */
-    getPrefix(strPrefix: any, sorted?: boolean): any[];
+    getPrefix(strPrefix: string, sorted?: boolean): string[];
     /**
      * Count the number of words with the given prefixSearch
      * @returns Number
      */
-    countPrefix(strPrefix: any): any;
+    countPrefix(strPrefix: string): number;
     /**
      * Get all words in the trie
      * @returns Array
      */
-    getWords(sorted?: boolean): any[];
+    getWords(sorted?: boolean): string[];
     /**
      * Check the existence of a word in the trie
      * @returns Boolean
      */
-    hasWord(word: any): boolean;
+    hasWord(word: string): boolean;
     /**
      * Get a list of valid anagrams that can be made from the given letters
      * @returns Array
      */
-    getAnagrams(letters: any): any[];
+    getAnagrams(letters: string): string[];
     /**
      * Get a list of all sub-anagrams that can be made from the given letters
      * @returns Array
      */
-    getSubAnagrams(letters: any): any[];
-};
-export default Trie;
+    getSubAnagrams(letters: string): string[];
+}
+export declare function createTrie<T = typeof END_VALUE>(input: string[], ...argv: any[]): Trie<T>;
+export default createTrie;

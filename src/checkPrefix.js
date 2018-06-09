@@ -6,6 +6,7 @@ function checkPrefix(prefixNode, prefix) {
         if (!prefixNode[letter]) {
             return false;
         }
+        // @ts-ignore
         return prefixNode = prefixNode[letter];
     });
     return {

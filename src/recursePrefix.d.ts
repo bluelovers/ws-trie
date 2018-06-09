@@ -1,3 +1,4 @@
-export declare function pushInOrder(word: any, prefixes: any): any;
-export declare function recursePrefix(node: any, prefix: any, sorted: any, prefixes?: any[]): any[];
+import { ITrie } from './create';
+export declare function pushInOrder<T>(word: T, prefixes: T[]): T[];
+export declare function recursePrefix<T>(node: ITrie<T>, prefix: string, sorted: boolean, prefixes?: string[]): string[];
 export default recursePrefix;

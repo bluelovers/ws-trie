@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const append_1 = require("./append");
 const config_1 = require("./config");
-function create(input) {
+function create(input, ...argv) {
     if (!Array.isArray(input)) {
         throw (`Expected parameter Array, received ${typeof input}`);
     }

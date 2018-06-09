@@ -1,4 +1,4 @@
 export declare function permutations(letters: any, trie: any, opts?: {
     type: string;
-}): any[];
+}): string[];
 export default permutations;

@@ -2,7 +2,7 @@ import config from './config';
 
 export function permutations(letters, trie, opts = {
 	type: 'anagram',
-})
+}): string[]
 {
 	if (typeof letters !== 'string')
 	{
