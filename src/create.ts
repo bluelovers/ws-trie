@@ -8,7 +8,9 @@ export interface ITrieNode<T = typeof END_VALUE>
 {
 	[k: string]: ITrieNode<T>,
 
-	// @ts-ignore
+	//@ts-ignore
+	'$$'?: T,
+	//@ts-ignore
 	[END_WORD]?: T,
 }
 

@@ -38,3 +38,4 @@ __tests__
 *.jpeg
 *.png
 *.bmp
+/script/
