@@ -10,7 +10,7 @@ export function append<T>(trie: ITrie<T>, letter: string, index: number, array: 
 	if (index === array.length - 1)
 	{
 		// @ts-ignore
-		trie[END_WORD] = END_VALUE;
+		trie[END_WORD] = null;
 	}
 
 	return trie;

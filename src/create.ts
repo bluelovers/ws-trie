@@ -29,7 +29,8 @@ export function create<T>(input: IInput<T>, ...argv): ITrieRaw<T>
 
 	const trie = input.reduce((accumulator, item) =>
 	{
-		split(item.toLowerCase())
+		//split(item.toLowerCase())
+		split(item)
 			.reduce(append, accumulator)
 		;
 

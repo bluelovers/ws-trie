@@ -11,5 +11,8 @@ export declare function stringify(obj?: any, spacer?: number | string): string;
 export declare function throwMsg(expected: any, received: any): string;
 export declare function isEndpoint<T>(value: ITrie<T>, key: string, trie: ITrie<T>): value is ITrieNode<T>;
 export declare function hasEndpoint<T>(node: ITrie<T>): node is ITrieNode<T>;
+export declare function zwjTrim(s: string): string;
+export declare function zwjTrimStart(s: string): string;
+export declare function zwjTrimEnd(s: string): string;
 import * as utils from './utils';
 export default utils;

@@ -1,12 +1,23 @@
-import { ITrieRaw } from './create';
+import { ITrieRaw, ITrieNode } from './create';
 import { END_VALUE } from './config';
 import trieToRegExp, { IOptionsAll as ITrieToRegExpOptionsAll, IOptions as ITrieToRegExpOptions } from 'trie-regex';
 export declare const SYM_RAW: unique symbol;
 export declare type IInput<T> = string[];
 export declare type IInputMap<T> = [string, T][];
+export declare type ITrieOptions = {
+    /**
+     * @default true
+     */
+    ignoreCase?: boolean;
+    mapMode?: boolean;
+};
 export declare class Trie<T = typeof END_VALUE> {
     [SYM_RAW]: ITrieRaw<T>;
-    constructor(input: IInput<T>, ...argv: any[]);
+    options?: Readonly<ITrieOptions>;
+    constructor(input: IInputMap<T>, options?: ITrieOptions & {
+        mapMode: true;
+    }, ...argv: any[]);
+    constructor(input: IInput<T>, options?: ITrieOptions, ...argv: any[]);
     /**
      * Get the generated raw trie object
      */
@@ -24,11 +35,16 @@ export declare class Trie<T = typeof END_VALUE> {
     /**
      * Add a new word to the trie
      */
-    addWord(word: string): this;
+    addWord(word: string, value?: T): this;
+    _key(word: string): string;
     /**
      * Remove an existing word from the trie
      */
     removeWord(word: string): this;
+    protected _checkPrefix(prefix: string): {
+        prefixFound: boolean;
+        prefixNode: ITrieNode<T>;
+    };
     /**
      * Check a prefix is valid
      * @returns Boolean

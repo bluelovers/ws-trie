@@ -12,12 +12,28 @@ const trie_regex_1 = require("trie-regex");
 const PERMS_MIN_LEN = config_1.default.PERMS_MIN_LEN;
 exports.SYM_RAW = Symbol('trie');
 class Trie {
-    constructor(input, ...argv) {
+    constructor(input, options, ...argv) {
         if (!Array.isArray(input)) {
             throw (utils_1.throwMsg('parameter Array', typeof input));
         }
-        const trie = create_1.default([...input], ...argv);
-        this[exports.SYM_RAW] = trie;
+        const self = this;
+        this.options = Object.assign({
+            ignoreCase: true,
+        }, options);
+        this.options = Object.freeze(this.options);
+        if (this.options.mapMode) {
+            this[exports.SYM_RAW] = create_1.default([], ...argv);
+            input.forEach(row => {
+                let [key, value] = row;
+                self.addWord(key, value);
+            });
+        }
+        else {
+            this[exports.SYM_RAW] = create_1.default([], ...argv);
+            input.forEach(key => {
+                self.addWord(key);
+            });
+        }
     }
     /**
      * Get the generated raw trie object
@@ -38,7 +54,7 @@ class Trie {
     /**
      * Add a new word to the trie
      */
-    addWord(word) {
+    addWord(word, value = null) {
         if (typeof word !== 'string' || word === '') {
             throw (utils_1.throwMsg('parameter string', typeof word));
         }
@@ -46,9 +62,16 @@ class Trie {
             // @ts-ignore
             return append_1.default(...params);
         };
-        const input = utils_1.split(word.toLowerCase());
-        input.reduce(reducer, this[exports.SYM_RAW]);
+        let key = this._key(word);
+        const input = utils_1.split(key);
+        let node = input.reduce(reducer, this[exports.SYM_RAW]);
+        node[config_1.END_WORD] = node[config_1.END_WORD] || {};
+        node[config_1.END_WORD][word] = value;
+        node[config_1.END_WORD][config_1.END_DEF] = word;
         return this;
+    }
+    _key(word) {
+        return this.options.ignoreCase ? word.toLowerCase() : word;
     }
     /**
      * Remove an existing word from the trie
@@ -57,11 +80,15 @@ class Trie {
         if (typeof word !== 'string' || word === '') {
             throw (utils_1.throwMsg('parameter string', typeof word));
         }
-        const { prefixFound, prefixNode } = checkPrefix_1.default(this[exports.SYM_RAW], word);
+        const { prefixFound, prefixNode } = this._checkPrefix(word);
         if (prefixFound) {
             delete prefixNode[config_1.default.END_WORD];
         }
         return this;
+    }
+    _checkPrefix(prefix) {
+        let key = this._key(prefix);
+        return checkPrefix_1.default(this[exports.SYM_RAW], key);
     }
     /**
      * Check a prefix is valid
@@ -71,7 +98,7 @@ class Trie {
         if (typeof prefix !== 'string' || prefix === '') {
             throw (utils_1.throwMsg('string prefix', typeof prefix));
         }
-        const { prefixFound } = checkPrefix_1.default(this[exports.SYM_RAW], prefix);
+        const { prefixFound } = this._checkPrefix(prefix);
         return prefixFound;
     }
     /**
@@ -88,7 +115,7 @@ class Trie {
         if (!this.isPrefix(strPrefix)) {
             return [];
         }
-        const { prefixNode } = checkPrefix_1.default(this[exports.SYM_RAW], strPrefix);
+        const { prefixNode } = this._checkPrefix(strPrefix);
         return recursePrefix_1.default(prefixNode, strPrefix, sorted);
     }
     getRandomWordWithPrefix(...argv) {
@@ -102,7 +129,7 @@ class Trie {
         else {
             strPrefix = '';
         }
-        const { prefixNode } = checkPrefix_1.default(this[exports.SYM_RAW], strPrefix);
+        const { prefixNode } = this._checkPrefix(strPrefix);
         return recurseRandomWord_1.default(prefixNode, strPrefix);
     }
     /**
@@ -131,10 +158,11 @@ class Trie {
         if (typeof word !== 'string') {
             throw (utils_1.throwMsg('string word', typeof word));
         }
-        const { prefixFound, prefixNode } = checkPrefix_1.default(this[exports.SYM_RAW], word);
+        const { prefixFound, prefixNode } = this._checkPrefix(word);
         if (prefixFound) {
             // @ts-ignore
-            return prefixNode[config_1.default.END_WORD] === config_1.default.END_VALUE;
+            //return prefixNode[config.END_WORD] === config.END_VALUE;
+            return utils_1.hasEndpoint(prefixNode);
         }
         return false;
     }
@@ -171,6 +199,9 @@ class Trie {
     toRegExp(flags, options) {
         if (!flags || !utils_1.isString(flags)) {
             flags = 'u';
+            if (this.options.ignoreCase) {
+                flags += 'i';
+            }
         }
         options = Object.assign({
             disableEscaped: true,

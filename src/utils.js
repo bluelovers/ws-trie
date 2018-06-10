@@ -57,5 +57,17 @@ function hasEndpoint(node) {
     return config_1.END_WORD in node;
 }
 exports.hasEndpoint = hasEndpoint;
+function zwjTrim(s) {
+    return s.replace(/^[\u200d\s]+|[\u200d\s]+$/, '');
+}
+exports.zwjTrim = zwjTrim;
+function zwjTrimStart(s) {
+    return s.replace(/^[\u200d\s]+/, '');
+}
+exports.zwjTrimStart = zwjTrimStart;
+function zwjTrimEnd(s) {
+    return s.replace(/[\u200d\s]+$/, '');
+}
+exports.zwjTrimEnd = zwjTrimEnd;
 const utils = require("./utils");
 exports.default = utils;

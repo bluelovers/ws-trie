@@ -8,7 +8,8 @@ function create(input, ...argv) {
         throw (`Expected parameter Array, received ${typeof input}`);
     }
     const trie = input.reduce((accumulator, item) => {
-        utils_1.split(item.toLowerCase())
+        //split(item.toLowerCase())
+        utils_1.split(item)
             .reduce(append_1.default, accumulator);
         return accumulator;
     }, {});

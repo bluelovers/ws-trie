@@ -1,10 +1,10 @@
 
-import create, { ITrieRaw } from './create';
+import create, { ITrieRaw, ITrieNode, ITrie } from './create';
 import append from './append';
 import checkPrefix from './checkPrefix';
 import recursePrefix from './recursePrefix';
-import utils, { isEndpoint, isString, split, throwMsg } from './utils';
-import config, { END_VALUE } from './config';
+import utils, { hasEndpoint, isEndpoint, isString, split, throwMsg } from './utils';
+import config, { END_VALUE, END_WORD, END_DEF } from './config';
 import permutations from './permutations';
 import recurseRandomWord from './recurseRandomWord';
 import trieToRegExp, { IOptionsAll as ITrieToRegExpOptionsAll, IOptions as ITrieToRegExpOptions } from 'trie-regex';
@@ -16,20 +16,55 @@ export const SYM_RAW = Symbol('trie');
 export type IInput<T> = string[];
 export type IInputMap<T> = [string, T][];
 
+export type ITrieOptions = {
+	/**
+	 * @default true
+	 */
+	ignoreCase?: boolean,
+	mapMode?: boolean,
+}
+
 export class Trie<T = typeof END_VALUE>
 {
 	[SYM_RAW]: ITrieRaw<T>;
+	options?: Readonly<ITrieOptions>;
 
-	constructor(input: IInput<T>, ...argv)
+	constructor(input: IInputMap<T>, options?: ITrieOptions & {
+		mapMode: true,
+	}, ...argv)
+	constructor(input: IInput<T>, options?: ITrieOptions, ...argv)
+	constructor(input: IInput<T> | IInputMap<T>, options?: ITrieOptions, ...argv)
 	{
 		if (!Array.isArray(input))
 		{
 			throw(throwMsg('parameter Array', typeof input));
 		}
 
-		const trie = create<T>([...input], ...argv);
+		const self = this;
 
-		this[SYM_RAW] = trie;
+		this.options = Object.assign({
+			ignoreCase: true,
+		} as ITrieOptions, options);
+		this.options = Object.freeze(this.options);
+
+		if (this.options.mapMode)
+		{
+			this[SYM_RAW] = create<T>([], ...argv);
+
+			(input as IInputMap<T>).forEach(row => {
+				let [key, value] = row;
+
+				self.addWord(key, value);
+			});
+		}
+		else
+		{
+			this[SYM_RAW] = create<T>([] as IInput<T>, ...argv);
+
+			(input as IInput<T>).forEach(key => {
+				self.addWord(key);
+			});
+		}
 	}
 
 	/**
@@ -64,7 +99,7 @@ export class Trie<T = typeof END_VALUE>
 	/**
 	 * Add a new word to the trie
 	 */
-	addWord(word: string)
+	addWord(word: string, value: T = null)
 	{
 		if (typeof word !== 'string' || word === '')
 		{
@@ -77,12 +112,21 @@ export class Trie<T = typeof END_VALUE>
 			return append(...params);
 		};
 
+		let key = this._key(word);
 
+		const input = split(key);
+		let node = input.reduce(reducer, this[SYM_RAW]);
 
-		const input = split(word.toLowerCase());
-		input.reduce(reducer, this[SYM_RAW]);
+		node[END_WORD] = node[END_WORD] || {};
+		node[END_WORD][word] = value;
+		node[END_WORD][END_DEF] = word;
 
 		return this;
+	}
+
+	_key(word: string)
+	{
+		return this.options.ignoreCase ? word.toLowerCase() : word;
 	}
 
 	/**
@@ -95,7 +139,7 @@ export class Trie<T = typeof END_VALUE>
 			throw(throwMsg('parameter string', typeof word));
 		}
 
-		const { prefixFound, prefixNode } = checkPrefix(this[SYM_RAW], word);
+		const { prefixFound, prefixNode } = this._checkPrefix(word);
 
 		if (prefixFound)
 		{
@@ -103,6 +147,12 @@ export class Trie<T = typeof END_VALUE>
 		}
 
 		return this;
+	}
+
+	protected _checkPrefix(prefix: string)
+	{
+		let key = this._key(prefix);
+		return checkPrefix(this[SYM_RAW], key);
 	}
 
 	/**
@@ -116,7 +166,7 @@ export class Trie<T = typeof END_VALUE>
 			throw(throwMsg('string prefix', typeof prefix));
 		}
 
-		const { prefixFound } = checkPrefix(this[SYM_RAW], prefix);
+		const { prefixFound } = this._checkPrefix(prefix);
 
 		return prefixFound;
 	}
@@ -142,7 +192,7 @@ export class Trie<T = typeof END_VALUE>
 			return [];
 		}
 
-		const { prefixNode } = checkPrefix(this[SYM_RAW], strPrefix);
+		const { prefixNode } = this._checkPrefix(strPrefix);
 
 		return recursePrefix(prefixNode, strPrefix, sorted);
 	}
@@ -170,7 +220,7 @@ export class Trie<T = typeof END_VALUE>
 			strPrefix = '';
 		}
 
-		const { prefixNode } = checkPrefix(this[SYM_RAW], strPrefix);
+		const { prefixNode } = this._checkPrefix(strPrefix);
 
 		return recurseRandomWord(prefixNode, strPrefix);
 	}
@@ -210,12 +260,13 @@ export class Trie<T = typeof END_VALUE>
 			throw(throwMsg('string word', typeof word));
 		}
 
-		const { prefixFound, prefixNode } = checkPrefix<T>(this[SYM_RAW], word);
+		const { prefixFound, prefixNode } = this._checkPrefix( word);
 
 		if (prefixFound)
 		{
 			// @ts-ignore
-			return prefixNode[config.END_WORD] === config.END_VALUE;
+			//return prefixNode[config.END_WORD] === config.END_VALUE;
+			return hasEndpoint(prefixNode);
 		}
 
 		return false;
@@ -270,6 +321,11 @@ export class Trie<T = typeof END_VALUE>
 		if (!flags || !isString(flags))
 		{
 			flags = 'u';
+
+			if (this.options.ignoreCase)
+			{
+				flags += 'i';
+			}
 		}
 
 		options = Object.assign({

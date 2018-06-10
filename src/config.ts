@@ -1,5 +1,6 @@
 export const END_WORD = '$$';
-export const END_VALUE = 1;
+export const END_VALUE = Object.freeze({});
+export const END_DEF = Symbol('default');
 
 export const PERMS_MIN_LEN = 2;
 

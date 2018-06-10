@@ -84,5 +84,20 @@ export function hasEndpoint<T>(node: ITrie<T>): node is ITrieNode<T>
 	return END_WORD in node;
 }
 
+export function zwjTrim(s: string)
+{
+	return s.replace(/^[\u200d\s]+|[\u200d\s]+$/, '');
+}
+
+export function zwjTrimStart(s: string)
+{
+	return s.replace(/^[\u200d\s]+/, '');
+}
+
+export function zwjTrimEnd(s: string)
+{
+	return s.replace(/[\u200d\s]+$/, '');
+}
+
 import * as utils from './utils';
 export default utils;

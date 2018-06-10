@@ -3,7 +3,8 @@ import utils, { split } from './utils';
 
 export function checkPrefix<T>(prefixNode: ITrie<T>, prefix: string)
 {
-	const input = split(prefix.toLowerCase());
+	//const input = split(prefix.toLowerCase());
+	const input = split(prefix);
 	const prefixFound = input.every((letter, index): boolean =>
 	{
 		if (!prefixNode[letter])

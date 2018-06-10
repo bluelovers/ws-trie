@@ -1,5 +1,6 @@
 import { END_VALUE, END_WORD } from '../src/config';
 import create from '../src/create';
+import trie from '../src';
 
 describe('Creating the Trie', () =>
 {
@@ -22,7 +23,7 @@ describe('Creating the Trie', () =>
 	it('returns a Trie object structure converted to lowercase', () =>
 	{
 		const input = ['Dog'];
-		const data = create(input);
+		const data = trie(input).tree();
 		const expected = {
 			d: {
 				o: {
@@ -36,6 +37,27 @@ describe('Creating the Trie', () =>
 		//expect(data).to.deep.equal(expected);
 		expect(data)
 			.to.have.nested.property('d.o.g')
+			.to.have.property(END_WORD)
+		;
+	});
+
+	it('returns a Trie object structure', () =>
+	{
+		const input = ['Dog'];
+		const data = create(input);
+		const expected = {
+			D: {
+				o: {
+					g: {
+						[END_WORD]: END_VALUE
+					}
+				}
+			}
+		};
+
+		//expect(data).to.deep.equal(expected);
+		expect(data)
+			.to.have.nested.property('D.o.g')
 			.to.have.property(END_WORD)
 		;
 	});

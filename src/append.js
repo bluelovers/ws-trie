@@ -6,7 +6,7 @@ function append(trie, letter, index, array) {
     trie = trie[letter];
     if (index === array.length - 1) {
         // @ts-ignore
-        trie[config_1.END_WORD] = config_1.END_VALUE;
+        trie[config_1.END_WORD] = null;
     }
     return trie;
 }
