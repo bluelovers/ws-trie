@@ -36,7 +36,7 @@ export declare class Trie<T = typeof END_VALUE> {
      * Add a new word to the trie
      */
     addWord(word: string, value?: T): this;
-    _key(word: string): string;
+    protected _key(word: string): string;
     /**
      * Remove an existing word from the trie
      */
@@ -69,13 +69,13 @@ export declare class Trie<T = typeof END_VALUE> {
      * Get all words in the trie
      * @returns Array
      */
-    getWords(sorted?: boolean): string[];
+    getWordsAll(sorted?: boolean): string[];
     /**
      * Check the existence of a word in the trie
      * @returns Boolean
      */
     hasWord(word: string): boolean;
-    isAnagrams(letters: string): letters is string;
+    protected isAnagrams(letters: string): letters is string;
     /**
      * Get a list of valid anagrams that can be made from the given letters
      * @returns Array

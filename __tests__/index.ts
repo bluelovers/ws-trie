@@ -29,7 +29,7 @@ describe('Trie', () =>
 		expect(data).to.have.property('isPrefix');
 		expect(data).to.have.property('countPrefix');
 		expect(data).to.have.property('getPrefix');
-		expect(data).to.have.property('getWords');
+		expect(data).to.have.property('getWordsAll');
 		expect(data).to.have.property('hasWord');
 		expect(data).to.have.property('getAnagrams');
 		expect(data).to.have.property('getSubAnagrams');

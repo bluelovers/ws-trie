@@ -13,15 +13,26 @@ declare module 'trie-prefix-tree2' {
 }
 
 declare module 'trie-prefix-tree2/src' {
-    import { ITrieRaw } from 'trie-prefix-tree2/src/create';
+    import { ITrieRaw, ITrieNode } from 'trie-prefix-tree2/src/create';
     import { END_VALUE } from 'trie-prefix-tree2/src/config';
     import trieToRegExp, { IOptionsAll as ITrieToRegExpOptionsAll, IOptions as ITrieToRegExpOptions } from 'trie-regex';
     export const SYM_RAW: unique symbol;
     export type IInput<T> = string[];
     export type IInputMap<T> = [string, T][];
+    export type ITrieOptions = {
+            /**
+                * @default true
+                */
+            ignoreCase?: boolean;
+            mapMode?: boolean;
+    };
     export class Trie<T = typeof END_VALUE> {
             [SYM_RAW]: ITrieRaw<T>;
-            constructor(input: IInput<T>, ...argv: any[]);
+            options?: Readonly<ITrieOptions>;
+            constructor(input: IInputMap<T>, options?: ITrieOptions & {
+                    mapMode: true;
+            }, ...argv: any[]);
+            constructor(input: IInput<T>, options?: ITrieOptions, ...argv: any[]);
             /**
                 * Get the generated raw trie object
                 */
@@ -39,11 +50,16 @@ declare module 'trie-prefix-tree2/src' {
             /**
                 * Add a new word to the trie
                 */
-            addWord(word: string): this;
+            addWord(word: string, value?: T): this;
+            protected _key(word: string): string;
             /**
                 * Remove an existing word from the trie
                 */
             removeWord(word: string): this;
+            protected _checkPrefix(prefix: string): {
+                    prefixFound: boolean;
+                    prefixNode: ITrieNode<T>;
+            };
             /**
                 * Check a prefix is valid
                 * @returns Boolean
@@ -68,13 +84,13 @@ declare module 'trie-prefix-tree2/src' {
                 * Get all words in the trie
                 * @returns Array
                 */
-            getWords(sorted?: boolean): string[];
+            getWordsAll(sorted?: boolean): string[];
             /**
                 * Check the existence of a word in the trie
                 * @returns Boolean
                 */
             hasWord(word: string): boolean;
-            isAnagrams(letters: string): letters is string;
+            protected isAnagrams(letters: string): letters is string;
             /**
                 * Get a list of valid anagrams that can be made from the given letters
                 * @returns Array
@@ -110,22 +126,34 @@ declare module 'trie-prefix-tree2/src/create' {
 
 declare module 'trie-prefix-tree2/src/config' {
     export const END_WORD = "$$";
-    export const END_VALUE = 1;
+    export const END_VALUE: Readonly<{}>;
+    export const END_DEF: unique symbol;
     export const PERMS_MIN_LEN = 2;
     import * as config from 'trie-prefix-tree2/src/config';
     export default config;
 }
 
 declare module 'trie-prefix-tree2/src/index' {
-    import { ITrieRaw } from 'trie-prefix-tree2/src/create';
+    import { ITrieRaw, ITrieNode } from 'trie-prefix-tree2/src/create';
     import { END_VALUE } from 'trie-prefix-tree2/src/config';
     import trieToRegExp, { IOptionsAll as ITrieToRegExpOptionsAll, IOptions as ITrieToRegExpOptions } from 'trie-regex';
     export const SYM_RAW: unique symbol;
     export type IInput<T> = string[];
     export type IInputMap<T> = [string, T][];
+    export type ITrieOptions = {
+            /**
+                * @default true
+                */
+            ignoreCase?: boolean;
+            mapMode?: boolean;
+    };
     export class Trie<T = typeof END_VALUE> {
             [SYM_RAW]: ITrieRaw<T>;
-            constructor(input: IInput<T>, ...argv: any[]);
+            options?: Readonly<ITrieOptions>;
+            constructor(input: IInputMap<T>, options?: ITrieOptions & {
+                    mapMode: true;
+            }, ...argv: any[]);
+            constructor(input: IInput<T>, options?: ITrieOptions, ...argv: any[]);
             /**
                 * Get the generated raw trie object
                 */
@@ -143,11 +171,16 @@ declare module 'trie-prefix-tree2/src/index' {
             /**
                 * Add a new word to the trie
                 */
-            addWord(word: string): this;
+            addWord(word: string, value?: T): this;
+            protected _key(word: string): string;
             /**
                 * Remove an existing word from the trie
                 */
             removeWord(word: string): this;
+            protected _checkPrefix(prefix: string): {
+                    prefixFound: boolean;
+                    prefixNode: ITrieNode<T>;
+            };
             /**
                 * Check a prefix is valid
                 * @returns Boolean
@@ -172,13 +205,13 @@ declare module 'trie-prefix-tree2/src/index' {
                 * Get all words in the trie
                 * @returns Array
                 */
-            getWords(sorted?: boolean): string[];
+            getWordsAll(sorted?: boolean): string[];
             /**
                 * Check the existence of a word in the trie
                 * @returns Boolean
                 */
             hasWord(word: string): boolean;
-            isAnagrams(letters: string): letters is string;
+            protected isAnagrams(letters: string): letters is string;
             /**
                 * Get a list of valid anagrams that can be made from the given letters
                 * @returns Array

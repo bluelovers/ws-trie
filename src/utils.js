@@ -4,7 +4,7 @@ const uni_string_1 = require("uni-string");
 const config_1 = require("./config");
 exports.ZWJ = 0x200d;
 exports.ZWJ_STR = '\u200d';
-function isString(word, msg = 'parameter string') {
+function isString(word, msg = 'string') {
     if (typeof word !== 'string' || word === '') {
         throw (throwMsg(msg, typeof word));
     }

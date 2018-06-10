@@ -55,9 +55,7 @@ class Trie {
      * Add a new word to the trie
      */
     addWord(word, value = null) {
-        if (typeof word !== 'string' || word === '') {
-            throw (utils_1.throwMsg('parameter string', typeof word));
-        }
+        utils_1.isString(word, 'word is string');
         const reducer = (...params) => {
             // @ts-ignore
             return append_1.default(...params);
@@ -77,9 +75,7 @@ class Trie {
      * Remove an existing word from the trie
      */
     removeWord(word) {
-        if (typeof word !== 'string' || word === '') {
-            throw (utils_1.throwMsg('parameter string', typeof word));
-        }
+        utils_1.isString(word, 'word is string');
         const { prefixFound, prefixNode } = this._checkPrefix(word);
         if (prefixFound) {
             delete prefixNode[config_1.default.END_WORD];
@@ -95,9 +91,7 @@ class Trie {
      * @returns Boolean
      */
     isPrefix(prefix) {
-        if (typeof prefix !== 'string' || prefix === '') {
-            throw (utils_1.throwMsg('string prefix', typeof prefix));
-        }
+        utils_1.isString(prefix, 'prefix is string');
         const { prefixFound } = this._checkPrefix(prefix);
         return prefixFound;
     }
@@ -106,9 +100,7 @@ class Trie {
      * @returns Array
      */
     getPrefix(strPrefix, sorted = true) {
-        if (typeof strPrefix !== 'string' || strPrefix === '') {
-            throw (utils_1.throwMsg('string prefix', typeof strPrefix));
-        }
+        utils_1.isString(strPrefix, 'prefix is string');
         if (typeof sorted !== 'boolean') {
             throw (utils_1.throwMsg('sort parameter as boolean', typeof sorted));
         }
@@ -144,7 +136,7 @@ class Trie {
      * Get all words in the trie
      * @returns Array
      */
-    getWords(sorted = true) {
+    getWordsAll(sorted = true) {
         if (typeof sorted !== 'boolean') {
             throw (utils_1.throwMsg('sort parameter as boolean', typeof sorted));
         }
@@ -158,11 +150,13 @@ class Trie {
         if (typeof word !== 'string') {
             throw (utils_1.throwMsg('string word', typeof word));
         }
-        const { prefixFound, prefixNode } = this._checkPrefix(word);
-        if (prefixFound) {
-            // @ts-ignore
-            //return prefixNode[config.END_WORD] === config.END_VALUE;
-            return utils_1.hasEndpoint(prefixNode);
+        if (word !== '') {
+            const { prefixFound, prefixNode } = this._checkPrefix(word);
+            if (prefixFound) {
+                // @ts-ignore
+                //return prefixNode[config.END_WORD] === config.END_VALUE;
+                return utils_1.hasEndpoint(prefixNode);
+            }
         }
         return false;
     }

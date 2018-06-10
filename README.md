@@ -116,17 +116,17 @@ myTrie.getRandomWordWithPrefix('c'); // 'cats'
 
 ### Other:
 
-getWords
+getWordsAll
 
 ```javascript
 // retrieve a full list of words in the Trie
 // the output array is automatically sorted
-myTrie.getWords(); // ['cat', 'cats', 'elephant', 'lion', 'tiger']
+myTrie.getWordsAll(); // ['cat', 'cats', 'elephant', 'lion', 'tiger']
 
 // pass false to disable the output being sorted
 // this is useful when your dictionary is already sorted
 // and will therefore save performance
-myTrie.getWords(false); // ['cat', 'cats', 'elephant', 'tiger', 'lion']
+myTrie.getWordsAll(false); // ['cat', 'cats', 'elephant', 'tiger', 'lion']
 ```
 
 hasWord
