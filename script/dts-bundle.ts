@@ -10,5 +10,9 @@ import path = require('path');
 
 dts.bundle({
 	name: pkg.name,
-	main: path.join(__dirname, '../index.d.ts')
+	main: path.join(__dirname, '../index.d.ts'),
+
+	//referenceExternals: true,
+
+	newline: '\n',
 });
