@@ -78,11 +78,34 @@ class Trie {
     /**
      * Remove an existing word from the trie
      */
-    removeWord(word) {
+    removeWord(word, all) {
         utils_1.isString(word, 'word is string');
         const { prefixFound, prefixNode } = this._checkPrefix(word);
         if (prefixFound) {
-            delete prefixNode[config_1.default.END_WORD];
+            let node = prefixNode[config_1.END_WORD];
+            /**
+             * 更改了 removeWord 行為
+             * 會先刪除與 word 符合的 key 值
+             * 如果沒有則刪除 預設值
+             * 基本上這個狀況只會發生在 ignoreCase = true 時
+             * 不論如何每次執行都必定刪除一個 key
+             */
+            if (!all && Object.keys(node).length > 1) {
+                let bool;
+                if (word in node) {
+                    delete node[word];
+                }
+                else if (node[config_1.END_DEF] in node) {
+                    delete node[node[config_1.END_DEF]];
+                    bool = true;
+                }
+                if (bool || word == node[config_1.END_DEF]) {
+                    node[config_1.END_DEF] = Object.keys(node)[0];
+                }
+            }
+            else {
+                delete prefixNode[config_1.default.END_WORD];
+            }
         }
         return this;
     }

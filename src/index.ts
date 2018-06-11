@@ -132,7 +132,7 @@ export class Trie<T = typeof END_VALUE>
 	/**
 	 * Remove an existing word from the trie
 	 */
-	removeWord(word: string)
+	removeWord(word: string, all?: boolean)
 	{
 		isString(word, 'word is string');
 
@@ -140,7 +140,38 @@ export class Trie<T = typeof END_VALUE>
 
 		if (prefixFound)
 		{
-			delete prefixNode[config.END_WORD];
+			let node = prefixNode[END_WORD];
+
+			/**
+			 * 更改了 removeWord 行為
+			 * 會先刪除與 word 符合的 key 值
+			 * 如果沒有則刪除 預設值
+			 * 基本上這個狀況只會發生在 ignoreCase = true 時
+			 * 不論如何每次執行都必定刪除一個 key
+			 */
+			if (!all && Object.keys(node).length > 1)
+			{
+				let bool: boolean;
+
+				if (word in node)
+				{
+					delete node[word];
+				}
+				else if (node[END_DEF] in node)
+				{
+					delete node[node[END_DEF]];
+					bool = true;
+				}
+
+				if (bool || word == node[END_DEF])
+				{
+					node[END_DEF] = Object.keys(node)[0];
+				}
+			}
+			else
+			{
+				delete prefixNode[config.END_WORD];
+			}
 		}
 
 		return this;

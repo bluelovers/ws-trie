@@ -62,7 +62,7 @@ declare module "trie-prefix-tree2/src" {
         /**
          * Remove an existing word from the trie
          */
-        removeWord(word: string): this;
+        removeWord(word: string, all?: boolean): this;
         protected _checkPrefix(
             prefix: string
         ): {
@@ -233,7 +233,7 @@ declare module "trie-prefix-tree2/src/index" {
         /**
          * Remove an existing word from the trie
          */
-        removeWord(word: string): this;
+        removeWord(word: string, all?: boolean): this;
         protected _checkPrefix(
             prefix: string
         ): {

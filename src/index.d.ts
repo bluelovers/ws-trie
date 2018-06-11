@@ -43,7 +43,7 @@ export declare class Trie<T = typeof END_VALUE> {
     /**
      * Remove an existing word from the trie
      */
-    removeWord(word: string): this;
+    removeWord(word: string, all?: boolean): this;
     protected _checkPrefix(prefix: string): {
         prefixFound: boolean;
         prefixNode: ITrieNode<T>;
