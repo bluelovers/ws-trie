@@ -21,9 +21,10 @@ before_install:
 
 install:
   - npm install
-  - npm install -g typescript@next
+  - npm install -g typescript@next npx
   - npm install --no-save typedoc typedoc-themes-color typedoc-plugin-nojekyll fs-extra
   - npm install --no-save dts-bundle
+
 
 before_script:
 
