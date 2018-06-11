@@ -20,12 +20,12 @@ cache:
 before_install:
   #- npm install -g typedoc typedoc-themes-color typedoc-plugin-nojekyll
 #  - npm install -g typescript
+  - npm install --no-save dts-bundle
+  - npm install -g typescript@next npx
 
 install:
   - npm install
-  - npm install -g typescript@next npx
   - npm install --no-save typedoc typedoc-themes-color typedoc-plugin-nojekyll fs-extra
-  - npm install --no-save dts-bundle
 
 
 before_script:
