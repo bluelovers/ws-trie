@@ -1,6 +1,9 @@
-import { ITrieRaw, ITrieNode } from './create';
+import { ITrieRaw, ITrieNode, ITrieNodeValue } from './create';
+export { ITrieRaw, ITrieNode, ITrie, ITrieNodeValue } from './create';
 import { END_VALUE } from './config';
+export { END_VALUE, END_WORD, END_DEF } from './config';
 import trieToRegExp, { IOptionsAll as ITrieToRegExpOptionsAll, IOptions as ITrieToRegExpOptions } from 'trie-regex';
+export { IOptionsAll as ITrieToRegExpOptionsAll, IOptions as ITrieToRegExpOptions } from 'trie-regex';
 export declare const SYM_RAW: unique symbol;
 export declare type IInput<T> = string[];
 export declare type IInputMap<T> = [string, T][];
@@ -75,6 +78,31 @@ export declare class Trie<T = typeof END_VALUE> {
      * @returns Boolean
      */
     hasWord(word: string): boolean;
+    /**
+     *
+     * @example
+     * tree.getWordData('object.entries')
+     * // => { key: 'Object.entries', value: null, matched: false }
+     * tree.getWordData('Object.entries')
+     * // { key: 'Object.entries', value: null, matched: true }
+     */
+    getWordData(word: string, notChkDefault?: boolean): {
+        key: string;
+        value: T;
+        matched: boolean;
+    };
+    getWordData<R>(word: string, notChkDefault?: boolean): {
+        key: string;
+        value: R;
+        matched: boolean;
+    };
+    /**
+     * @example
+     * tree.getWordNode('Object.entries')
+     * // => { 'Object.entries': null, [Symbol(default)]: 'Object.entries' }
+     */
+    getWordNode(word: string): ITrieNodeValue<T>;
+    getWordNode<R>(word: string): ITrieNodeValue<R>;
     protected isAnagrams(letters: string): letters is string;
     /**
      * Get a list of valid anagrams that can be made from the given letters

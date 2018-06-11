@@ -3,5 +3,5 @@
  */
 import trie, { Trie } from './src';
 export * from './src';
-export { Trie };
+export { Trie, trie };
 export default trie;

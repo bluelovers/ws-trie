@@ -1,5 +1,5 @@
 import append from './append';
-import { END_WORD, END_VALUE } from './config';
+import { END_WORD, END_VALUE, END_DEF } from './config';
 import { IInput, IInputMap } from './index';
 import { split } from './utils';
 
@@ -10,9 +10,15 @@ export interface ITrieNode<T = typeof END_VALUE>
 	[k: string]: ITrieNode<T>,
 
 	//@ts-ignore
-	'$$'?: T,
+	'$$'?: ITrieNodeValue<T>,
 	//@ts-ignore
-	[END_WORD]?: T,
+	[END_WORD]?: ITrieNodeValue<T>,
+}
+
+export interface ITrieNodeValue<T = typeof END_VALUE>
+{
+	[k: string]: T,
+	[END_DEF]: string,
 }
 
 export interface ITrieRaw<T = typeof END_VALUE>

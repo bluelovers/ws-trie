@@ -148,7 +148,7 @@ getSubAnagrams
 
 ```javascript
 // generate a list of valid sub-anagrams from the given letters
-myTrie.getSubAnagrams('ctalion'); ['cat', 'cats', 'lion'];
+myTrie.getSubAnagrams('ctalion'); // ['cat', 'cats', 'lion'];
 ```
 
 ## Credits

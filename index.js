@@ -10,6 +10,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 //
 //export = triePrefixTree;
 const src_1 = require("./src");
+exports.trie = src_1.default;
 exports.Trie = src_1.Trie;
 __export(require("./src"));
 exports.default = src_1.default;

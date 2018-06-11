@@ -6,6 +6,10 @@ const checkPrefix_1 = require("./checkPrefix");
 const recursePrefix_1 = require("./recursePrefix");
 const utils_1 = require("./utils");
 const config_1 = require("./config");
+var config_2 = require("./config");
+exports.END_VALUE = config_2.END_VALUE;
+exports.END_WORD = config_2.END_WORD;
+exports.END_DEF = config_2.END_DEF;
 const permutations_1 = require("./permutations");
 const recurseRandomWord_1 = require("./recurseRandomWord");
 const trie_regex_1 = require("trie-regex");
@@ -159,6 +163,44 @@ class Trie {
             }
         }
         return false;
+    }
+    getWordData(word, notChkDefault) {
+        let node = this.getWordNode(word);
+        if (node) {
+            if (word in node) {
+                return {
+                    key: word,
+                    value: node[word],
+                    matched: word === word,
+                };
+            }
+            else if (!notChkDefault && config_1.END_DEF in node) {
+                let k = node[config_1.END_DEF];
+                if (!(k in node)) {
+                    k = Object.keys(node)[0];
+                }
+                if (k in node) {
+                    return {
+                        key: k,
+                        value: node[k],
+                        matched: k === word,
+                    };
+                }
+            }
+        }
+        return null;
+    }
+    getWordNode(word) {
+        if (typeof word !== 'string') {
+            throw (utils_1.throwMsg('string word', typeof word));
+        }
+        if (word !== '') {
+            const { prefixFound, prefixNode } = this._checkPrefix(word);
+            if (utils_1.hasEndpoint(prefixNode)) {
+                return prefixNode[config_1.END_WORD];
+            }
+        }
+        return null;
     }
     isAnagrams(letters) {
         if (typeof letters !== 'string') {

@@ -8,14 +8,17 @@ declare module "trie-prefix-tree2" {
      */
     import trie, { Trie } from "trie-prefix-tree2/src";
     export * from "trie-prefix-tree2/src";
-    export { Trie };
+    export { Trie, trie };
     export default trie;
 }
 
 declare module "trie-prefix-tree2/src" {
-    import { ITrieRaw, ITrieNode } from "trie-prefix-tree2/src/create";
+    import { ITrieRaw, ITrieNode, ITrieNodeValue } from "trie-prefix-tree2/src/create";
+    export { ITrieRaw, ITrieNode, ITrie, ITrieNodeValue } from "trie-prefix-tree2/src/create";
     import { END_VALUE } from "trie-prefix-tree2/src/config";
+    export { END_VALUE, END_WORD, END_DEF } from "trie-prefix-tree2/src/config";
     import trieToRegExp, { IOptionsAll as ITrieToRegExpOptionsAll, IOptions as ITrieToRegExpOptions } from "trie-regex";
+    export { IOptionsAll as ITrieToRegExpOptionsAll, IOptions as ITrieToRegExpOptions } from "trie-regex";
     export const SYM_RAW: unique symbol;
     export type IInput<T> = string[];
     export type IInputMap<T> = [string, T][];
@@ -96,6 +99,37 @@ declare module "trie-prefix-tree2/src" {
          * @returns Boolean
          */
         hasWord(word: string): boolean;
+        /**
+         *
+         * @example
+         * tree.getWordData('object.entries')
+         * // => { key: 'Object.entries', value: null, matched: false }
+         * tree.getWordData('Object.entries')
+         * // { key: 'Object.entries', value: null, matched: true }
+         */
+        getWordData(
+            word: string,
+            notChkDefault?: boolean
+        ): {
+            key: string;
+            value: T;
+            matched: boolean;
+        };
+        getWordData<R>(
+            word: string,
+            notChkDefault?: boolean
+        ): {
+            key: string;
+            value: R;
+            matched: boolean;
+        };
+        /**
+         * @example
+         * tree.getWordNode('Object.entries')
+         * // => { 'Object.entries': null, [Symbol(default)]: 'Object.entries' }
+         */
+        getWordNode(word: string): ITrieNodeValue<T>;
+        getWordNode<R>(word: string): ITrieNodeValue<R>;
         protected isAnagrams(letters: string): letters is string;
         /**
          * Get a list of valid anagrams that can be made from the given letters
@@ -115,13 +149,17 @@ declare module "trie-prefix-tree2/src" {
 }
 
 declare module "trie-prefix-tree2/src/create" {
-    import { END_WORD, END_VALUE } from "trie-prefix-tree2/src/config";
+    import { END_WORD, END_VALUE, END_DEF } from "trie-prefix-tree2/src/config";
     import { IInput } from "trie-prefix-tree2/src/index";
     export type ITrie<T = typeof END_VALUE> = ITrieNode<T> | ITrieRaw<T>;
     export interface ITrieNode<T = typeof END_VALUE> {
         [k: string]: ITrieNode<T>;
-        $$?: T;
-        [END_WORD]?: T;
+        $$?: ITrieNodeValue<T>;
+        [END_WORD]?: ITrieNodeValue<T>;
+    }
+    export interface ITrieNodeValue<T = typeof END_VALUE> {
+        [k: string]: T;
+        [END_DEF]: string;
     }
     export interface ITrieRaw<T = typeof END_VALUE> {
         [k: string]: ITrieNode<T>;
@@ -132,7 +170,7 @@ declare module "trie-prefix-tree2/src/create" {
 
 declare module "trie-prefix-tree2/src/config" {
     export const END_WORD = "$$";
-    export const END_VALUE: Readonly<{}>;
+    export const END_VALUE: any;
     export const END_DEF: unique symbol;
     export const PERMS_MIN_LEN = 2;
     import * as config from "trie-prefix-tree2/src/config";
@@ -140,9 +178,12 @@ declare module "trie-prefix-tree2/src/config" {
 }
 
 declare module "trie-prefix-tree2/src/index" {
-    import { ITrieRaw, ITrieNode } from "trie-prefix-tree2/src/create";
+    import { ITrieRaw, ITrieNode, ITrieNodeValue } from "trie-prefix-tree2/src/create";
+    export { ITrieRaw, ITrieNode, ITrie, ITrieNodeValue } from "trie-prefix-tree2/src/create";
     import { END_VALUE } from "trie-prefix-tree2/src/config";
+    export { END_VALUE, END_WORD, END_DEF } from "trie-prefix-tree2/src/config";
     import trieToRegExp, { IOptionsAll as ITrieToRegExpOptionsAll, IOptions as ITrieToRegExpOptions } from "trie-regex";
+    export { IOptionsAll as ITrieToRegExpOptionsAll, IOptions as ITrieToRegExpOptions } from "trie-regex";
     export const SYM_RAW: unique symbol;
     export type IInput<T> = string[];
     export type IInputMap<T> = [string, T][];
@@ -223,6 +264,37 @@ declare module "trie-prefix-tree2/src/index" {
          * @returns Boolean
          */
         hasWord(word: string): boolean;
+        /**
+         *
+         * @example
+         * tree.getWordData('object.entries')
+         * // => { key: 'Object.entries', value: null, matched: false }
+         * tree.getWordData('Object.entries')
+         * // { key: 'Object.entries', value: null, matched: true }
+         */
+        getWordData(
+            word: string,
+            notChkDefault?: boolean
+        ): {
+            key: string;
+            value: T;
+            matched: boolean;
+        };
+        getWordData<R>(
+            word: string,
+            notChkDefault?: boolean
+        ): {
+            key: string;
+            value: R;
+            matched: boolean;
+        };
+        /**
+         * @example
+         * tree.getWordNode('Object.entries')
+         * // => { 'Object.entries': null, [Symbol(default)]: 'Object.entries' }
+         */
+        getWordNode(word: string): ITrieNodeValue<T>;
+        getWordNode<R>(word: string): ITrieNodeValue<R>;
         protected isAnagrams(letters: string): letters is string;
         /**
          * Get a list of valid anagrams that can be made from the given letters

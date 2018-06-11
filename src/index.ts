@@ -1,13 +1,16 @@
 
-import create, { ITrieRaw, ITrieNode, ITrie } from './create';
+import create, { ITrieRaw, ITrieNode, ITrie, ITrieNodeValue } from './create';
+export { ITrieRaw, ITrieNode, ITrie, ITrieNodeValue } from './create';
 import append from './append';
 import checkPrefix from './checkPrefix';
 import recursePrefix from './recursePrefix';
 import utils, { hasEndpoint, isEndpoint, isString, split, throwMsg } from './utils';
 import config, { END_VALUE, END_WORD, END_DEF } from './config';
+export { END_VALUE, END_WORD, END_DEF } from './config';
 import permutations from './permutations';
 import recurseRandomWord from './recurseRandomWord';
 import trieToRegExp, { IOptionsAll as ITrieToRegExpOptionsAll, IOptions as ITrieToRegExpOptions } from 'trie-regex';
+export { IOptionsAll as ITrieToRegExpOptionsAll, IOptions as ITrieToRegExpOptions } from 'trie-regex';
 
 const PERMS_MIN_LEN = config.PERMS_MIN_LEN;
 
@@ -261,6 +264,88 @@ export class Trie<T = typeof END_VALUE>
 		}
 
 		return false;
+	}
+
+	/**
+	 *
+	 * @example
+	 * tree.getWordData('object.entries')
+	 * // => { key: 'Object.entries', value: null, matched: false }
+	 * tree.getWordData('Object.entries')
+	 * // { key: 'Object.entries', value: null, matched: true }
+	 */
+	getWordData(word: string, notChkDefault?: boolean): {
+		key: string,
+		value: T,
+		matched: boolean,
+	}
+	getWordData<R>(word: string, notChkDefault?: boolean): {
+		key: string,
+		value: R,
+		matched: boolean,
+	}
+	getWordData(word: string, notChkDefault?: boolean)
+	{
+		let node = this.getWordNode(word);
+
+		if (node)
+		{
+			if (word in node)
+			{
+				return {
+					key: word,
+					value: node[word],
+					matched: word === word,
+				};
+			}
+			else if (!notChkDefault && END_DEF in node)
+			{
+				let k: string = node[END_DEF];
+
+				if (!(k in node))
+				{
+					k = Object.keys(node)[0];
+				}
+
+				if (k in node)
+				{
+					return {
+						key: k,
+						value: node[k],
+						matched: k === word,
+					};
+				}
+			}
+		}
+
+		return null;
+	}
+
+	/**
+	 * @example
+	 * tree.getWordNode('Object.entries')
+	 * // => { 'Object.entries': null, [Symbol(default)]: 'Object.entries' }
+	 */
+	getWordNode(word: string): ITrieNodeValue<T>
+	getWordNode<R>(word: string): ITrieNodeValue<R>
+	getWordNode(word: string): ITrieNodeValue<T>
+	{
+		if (typeof word !== 'string')
+		{
+			throw(throwMsg('string word', typeof word));
+		}
+
+		if (word !== '')
+		{
+			const { prefixFound, prefixNode } = this._checkPrefix( word);
+
+			if (hasEndpoint(prefixNode))
+			{
+				return prefixNode[END_WORD];
+			}
+		}
+
+		return null;
 	}
 
 	protected isAnagrams(letters: string): letters is string
