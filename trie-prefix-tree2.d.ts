@@ -130,6 +130,12 @@ declare module "trie-prefix-tree2/src" {
          */
         getWordNode(word: string): ITrieNodeValue<T>;
         getWordNode<R>(word: string): ITrieNodeValue<R>;
+        /**
+         * @example
+         * tree.getWordNodeKeys('Object.entries')
+         * // => [ 'Object.entries' ]
+         */
+        getWordNodeKeys(word: string): string[];
         protected isAnagrams(letters: string): letters is string;
         /**
          * Get a list of valid anagrams that can be made from the given letters
@@ -295,6 +301,12 @@ declare module "trie-prefix-tree2/src/index" {
          */
         getWordNode(word: string): ITrieNodeValue<T>;
         getWordNode<R>(word: string): ITrieNodeValue<R>;
+        /**
+         * @example
+         * tree.getWordNodeKeys('Object.entries')
+         * // => [ 'Object.entries' ]
+         */
+        getWordNodeKeys(word: string): string[];
         protected isAnagrams(letters: string): letters is string;
         /**
          * Get a list of valid anagrams that can be made from the given letters

@@ -348,6 +348,23 @@ export class Trie<T = typeof END_VALUE>
 		return null;
 	}
 
+	/**
+	 * @example
+	 * tree.getWordNodeKeys('Object.entries')
+	 * // => [ 'Object.entries' ]
+	 */
+	getWordNodeKeys(word: string): string[]
+	{
+		let node = this.getWordNode(word);
+
+		if (node)
+		{
+			return Object.keys(node);
+		}
+
+		return null;
+	}
+
 	protected isAnagrams(letters: string): letters is string
 	{
 		if (typeof letters !== 'string')

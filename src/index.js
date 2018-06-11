@@ -202,6 +202,18 @@ class Trie {
         }
         return null;
     }
+    /**
+     * @example
+     * tree.getWordNodeKeys('Object.entries')
+     * // => [ 'Object.entries' ]
+     */
+    getWordNodeKeys(word) {
+        let node = this.getWordNode(word);
+        if (node) {
+            return Object.keys(node);
+        }
+        return null;
+    }
     isAnagrams(letters) {
         if (typeof letters !== 'string') {
             throw (utils_1.throwMsg('string letters', typeof letters));
