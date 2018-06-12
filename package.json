@@ -29,10 +29,10 @@
   "scripts": {
     "build-dts": "npm run dts-bundle && npm run prettier",
     "commit": "git-cz",
-    "travis": "npx typedoc --options ./typedoc.config.js",
     "dts-bundle": "node ./script/dts-bundle",
     "prepublishOnly": "npx sort-package-json && npm run build-dts && npm run test",
     "test": "npx mocha-benchmark2 \"__tests__/**/*.js\"",
+    "travis": "npx typedoc --options ./typedoc.config.js",
     "prettier": "npx prettier --tab-width 4 --prose-wrap never --write trie-prefix-tree2.d.ts --parser typescript --print-width 999"
   },
   "config": {
@@ -44,6 +44,5 @@
     "trie-regex": "^1.1.0",
     "uni-string": "^1.0.2"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
