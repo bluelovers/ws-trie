@@ -44,5 +44,7 @@ describe(relative(__filename), () =>
 
 		expect(find_list.length).to.ok;
 		expect(Object.keys(r.count)).to.deep.equal(find_list)
+
+		console.log(r);
 	});
 });

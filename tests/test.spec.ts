@@ -79,6 +79,8 @@ describe(relative(__filename), () =>
 
 		expect(find_list.length).to.ok;
 		expect(Object.keys(r.count)).to.deep.equal(find_list)
+
+		console.log(r);
 	});
 
 	it(`Match every`, function ()
@@ -129,7 +131,7 @@ describe(relative(__filename), () =>
 			her: 1
 		};
 		actual = {};
-		ac.search('yasherhs', function(found_word) {
+		let r = ac.search('yasherhs', function(found_word) {
 			if (actual[found_word] == null) {
 				actual[found_word] = 0;
 			}
@@ -137,6 +139,8 @@ describe(relative(__filename), () =>
 		});
 
 		expect(actual).to.deep.equal(expected);
+
+		console.log(r);
 
 	});
 
@@ -160,6 +164,8 @@ describe(relative(__filename), () =>
 		expect(r.count['foo']).to.deep.equal(1);
 
 		expect(r.data['foo']).to.deep.equal(['data1', 'data2']);
+
+		console.log(r);
 
 	});
 
