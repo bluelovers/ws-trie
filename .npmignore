@@ -5,24 +5,34 @@
 ~ci.list.txt
 ~ci.log.txt
 ~ci.errors.txt
-
 *.stackdump
 *.bak
 *.old
-
 tsconfig.json
 #package-lock.json
-
 test
-
 .github
 .gitkeep
-
 /.*### Example user template template
 ### Example user template
-
 # IntelliJ project files
-.idea
 *.iml
 out
 gen
+/tests/
+test/**/*.js
+test/**/*.d.ts
+test/*.js
+test/*.d.ts
+test/temp*
+tests/**/*.js
+tests/**/*.d.ts
+tests/*.js
+tests/*.d.ts
+tests/temp*
+tests
+### npm2 template
+/.*
+/~*
+__test__
+__tests__

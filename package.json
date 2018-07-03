@@ -1,6 +1,6 @@
 {
   "name": "aho-corasick2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Aho–Corasick string matching algorithm",
   "keywords": [
     "Aho-Corasick automation",
