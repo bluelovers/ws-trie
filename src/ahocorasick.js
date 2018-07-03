@@ -33,13 +33,54 @@ class AhoCorasick {
         while (node) {
             if (node.is_word) {
                 offset = pos - node.value.length;
-                callback(node.value, node.data, offset);
+                callback(node.value, node.data, offset, node);
             }
             node = node.fail;
         }
         return this;
     }
     search(string, callback) {
+        /**
+         * 參考 aca 回傳的資料結構
+         * @see https://www.npmjs.com/package/aca
+         */
+        let result = {
+            matches: {},
+            positions: {},
+            count: {},
+            data: {},
+        };
+        let callbackResult;
+        if (callback) {
+            callbackResult = function (...argv) {
+                let [value, data, offset, node] = argv;
+                result.matches[value] = result.matches[value] || [];
+                result.matches[value].push(offset);
+                result.positions[offset] = result.positions[offset] || [];
+                result.positions[offset].push(value);
+                if (result.count[value] == null) {
+                    result.count[value] = 0;
+                }
+                result.count[value]++;
+                result.data[value] = node.data;
+                // @ts-ignore
+                callback.call(result, ...argv);
+            };
+        }
+        else {
+            callbackResult = function (...argv) {
+                let [value, data, offset, node] = argv;
+                result.matches[value] = result.matches[value] || [];
+                result.matches[value].push(offset);
+                result.positions[offset] = result.positions[offset] || [];
+                result.positions[offset].push(value);
+                if (result.count[value] == null) {
+                    result.count[value] = 0;
+                }
+                result.count[value]++;
+                result.data[value] = node.data;
+            };
+        }
         let chr, current, idx, j, ref;
         current = this.trie;
         for (idx = j = 0, ref = string.length; (0 <= ref ? j < ref : j > ref); idx = 0 <= ref ? ++j : --j) {
@@ -52,12 +93,11 @@ class AhoCorasick {
             }
             if (current.next[chr]) {
                 current = current.next[chr];
-                if (callback) {
-                    this.foreach_match(current, idx + 1, callback);
-                }
+                this.foreach_match(current, idx + 1, callbackResult);
             }
         }
-        return this;
+        // @ts-ignore
+        return result;
     }
     to_dot() {
         let dot, fail_cb, last_chr, link_cb, v_;

@@ -8,6 +8,8 @@
 
 ## Example
 
+[API](src/ahocorasick.d.ts)
+
 ```ts
 import * as AhoCorasick from 'aho-corasick2';
 import AhoCorasick from 'aho-corasick2';

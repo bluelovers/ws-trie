@@ -51,15 +51,80 @@ export class AhoCorasick<T = any>
 			if (node.is_word)
 			{
 				offset = pos - node.value.length;
-				callback(node.value, node.data, offset);
+				callback(node.value, node.data, offset, node);
 			}
 			node = node.fail;
 		}
 		return this;
 	}
 
-	search(string: string, callback: IAhoCorasickCallback<T>)
+	search(string: string, callback?: IAhoCorasickCallback<T>): IAhoCorasickResult<T>
+	search<R = IAhoCorasickResult<T>>(string: string, callback?: IAhoCorasickCallback<T>): R
+	search(string: string, callback?: IAhoCorasickCallback<T>)
 	{
+		/**
+		 * 參考 aca 回傳的資料結構
+		 * @see https://www.npmjs.com/package/aca
+		 */
+		let result: IAhoCorasickResult<T> = {
+			matches: {},
+			positions: {},
+			count: {},
+			data: {},
+		};
+
+		let callbackResult: IAhoCorasickCallback<T>;
+
+		if (callback)
+		{
+			callbackResult = function (...argv)
+			{
+				let [value, data, offset, node] = argv;
+
+				result.matches[value] = result.matches[value] || [];
+
+				result.matches[value].push(offset);
+
+				result.positions[offset] = result.positions[offset] || [];
+				result.positions[offset].push(value);
+
+				if (result.count[value] == null)
+				{
+					result.count[value] = 0;
+				}
+
+				result.count[value]++;
+
+				result.data[value] = node.data;
+
+				// @ts-ignore
+				callback.call(result, ...argv);
+			};
+		}
+		else
+		{
+			callbackResult = function (...argv)
+			{
+				let [value, data, offset, node] = argv;
+
+				result.matches[value] = result.matches[value] || [];
+
+				result.matches[value].push(offset);
+
+				result.positions[offset] = result.positions[offset] || [];
+				result.positions[offset].push(value);
+
+				if (result.count[value] == null)
+				{
+					result.count[value] = 0;
+				}
+
+				result.count[value]++;
+
+				result.data[value] = node.data;
+			};
+		}
+
 		let chr, current, idx, j, ref;
 		current = this.trie;
 		for (idx = j = 0, ref = string.length; (0 <= ref ? j < ref : j > ref); idx = 0 <= ref ? ++j : --j)
@@ -76,13 +141,13 @@ export class AhoCorasick<T = any>
 			if (current.next[chr])
 			{
 				current = current.next[chr];
-				if (callback)
-				{
-					this.foreach_match(current, idx + 1, callback);
-				}
+
+				this.foreach_match(current, idx + 1, callbackResult);
 			}
 		}
-		return this;
+
+		// @ts-ignore
+		return result;
 	}
 
 	to_dot(): string
@@ -142,7 +207,34 @@ export class AhoCorasick<T = any>
 
 }
 
-export type IAhoCorasickCallback<T> = (value: string, data: T[], offset: number) => void
+export type IAhoCorasickCallback<T> = (value: string, data: T[], offset: number, node: Trie<T>) => void
+
+export type IAhoCorasickResult<T = any> = {
+	/**
+	 * keyword: position[]
+	 */
+	matches: {
+		[k: string]: number[],
+	},
+	/**
+	 * position: keyword[]
+	 */
+	positions: {
+		[k: number]: string[],
+	},
+	/**
+	 * keyword: count
+	 */
+	count: {
+		[k: string]: number,
+	},
+	/**
+	 * keyword: data
+	 */
+	data: {
+		[k: string]: T[],
+	},
+};
 
 export namespace AhoCorasick
 {
