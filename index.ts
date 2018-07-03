@@ -4,11 +4,11 @@
 
 import { Trie } from './src/trie'
 // @ts-ignore
-import { AhoCorasick } from './src/ahocorasick'
+import { AhoCorasick, IAhoCorasickCallback } from './src/ahocorasick'
 export * from './src/ahocorasick'
 
 // @ts-ignore
-export { AhoCorasick, Trie }
+export { AhoCorasick, Trie, IAhoCorasickCallback }
 
 // @ts-ignore
 export default AhoCorasick
