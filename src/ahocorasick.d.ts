@@ -6,7 +6,6 @@ declare module './trie' {
 }
 export declare class AhoCorasick<T = any> {
     trie: Trie<T>;
-    constructor();
     add(word: string, data?: T): boolean;
     build_fail(node?: Trie<T>): this;
     foreach_match(node: Trie<T>, pos: number, callback: IAhoCorasickCallback<T>): this;

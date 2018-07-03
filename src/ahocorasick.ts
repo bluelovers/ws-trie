@@ -12,11 +12,6 @@ export class AhoCorasick<T = any>
 {
 	trie: Trie<T> = new Trie();
 
-	constructor()
-	{
-
-	}
-
 	add(word: string, data?: T)
 	{
 		return this.trie.add(word, data);
