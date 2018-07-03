@@ -1,29 +1,53 @@
-{ "name"    : "aho-corasick",
-  "author"  : {
-    "name"  : "Dejian Xu",
-    "email" : "xudejian2008@gmail.com",
-    "url"   : "https://github.com/xudejian/aho-corasick"
-  },
-  "description" : "Aho–Corasick string matching algorithm",
+{
+  "name": "aho-corasick2",
+  "version": "0.1.3",
+  "description": "Aho–Corasick string matching algorithm",
   "keywords": [
+    "Aho-Corasick automation",
+    "ac",
+    "ac automation",
+    "aca",
+    "add",
+    "aho",
     "aho-corasick",
+    "algorithm",
+    "array",
+    "automata",
+    "corasick",
+    "data",
+    "javascript",
+    "match",
+    "multiple",
+    "pattern",
+    "remove",
+    "stream",
+    "strings",
+    "structure",
+    "tree",
+    "tree-structure",
     "trie",
-    "match"
+    "trie-structure",
+    "words"
   ],
-  "version"     : "0.1.3",
-  "homepage": "https://github.com/xudejian/aho-corasick",
+  "homepage": "https://github.com/bluelovers/aho-corasick#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/aho-corasick/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "git://github.com/xudejian/aho-corasick.git"
+    "url": "git+https://github.com/bluelovers/aho-corasick.git"
   },
-  "main" : "./src/aho-corasick",
-  "engines": { "node": "*" },
-  "dependencies": {},
-  "devDependencies": {
-     "nodeunit": "*",
-     "coffee-script": "*"
+  "license": "ISC",
+  "author": "Dejian Xu <xudejian2008@gmail.com> (https://github.com/xudejian/aho-corasick)",
+  "main": "./index",
+  "directories": {
+    "test": "tests"
   },
   "scripts": {
-    "test": "nodeunit tests"
-  }
+    "prepublishOnly": "npm run sort-package-json",
+    "sort-package-json": "npx sort-package-json",
+    "test": "npx nodeunit tests/chinese.test.js tests/test.test.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
 }

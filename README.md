@@ -1,57 +1,80 @@
 # About
 
-[![Build Status](https://travis-ci.org/xudejian/aho-corasick.png?branch=master)](https://travis-ci.org/xudejian/aho-corasick)
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/xudejian/aho-corasick/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
-
-aho-corasick - Aho–Corasick string matching algorithm
+> aho-corasick2 - Aho–Corasick string matching algorithm
 
 #Installation
 
-	$ npm install aho-corasick
+	$ npm install aho-corasick2
 
-#Example
+## Example
 
-##coffee
-
+```ts
+import * as AhoCorasick from 'aho-corasick2';
+import AhoCorasick from 'aho-corasick2';
+import AhoCorasick = require('aho-corasick2');
+```
 * search
 
-		ac = new AhoCorasick()
-		ac.add word, word:word for word in ['say', 'she', 'shr', 'he', 'her']
-		ac.build_fail()
+```ts
+var ac, actual, i, len, ref, word;
 
-		actual = {}
-  
-		ac.search 'yasherhs', (found_word)->
-    		actual[found_word] ?= 0
-    		actual[found_word]++
+ac = new AhoCorasick();
+
+ref = ['say', 'she', 'shr', 'he', 'her'];
+for (i = 0, len = ref.length; i < len; i++) {
+  word = ref[i];
+  ac.add(word, {
+    word: word
+  });
+}
+
+ac.build_fail();
+
+console.dir(ac, {
+	depth: null,
+	colors: true,
+});
+
+actual = {};
+
+ac.search('yasherhs', function(found_word) {
+  if (actual[found_word] == null) {
+    actual[found_word] = 0;
+  }
+  return actual[found_word]++;
+});
+
+console.dir(actual, {
+	depth: null,
+	colors: true,
+});
+```
 
 
-* build graphviz dot
+## build graphviz dot
 
+```coffee
 		ac = new AhoCorasick()
 		ac.add word, word:word for word in ['say', 'she', 'shr', 'he', 'her']
 		ac.build_fail()
 		console.log ac.to_dot()
+```
 
-	\# save output as trie.dot  and 
-	
-		$ dot -Tpng trie.dot -o trie.png
-	
-	You also need to install [GraphViz](http://www.graphviz.org/)
+save output as `trie.dot` and
 
+    $ dot -Tpng trie.dot -o trie.png
 
-# Author
+You also need to install [GraphViz](http://www.graphviz.org/)
+
+## Author
 
 Dejian Xu
 [Google+](https://plus.google.com/116305544434538996428?rel=author)
 
-##Thanks
+## Thanks
 
 * Thomas Booth [https://github.com/tombooth/aho-corasick.js](https://github.com/tombooth/aho-corasick.js)
 * glejeune node-graphviz [https://github.com/glejeune/node-graphviz](https://github.com/glejeune/node-graphviz)
 
-##References
+## References
 wikipedia: [Aho-Corasick](https://en.wikipedia.org/wiki/Aho-Corasick)
-
-
