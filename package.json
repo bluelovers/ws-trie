@@ -44,9 +44,9 @@
     "test": "tests"
   },
   "scripts": {
+    "mocha": "npx mocha-benchmark2 --require ts-node/register \"!(node_modules)/**/*.spec.{ts,tsx}\"",
     "prepublishOnly": "npm run sort-package-json",
-    "sort-package-json": "npx sort-package-json",
-    "test": "npx nodeunit tests/chinese.test.js tests/test.test.js"
+    "sort-package-json": "npx sort-package-json"
   },
   "dependencies": {},
   "devDependencies": {}
