@@ -1,10 +1,14 @@
-# About
+# aho-corasick2
 
-> aho-corasick2 - Aho–Corasick string matching algorithm
+    aho-corasick2 - Aho–Corasick string matching algorithm
 
-#Installation
+## Installation
 
 	$ npm install aho-corasick2
+
+## 應用
+
+* [應用於小說翻譯時](tests/novel.ts)
 
 ## Example
 
