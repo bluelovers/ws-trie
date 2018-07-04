@@ -1,6 +1,10 @@
-# ws-segment README
+# trie-pos-list
 
-    get { position: keyword[] }
+    get trie position list { position: keyword[] }
+
+```
+npm install trie-pos-list
+```
 
 ```ts
 import triePosList, { allPosMax } from 'trie-pos-list';
@@ -51,3 +55,6 @@ console.log(ret3);
 console.log(`ret2 same as ret3:`, equals(ret2, ret3));
 
 ```
+
+* [aho-corasick2](https://github.com/bluelovers/aho-corasick)
+* 
