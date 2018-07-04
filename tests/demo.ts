@@ -1,11 +1,12 @@
 import AhoCorasick from '..';
-import array_unique from 'array-hyper-unique';
+import { array_unique } from 'array-hyper-unique';
+import equals = require('deep-eql');
 
-var actual, i, len, ref, word;
+var i, len, ref, word;
 
 var ac = new AhoCorasick();
 
-ref = [ 'say', 'she', 'shr', 'he', 'her', 'h', 'hers', 'his' ];
+ref = ['say', 'she', 'shr', 'he', 'her', 'h', 'hers', 'his'];
 
 for (i = 0, len = ref.length; i < len; i++)
 {
@@ -22,7 +23,7 @@ console.dir(ac, {
 	colors: true,
 });
 
-actual = ac.search('yasherhs');
+let actual = ac.search('yasherhs');
 /*
 { matches: { h: [ 3, 6 ], she: [ 2 ], he: [ 3 ], her: [ 3 ] },
   positions: { '2': [ 'she' ], '3': [ 'h', 'he', 'her' ], '6': [ 'h' ] },

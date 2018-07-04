@@ -18,16 +18,18 @@ import AhoCorasick = require('aho-corasick2');
 * search
 
 ```ts
-var ac, actual, i, len, ref, word;
+var i, len, ref, word;
 
-ac = new AhoCorasick();
+var ac = new AhoCorasick();
 
-ref = ['say', 'she', 'shr', 'he', 'her'];
-for (i = 0, len = ref.length; i < len; i++) {
-  word = ref[i];
-  ac.add(word, {
-    word: word
-  });
+ref = ['say', 'she', 'shr', 'he', 'her', 'h', 'hers', 'his'];
+
+for (i = 0, len = ref.length; i < len; i++)
+{
+	word = ref[i];
+	ac.add(word, {
+		word: word
+	});
 }
 
 ac.build_fail();
@@ -37,14 +39,17 @@ console.dir(ac, {
 	colors: true,
 });
 
-actual = {};
-
-ac.search('yasherhs', function(found_word) {
-  if (actual[found_word] == null) {
-    actual[found_word] = 0;
-  }
-  return actual[found_word]++;
-});
+let actual = ac.search('yasherhs');
+/*
+{ matches: { h: [ 3, 6 ], she: [ 2 ], he: [ 3 ], her: [ 3 ] },
+  positions: { '2': [ 'she' ], '3': [ 'h', 'he', 'her' ], '6': [ 'h' ] },
+  count: { h: 2, she: 1, he: 1, her: 1 },
+  data:
+   { h: [ { word: 'h' } ],
+     she: [ { word: 'she' } ],
+     he: [ { word: 'he' } ],
+     her: [ { word: 'her' } ] } }
+ */
 
 console.dir(actual, {
 	depth: null,
