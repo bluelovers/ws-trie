@@ -39,9 +39,9 @@ list.forEach(function (word: any)
 	if (typeof word === 'string')
 	{
 		key = word;
-		data = {
-			word,
-		};
+		//data = {
+		//word,
+		//};
 	}
 	else if (word.word)
 	{
@@ -51,10 +51,7 @@ list.forEach(function (word: any)
 	else if (Array.isArray(word))
 	{
 		key = word[0];
-		data = {
-			word: word[0],
-			input: word.slice(1),
-		};
+		data = word.slice(1);
 	}
 	else
 	{
@@ -74,9 +71,12 @@ function search(input: string)
 {
 	let actual = ac.search(input);
 
+	let { data, positions } = actual;
+
 	let ret = {
 		input,
-		actual,
+		positions,
+		data,
 	};
 
 	console.dir(ret, {
