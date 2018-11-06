@@ -56,3 +56,6 @@ __tests__### Example user template template
 *.iml
 out
 gen
+### jsonly template
+*.ts
+!*.d.ts
