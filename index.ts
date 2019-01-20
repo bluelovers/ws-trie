@@ -2,8 +2,8 @@
  * Created by user on 2018/6/8/008.
  */
 
-import * as jsesc from 'jsesc';
-import * as naturalCompare from 'string-natural-compare';
+import jsesc = require('jsesc');
+import naturalCompare = require('string-natural-compare');
 //import { END_WORD } from 'trie-prefix-tree/dist/config';
 
 const END_WORD = '$$';

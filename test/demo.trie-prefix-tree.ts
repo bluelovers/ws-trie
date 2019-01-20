@@ -2,7 +2,7 @@
  * Created by user on 2018/6/9/009.
  */
 
-import * as trie from 'trie-prefix-tree';
+import trie = require('trie-prefix-tree');
 import trieToRegExp from '../index';
 
 let arr = ['trea', 'tr2a', 'trie', '1', 'foobar', 'foobaz', 'foozap', 'fooza', '$'];
@@ -15,6 +15,7 @@ console.log(trieToRegExp(t1, {
 		return (key === '$') && (value === 1);
 	}
 }));
+// => /(?:foo(?:ba[rz]|zap?)|tr(?:2a|ea|ie)|\$|1)/u
 
 let t2 = {
 	"1": {
@@ -74,3 +75,4 @@ console.log(trieToRegExp(t2, {
 		return (key === '$') && (value === 1);
 	}
 }));
+// => /(?:foo(?:ba[rz]|zap?)|tr(?:2a|ea|ie)|\$|1)/u

@@ -2,14 +2,18 @@
 
     Create a regular expression from trie like object
 
+## install
 
+```
+npm install trie-regex
+```
 
 ## demo
 
 * [API](index.d.ts)
 
 ```ts
-import * as trie from 'trie-prefix-tree';
+import trie = require('trie-prefix-tree');
 import trieToRegExp from 'trie-regex';
 
 let arr = ['trea', 'tr2a', 'trie', '1', 'foobar', 'foobaz', 'foozap', 'fooza', '$'];
@@ -22,6 +26,7 @@ console.log(trieToRegExp(t1, {
 		return (key === '$') && (value === 1);
 	}
 }));
+// => /(?:foo(?:ba[rz]|zap?)|tr(?:2a|ea|ie)|\$|1)/u
 
 let t2 = {
 	"1": {
@@ -81,4 +86,5 @@ console.log(trieToRegExp(t2, {
 		return (key === '$') && (value === 1);
 	}
 }));
+// => /(?:foo(?:ba[rz]|zap?)|tr(?:2a|ea|ie)|\$|1)/u
 ```

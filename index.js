@@ -114,3 +114,4 @@ function _is_phrase_valid(phrase) {
 }
 exports._is_phrase_valid = _is_phrase_valid;
 exports.default = trieToRegExp;
+//# sourceMappingURL=index.js.map
