@@ -35,3 +35,4 @@ function permutations(letters, trie, opts = {
 }
 exports.permutations = permutations;
 exports.default = permutations;
+//# sourceMappingURL=permutations.js.map

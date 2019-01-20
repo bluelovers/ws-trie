@@ -14,5 +14,5 @@ export declare function hasEndpoint<T>(node: ITrie<T>): node is ITrieNode<T>;
 export declare function zwjTrim(s: string): string;
 export declare function zwjTrimStart(s: string): string;
 export declare function zwjTrimEnd(s: string): string;
-import * as utils from './utils';
-export default utils;
+declare const _default: typeof import("./utils");
+export default _default;

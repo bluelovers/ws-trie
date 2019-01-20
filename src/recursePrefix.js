@@ -34,3 +34,4 @@ function recursePrefix(node, prefix, sorted, prefixes = []) {
 }
 exports.recursePrefix = recursePrefix;
 exports.default = recursePrefix;
+//# sourceMappingURL=recursePrefix.js.map

@@ -12,3 +12,4 @@ function append(trie, letter, index, array) {
 }
 exports.append = append;
 exports.default = append;
+//# sourceMappingURL=append.js.map

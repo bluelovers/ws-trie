@@ -99,5 +99,4 @@ export function zwjTrimEnd(s: string)
 	return s.replace(/[\u200d\s]+$/, '');
 }
 
-import * as utils from './utils';
-export default utils;
+export default exports as typeof import('./utils');

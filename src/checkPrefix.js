@@ -18,3 +18,4 @@ function checkPrefix(prefixNode, prefix) {
 }
 exports.checkPrefix = checkPrefix;
 exports.default = checkPrefix;
+//# sourceMappingURL=checkPrefix.js.map

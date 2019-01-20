@@ -41,3 +41,5 @@ __tests__
 /script/
 /typedoc.config.js
 /docs/
+*.ts
+!*.d.ts

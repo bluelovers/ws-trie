@@ -286,9 +286,14 @@ class Trie {
     }
 }
 exports.Trie = Trie;
-function createTrie(input, ...argv) {
-    return new Trie(input, ...argv);
+function createTrie(...argv) {
+    // @ts-ignore
+    return new Trie(...argv);
 }
 exports.createTrie = createTrie;
-createTrie.prototype = Trie.prototype;
+Object.assign(createTrie, {
+    prototype: Trie.prototype,
+});
+//createTrie.prototype = Trie.prototype;
 exports.default = createTrie;
+//# sourceMappingURL=index.js.map

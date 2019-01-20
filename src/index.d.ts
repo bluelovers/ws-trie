@@ -123,5 +123,8 @@ export declare class Trie<T = typeof END_VALUE> {
     toRegExp<R = RegExp>(flags?: string, options?: ITrieToRegExpOptions): R;
     toRegExp<R>(flags?: string, options?: ITrieToRegExpOptionsAll<R>): ReturnType<typeof trieToRegExp>;
 }
-export declare function createTrie<T = typeof END_VALUE>(input: string[], ...argv: any[]): Trie<T>;
+export declare function createTrie<T = typeof END_VALUE>(input: IInputMap<T>, options?: ITrieOptions & {
+    mapMode: true;
+}, ...argv: any[]): Trie<T>;
+export declare function createTrie<T = typeof END_VALUE>(input: IInput<T>, options?: ITrieOptions, ...argv: any[]): Trie<T>;
 export default createTrie;

@@ -8,18 +8,6 @@ A Trie (also known as a prefix-tree) is a data structure for storing strings in 
 
 ![trie data structure](/trie.jpg)
 
-## Installation
-
-Pull down dependencies:
-
-```
-npm install
-```
-
-```
-npm test
-```
-
 ## How to Use
 
 To use the Trie, install and save it to your package dependencies:
@@ -27,6 +15,9 @@ To use the Trie, install and save it to your package dependencies:
 ```
 npm install trie-prefix-tree2
 ```
+
+> see more in [API](src/index.d.ts)
+> also has [demo.ts](test/demo/demo.ts)
 
 To create a new Trie:
 

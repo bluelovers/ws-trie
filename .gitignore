@@ -32,6 +32,8 @@ tests/*.d.ts
 tests/temp*
 ### git2 template
 
+/test/**.map
+/tests/**.map
 
 
 
@@ -44,3 +46,8 @@ __tests__/*.d.ts
 __tests__/temp*
 /package-lock.json
 /docs/
+/test/**/*.map
+/tests/**/*.map
+
+/script/**/*.map
+

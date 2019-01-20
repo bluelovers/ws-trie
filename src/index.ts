@@ -468,11 +468,21 @@ export class Trie<T = typeof END_VALUE>
 
 }
 
-export function createTrie<T = typeof END_VALUE>(input: string[], ...argv)
+
+export function createTrie<T = typeof END_VALUE>(input: IInputMap<T>, options?: ITrieOptions & {
+	mapMode: true,
+}, ...argv): Trie<T>
+export function createTrie<T = typeof END_VALUE>(input: IInput<T>, options?: ITrieOptions, ...argv): Trie<T>
+export function createTrie<T = typeof END_VALUE>(...argv)
 {
-	return new Trie<T>(input, ...argv);
+	// @ts-ignore
+	return new Trie<T>(...argv);
 }
 
-createTrie.prototype = Trie.prototype;
+Object.assign(createTrie, {
+	prototype: Trie.prototype,
+});
+
+//createTrie.prototype = Trie.prototype;
 
 export default createTrie

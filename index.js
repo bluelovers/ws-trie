@@ -14,3 +14,4 @@ exports.trie = src_1.default;
 exports.Trie = src_1.Trie;
 __export(require("./src"));
 exports.default = src_1.default;
+//# sourceMappingURL=index.js.map

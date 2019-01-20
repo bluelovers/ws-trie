@@ -4,5 +4,4 @@ export const END_DEF = Symbol('default');
 
 export const PERMS_MIN_LEN = 2;
 
-import * as config from './config';
-export default config
+export default exports as typeof import('./config');

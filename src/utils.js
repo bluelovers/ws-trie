@@ -69,5 +69,5 @@ function zwjTrimEnd(s) {
     return s.replace(/[\u200d\s]+$/, '');
 }
 exports.zwjTrimEnd = zwjTrimEnd;
-const utils = require("./utils");
-exports.default = utils;
+exports.default = exports;
+//# sourceMappingURL=utils.js.map
