@@ -1,6 +1,6 @@
 {
   "name": "trie-prefix-tree2",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Create and modify trie prefix structures, extract word lists including anagrams and sub-anagrams",
   "keywords": [
     "add",
@@ -41,7 +41,7 @@
     "sort-package-json": "npx yarn-tool sort"
   },
   "dependencies": {
-    "trie-regex": "^1.1.3",
+    "trie-regex": "^1.1.4",
     "uni-string": "^1.1.2"
   }
 }
