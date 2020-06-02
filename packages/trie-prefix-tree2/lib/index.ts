@@ -10,9 +10,8 @@ import { END_VALUE, END_WORD, END_DEF, PERMS_MIN_LEN } from './config';
 export { END_VALUE, END_WORD, END_DEF } from './config';
 import permutations from './permutations';
 import recurseRandomWord from './recurseRandomWord';
-import trieToRegExp, { IOptionsAll as ITrieToRegExpOptionsAll, IOptions as ITrieToRegExpOptions } from 'trie-regex';
-
-export { IOptionsAll as ITrieToRegExpOptionsAll, IOptions as ITrieToRegExpOptions } from 'trie-regex';
+import trieToRegExp from 'trie-regex';
+import { IOptionsAll as ITrieToRegExpOptionsAll, IOptions as ITrieToRegExpOptions } from 'trie-regex/lib/types';
 
 export const SYM_RAW = Symbol('trie');
 
@@ -488,3 +487,5 @@ Object.assign(createTrie, {
 //createTrie.prototype = Trie.prototype;
 
 export default createTrie
+export { IOptionsAll as ITrieToRegExpOptionsAll } from 'trie-regex/lib/types';
+export { IOptions as ITrieToRegExpOptions } from 'trie-regex/lib/types';

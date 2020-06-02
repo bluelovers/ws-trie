@@ -2,8 +2,8 @@ import { ITrieRaw, ITrieNode, ITrieNodeValue } from './create';
 export { ITrieRaw, ITrieNode, ITrie, ITrieNodeValue } from './create';
 import { END_VALUE } from './config';
 export { END_VALUE, END_WORD, END_DEF } from './config';
-import trieToRegExp, { IOptionsAll as ITrieToRegExpOptionsAll, IOptions as ITrieToRegExpOptions } from 'trie-regex';
-export { IOptionsAll as ITrieToRegExpOptionsAll, IOptions as ITrieToRegExpOptions } from 'trie-regex';
+import trieToRegExp from 'trie-regex';
+import { IOptionsAll as ITrieToRegExpOptionsAll, IOptions as ITrieToRegExpOptions } from 'trie-regex/lib/types';
 export declare const SYM_RAW: unique symbol;
 export declare type IInput<T> = string[];
 export declare type IInputMap<T> = [string, T][];
@@ -128,3 +128,5 @@ export declare function createTrie<T = typeof END_VALUE>(input: IInputMap<T>, op
 }, ...argv: any[]): Trie<T>;
 export declare function createTrie<T = typeof END_VALUE>(input: IInput<T>, options?: ITrieOptions, ...argv: any[]): Trie<T>;
 export default createTrie;
+export { IOptionsAll as ITrieToRegExpOptionsAll } from 'trie-regex/lib/types';
+export { IOptions as ITrieToRegExpOptions } from 'trie-regex/lib/types';

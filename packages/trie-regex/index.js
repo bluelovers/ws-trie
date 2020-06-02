@@ -2,47 +2,56 @@
 /**
  * Created by user on 2018/6/8/008.
  */
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports._is_phrase_valid = exports._quotemeta = exports._to_regex = exports.trieToRegExpSource = exports.trieToRegExp = void 0;
-const jsesc_1 = __importDefault(require("jsesc"));
+exports.trieToRegExpSource = exports.trieToRegExp = void 0;
 const string_natural_compare_1 = __importDefault(require("string-natural-compare"));
-//import { END_WORD } from 'trie-prefix-tree/dist/config';
-const END_WORD = '$$';
+const util_1 = require("./lib/util");
+__exportStar(require("./lib/types"), exports);
 function trieToRegExp(data, flags, options) {
+    var _a;
     if (typeof flags == 'object') {
         [flags, options] = [options, flags];
     }
     options = options || {};
+    flags = (_a = flags !== null && flags !== void 0 ? flags : options.flags) !== null && _a !== void 0 ? _a : 'u';
     let source = trieToRegExpSource(data, options);
     if (options.createRegExp) {
         return options.createRegExp(source, flags);
     }
-    return new RegExp(source, flags || 'u');
+    return new RegExp(source, flags);
 }
 exports.trieToRegExp = trieToRegExp;
 function trieToRegExpSource(data, options = {}) {
     options.getKeys = options.getKeys || function (trie) {
         return Object.keys(trie);
     };
-    options.isEndpoint = options.isEndpoint || function (value, key, trie) {
-        //return (key === END_WORD) && (trie[key] === 1);
-        return (key === END_WORD);
-    };
-    options.toRegexString = options.toRegexString || _to_regex;
+    options.isEndpoint = options.isEndpoint || util_1.isDefaultEndpoint;
+    options.toRegexString = options.toRegexString || util_1._to_regex;
     const _fn_push = [].push;
+    const { getKeys, isEndpoint, toRegexString } = options;
     function _walk_trie(trie, key, root) {
-        let keys = options.getKeys(trie, key, data), alt_group = [], char_class = [], end = false; // marks the end of a phrase
+        let keys = getKeys(trie, key, data), alt_group = [], char_class = [], end = false; // marks the end of a phrase
         keys.forEach(function (_key) {
             let walk_result, insert;
-            if (options.isEndpoint(trie[_key], _key, trie)) {
+            if (isEndpoint(trie[_key], _key, trie)) {
                 end = true;
                 return;
             }
             walk_result =
-                _quotemeta(_key, options) + _walk_trie(trie[_key], _key);
+                util_1._quotemeta(_key, options) + _walk_trie(trie[_key], _key);
             // When we have more than one key, `insert` references
             // the alternative regexp group, otherwise it points to
             // the char class group.
@@ -54,68 +63,11 @@ function trieToRegExpSource(data, options = {}) {
         alt_group.sort(function (a, b) {
             return (b.length - a.length) || string_natural_compare_1.default(a, b);
         });
-        return options.toRegexString(alt_group, char_class, end);
+        return toRegexString(alt_group, char_class, end);
     }
     let result = _walk_trie(data, undefined, true);
     return result;
 }
 exports.trieToRegExpSource = trieToRegExpSource;
-function _to_regex(alt_group, char_class, end) {
-    let group_has_one_element = function (el) {
-        return el.length === 1;
-    }, result = "";
-    // Once we've finished walking through the tree we need to build
-    // the regex match groups...
-    if (alt_group.length > 0) {
-        if (alt_group.length === 1) {
-            // Individual elements are merged with the current result.
-            result += alt_group[0];
-        }
-        else if (alt_group.every(group_has_one_element)) {
-            // When every single array in the alternative group is
-            // a single element array, this gets flattened in to
-            // a character class.
-            result += ('[' + alt_group.join('') + ']');
-        }
-        else {
-            // Finally, build a non-capturing alternative group.
-            result += ('(?:' + alt_group.join('|') + ')');
-        }
-    }
-    else if (char_class.length > 0) {
-        result += char_class[0];
-    }
-    if (end && result) {
-        if (result.length === 1) {
-            result += '?';
-        }
-        else {
-            result = '(?:' + result + ')?';
-        }
-    }
-    return result;
-}
-exports._to_regex = _to_regex;
-function _quotemeta(phrase, options = {}) {
-    if (!_is_phrase_valid(phrase)) {
-        return phrase;
-    }
-    let s = phrase
-        .replace(/([\t\n\f\r\\\$\(\)\*\+\-\.\?\[\]\^\{\|\}])/g, '\\$1');
-    if (!options.disableEscaped) {
-        let jo = Object.assign({
-            'es6': true,
-        }, options.jsescOptions);
-        s = s.replace(/[^\x20-\x7E]+/ug, function (s) {
-            return jsesc_1.default(s, jo);
-        });
-    }
-    return s;
-}
-exports._quotemeta = _quotemeta;
-function _is_phrase_valid(phrase) {
-    return (typeof phrase === 'string' && phrase.length > 0);
-}
-exports._is_phrase_valid = _is_phrase_valid;
 exports.default = trieToRegExp;
 //# sourceMappingURL=index.js.map
