@@ -1,0 +1,51 @@
+{
+  "name": "trie-prefix-tree2",
+  "version": "2.0.1",
+  "description": "Create and modify trie prefix structures, extract word lists including anagrams and sub-anagrams",
+  "keywords": [
+    "add",
+    "data",
+    "javascript",
+    "remove",
+    "structure",
+    "tree",
+    "tree-structure",
+    "trie",
+    "trie-structure",
+    "words"
+  ],
+  "homepage": "https://github.com/bluelovers/trie-prefix-tree#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/trie-prefix-tree/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/trie-prefix-tree.git"
+  },
+  "license": "MIT",
+  "author": "Lyndsey Browning <lbrowning86@gmail.com> (http://lyndseyb.co.uk/)",
+  "main": "index.js",
+  "types": "trie-prefix-tree2.d.ts",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "build-dts": "npm run dts-bundle",
+    "commit": "git-cz",
+    "dts-bundle": "node ./script/dts-bundle",
+    "prepublishOnly": "npx sort-package-json && npm run build-dts && npm run test",
+    "test": "npx mocha-benchmark2 \"__tests__/**/*.js\"",
+    "travis": "npx typedoc --options ./typedoc.config.js"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run test"
+    }
+  },
+  "dependencies": {
+    "trie-regex": "^1.1.1",
+    "uni-string": "^1.1.0"
+  },
+  "devDependencies": {}
+}
