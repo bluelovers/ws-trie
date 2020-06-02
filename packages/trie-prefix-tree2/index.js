@@ -2,16 +2,36 @@
 /**
  * Created by user on 2018/6/9/009.
  */
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.trie = exports.Trie = void 0;
 //import * as triePrefixTree from './src';
 //
 //export = triePrefixTree;
-const src_1 = require("./src");
-exports.trie = src_1.default;
-exports.Trie = src_1.Trie;
-__export(require("./src"));
-exports.default = src_1.default;
+const lib_1 = __importStar(require("./lib"));
+exports.trie = lib_1.default;
+Object.defineProperty(exports, "Trie", { enumerable: true, get: function () { return lib_1.Trie; } });
+__exportStar(require("./lib"), exports);
+exports.default = lib_1.default;
 //# sourceMappingURL=index.js.map

@@ -16,7 +16,7 @@ To use the Trie, install and save it to your package dependencies:
 npm install trie-prefix-tree2
 ```
 
-> see more in [API](src/index.d.ts)
+> see more in [API](lib/index.d.ts)
 > also has [demo.ts](test/demo/demo.ts)
 
 To create a new Trie:

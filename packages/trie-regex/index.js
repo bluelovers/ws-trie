@@ -2,9 +2,13 @@
 /**
  * Created by user on 2018/6/8/008.
  */
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const jsesc = require("jsesc");
-const naturalCompare = require("string-natural-compare");
+exports._is_phrase_valid = exports._quotemeta = exports._to_regex = exports.trieToRegExpSource = exports.trieToRegExp = void 0;
+const jsesc_1 = __importDefault(require("jsesc"));
+const string_natural_compare_1 = __importDefault(require("string-natural-compare"));
 //import { END_WORD } from 'trie-prefix-tree/dist/config';
 const END_WORD = '$$';
 function trieToRegExp(data, flags, options) {
@@ -48,7 +52,7 @@ function trieToRegExpSource(data, options = {}) {
         });
         //alt_group.sort();
         alt_group.sort(function (a, b) {
-            return (b.length - a.length) || naturalCompare(a, b);
+            return (b.length - a.length) || string_natural_compare_1.default(a, b);
         });
         return options.toRegexString(alt_group, char_class, end);
     }
@@ -103,7 +107,7 @@ function _quotemeta(phrase, options = {}) {
             'es6': true,
         }, options.jsescOptions);
         s = s.replace(/[^\x20-\x7E]+/ug, function (s) {
-            return jsesc(s, jo);
+            return jsesc_1.default(s, jo);
         });
     }
     return s;

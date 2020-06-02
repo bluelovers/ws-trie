@@ -14,38 +14,35 @@
     "trie-structure",
     "words"
   ],
-  "homepage": "https://github.com/bluelovers/trie-prefix-tree#readme",
+  "homepage": "https://github.com/bluelovers/ws-trie/tree/master/packages/trie-prefix-tree2#readme",
   "bugs": {
-    "url": "https://github.com/bluelovers/trie-prefix-tree/issues"
+    "url": "https://github.com/bluelovers/ws-trie/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluelovers/trie-prefix-tree.git"
+    "url": "git+https://github.com/bluelovers/ws-trie.git"
   },
   "license": "MIT",
   "author": "Lyndsey Browning <lbrowning86@gmail.com> (http://lyndseyb.co.uk/)",
   "main": "index.js",
   "types": "trie-prefix-tree2.d.ts",
   "directories": {
-    "doc": "docs",
     "test": "test"
   },
   "scripts": {
-    "build-dts": "npm run dts-bundle",
-    "commit": "git-cz",
-    "dts-bundle": "node ./script/dts-bundle",
-    "prepublishOnly": "npx sort-package-json && npm run build-dts && npm run test",
-    "test": "npx mocha-benchmark2 \"__tests__/**/*.js\"",
-    "travis": "npx typedoc --options ./typedoc.config.js"
-  },
-  "config": {
-    "ghooks": {
-      "pre-commit": "npm run test"
-    }
+    "test": "jest",
+    "npm:publish": "npm publish",
+    "npm:publish:lerna": "npx lerna publish --yes --cd-version patch",
+    "prepublish:lockfile": "npx sync-lockfile .",
+    "prepublishOnly": "yarn run test",
+    "prepublishOnly_": "yarn run ncu && yarn run sort-package-json && yarn run test",
+    "postpublish_": "git commit -m \"chore(release): publish\" .",
+    "ncu": "npx yarn-tool ncu -u",
+    "sort-package-json": "npx yarn-tool sort"
   },
   "dependencies": {
     "trie-regex": "^1.1.1",
-    "uni-string": "^1.1.0"
+    "uni-string": "^1.1.2"
   },
   "devDependencies": {}
 }

@@ -1,5 +1,5 @@
 {
-  "name": "ws-trie2",
+  "name": "ws-trie",
   "version": "1.0.0",
   "private": true,
   "workspaces": [
@@ -20,9 +20,14 @@
   "resolutions": {},
   "devDependencies": {
     "@bluelovers/tsconfig": "*",
+    "@types/jest": "^25.2.3",
     "@types/node": "*"
   },
   "peerDependencies": {
     "lerna": "^3"
+  },
+  "dependencies": {
+    "jest": "^26.0.1",
+    "ts-jest": "^26.1.0"
   }
 }

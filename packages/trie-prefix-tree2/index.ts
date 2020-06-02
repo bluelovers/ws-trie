@@ -6,8 +6,9 @@
 //
 //export = triePrefixTree;
 
-import trie, { Trie } from './src';
-export * from './src';
+import trie, { Trie } from './lib';
+
+export * from './lib';
 
 export { Trie, trie }
 

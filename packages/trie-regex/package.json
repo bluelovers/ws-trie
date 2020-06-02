@@ -13,25 +13,37 @@
     "tree",
     "trie"
   ],
-  "homepage": "https://github.com/bluelovers/trie-regex#readme",
+  "homepage": "https://github.com/bluelovers/ws-trie/tree/master/packages/trie-regex#readme",
   "bugs": {
-    "url": "https://github.com/bluelovers/trie-regex/issues"
+    "url": "https://github.com/bluelovers/ws-trie/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluelovers/trie-regex.git"
+    "url": "git+https://github.com/bluelovers/ws-trie.git"
   },
   "license": "ISC",
-  "author": "",
+  "author": "bluelovers",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "npx ts-node ./test/demo.trie-prefix-tree.ts"
+    "test": "ts-node ./test/demo.trie-prefix-tree.ts",
+    "npm:publish": "npm publish",
+    "npm:publish:lerna": "npx lerna publish --yes --cd-version patch",
+    "prepublish:lockfile": "npx sync-lockfile .",
+    "prepublishOnly": "yarn run test",
+    "postpublish_": "git commit -m \"chore(release): publish\" .",
+    "ncu": "npx yarn-tool ncu -u",
+    "sort-package-json": "npx yarn-tool sort"
   },
   "dependencies": {
-    "jsesc": "^2.5.2",
-    "string-natural-compare": "^2.0.3"
+    "jsesc": "^3.0.1",
+    "string-natural-compare": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/jsesc": "^2.5.1",
+    "@types/trie-prefix-tree": "^1.5.0",
+    "trie-prefix-tree": "^1.5.1"
   }
 }
