@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`array 1`] = `/\\(\\?:foo\\(\\?:ba\\[rz\\]\\|zap\\?\\)\\|tr\\(\\?:2a\\|ea\\|ie\\)\\|\\\\\\$\\|1\\)/u`;
+
+exports[`array 2`] = `
+Object {
+  "$": Object {
+    "$": 1,
+  },
+  "1": Object {
+    "$": 1,
+  },
+  "f": Object {
+    "o": Object {
+      "o": Object {
+        "b": Object {
+          "a": Object {
+            "r": Object {
+              "$": 1,
+            },
+            "z": Object {
+              "$": 1,
+            },
+          },
+        },
+        "z": Object {
+          "a": Object {
+            "$": 1,
+            "p": Object {
+              "$": 1,
+            },
+          },
+        },
+      },
+    },
+  },
+  "t": Object {
+    "r": Object {
+      "2": Object {
+        "a": Object {
+          "$": 1,
+        },
+      },
+      "e": Object {
+        "a": Object {
+          "$": 1,
+        },
+      },
+      "i": Object {
+        "e": Object {
+          "$": 1,
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`object 1`] = `/\\(\\?:foo\\(\\?:ba\\[rz\\]\\|zap\\?\\)\\|tr\\(\\?:2a\\|ea\\|ie\\)\\|\\\\\\$\\|1\\)/u`;

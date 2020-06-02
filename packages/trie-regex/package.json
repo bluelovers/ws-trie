@@ -28,7 +28,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "ts-node ./test/demo.trie-prefix-tree.ts",
+    "test": "jest",
     "npm:publish": "npm publish",
     "npm:publish:lerna": "npx lerna publish --yes --cd-version patch",
     "prepublish:lockfile": "npx sync-lockfile .",
@@ -44,6 +44,7 @@
   "devDependencies": {
     "@types/jsesc": "^2.5.1",
     "@types/trie-prefix-tree": "^1.5.0",
-    "trie-prefix-tree": "^1.5.1"
+    "trie-prefix-tree": "^1.5.1",
+    "trie-prefix-tree2": "^2.0.2"
   }
 }

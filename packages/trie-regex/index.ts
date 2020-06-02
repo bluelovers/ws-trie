@@ -2,35 +2,34 @@
  * Created by user on 2018/6/8/008.
  */
 
-import jsesc from 'jsesc';
+import jsesc, { Opts as IJsescOptions } from 'jsesc';
 import naturalCompare from 'string-natural-compare';
 //import { END_WORD } from 'trie-prefix-tree/dist/config';
 
 const END_WORD = '$$';
 
-export type IOptions = {
+export interface IOptions
+{
 	getKeys?(value, key?, data?, root?: boolean): string[],
 	isEndpoint?(value, key, trie): boolean,
 	toRegexString?(alt_group, char_class, end): string,
 
 	disableEscaped?: boolean,
 
-	jsescOptions?: {
-		es6?: boolean,
-		minimal?: boolean,
-	}
-};
+	jsescOptions?: IJsescOptions,
+}
 
-export type IOptionsPlus<T = RegExp> = {
+export interface IOptionsPlus<T = RegExp>
+{
 	createRegExp<T>(source: string, flags?): T
-};
+}
 
 export type IOptionsAll<T = RegExp> = IOptions & IOptionsPlus<T>;
 
-export function trieToRegExp<T>(data, options: IOptions & IOptionsPlus<T>, flags?: string): T
-export function trieToRegExp<T>(data, flags?: string, options?: IOptions & IOptionsPlus<T>): T
 export function trieToRegExp<T = RegExp>(data, options: IOptions): T
 export function trieToRegExp<T = RegExp>(data, flags?: string, options?: IOptions): T
+export function trieToRegExp<T = RegExp>(data, options: IOptions & IOptionsPlus<T>, flags?: string): T
+export function trieToRegExp<T = RegExp>(data, flags?: string, options?: IOptions & IOptionsPlus<T>): T
 export function trieToRegExp(data, flags?, options?)
 {
 	if (typeof flags == 'object')

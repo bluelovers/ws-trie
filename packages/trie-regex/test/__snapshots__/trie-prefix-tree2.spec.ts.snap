@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`array 1`] = `/\\(\\?:foo\\(\\?:ba\\[rz\\]\\|zap\\?\\)\\|tr\\(\\?:2a\\|ea\\|ie\\)\\|\\\\\\$\\|1\\)/u`;
+
+exports[`array 2`] = `
+Object {
+  "$": Object {
+    "$$": Object {
+      "$": null,
+      Symbol(default): "$",
+    },
+  },
+  "1": Object {
+    "$$": Object {
+      "1": null,
+      Symbol(default): "1",
+    },
+  },
+  "f": Object {
+    "o": Object {
+      "o": Object {
+        "b": Object {
+          "a": Object {
+            "r": Object {
+              "$$": Object {
+                "foobar": null,
+                Symbol(default): "foobar",
+              },
+            },
+            "z": Object {
+              "$$": Object {
+                "foobaz": null,
+                Symbol(default): "foobaz",
+              },
+            },
+          },
+        },
+        "z": Object {
+          "a": Object {
+            "$$": Object {
+              "fooza": null,
+              Symbol(default): "fooza",
+            },
+            "p": Object {
+              "$$": Object {
+                "foozap": null,
+                Symbol(default): "foozap",
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+  "t": Object {
+    "r": Object {
+      "2": Object {
+        "a": Object {
+          "$$": Object {
+            "tr2a": null,
+            Symbol(default): "tr2a",
+          },
+        },
+      },
+      "e": Object {
+        "a": Object {
+          "$$": Object {
+            "trea": null,
+            Symbol(default): "trea",
+          },
+        },
+      },
+      "i": Object {
+        "e": Object {
+          "$$": Object {
+            "trie": null,
+            Symbol(default): "trie",
+          },
+        },
+      },
+    },
+  },
+}
+`;

@@ -29,9 +29,9 @@ exports.trie = exports.Trie = void 0;
 //import * as triePrefixTree from './src';
 //
 //export = triePrefixTree;
-const lib_1 = __importStar(require("./lib"));
-exports.trie = lib_1.default;
-Object.defineProperty(exports, "Trie", { enumerable: true, get: function () { return lib_1.Trie; } });
+const index_1 = __importStar(require("./lib/index"));
+exports.trie = index_1.default;
+Object.defineProperty(exports, "Trie", { enumerable: true, get: function () { return index_1.Trie; } });
 __exportStar(require("./lib"), exports);
-exports.default = lib_1.default;
+exports.default = index_1.default;
 //# sourceMappingURL=index.js.map
