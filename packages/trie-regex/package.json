@@ -1,0 +1,37 @@
+{
+  "name": "trie-regex",
+  "version": "1.1.1",
+  "description": "Create a regular expression from trie like object",
+  "keywords": [
+    "data",
+    "expression",
+    "pattern",
+    "regex",
+    "regexp",
+    "regular",
+    "regular expression",
+    "tree",
+    "trie"
+  ],
+  "homepage": "https://github.com/bluelovers/trie-regex#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/trie-regex/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/trie-regex.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npx ts-node ./test/demo.trie-prefix-tree.ts"
+  },
+  "dependencies": {
+    "jsesc": "^2.5.2",
+    "string-natural-compare": "^2.0.3"
+  }
+}
