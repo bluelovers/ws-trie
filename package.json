@@ -19,9 +19,12 @@
   },
   "resolutions": {},
   "devDependencies": {
-    "@bluelovers/tsconfig": "*",
+    "@bluelovers/tsconfig": "^1.0.19",
     "@types/jest": "^25.2.3",
-    "@types/node": "*"
+    "@types/jsesc": "^2.5.1",
+    "@types/node": "*",
+    "jsesc": "^3.0.1",
+    "regenerate": "^1.4.1"
   },
   "peerDependencies": {
     "lerna": "^3"

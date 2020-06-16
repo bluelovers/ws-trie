@@ -42,7 +42,6 @@
     "string-natural-compare": "^3.0.1"
   },
   "devDependencies": {
-    "@types/jsesc": "^2.5.1",
     "@types/trie-prefix-tree": "^1.5.0",
     "trie-prefix-tree": "^1.5.1",
     "trie-prefix-tree2": "^2.0.4"
