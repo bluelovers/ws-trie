@@ -1,6 +1,4 @@
 import AhoCorasick from '..';
-import { array_unique } from 'array-hyper-unique';
-import equals = require('deep-eql');
 
 var i, len, ref, word;
 

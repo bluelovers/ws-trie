@@ -29,13 +29,13 @@
     "trie-structure",
     "words"
   ],
-  "homepage": "https://github.com/bluelovers/aho-corasick#readme",
+  "homepage": "https://github.com/bluelovers/ws-trie/tree/master/packages/aho-corasick2#readme",
   "bugs": {
-    "url": "https://github.com/bluelovers/aho-corasick/issues"
+    "url": "https://github.com/bluelovers/ws-trie/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluelovers/aho-corasick.git"
+    "url": "git+https://github.com/bluelovers/ws-trie.git"
   },
   "license": "ISC",
   "author": "Dejian Xu <xudejian2008@gmail.com> (https://github.com/xudejian/aho-corasick)",
@@ -44,9 +44,12 @@
     "test": "tests"
   },
   "scripts": {
-    "mocha": "npx mocha-benchmark2 --require ts-node/register \"!(node_modules)/**/*.spec.{ts,tsx}\"",
-    "prepublishOnly": "npm run sort-package-json",
-    "sort-package-json": "npx sort-package-json"
+    "test": "jest",
+    "prepublishOnly": "yarn run test",
+    "prepublishOnly:check-bin": "ynpx --quiet @yarn-tool/check-pkg-bin",
+    "prepublishOnly:update": "yarn run ncu && yarn run sort-package-json",
+    "ncu": "ynpx --quiet yarn-tool -- ncu -u",
+    "sort-package-json": "yarn-tool sort"
   },
   "dependencies": {},
   "devDependencies": {}

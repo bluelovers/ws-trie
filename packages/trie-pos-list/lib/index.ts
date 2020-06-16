@@ -3,7 +3,7 @@
  */
 
 import { array_unique } from 'array-hyper-unique';
-import equals = require('deep-eql');
+import equals from 'deep-eql';
 
 export function allPos(words: string, positions: {
 	[k: string]: string[],
@@ -155,6 +155,12 @@ export function triePosList(words: string, positions: {
 	return allPos(words, positions);
 }
 
-export default triePosList
+triePosList.allPos = allPos;
+triePosList.allPosMax = allPosMax;
+triePosList.validPos = validPos;
+triePosList.triePosList = triePosList;
+triePosList.default = triePosList;
 
-exports = Object.assign(triePosList, exports);
+Object.defineProperty(triePosList, "__esModule", { value: true });
+
+export default triePosList

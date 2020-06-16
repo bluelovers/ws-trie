@@ -29,23 +29,28 @@
     "trie-structure",
     "words"
   ],
-  "homepage": "https://github.com/bluelovers/trie-pos-list#readme",
+  "homepage": "https://github.com/bluelovers/ws-trie/tree/master/packages/trie-pos-list#readme",
   "bugs": {
-    "url": "https://github.com/bluelovers/trie-pos-list/issues"
+    "url": "https://github.com/bluelovers/ws-trie/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluelovers/trie-pos-list.git"
+    "url": "git+https://github.com/bluelovers/ws-trie.git"
   },
   "license": "ISC",
-  "author": "",
+  "author": "bluelovers",
   "main": "index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "prepublishOnly:check-bin": "ynpx --quiet @yarn-tool/check-pkg-bin",
+    "prepublishOnly:update": "yarn run ncu && yarn run sort-package-json",
+    "prepublishOnly": "yarn run test",
+    "ncu": "ynpx --quiet yarn-tool -- ncu -u",
+    "sort-package-json": "ynpx --quiet yarn-tool -- sort"
   },
   "dependencies": {
     "array-hyper-unique": "^1.0.7",

@@ -1,0 +1,2384 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`trie 1`] = `
+AhoCorasick {
+  "trie": Trie {
+    "data": Array [],
+    "fail": null,
+    "is_word": null,
+    "next": Object {
+      "ア": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "ラ": Trie {
+            "data": Array [],
+            "fail": Trie {
+              "data": Array [],
+              "fail": null,
+              "is_word": null,
+              "next": Object {
+                "ス": Trie {
+                  "data": Array [],
+                  "fail": Trie {
+                    "data": Array [],
+                    "fail": null,
+                    "is_word": null,
+                    "next": Object {
+                      "キ": Trie {
+                        "data": Array [],
+                        "fail": Trie {
+                          "data": Array [],
+                          "fail": null,
+                          "is_word": null,
+                          "next": Object {
+                            "ン": Trie {
+                              "data": Array [],
+                              "fail": null,
+                              "is_word": null,
+                              "next": Object {
+                                "グ": Trie {
+                                  "data": Array [
+                                    Array [
+                                      "王",
+                                    ],
+                                  ],
+                                  "fail": null,
+                                  "is_word": true,
+                                  "next": Object {},
+                                  "value": "キング",
+                                },
+                              },
+                              "value": "キン",
+                            },
+                          },
+                          "value": "キ",
+                        },
+                        "is_word": null,
+                        "next": Object {
+                          "ュ": Trie {
+                            "data": Array [],
+                            "fail": null,
+                            "is_word": null,
+                            "next": Object {
+                              "ラ": Trie {
+                                "data": Array [
+                                  Array [
+                                    "斯庫拉",
+                                  ],
+                                ],
+                                "fail": [Circular],
+                                "is_word": true,
+                                "next": Object {},
+                                "value": "スキュラ",
+                              },
+                            },
+                            "value": "スキュ",
+                          },
+                        },
+                        "value": "スキ",
+                      },
+                    },
+                    "value": "ス",
+                  },
+                  "is_word": null,
+                  "next": Object {
+                    "ト": Trie {
+                      "data": Array [
+                        Array [
+                          "Lust 性欲 渇望 Last 最後",
+                        ],
+                      ],
+                      "fail": null,
+                      "is_word": true,
+                      "next": Object {
+                        "ロ": Trie {
+                          "data": Array [],
+                          "fail": Trie {
+                            "data": Array [],
+                            "fail": null,
+                            "is_word": null,
+                            "next": Object {
+                              "ー": Trie {
+                                "data": Array [],
+                                "fail": null,
+                                "is_word": null,
+                                "next": Object {
+                                  "ズ": Trie {
+                                    "data": Array [
+                                      Array [
+                                        "薔薇 玫瑰",
+                                      ],
+                                    ],
+                                    "fail": null,
+                                    "is_word": true,
+                                    "next": Object {},
+                                    "value": "ローズ",
+                                  },
+                                },
+                                "value": "ロー",
+                              },
+                            },
+                            "value": "ロ",
+                          },
+                          "is_word": null,
+                          "next": Object {
+                            "ー": Trie {
+                              "data": Array [],
+                              "fail": Trie {
+                                "data": Array [],
+                                "fail": null,
+                                "is_word": null,
+                                "next": Object {
+                                  "ズ": Trie {
+                                    "data": Array [
+                                      Array [
+                                        "薔薇 玫瑰",
+                                      ],
+                                    ],
+                                    "fail": null,
+                                    "is_word": true,
+                                    "next": Object {},
+                                    "value": "ローズ",
+                                  },
+                                },
+                                "value": "ロー",
+                              },
+                              "is_word": null,
+                              "next": Object {
+                                "ズ": Trie {
+                                  "data": Array [
+                                    Array [
+                                      "淫欲罗茲 最後的玫瑰",
+                                    ],
+                                  ],
+                                  "fail": Trie {
+                                    "data": Array [
+                                      Array [
+                                        "薔薇 玫瑰",
+                                      ],
+                                    ],
+                                    "fail": null,
+                                    "is_word": true,
+                                    "next": Object {},
+                                    "value": "ローズ",
+                                  },
+                                  "is_word": true,
+                                  "next": Object {},
+                                  "value": "ラストローズ",
+                                },
+                              },
+                              "value": "ラストロー",
+                            },
+                          },
+                          "value": "ラストロ",
+                        },
+                      },
+                      "value": "ラスト",
+                    },
+                  },
+                  "value": "ラス",
+                },
+              },
+              "value": "ラ",
+            },
+            "is_word": null,
+            "next": Object {
+              "ク": Trie {
+                "data": Array [],
+                "fail": Trie {
+                  "data": Array [],
+                  "fail": null,
+                  "is_word": null,
+                  "next": Object {
+                    "ノ": Trie {
+                      "data": Array [],
+                      "fail": null,
+                      "is_word": null,
+                      "next": Object {
+                        "イ": Trie {
+                          "data": Array [],
+                          "fail": null,
+                          "is_word": null,
+                          "next": Object {
+                            "チ": Trie {
+                              "data": Array [
+                                Array [
+                                  "女忍者",
+                                ],
+                              ],
+                              "fail": null,
+                              "is_word": true,
+                              "next": Object {},
+                              "value": "クノイチ",
+                            },
+                          },
+                          "value": "クノイ",
+                        },
+                      },
+                      "value": "クノ",
+                    },
+                    "リ": Trie {
+                      "data": Array [],
+                      "fail": null,
+                      "is_word": null,
+                      "next": Object {
+                        "ス": Trie {
+                          "data": Array [],
+                          "fail": Trie {
+                            "data": Array [],
+                            "fail": null,
+                            "is_word": null,
+                            "next": Object {
+                              "キ": Trie {
+                                "data": Array [],
+                                "fail": Trie {
+                                  "data": Array [],
+                                  "fail": null,
+                                  "is_word": null,
+                                  "next": Object {
+                                    "ン": Trie {
+                                      "data": Array [],
+                                      "fail": null,
+                                      "is_word": null,
+                                      "next": Object {
+                                        "グ": Trie {
+                                          "data": Array [
+                                            Array [
+                                              "王",
+                                            ],
+                                          ],
+                                          "fail": null,
+                                          "is_word": true,
+                                          "next": Object {},
+                                          "value": "キング",
+                                        },
+                                      },
+                                      "value": "キン",
+                                    },
+                                  },
+                                  "value": "キ",
+                                },
+                                "is_word": null,
+                                "next": Object {
+                                  "ュ": Trie {
+                                    "data": Array [],
+                                    "fail": null,
+                                    "is_word": null,
+                                    "next": Object {
+                                      "ラ": Trie {
+                                        "data": Array [
+                                          Array [
+                                            "斯庫拉",
+                                          ],
+                                        ],
+                                        "fail": Trie {
+                                          "data": Array [],
+                                          "fail": null,
+                                          "is_word": null,
+                                          "next": Object {
+                                            "ス": Trie {
+                                              "data": Array [],
+                                              "fail": [Circular],
+                                              "is_word": null,
+                                              "next": Object {
+                                                "ト": Trie {
+                                                  "data": Array [
+                                                    Array [
+                                                      "Lust 性欲 渇望 Last 最後",
+                                                    ],
+                                                  ],
+                                                  "fail": null,
+                                                  "is_word": true,
+                                                  "next": Object {
+                                                    "ロ": Trie {
+                                                      "data": Array [],
+                                                      "fail": Trie {
+                                                        "data": Array [],
+                                                        "fail": null,
+                                                        "is_word": null,
+                                                        "next": Object {
+                                                          "ー": Trie {
+                                                            "data": Array [],
+                                                            "fail": null,
+                                                            "is_word": null,
+                                                            "next": Object {
+                                                              "ズ": Trie {
+                                                                "data": Array [
+                                                                  Array [
+                                                                    "薔薇 玫瑰",
+                                                                  ],
+                                                                ],
+                                                                "fail": null,
+                                                                "is_word": true,
+                                                                "next": Object {},
+                                                                "value": "ローズ",
+                                                              },
+                                                            },
+                                                            "value": "ロー",
+                                                          },
+                                                        },
+                                                        "value": "ロ",
+                                                      },
+                                                      "is_word": null,
+                                                      "next": Object {
+                                                        "ー": Trie {
+                                                          "data": Array [],
+                                                          "fail": Trie {
+                                                            "data": Array [],
+                                                            "fail": null,
+                                                            "is_word": null,
+                                                            "next": Object {
+                                                              "ズ": Trie {
+                                                                "data": Array [
+                                                                  Array [
+                                                                    "薔薇 玫瑰",
+                                                                  ],
+                                                                ],
+                                                                "fail": null,
+                                                                "is_word": true,
+                                                                "next": Object {},
+                                                                "value": "ローズ",
+                                                              },
+                                                            },
+                                                            "value": "ロー",
+                                                          },
+                                                          "is_word": null,
+                                                          "next": Object {
+                                                            "ズ": Trie {
+                                                              "data": Array [
+                                                                Array [
+                                                                  "淫欲罗茲 最後的玫瑰",
+                                                                ],
+                                                              ],
+                                                              "fail": Trie {
+                                                                "data": Array [
+                                                                  Array [
+                                                                    "薔薇 玫瑰",
+                                                                  ],
+                                                                ],
+                                                                "fail": null,
+                                                                "is_word": true,
+                                                                "next": Object {},
+                                                                "value": "ローズ",
+                                                              },
+                                                              "is_word": true,
+                                                              "next": Object {},
+                                                              "value": "ラストローズ",
+                                                            },
+                                                          },
+                                                          "value": "ラストロー",
+                                                        },
+                                                      },
+                                                      "value": "ラストロ",
+                                                    },
+                                                  },
+                                                  "value": "ラスト",
+                                                },
+                                              },
+                                              "value": "ラス",
+                                            },
+                                          },
+                                          "value": "ラ",
+                                        },
+                                        "is_word": true,
+                                        "next": Object {},
+                                        "value": "スキュラ",
+                                      },
+                                    },
+                                    "value": "スキュ",
+                                  },
+                                },
+                                "value": "スキ",
+                              },
+                            },
+                            "value": "ス",
+                          },
+                          "is_word": null,
+                          "next": Object {
+                            "タ": Trie {
+                              "data": Array [],
+                              "fail": null,
+                              "is_word": null,
+                              "next": Object {
+                                "ル": Trie {
+                                  "data": Array [
+                                    Array [
+                                      "水晶",
+                                    ],
+                                  ],
+                                  "fail": null,
+                                  "is_word": true,
+                                  "next": Object {},
+                                  "value": "クリスタル",
+                                },
+                              },
+                              "value": "クリスタ",
+                            },
+                          },
+                          "value": "クリス",
+                        },
+                      },
+                      "value": "クリ",
+                    },
+                  },
+                  "value": "ク",
+                },
+                "is_word": null,
+                "next": Object {
+                  "ネ": Trie {
+                    "data": Array [
+                      Array [
+                        "阿剌克涅",
+                      ],
+                    ],
+                    "fail": null,
+                    "is_word": true,
+                    "next": Object {},
+                    "value": "アラクネ",
+                  },
+                },
+                "value": "アラク",
+              },
+            },
+            "value": "アラ",
+          },
+        },
+        "value": "ア",
+      },
+      "ウ": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "ェ": Trie {
+            "data": Array [],
+            "fail": null,
+            "is_word": null,
+            "next": Object {
+              "ン": Trie {
+                "data": Array [],
+                "fail": null,
+                "is_word": null,
+                "next": Object {
+                  "デ": Trie {
+                    "data": Array [],
+                    "fail": null,
+                    "is_word": null,
+                    "next": Object {
+                      "ィ": Trie {
+                        "data": Array [],
+                        "fail": null,
+                        "is_word": null,
+                        "next": Object {
+                          "ゴ": Trie {
+                            "data": Array [
+                              Array [
+                                "威尔迪哥",
+                              ],
+                            ],
+                            "fail": Trie {
+                              "data": Array [],
+                              "fail": null,
+                              "is_word": null,
+                              "next": Object {
+                                "ブ": Trie {
+                                  "data": Array [],
+                                  "fail": null,
+                                  "is_word": null,
+                                  "next": Object {
+                                    "リ": Trie {
+                                      "data": Array [],
+                                      "fail": null,
+                                      "is_word": null,
+                                      "next": Object {
+                                        "ン": Trie {
+                                          "data": Array [
+                                            Array [
+                                              "哥布林",
+                                            ],
+                                          ],
+                                          "fail": null,
+                                          "is_word": true,
+                                          "next": Object {},
+                                          "value": "ゴブリン",
+                                        },
+                                      },
+                                      "value": "ゴブリ",
+                                    },
+                                  },
+                                  "value": "ゴブ",
+                                },
+                              },
+                              "value": "ゴ",
+                            },
+                            "is_word": true,
+                            "next": Object {},
+                            "value": "ウェンディゴ",
+                          },
+                        },
+                        "value": "ウェンディ",
+                      },
+                    },
+                    "value": "ウェンデ",
+                  },
+                },
+                "value": "ウェン",
+              },
+            },
+            "value": "ウェ",
+          },
+        },
+        "value": "ウ",
+      },
+      "エ": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "ン": Trie {
+            "data": Array [],
+            "fail": null,
+            "is_word": null,
+            "next": Object {
+              "プ": Trie {
+                "data": Array [],
+                "fail": null,
+                "is_word": null,
+                "next": Object {
+                  "ー": Trie {
+                    "data": Array [],
+                    "fail": null,
+                    "is_word": null,
+                    "next": Object {
+                      "サ": Trie {
+                        "data": Array [
+                          Array [
+                            "安普莎",
+                          ],
+                        ],
+                        "fail": Trie {
+                          "data": Array [],
+                          "fail": null,
+                          "is_word": null,
+                          "next": Object {
+                            "ム": Trie {
+                              "data": Array [],
+                              "fail": null,
+                              "is_word": null,
+                              "next": Object {
+                                "ラ": Trie {
+                                  "data": Array [],
+                                  "fail": Trie {
+                                    "data": Array [],
+                                    "fail": null,
+                                    "is_word": null,
+                                    "next": Object {
+                                      "ス": Trie {
+                                        "data": Array [],
+                                        "fail": Trie {
+                                          "data": Array [],
+                                          "fail": null,
+                                          "is_word": null,
+                                          "next": Object {
+                                            "キ": Trie {
+                                              "data": Array [],
+                                              "fail": Trie {
+                                                "data": Array [],
+                                                "fail": null,
+                                                "is_word": null,
+                                                "next": Object {
+                                                  "ン": Trie {
+                                                    "data": Array [],
+                                                    "fail": null,
+                                                    "is_word": null,
+                                                    "next": Object {
+                                                      "グ": Trie {
+                                                        "data": Array [
+                                                          Array [
+                                                            "王",
+                                                          ],
+                                                        ],
+                                                        "fail": null,
+                                                        "is_word": true,
+                                                        "next": Object {},
+                                                        "value": "キング",
+                                                      },
+                                                    },
+                                                    "value": "キン",
+                                                  },
+                                                },
+                                                "value": "キ",
+                                              },
+                                              "is_word": null,
+                                              "next": Object {
+                                                "ュ": Trie {
+                                                  "data": Array [],
+                                                  "fail": null,
+                                                  "is_word": null,
+                                                  "next": Object {
+                                                    "ラ": Trie {
+                                                      "data": Array [
+                                                        Array [
+                                                          "斯庫拉",
+                                                        ],
+                                                      ],
+                                                      "fail": [Circular],
+                                                      "is_word": true,
+                                                      "next": Object {},
+                                                      "value": "スキュラ",
+                                                    },
+                                                  },
+                                                  "value": "スキュ",
+                                                },
+                                              },
+                                              "value": "スキ",
+                                            },
+                                          },
+                                          "value": "ス",
+                                        },
+                                        "is_word": null,
+                                        "next": Object {
+                                          "ト": Trie {
+                                            "data": Array [
+                                              Array [
+                                                "Lust 性欲 渇望 Last 最後",
+                                              ],
+                                            ],
+                                            "fail": null,
+                                            "is_word": true,
+                                            "next": Object {
+                                              "ロ": Trie {
+                                                "data": Array [],
+                                                "fail": Trie {
+                                                  "data": Array [],
+                                                  "fail": null,
+                                                  "is_word": null,
+                                                  "next": Object {
+                                                    "ー": Trie {
+                                                      "data": Array [],
+                                                      "fail": null,
+                                                      "is_word": null,
+                                                      "next": Object {
+                                                        "ズ": Trie {
+                                                          "data": Array [
+                                                            Array [
+                                                              "薔薇 玫瑰",
+                                                            ],
+                                                          ],
+                                                          "fail": null,
+                                                          "is_word": true,
+                                                          "next": Object {},
+                                                          "value": "ローズ",
+                                                        },
+                                                      },
+                                                      "value": "ロー",
+                                                    },
+                                                  },
+                                                  "value": "ロ",
+                                                },
+                                                "is_word": null,
+                                                "next": Object {
+                                                  "ー": Trie {
+                                                    "data": Array [],
+                                                    "fail": Trie {
+                                                      "data": Array [],
+                                                      "fail": null,
+                                                      "is_word": null,
+                                                      "next": Object {
+                                                        "ズ": Trie {
+                                                          "data": Array [
+                                                            Array [
+                                                              "薔薇 玫瑰",
+                                                            ],
+                                                          ],
+                                                          "fail": null,
+                                                          "is_word": true,
+                                                          "next": Object {},
+                                                          "value": "ローズ",
+                                                        },
+                                                      },
+                                                      "value": "ロー",
+                                                    },
+                                                    "is_word": null,
+                                                    "next": Object {
+                                                      "ズ": Trie {
+                                                        "data": Array [
+                                                          Array [
+                                                            "淫欲罗茲 最後的玫瑰",
+                                                          ],
+                                                        ],
+                                                        "fail": Trie {
+                                                          "data": Array [
+                                                            Array [
+                                                              "薔薇 玫瑰",
+                                                            ],
+                                                          ],
+                                                          "fail": null,
+                                                          "is_word": true,
+                                                          "next": Object {},
+                                                          "value": "ローズ",
+                                                        },
+                                                        "is_word": true,
+                                                        "next": Object {},
+                                                        "value": "ラストローズ",
+                                                      },
+                                                    },
+                                                    "value": "ラストロー",
+                                                  },
+                                                },
+                                                "value": "ラストロ",
+                                              },
+                                            },
+                                            "value": "ラスト",
+                                          },
+                                        },
+                                        "value": "ラス",
+                                      },
+                                    },
+                                    "value": "ラ",
+                                  },
+                                  "is_word": null,
+                                  "next": Object {
+                                    "イ": Trie {
+                                      "data": Array [
+                                        Array [
+                                          "武士",
+                                        ],
+                                      ],
+                                      "fail": null,
+                                      "is_word": true,
+                                      "next": Object {},
+                                      "value": "サムライ",
+                                    },
+                                  },
+                                  "value": "サムラ",
+                                },
+                              },
+                              "value": "サム",
+                            },
+                          },
+                          "value": "サ",
+                        },
+                        "is_word": true,
+                        "next": Object {},
+                        "value": "エンプーサ",
+                      },
+                    },
+                    "value": "エンプー",
+                  },
+                },
+                "value": "エンプ",
+              },
+            },
+            "value": "エン",
+          },
+        },
+        "value": "エ",
+      },
+      "オ": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "リ": Trie {
+            "data": Array [],
+            "fail": null,
+            "is_word": null,
+            "next": Object {
+              "ジ": Trie {
+                "data": Array [],
+                "fail": null,
+                "is_word": null,
+                "next": Object {
+                  "ン": Trie {
+                    "data": Array [
+                      Array [
+                        "起源",
+                      ],
+                    ],
+                    "fail": null,
+                    "is_word": true,
+                    "next": Object {},
+                    "value": "オリジン",
+                  },
+                },
+                "value": "オリジ",
+              },
+            },
+            "value": "オリ",
+          },
+        },
+        "value": "オ",
+      },
+      "キ": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "ン": Trie {
+            "data": Array [],
+            "fail": null,
+            "is_word": null,
+            "next": Object {
+              "グ": Trie {
+                "data": Array [
+                  Array [
+                    "王",
+                  ],
+                ],
+                "fail": null,
+                "is_word": true,
+                "next": Object {},
+                "value": "キング",
+              },
+            },
+            "value": "キン",
+          },
+        },
+        "value": "キ",
+      },
+      "ク": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "ノ": Trie {
+            "data": Array [],
+            "fail": null,
+            "is_word": null,
+            "next": Object {
+              "イ": Trie {
+                "data": Array [],
+                "fail": null,
+                "is_word": null,
+                "next": Object {
+                  "チ": Trie {
+                    "data": Array [
+                      Array [
+                        "女忍者",
+                      ],
+                    ],
+                    "fail": null,
+                    "is_word": true,
+                    "next": Object {},
+                    "value": "クノイチ",
+                  },
+                },
+                "value": "クノイ",
+              },
+            },
+            "value": "クノ",
+          },
+          "リ": Trie {
+            "data": Array [],
+            "fail": null,
+            "is_word": null,
+            "next": Object {
+              "ス": Trie {
+                "data": Array [],
+                "fail": Trie {
+                  "data": Array [],
+                  "fail": null,
+                  "is_word": null,
+                  "next": Object {
+                    "キ": Trie {
+                      "data": Array [],
+                      "fail": Trie {
+                        "data": Array [],
+                        "fail": null,
+                        "is_word": null,
+                        "next": Object {
+                          "ン": Trie {
+                            "data": Array [],
+                            "fail": null,
+                            "is_word": null,
+                            "next": Object {
+                              "グ": Trie {
+                                "data": Array [
+                                  Array [
+                                    "王",
+                                  ],
+                                ],
+                                "fail": null,
+                                "is_word": true,
+                                "next": Object {},
+                                "value": "キング",
+                              },
+                            },
+                            "value": "キン",
+                          },
+                        },
+                        "value": "キ",
+                      },
+                      "is_word": null,
+                      "next": Object {
+                        "ュ": Trie {
+                          "data": Array [],
+                          "fail": null,
+                          "is_word": null,
+                          "next": Object {
+                            "ラ": Trie {
+                              "data": Array [
+                                Array [
+                                  "斯庫拉",
+                                ],
+                              ],
+                              "fail": Trie {
+                                "data": Array [],
+                                "fail": null,
+                                "is_word": null,
+                                "next": Object {
+                                  "ス": Trie {
+                                    "data": Array [],
+                                    "fail": [Circular],
+                                    "is_word": null,
+                                    "next": Object {
+                                      "ト": Trie {
+                                        "data": Array [
+                                          Array [
+                                            "Lust 性欲 渇望 Last 最後",
+                                          ],
+                                        ],
+                                        "fail": null,
+                                        "is_word": true,
+                                        "next": Object {
+                                          "ロ": Trie {
+                                            "data": Array [],
+                                            "fail": Trie {
+                                              "data": Array [],
+                                              "fail": null,
+                                              "is_word": null,
+                                              "next": Object {
+                                                "ー": Trie {
+                                                  "data": Array [],
+                                                  "fail": null,
+                                                  "is_word": null,
+                                                  "next": Object {
+                                                    "ズ": Trie {
+                                                      "data": Array [
+                                                        Array [
+                                                          "薔薇 玫瑰",
+                                                        ],
+                                                      ],
+                                                      "fail": null,
+                                                      "is_word": true,
+                                                      "next": Object {},
+                                                      "value": "ローズ",
+                                                    },
+                                                  },
+                                                  "value": "ロー",
+                                                },
+                                              },
+                                              "value": "ロ",
+                                            },
+                                            "is_word": null,
+                                            "next": Object {
+                                              "ー": Trie {
+                                                "data": Array [],
+                                                "fail": Trie {
+                                                  "data": Array [],
+                                                  "fail": null,
+                                                  "is_word": null,
+                                                  "next": Object {
+                                                    "ズ": Trie {
+                                                      "data": Array [
+                                                        Array [
+                                                          "薔薇 玫瑰",
+                                                        ],
+                                                      ],
+                                                      "fail": null,
+                                                      "is_word": true,
+                                                      "next": Object {},
+                                                      "value": "ローズ",
+                                                    },
+                                                  },
+                                                  "value": "ロー",
+                                                },
+                                                "is_word": null,
+                                                "next": Object {
+                                                  "ズ": Trie {
+                                                    "data": Array [
+                                                      Array [
+                                                        "淫欲罗茲 最後的玫瑰",
+                                                      ],
+                                                    ],
+                                                    "fail": Trie {
+                                                      "data": Array [
+                                                        Array [
+                                                          "薔薇 玫瑰",
+                                                        ],
+                                                      ],
+                                                      "fail": null,
+                                                      "is_word": true,
+                                                      "next": Object {},
+                                                      "value": "ローズ",
+                                                    },
+                                                    "is_word": true,
+                                                    "next": Object {},
+                                                    "value": "ラストローズ",
+                                                  },
+                                                },
+                                                "value": "ラストロー",
+                                              },
+                                            },
+                                            "value": "ラストロ",
+                                          },
+                                        },
+                                        "value": "ラスト",
+                                      },
+                                    },
+                                    "value": "ラス",
+                                  },
+                                },
+                                "value": "ラ",
+                              },
+                              "is_word": true,
+                              "next": Object {},
+                              "value": "スキュラ",
+                            },
+                          },
+                          "value": "スキュ",
+                        },
+                      },
+                      "value": "スキ",
+                    },
+                  },
+                  "value": "ス",
+                },
+                "is_word": null,
+                "next": Object {
+                  "タ": Trie {
+                    "data": Array [],
+                    "fail": null,
+                    "is_word": null,
+                    "next": Object {
+                      "ル": Trie {
+                        "data": Array [
+                          Array [
+                            "水晶",
+                          ],
+                        ],
+                        "fail": null,
+                        "is_word": true,
+                        "next": Object {},
+                        "value": "クリスタル",
+                      },
+                    },
+                    "value": "クリスタ",
+                  },
+                },
+                "value": "クリス",
+              },
+            },
+            "value": "クリ",
+          },
+        },
+        "value": "ク",
+      },
+      "コ": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "ボ": Trie {
+            "data": Array [],
+            "fail": null,
+            "is_word": null,
+            "next": Object {
+              "ル": Trie {
+                "data": Array [],
+                "fail": null,
+                "is_word": null,
+                "next": Object {
+                  "ト": Trie {
+                    "data": Array [
+                      Array [
+                        "狗头人",
+                      ],
+                    ],
+                    "fail": null,
+                    "is_word": true,
+                    "next": Object {},
+                    "value": "コボルト",
+                  },
+                },
+                "value": "コボル",
+              },
+            },
+            "value": "コボ",
+          },
+        },
+        "value": "コ",
+      },
+      "ゴ": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "ブ": Trie {
+            "data": Array [],
+            "fail": null,
+            "is_word": null,
+            "next": Object {
+              "リ": Trie {
+                "data": Array [],
+                "fail": null,
+                "is_word": null,
+                "next": Object {
+                  "ン": Trie {
+                    "data": Array [
+                      Array [
+                        "哥布林",
+                      ],
+                    ],
+                    "fail": null,
+                    "is_word": true,
+                    "next": Object {},
+                    "value": "ゴブリン",
+                  },
+                },
+                "value": "ゴブリ",
+              },
+            },
+            "value": "ゴブ",
+          },
+        },
+        "value": "ゴ",
+      },
+      "サ": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "ム": Trie {
+            "data": Array [],
+            "fail": null,
+            "is_word": null,
+            "next": Object {
+              "ラ": Trie {
+                "data": Array [],
+                "fail": Trie {
+                  "data": Array [],
+                  "fail": null,
+                  "is_word": null,
+                  "next": Object {
+                    "ス": Trie {
+                      "data": Array [],
+                      "fail": Trie {
+                        "data": Array [],
+                        "fail": null,
+                        "is_word": null,
+                        "next": Object {
+                          "キ": Trie {
+                            "data": Array [],
+                            "fail": Trie {
+                              "data": Array [],
+                              "fail": null,
+                              "is_word": null,
+                              "next": Object {
+                                "ン": Trie {
+                                  "data": Array [],
+                                  "fail": null,
+                                  "is_word": null,
+                                  "next": Object {
+                                    "グ": Trie {
+                                      "data": Array [
+                                        Array [
+                                          "王",
+                                        ],
+                                      ],
+                                      "fail": null,
+                                      "is_word": true,
+                                      "next": Object {},
+                                      "value": "キング",
+                                    },
+                                  },
+                                  "value": "キン",
+                                },
+                              },
+                              "value": "キ",
+                            },
+                            "is_word": null,
+                            "next": Object {
+                              "ュ": Trie {
+                                "data": Array [],
+                                "fail": null,
+                                "is_word": null,
+                                "next": Object {
+                                  "ラ": Trie {
+                                    "data": Array [
+                                      Array [
+                                        "斯庫拉",
+                                      ],
+                                    ],
+                                    "fail": [Circular],
+                                    "is_word": true,
+                                    "next": Object {},
+                                    "value": "スキュラ",
+                                  },
+                                },
+                                "value": "スキュ",
+                              },
+                            },
+                            "value": "スキ",
+                          },
+                        },
+                        "value": "ス",
+                      },
+                      "is_word": null,
+                      "next": Object {
+                        "ト": Trie {
+                          "data": Array [
+                            Array [
+                              "Lust 性欲 渇望 Last 最後",
+                            ],
+                          ],
+                          "fail": null,
+                          "is_word": true,
+                          "next": Object {
+                            "ロ": Trie {
+                              "data": Array [],
+                              "fail": Trie {
+                                "data": Array [],
+                                "fail": null,
+                                "is_word": null,
+                                "next": Object {
+                                  "ー": Trie {
+                                    "data": Array [],
+                                    "fail": null,
+                                    "is_word": null,
+                                    "next": Object {
+                                      "ズ": Trie {
+                                        "data": Array [
+                                          Array [
+                                            "薔薇 玫瑰",
+                                          ],
+                                        ],
+                                        "fail": null,
+                                        "is_word": true,
+                                        "next": Object {},
+                                        "value": "ローズ",
+                                      },
+                                    },
+                                    "value": "ロー",
+                                  },
+                                },
+                                "value": "ロ",
+                              },
+                              "is_word": null,
+                              "next": Object {
+                                "ー": Trie {
+                                  "data": Array [],
+                                  "fail": Trie {
+                                    "data": Array [],
+                                    "fail": null,
+                                    "is_word": null,
+                                    "next": Object {
+                                      "ズ": Trie {
+                                        "data": Array [
+                                          Array [
+                                            "薔薇 玫瑰",
+                                          ],
+                                        ],
+                                        "fail": null,
+                                        "is_word": true,
+                                        "next": Object {},
+                                        "value": "ローズ",
+                                      },
+                                    },
+                                    "value": "ロー",
+                                  },
+                                  "is_word": null,
+                                  "next": Object {
+                                    "ズ": Trie {
+                                      "data": Array [
+                                        Array [
+                                          "淫欲罗茲 最後的玫瑰",
+                                        ],
+                                      ],
+                                      "fail": Trie {
+                                        "data": Array [
+                                          Array [
+                                            "薔薇 玫瑰",
+                                          ],
+                                        ],
+                                        "fail": null,
+                                        "is_word": true,
+                                        "next": Object {},
+                                        "value": "ローズ",
+                                      },
+                                      "is_word": true,
+                                      "next": Object {},
+                                      "value": "ラストローズ",
+                                    },
+                                  },
+                                  "value": "ラストロー",
+                                },
+                              },
+                              "value": "ラストロ",
+                            },
+                          },
+                          "value": "ラスト",
+                        },
+                      },
+                      "value": "ラス",
+                    },
+                  },
+                  "value": "ラ",
+                },
+                "is_word": null,
+                "next": Object {
+                  "イ": Trie {
+                    "data": Array [
+                      Array [
+                        "武士",
+                      ],
+                    ],
+                    "fail": null,
+                    "is_word": true,
+                    "next": Object {},
+                    "value": "サムライ",
+                  },
+                },
+                "value": "サムラ",
+              },
+            },
+            "value": "サム",
+          },
+        },
+        "value": "サ",
+      },
+      "ス": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "キ": Trie {
+            "data": Array [],
+            "fail": Trie {
+              "data": Array [],
+              "fail": null,
+              "is_word": null,
+              "next": Object {
+                "ン": Trie {
+                  "data": Array [],
+                  "fail": null,
+                  "is_word": null,
+                  "next": Object {
+                    "グ": Trie {
+                      "data": Array [
+                        Array [
+                          "王",
+                        ],
+                      ],
+                      "fail": null,
+                      "is_word": true,
+                      "next": Object {},
+                      "value": "キング",
+                    },
+                  },
+                  "value": "キン",
+                },
+              },
+              "value": "キ",
+            },
+            "is_word": null,
+            "next": Object {
+              "ュ": Trie {
+                "data": Array [],
+                "fail": null,
+                "is_word": null,
+                "next": Object {
+                  "ラ": Trie {
+                    "data": Array [
+                      Array [
+                        "斯庫拉",
+                      ],
+                    ],
+                    "fail": Trie {
+                      "data": Array [],
+                      "fail": null,
+                      "is_word": null,
+                      "next": Object {
+                        "ス": Trie {
+                          "data": Array [],
+                          "fail": [Circular],
+                          "is_word": null,
+                          "next": Object {
+                            "ト": Trie {
+                              "data": Array [
+                                Array [
+                                  "Lust 性欲 渇望 Last 最後",
+                                ],
+                              ],
+                              "fail": null,
+                              "is_word": true,
+                              "next": Object {
+                                "ロ": Trie {
+                                  "data": Array [],
+                                  "fail": Trie {
+                                    "data": Array [],
+                                    "fail": null,
+                                    "is_word": null,
+                                    "next": Object {
+                                      "ー": Trie {
+                                        "data": Array [],
+                                        "fail": null,
+                                        "is_word": null,
+                                        "next": Object {
+                                          "ズ": Trie {
+                                            "data": Array [
+                                              Array [
+                                                "薔薇 玫瑰",
+                                              ],
+                                            ],
+                                            "fail": null,
+                                            "is_word": true,
+                                            "next": Object {},
+                                            "value": "ローズ",
+                                          },
+                                        },
+                                        "value": "ロー",
+                                      },
+                                    },
+                                    "value": "ロ",
+                                  },
+                                  "is_word": null,
+                                  "next": Object {
+                                    "ー": Trie {
+                                      "data": Array [],
+                                      "fail": Trie {
+                                        "data": Array [],
+                                        "fail": null,
+                                        "is_word": null,
+                                        "next": Object {
+                                          "ズ": Trie {
+                                            "data": Array [
+                                              Array [
+                                                "薔薇 玫瑰",
+                                              ],
+                                            ],
+                                            "fail": null,
+                                            "is_word": true,
+                                            "next": Object {},
+                                            "value": "ローズ",
+                                          },
+                                        },
+                                        "value": "ロー",
+                                      },
+                                      "is_word": null,
+                                      "next": Object {
+                                        "ズ": Trie {
+                                          "data": Array [
+                                            Array [
+                                              "淫欲罗茲 最後的玫瑰",
+                                            ],
+                                          ],
+                                          "fail": Trie {
+                                            "data": Array [
+                                              Array [
+                                                "薔薇 玫瑰",
+                                              ],
+                                            ],
+                                            "fail": null,
+                                            "is_word": true,
+                                            "next": Object {},
+                                            "value": "ローズ",
+                                          },
+                                          "is_word": true,
+                                          "next": Object {},
+                                          "value": "ラストローズ",
+                                        },
+                                      },
+                                      "value": "ラストロー",
+                                    },
+                                  },
+                                  "value": "ラストロ",
+                                },
+                              },
+                              "value": "ラスト",
+                            },
+                          },
+                          "value": "ラス",
+                        },
+                      },
+                      "value": "ラ",
+                    },
+                    "is_word": true,
+                    "next": Object {},
+                    "value": "スキュラ",
+                  },
+                },
+                "value": "スキュ",
+              },
+            },
+            "value": "スキ",
+          },
+        },
+        "value": "ス",
+      },
+      "ダ": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "ン": Trie {
+            "data": Array [],
+            "fail": null,
+            "is_word": null,
+            "next": Object {
+              "ピ": Trie {
+                "data": Array [],
+                "fail": null,
+                "is_word": null,
+                "next": Object {
+                  "ー": Trie {
+                    "data": Array [],
+                    "fail": null,
+                    "is_word": null,
+                    "next": Object {
+                      "ル": Trie {
+                        "data": Array [
+                          Array [
+                            "丹皮尔",
+                          ],
+                        ],
+                        "fail": null,
+                        "is_word": true,
+                        "next": Object {},
+                        "value": "ダンピール",
+                      },
+                    },
+                    "value": "ダンピー",
+                  },
+                },
+                "value": "ダンピ",
+              },
+            },
+            "value": "ダン",
+          },
+        },
+        "value": "ダ",
+      },
+      "ド": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "ル": Trie {
+            "data": Array [],
+            "fail": null,
+            "is_word": null,
+            "next": Object {
+              "イ": Trie {
+                "data": Array [],
+                "fail": null,
+                "is_word": null,
+                "next": Object {
+                  "ド": Trie {
+                    "data": Array [
+                      Array [
+                        "德魯伊",
+                      ],
+                    ],
+                    "fail": [Circular],
+                    "is_word": true,
+                    "next": Object {},
+                    "value": "ドルイド",
+                  },
+                },
+                "value": "ドルイ",
+              },
+            },
+            "value": "ドル",
+          },
+        },
+        "value": "ド",
+      },
+      "ハ": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "イ": Trie {
+            "data": Array [
+              Array [
+                "高等",
+              ],
+            ],
+            "fail": null,
+            "is_word": true,
+            "next": Object {},
+            "value": "ハイ",
+          },
+        },
+        "value": "ハ",
+      },
+      "ホ": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "ブ": Trie {
+            "data": Array [
+              Array [
+                "滚刀",
+              ],
+            ],
+            "fail": null,
+            "is_word": true,
+            "next": Object {},
+            "value": "ホブ",
+          },
+        },
+        "value": "ホ",
+      },
+      "ポ": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "イ": Trie {
+            "data": Array [],
+            "fail": null,
+            "is_word": null,
+            "next": Object {
+              "ズ": Trie {
+                "data": Array [],
+                "fail": null,
+                "is_word": null,
+                "next": Object {
+                  "ン": Trie {
+                    "data": Array [
+                      Array [
+                        "劇毒",
+                      ],
+                    ],
+                    "fail": null,
+                    "is_word": true,
+                    "next": Object {},
+                    "value": "ポイズン",
+                  },
+                },
+                "value": "ポイズ",
+              },
+            },
+            "value": "ポイ",
+          },
+        },
+        "value": "ポ",
+      },
+      "マ": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "ス": Trie {
+            "data": Array [],
+            "fail": Trie {
+              "data": Array [],
+              "fail": null,
+              "is_word": null,
+              "next": Object {
+                "キ": Trie {
+                  "data": Array [],
+                  "fail": Trie {
+                    "data": Array [],
+                    "fail": null,
+                    "is_word": null,
+                    "next": Object {
+                      "ン": Trie {
+                        "data": Array [],
+                        "fail": null,
+                        "is_word": null,
+                        "next": Object {
+                          "グ": Trie {
+                            "data": Array [
+                              Array [
+                                "王",
+                              ],
+                            ],
+                            "fail": null,
+                            "is_word": true,
+                            "next": Object {},
+                            "value": "キング",
+                          },
+                        },
+                        "value": "キン",
+                      },
+                    },
+                    "value": "キ",
+                  },
+                  "is_word": null,
+                  "next": Object {
+                    "ュ": Trie {
+                      "data": Array [],
+                      "fail": null,
+                      "is_word": null,
+                      "next": Object {
+                        "ラ": Trie {
+                          "data": Array [
+                            Array [
+                              "斯庫拉",
+                            ],
+                          ],
+                          "fail": Trie {
+                            "data": Array [],
+                            "fail": null,
+                            "is_word": null,
+                            "next": Object {
+                              "ス": Trie {
+                                "data": Array [],
+                                "fail": [Circular],
+                                "is_word": null,
+                                "next": Object {
+                                  "ト": Trie {
+                                    "data": Array [
+                                      Array [
+                                        "Lust 性欲 渇望 Last 最後",
+                                      ],
+                                    ],
+                                    "fail": null,
+                                    "is_word": true,
+                                    "next": Object {
+                                      "ロ": Trie {
+                                        "data": Array [],
+                                        "fail": Trie {
+                                          "data": Array [],
+                                          "fail": null,
+                                          "is_word": null,
+                                          "next": Object {
+                                            "ー": Trie {
+                                              "data": Array [],
+                                              "fail": null,
+                                              "is_word": null,
+                                              "next": Object {
+                                                "ズ": Trie {
+                                                  "data": Array [
+                                                    Array [
+                                                      "薔薇 玫瑰",
+                                                    ],
+                                                  ],
+                                                  "fail": null,
+                                                  "is_word": true,
+                                                  "next": Object {},
+                                                  "value": "ローズ",
+                                                },
+                                              },
+                                              "value": "ロー",
+                                            },
+                                          },
+                                          "value": "ロ",
+                                        },
+                                        "is_word": null,
+                                        "next": Object {
+                                          "ー": Trie {
+                                            "data": Array [],
+                                            "fail": Trie {
+                                              "data": Array [],
+                                              "fail": null,
+                                              "is_word": null,
+                                              "next": Object {
+                                                "ズ": Trie {
+                                                  "data": Array [
+                                                    Array [
+                                                      "薔薇 玫瑰",
+                                                    ],
+                                                  ],
+                                                  "fail": null,
+                                                  "is_word": true,
+                                                  "next": Object {},
+                                                  "value": "ローズ",
+                                                },
+                                              },
+                                              "value": "ロー",
+                                            },
+                                            "is_word": null,
+                                            "next": Object {
+                                              "ズ": Trie {
+                                                "data": Array [
+                                                  Array [
+                                                    "淫欲罗茲 最後的玫瑰",
+                                                  ],
+                                                ],
+                                                "fail": Trie {
+                                                  "data": Array [
+                                                    Array [
+                                                      "薔薇 玫瑰",
+                                                    ],
+                                                  ],
+                                                  "fail": null,
+                                                  "is_word": true,
+                                                  "next": Object {},
+                                                  "value": "ローズ",
+                                                },
+                                                "is_word": true,
+                                                "next": Object {},
+                                                "value": "ラストローズ",
+                                              },
+                                            },
+                                            "value": "ラストロー",
+                                          },
+                                        },
+                                        "value": "ラストロ",
+                                      },
+                                    },
+                                    "value": "ラスト",
+                                  },
+                                },
+                                "value": "ラス",
+                              },
+                            },
+                            "value": "ラ",
+                          },
+                          "is_word": true,
+                          "next": Object {},
+                          "value": "スキュラ",
+                        },
+                      },
+                      "value": "スキュ",
+                    },
+                  },
+                  "value": "スキ",
+                },
+              },
+              "value": "ス",
+            },
+            "is_word": null,
+            "next": Object {
+              "タ": Trie {
+                "data": Array [],
+                "fail": null,
+                "is_word": null,
+                "next": Object {
+                  "ー": Trie {
+                    "data": Array [
+                      Array [
+                        "大師",
+                      ],
+                    ],
+                    "fail": null,
+                    "is_word": true,
+                    "next": Object {},
+                    "value": "マスター",
+                  },
+                },
+                "value": "マスタ",
+              },
+            },
+            "value": "マス",
+          },
+        },
+        "value": "マ",
+      },
+      "ラ": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "ス": Trie {
+            "data": Array [],
+            "fail": Trie {
+              "data": Array [],
+              "fail": null,
+              "is_word": null,
+              "next": Object {
+                "キ": Trie {
+                  "data": Array [],
+                  "fail": Trie {
+                    "data": Array [],
+                    "fail": null,
+                    "is_word": null,
+                    "next": Object {
+                      "ン": Trie {
+                        "data": Array [],
+                        "fail": null,
+                        "is_word": null,
+                        "next": Object {
+                          "グ": Trie {
+                            "data": Array [
+                              Array [
+                                "王",
+                              ],
+                            ],
+                            "fail": null,
+                            "is_word": true,
+                            "next": Object {},
+                            "value": "キング",
+                          },
+                        },
+                        "value": "キン",
+                      },
+                    },
+                    "value": "キ",
+                  },
+                  "is_word": null,
+                  "next": Object {
+                    "ュ": Trie {
+                      "data": Array [],
+                      "fail": null,
+                      "is_word": null,
+                      "next": Object {
+                        "ラ": Trie {
+                          "data": Array [
+                            Array [
+                              "斯庫拉",
+                            ],
+                          ],
+                          "fail": [Circular],
+                          "is_word": true,
+                          "next": Object {},
+                          "value": "スキュラ",
+                        },
+                      },
+                      "value": "スキュ",
+                    },
+                  },
+                  "value": "スキ",
+                },
+              },
+              "value": "ス",
+            },
+            "is_word": null,
+            "next": Object {
+              "ト": Trie {
+                "data": Array [
+                  Array [
+                    "Lust 性欲 渇望 Last 最後",
+                  ],
+                ],
+                "fail": null,
+                "is_word": true,
+                "next": Object {
+                  "ロ": Trie {
+                    "data": Array [],
+                    "fail": Trie {
+                      "data": Array [],
+                      "fail": null,
+                      "is_word": null,
+                      "next": Object {
+                        "ー": Trie {
+                          "data": Array [],
+                          "fail": null,
+                          "is_word": null,
+                          "next": Object {
+                            "ズ": Trie {
+                              "data": Array [
+                                Array [
+                                  "薔薇 玫瑰",
+                                ],
+                              ],
+                              "fail": null,
+                              "is_word": true,
+                              "next": Object {},
+                              "value": "ローズ",
+                            },
+                          },
+                          "value": "ロー",
+                        },
+                      },
+                      "value": "ロ",
+                    },
+                    "is_word": null,
+                    "next": Object {
+                      "ー": Trie {
+                        "data": Array [],
+                        "fail": Trie {
+                          "data": Array [],
+                          "fail": null,
+                          "is_word": null,
+                          "next": Object {
+                            "ズ": Trie {
+                              "data": Array [
+                                Array [
+                                  "薔薇 玫瑰",
+                                ],
+                              ],
+                              "fail": null,
+                              "is_word": true,
+                              "next": Object {},
+                              "value": "ローズ",
+                            },
+                          },
+                          "value": "ロー",
+                        },
+                        "is_word": null,
+                        "next": Object {
+                          "ズ": Trie {
+                            "data": Array [
+                              Array [
+                                "淫欲罗茲 最後的玫瑰",
+                              ],
+                            ],
+                            "fail": Trie {
+                              "data": Array [
+                                Array [
+                                  "薔薇 玫瑰",
+                                ],
+                              ],
+                              "fail": null,
+                              "is_word": true,
+                              "next": Object {},
+                              "value": "ローズ",
+                            },
+                            "is_word": true,
+                            "next": Object {},
+                            "value": "ラストローズ",
+                          },
+                        },
+                        "value": "ラストロー",
+                      },
+                    },
+                    "value": "ラストロ",
+                  },
+                },
+                "value": "ラスト",
+              },
+            },
+            "value": "ラス",
+          },
+        },
+        "value": "ラ",
+      },
+      "ロ": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "ー": Trie {
+            "data": Array [],
+            "fail": null,
+            "is_word": null,
+            "next": Object {
+              "ズ": Trie {
+                "data": Array [
+                  Array [
+                    "薔薇 玫瑰",
+                  ],
+                ],
+                "fail": null,
+                "is_word": true,
+                "next": Object {},
+                "value": "ローズ",
+              },
+            },
+            "value": "ロー",
+          },
+        },
+        "value": "ロ",
+      },
+    },
+    "value": null,
+  },
+}
+`;
+
+exports[`クリスタルエンプーサ 1`] = `
+Object {
+  "count": Object {
+    "エンプーサ": 1,
+    "クリスタル": 1,
+  },
+  "data": Object {
+    "エンプーサ": Array [
+      Array [
+        "安普莎",
+      ],
+    ],
+    "クリスタル": Array [
+      Array [
+        "水晶",
+      ],
+    ],
+  },
+  "matches": Object {
+    "エンプーサ": Array [
+      5,
+    ],
+    "クリスタル": Array [
+      0,
+    ],
+  },
+  "positions": Object {
+    "0": Array [
+      "クリスタル",
+    ],
+    "5": Array [
+      "エンプーサ",
+    ],
+  },
+}
+`;
+
+exports[`クリスタルエンプーサ 2`] = `
+Object {
+  "data": Object {
+    "エンプーサ": Array [
+      Array [
+        "安普莎",
+      ],
+    ],
+    "クリスタル": Array [
+      Array [
+        "水晶",
+      ],
+    ],
+  },
+  "input": "クリスタルエンプーサ",
+  "positions": Object {
+    "0": Array [
+      "クリスタル",
+    ],
+    "5": Array [
+      "エンプーサ",
+    ],
+  },
+}
+`;
+
+exports[`スキュラオリジンハイドルイド 1`] = `
+Object {
+  "count": Object {
+    "オリジン": 1,
+    "スキュラ": 1,
+    "ドルイド": 1,
+    "ハイ": 1,
+  },
+  "data": Object {
+    "オリジン": Array [
+      Array [
+        "起源",
+      ],
+    ],
+    "スキュラ": Array [
+      Array [
+        "斯庫拉",
+      ],
+    ],
+    "ドルイド": Array [
+      Array [
+        "德魯伊",
+      ],
+    ],
+    "ハイ": Array [
+      Array [
+        "高等",
+      ],
+    ],
+  },
+  "matches": Object {
+    "オリジン": Array [
+      4,
+    ],
+    "スキュラ": Array [
+      0,
+    ],
+    "ドルイド": Array [
+      10,
+    ],
+    "ハイ": Array [
+      8,
+    ],
+  },
+  "positions": Object {
+    "0": Array [
+      "スキュラ",
+    ],
+    "10": Array [
+      "ドルイド",
+    ],
+    "4": Array [
+      "オリジン",
+    ],
+    "8": Array [
+      "ハイ",
+    ],
+  },
+}
+`;
+
+exports[`スキュラオリジンハイドルイド 2`] = `
+Object {
+  "data": Object {
+    "オリジン": Array [
+      Array [
+        "起源",
+      ],
+    ],
+    "スキュラ": Array [
+      Array [
+        "斯庫拉",
+      ],
+    ],
+    "ドルイド": Array [
+      Array [
+        "德魯伊",
+      ],
+    ],
+    "ハイ": Array [
+      Array [
+        "高等",
+      ],
+    ],
+  },
+  "input": "スキュラオリジンハイドルイド",
+  "positions": Object {
+    "0": Array [
+      "スキュラ",
+    ],
+    "10": Array [
+      "ドルイド",
+    ],
+    "4": Array [
+      "オリジン",
+    ],
+    "8": Array [
+      "ハイ",
+    ],
+  },
+}
+`;
+
+exports[`ホブゴブリン 1`] = `
+Object {
+  "count": Object {
+    "ゴブリン": 1,
+    "ホブ": 1,
+  },
+  "data": Object {
+    "ゴブリン": Array [
+      Array [
+        "哥布林",
+      ],
+    ],
+    "ホブ": Array [
+      Array [
+        "滚刀",
+      ],
+    ],
+  },
+  "matches": Object {
+    "ゴブリン": Array [
+      2,
+    ],
+    "ホブ": Array [
+      0,
+    ],
+  },
+  "positions": Object {
+    "0": Array [
+      "ホブ",
+    ],
+    "2": Array [
+      "ゴブリン",
+    ],
+  },
+}
+`;
+
+exports[`ホブゴブリン 2`] = `
+Object {
+  "data": Object {
+    "ゴブリン": Array [
+      Array [
+        "哥布林",
+      ],
+    ],
+    "ホブ": Array [
+      Array [
+        "滚刀",
+      ],
+    ],
+  },
+  "input": "ホブゴブリン",
+  "positions": Object {
+    "0": Array [
+      "ホブ",
+    ],
+    "2": Array [
+      "ゴブリン",
+    ],
+  },
+}
+`;
+
+exports[`ラストローズ 1`] = `
+Object {
+  "count": Object {
+    "ラスト": 1,
+    "ラストローズ": 1,
+    "ローズ": 1,
+  },
+  "data": Object {
+    "ラスト": Array [
+      Array [
+        "Lust 性欲 渇望 Last 最後",
+      ],
+    ],
+    "ラストローズ": Array [
+      Array [
+        "淫欲罗茲 最後的玫瑰",
+      ],
+    ],
+    "ローズ": Array [
+      Array [
+        "薔薇 玫瑰",
+      ],
+    ],
+  },
+  "matches": Object {
+    "ラスト": Array [
+      0,
+    ],
+    "ラストローズ": Array [
+      0,
+    ],
+    "ローズ": Array [
+      3,
+    ],
+  },
+  "positions": Object {
+    "0": Array [
+      "ラスト",
+      "ラストローズ",
+    ],
+    "3": Array [
+      "ローズ",
+    ],
+  },
+}
+`;
+
+exports[`ラストローズ 2`] = `
+Object {
+  "data": Object {
+    "ラスト": Array [
+      Array [
+        "Lust 性欲 渇望 Last 最後",
+      ],
+    ],
+    "ラストローズ": Array [
+      Array [
+        "淫欲罗茲 最後的玫瑰",
+      ],
+    ],
+    "ローズ": Array [
+      Array [
+        "薔薇 玫瑰",
+      ],
+    ],
+  },
+  "input": "ラストローズ",
+  "positions": Object {
+    "0": Array [
+      "ラスト",
+      "ラストローズ",
+    ],
+    "3": Array [
+      "ローズ",
+    ],
+  },
+}
+`;

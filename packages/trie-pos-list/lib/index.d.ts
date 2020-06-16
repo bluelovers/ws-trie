@@ -26,4 +26,12 @@ export declare function triePosList(words: string, positions: {
     [k: string]: string[];
     [i: number]: string[];
 };
+export declare namespace triePosList {
+    export var allPos: typeof import(".").allPos;
+    export var allPosMax: typeof import(".").allPosMax;
+    export var validPos: typeof import(".").validPos;
+    export var triePosList: typeof import(".").triePosList;
+    var _a: typeof import(".").triePosList;
+    export { _a as default };
+}
 export default triePosList;

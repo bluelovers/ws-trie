@@ -2,7 +2,7 @@
  * Created by user on 2018/7/4/004.
  */
 import triePosList, { allPosMax } from '..';
-import equals = require('deep-eql');
+import equals from 'deep-eql';
 
 let words = 'yasherhs';
 
@@ -47,3 +47,19 @@ let ret3 = allPosMax(words, positions);
 console.log(ret3);
 
 console.log(`ret2 same as ret3:`, equals(ret2, ret3));
+
+test(`triePosList(words, positions)`, () => {
+	expect(ret1).toMatchSnapshot();
+})
+
+test(`allPosMax(words, ret1)`, () => {
+	expect(ret2).toMatchSnapshot();
+})
+
+test(`allPosMax(words, positions)`, () => {
+	expect(ret3).toMatchSnapshot();
+})
+
+test(`ret2 same as ret3`, () => {
+	expect(ret2).toStrictEqual(ret3);
+})

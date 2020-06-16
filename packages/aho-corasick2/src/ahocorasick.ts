@@ -1,12 +1,5 @@
 import Trie from './trie';
-
-declare module './trie'
-{
-	export interface Trie<T>
-	{
-		fail?: Trie<T>
-	}
-}
+import { IAhoCorasickResult, IAhoCorasickCallback, IAhoCorasickCallback as _IAhoCorasickCallback, IAhoCorasickResult as _IAhoCorasickResult } from './types';
 
 export class AhoCorasick<T = any>
 {
@@ -205,49 +198,15 @@ export class AhoCorasick<T = any>
 		return dot.join("\n");
 	}
 
+	static AhoCorasick = AhoCorasick
+	static Trie = Trie
+	static default = AhoCorasick
 }
-
-export type IAhoCorasickCallback<T> = (value: string, data: T[], offset: number, node: Trie<T>) => void
-
-export type IAhoCorasickResult<T = any> = {
-	/**
-	 * keyword: position[]
-	 */
-	matches: {
-		[k: string]: number[],
-	},
-	/**
-	 * position: keyword[]
-	 */
-	positions: {
-		[k: number]: string[],
-	},
-	/**
-	 * keyword: count
-	 */
-	count: {
-		[k: string]: number,
-	},
-	/**
-	 * keyword: data
-	 */
-	data: {
-		[k: string]: T[],
-	},
-};
 
 export namespace AhoCorasick
 {
-	// @ts-ignore
-	export { IAhoCorasickCallback }
-
-	// @ts-ignore
-	export { AhoCorasick }
-	// @ts-ignore
-	export { Trie }
+	export type IAhoCorasickCallback<T> = _IAhoCorasickCallback<T>
+	export type IAhoCorasickResult<T = any> = _IAhoCorasickResult<T>
 }
-
-AhoCorasick.AhoCorasick = AhoCorasick;
-AhoCorasick.Trie = Trie;
 
 export default AhoCorasick

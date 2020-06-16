@@ -1,0 +1,1519 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Allow attaching multiple bits of data 1`] = `
+AhoCorasick {
+  "trie": Trie {
+    "data": Array [],
+    "fail": null,
+    "is_word": null,
+    "next": Object {
+      "f": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "o": Trie {
+            "data": Array [],
+            "fail": null,
+            "is_word": null,
+            "next": Object {
+              "o": Trie {
+                "data": Array [
+                  "data1",
+                  "data2",
+                ],
+                "fail": null,
+                "is_word": true,
+                "next": Object {},
+                "value": "foo",
+              },
+            },
+            "value": "fo",
+          },
+        },
+        "value": "f",
+      },
+    },
+    "value": null,
+  },
+}
+`;
+
+exports[`Allow attaching multiple bits of data 2`] = `
+Object {
+  "count": Object {
+    "foo": 1,
+  },
+  "data": Object {
+    "foo": Array [
+      "data1",
+      "data2",
+    ],
+  },
+  "matches": Object {
+    "foo": Array [
+      0,
+    ],
+  },
+  "positions": Object {
+    "0": Array [
+      "foo",
+    ],
+  },
+}
+`;
+
+exports[`Match every 1`] = `
+AhoCorasick {
+  "trie": Trie {
+    "data": Array [],
+    "fail": null,
+    "is_word": null,
+    "next": Object {
+      "f": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "o": Trie {
+            "data": Array [],
+            "fail": null,
+            "is_word": null,
+            "next": Object {
+              "o": Trie {
+                "data": Array [
+                  undefined,
+                ],
+                "fail": null,
+                "is_word": true,
+                "next": Object {
+                  " ": Trie {
+                    "data": Array [],
+                    "fail": null,
+                    "is_word": null,
+                    "next": Object {
+                      "b": Trie {
+                        "data": Array [],
+                        "fail": null,
+                        "is_word": null,
+                        "next": Object {
+                          "a": Trie {
+                            "data": Array [],
+                            "fail": null,
+                            "is_word": null,
+                            "next": Object {
+                              "r": Trie {
+                                "data": Array [
+                                  undefined,
+                                ],
+                                "fail": null,
+                                "is_word": true,
+                                "next": Object {},
+                                "value": "foo bar",
+                              },
+                            },
+                            "value": "foo ba",
+                          },
+                        },
+                        "value": "foo b",
+                      },
+                    },
+                    "value": "foo ",
+                  },
+                },
+                "value": "foo",
+              },
+            },
+            "value": "fo",
+          },
+        },
+        "value": "f",
+      },
+    },
+    "value": null,
+  },
+}
+`;
+
+exports[`Match every 2`] = `
+Object {
+  "count": Object {
+    "foo": 1,
+  },
+  "data": Object {
+    "foo": Array [
+      undefined,
+    ],
+  },
+  "matches": Object {
+    "foo": Array [
+      0,
+    ],
+  },
+  "positions": Object {
+    "0": Array [
+      "foo",
+    ],
+  },
+}
+`;
+
+exports[`Match every 3`] = `
+Object {
+  "count": Object {
+    "foo": 1,
+    "foo bar": 1,
+  },
+  "data": Object {
+    "foo": Array [
+      undefined,
+    ],
+    "foo bar": Array [
+      undefined,
+    ],
+  },
+  "matches": Object {
+    "foo": Array [
+      0,
+    ],
+    "foo bar": Array [
+      0,
+    ],
+  },
+  "positions": Object {
+    "0": Array [
+      "foo",
+      "foo bar",
+    ],
+  },
+}
+`;
+
+exports[`Multiple matches 1`] = `
+AhoCorasick {
+  "trie": Trie {
+    "data": Array [],
+    "fail": null,
+    "is_word": null,
+    "next": Object {
+      "h": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "e": Trie {
+            "data": Array [
+              Object {
+                "word": "he",
+              },
+            ],
+            "fail": null,
+            "is_word": true,
+            "next": Object {
+              "r": Trie {
+                "data": Array [
+                  Object {
+                    "word": "her",
+                  },
+                ],
+                "fail": null,
+                "is_word": true,
+                "next": Object {},
+                "value": "her",
+              },
+            },
+            "value": "he",
+          },
+        },
+        "value": "h",
+      },
+      "s": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "a": Trie {
+            "data": Array [],
+            "fail": null,
+            "is_word": null,
+            "next": Object {
+              "y": Trie {
+                "data": Array [
+                  Object {
+                    "word": "say",
+                  },
+                ],
+                "fail": null,
+                "is_word": true,
+                "next": Object {},
+                "value": "say",
+              },
+            },
+            "value": "sa",
+          },
+          "h": Trie {
+            "data": Array [],
+            "fail": Trie {
+              "data": Array [],
+              "fail": null,
+              "is_word": null,
+              "next": Object {
+                "e": Trie {
+                  "data": Array [
+                    Object {
+                      "word": "he",
+                    },
+                  ],
+                  "fail": null,
+                  "is_word": true,
+                  "next": Object {
+                    "r": Trie {
+                      "data": Array [
+                        Object {
+                          "word": "her",
+                        },
+                      ],
+                      "fail": null,
+                      "is_word": true,
+                      "next": Object {},
+                      "value": "her",
+                    },
+                  },
+                  "value": "he",
+                },
+              },
+              "value": "h",
+            },
+            "is_word": null,
+            "next": Object {
+              "e": Trie {
+                "data": Array [
+                  Object {
+                    "word": "she",
+                  },
+                ],
+                "fail": Trie {
+                  "data": Array [
+                    Object {
+                      "word": "he",
+                    },
+                  ],
+                  "fail": null,
+                  "is_word": true,
+                  "next": Object {
+                    "r": Trie {
+                      "data": Array [
+                        Object {
+                          "word": "her",
+                        },
+                      ],
+                      "fail": null,
+                      "is_word": true,
+                      "next": Object {},
+                      "value": "her",
+                    },
+                  },
+                  "value": "he",
+                },
+                "is_word": true,
+                "next": Object {},
+                "value": "she",
+              },
+              "r": Trie {
+                "data": Array [
+                  Object {
+                    "word": "shr",
+                  },
+                ],
+                "fail": null,
+                "is_word": true,
+                "next": Object {},
+                "value": "shr",
+              },
+            },
+            "value": "sh",
+          },
+        },
+        "value": "s",
+      },
+    },
+    "value": null,
+  },
+}
+`;
+
+exports[`Multiple matches 2`] = `
+Object {
+  "count": Object {
+    "he": 1,
+    "her": 1,
+    "she": 1,
+  },
+  "data": Object {
+    "he": Array [
+      Object {
+        "word": "he",
+      },
+    ],
+    "her": Array [
+      Object {
+        "word": "her",
+      },
+    ],
+    "she": Array [
+      Object {
+        "word": "she",
+      },
+    ],
+  },
+  "matches": Object {
+    "he": Array [
+      3,
+    ],
+    "her": Array [
+      3,
+    ],
+    "she": Array [
+      2,
+    ],
+  },
+  "positions": Object {
+    "2": Array [
+      "she",
+    ],
+    "3": Array [
+      "he",
+      "her",
+    ],
+  },
+}
+`;
+
+exports[`Picks out multiple words 1`] = `
+AhoCorasick {
+  "trie": Trie {
+    "data": Array [],
+    "fail": null,
+    "is_word": null,
+    "next": Object {
+      "b": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "o": Trie {
+            "data": Array [],
+            "fail": null,
+            "is_word": null,
+            "next": Object {
+              "o": Trie {
+                "data": Array [],
+                "fail": null,
+                "is_word": null,
+                "next": Object {
+                  "t": Trie {
+                    "data": Array [
+                      undefined,
+                    ],
+                    "fail": null,
+                    "is_word": true,
+                    "next": Object {},
+                    "value": "boot",
+                  },
+                },
+                "value": "boo",
+              },
+            },
+            "value": "bo",
+          },
+        },
+        "value": "b",
+      },
+      "h": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "e": Trie {
+            "data": Array [],
+            "fail": null,
+            "is_word": null,
+            "next": Object {
+              "r": Trie {
+                "data": Array [],
+                "fail": Trie {
+                  "data": Array [],
+                  "fail": null,
+                  "is_word": null,
+                  "next": Object {
+                    "e": Trie {
+                      "data": Array [],
+                      "fail": null,
+                      "is_word": null,
+                      "next": Object {
+                        "c": Trie {
+                          "data": Array [],
+                          "fail": null,
+                          "is_word": null,
+                          "next": Object {
+                            "e": Trie {
+                              "data": Array [],
+                              "fail": null,
+                              "is_word": null,
+                              "next": Object {
+                                "i": Trie {
+                                  "data": Array [],
+                                  "fail": Trie {
+                                    "data": Array [],
+                                    "fail": null,
+                                    "is_word": null,
+                                    "next": Object {
+                                      "v": Trie {
+                                        "data": Array [],
+                                        "fail": null,
+                                        "is_word": null,
+                                        "next": Object {
+                                          "i": Trie {
+                                            "data": Array [
+                                              undefined,
+                                            ],
+                                            "fail": [Circular],
+                                            "is_word": true,
+                                            "next": Object {},
+                                            "value": "ivi",
+                                          },
+                                        },
+                                        "value": "iv",
+                                      },
+                                    },
+                                    "value": "i",
+                                  },
+                                  "is_word": null,
+                                  "next": Object {
+                                    "v": Trie {
+                                      "data": Array [],
+                                      "fail": Trie {
+                                        "data": Array [],
+                                        "fail": null,
+                                        "is_word": null,
+                                        "next": Object {
+                                          "i": Trie {
+                                            "data": Array [
+                                              undefined,
+                                            ],
+                                            "fail": Trie {
+                                              "data": Array [],
+                                              "fail": null,
+                                              "is_word": null,
+                                              "next": Object {
+                                                "v": [Circular],
+                                              },
+                                              "value": "i",
+                                            },
+                                            "is_word": true,
+                                            "next": Object {},
+                                            "value": "ivi",
+                                          },
+                                        },
+                                        "value": "iv",
+                                      },
+                                      "is_word": null,
+                                      "next": Object {
+                                        "i": Trie {
+                                          "data": Array [],
+                                          "fail": Trie {
+                                            "data": Array [
+                                              undefined,
+                                            ],
+                                            "fail": Trie {
+                                              "data": Array [],
+                                              "fail": null,
+                                              "is_word": null,
+                                              "next": Object {
+                                                "v": Trie {
+                                                  "data": Array [],
+                                                  "fail": null,
+                                                  "is_word": null,
+                                                  "next": Object {
+                                                    "i": [Circular],
+                                                  },
+                                                  "value": "iv",
+                                                },
+                                              },
+                                              "value": "i",
+                                            },
+                                            "is_word": true,
+                                            "next": Object {},
+                                            "value": "ivi",
+                                          },
+                                          "is_word": null,
+                                          "next": Object {
+                                            "n": Trie {
+                                              "data": Array [],
+                                              "fail": null,
+                                              "is_word": null,
+                                              "next": Object {
+                                                "g": Trie {
+                                                  "data": Array [],
+                                                  "fail": null,
+                                                  "is_word": null,
+                                                  "next": Object {
+                                                    "s": Trie {
+                                                      "data": Array [
+                                                        undefined,
+                                                      ],
+                                                      "fail": null,
+                                                      "is_word": true,
+                                                      "next": Object {},
+                                                      "value": "receivings",
+                                                    },
+                                                  },
+                                                  "value": "receiving",
+                                                },
+                                              },
+                                              "value": "receivin",
+                                            },
+                                          },
+                                          "value": "receivi",
+                                        },
+                                      },
+                                      "value": "receiv",
+                                    },
+                                  },
+                                  "value": "recei",
+                                },
+                              },
+                              "value": "rece",
+                            },
+                          },
+                          "value": "rec",
+                        },
+                      },
+                      "value": "re",
+                    },
+                  },
+                  "value": "r",
+                },
+                "is_word": null,
+                "next": Object {
+                  "e": Trie {
+                    "data": Array [
+                      undefined,
+                    ],
+                    "fail": Trie {
+                      "data": Array [],
+                      "fail": null,
+                      "is_word": null,
+                      "next": Object {
+                        "c": Trie {
+                          "data": Array [],
+                          "fail": null,
+                          "is_word": null,
+                          "next": Object {
+                            "e": Trie {
+                              "data": Array [],
+                              "fail": null,
+                              "is_word": null,
+                              "next": Object {
+                                "i": Trie {
+                                  "data": Array [],
+                                  "fail": Trie {
+                                    "data": Array [],
+                                    "fail": null,
+                                    "is_word": null,
+                                    "next": Object {
+                                      "v": Trie {
+                                        "data": Array [],
+                                        "fail": null,
+                                        "is_word": null,
+                                        "next": Object {
+                                          "i": Trie {
+                                            "data": Array [
+                                              undefined,
+                                            ],
+                                            "fail": [Circular],
+                                            "is_word": true,
+                                            "next": Object {},
+                                            "value": "ivi",
+                                          },
+                                        },
+                                        "value": "iv",
+                                      },
+                                    },
+                                    "value": "i",
+                                  },
+                                  "is_word": null,
+                                  "next": Object {
+                                    "v": Trie {
+                                      "data": Array [],
+                                      "fail": Trie {
+                                        "data": Array [],
+                                        "fail": null,
+                                        "is_word": null,
+                                        "next": Object {
+                                          "i": Trie {
+                                            "data": Array [
+                                              undefined,
+                                            ],
+                                            "fail": Trie {
+                                              "data": Array [],
+                                              "fail": null,
+                                              "is_word": null,
+                                              "next": Object {
+                                                "v": [Circular],
+                                              },
+                                              "value": "i",
+                                            },
+                                            "is_word": true,
+                                            "next": Object {},
+                                            "value": "ivi",
+                                          },
+                                        },
+                                        "value": "iv",
+                                      },
+                                      "is_word": null,
+                                      "next": Object {
+                                        "i": Trie {
+                                          "data": Array [],
+                                          "fail": Trie {
+                                            "data": Array [
+                                              undefined,
+                                            ],
+                                            "fail": Trie {
+                                              "data": Array [],
+                                              "fail": null,
+                                              "is_word": null,
+                                              "next": Object {
+                                                "v": Trie {
+                                                  "data": Array [],
+                                                  "fail": null,
+                                                  "is_word": null,
+                                                  "next": Object {
+                                                    "i": [Circular],
+                                                  },
+                                                  "value": "iv",
+                                                },
+                                              },
+                                              "value": "i",
+                                            },
+                                            "is_word": true,
+                                            "next": Object {},
+                                            "value": "ivi",
+                                          },
+                                          "is_word": null,
+                                          "next": Object {
+                                            "n": Trie {
+                                              "data": Array [],
+                                              "fail": null,
+                                              "is_word": null,
+                                              "next": Object {
+                                                "g": Trie {
+                                                  "data": Array [],
+                                                  "fail": null,
+                                                  "is_word": null,
+                                                  "next": Object {
+                                                    "s": Trie {
+                                                      "data": Array [
+                                                        undefined,
+                                                      ],
+                                                      "fail": null,
+                                                      "is_word": true,
+                                                      "next": Object {},
+                                                      "value": "receivings",
+                                                    },
+                                                  },
+                                                  "value": "receiving",
+                                                },
+                                              },
+                                              "value": "receivin",
+                                            },
+                                          },
+                                          "value": "receivi",
+                                        },
+                                      },
+                                      "value": "receiv",
+                                    },
+                                  },
+                                  "value": "recei",
+                                },
+                              },
+                              "value": "rece",
+                            },
+                          },
+                          "value": "rec",
+                        },
+                      },
+                      "value": "re",
+                    },
+                    "is_word": true,
+                    "next": Object {},
+                    "value": "here",
+                  },
+                },
+                "value": "her",
+              },
+            },
+            "value": "he",
+          },
+        },
+        "value": "h",
+      },
+      "i": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "v": Trie {
+            "data": Array [],
+            "fail": null,
+            "is_word": null,
+            "next": Object {
+              "i": Trie {
+                "data": Array [
+                  undefined,
+                ],
+                "fail": [Circular],
+                "is_word": true,
+                "next": Object {},
+                "value": "ivi",
+              },
+            },
+            "value": "iv",
+          },
+        },
+        "value": "i",
+      },
+      "l": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "i": Trie {
+            "data": Array [],
+            "fail": Trie {
+              "data": Array [],
+              "fail": null,
+              "is_word": null,
+              "next": Object {
+                "v": Trie {
+                  "data": Array [],
+                  "fail": null,
+                  "is_word": null,
+                  "next": Object {
+                    "i": Trie {
+                      "data": Array [
+                        undefined,
+                      ],
+                      "fail": [Circular],
+                      "is_word": true,
+                      "next": Object {},
+                      "value": "ivi",
+                    },
+                  },
+                  "value": "iv",
+                },
+              },
+              "value": "i",
+            },
+            "is_word": null,
+            "next": Object {
+              "t": Trie {
+                "data": Array [],
+                "fail": null,
+                "is_word": null,
+                "next": Object {
+                  "t": Trie {
+                    "data": Array [],
+                    "fail": null,
+                    "is_word": null,
+                    "next": Object {
+                      "l": Trie {
+                        "data": Array [],
+                        "fail": [Circular],
+                        "is_word": null,
+                        "next": Object {
+                          "e": Trie {
+                            "data": Array [],
+                            "fail": null,
+                            "is_word": null,
+                            "next": Object {
+                              " ": Trie {
+                                "data": Array [],
+                                "fail": null,
+                                "is_word": null,
+                                "next": Object {
+                                  "b": Trie {
+                                    "data": Array [],
+                                    "fail": Trie {
+                                      "data": Array [],
+                                      "fail": null,
+                                      "is_word": null,
+                                      "next": Object {
+                                        "o": Trie {
+                                          "data": Array [],
+                                          "fail": null,
+                                          "is_word": null,
+                                          "next": Object {
+                                            "o": Trie {
+                                              "data": Array [],
+                                              "fail": null,
+                                              "is_word": null,
+                                              "next": Object {
+                                                "t": Trie {
+                                                  "data": Array [
+                                                    undefined,
+                                                  ],
+                                                  "fail": null,
+                                                  "is_word": true,
+                                                  "next": Object {},
+                                                  "value": "boot",
+                                                },
+                                              },
+                                              "value": "boo",
+                                            },
+                                          },
+                                          "value": "bo",
+                                        },
+                                      },
+                                      "value": "b",
+                                    },
+                                    "is_word": null,
+                                    "next": Object {
+                                      "i": Trie {
+                                        "data": Array [],
+                                        "fail": Trie {
+                                          "data": Array [],
+                                          "fail": null,
+                                          "is_word": null,
+                                          "next": Object {
+                                            "v": Trie {
+                                              "data": Array [],
+                                              "fail": null,
+                                              "is_word": null,
+                                              "next": Object {
+                                                "i": Trie {
+                                                  "data": Array [
+                                                    undefined,
+                                                  ],
+                                                  "fail": [Circular],
+                                                  "is_word": true,
+                                                  "next": Object {},
+                                                  "value": "ivi",
+                                                },
+                                              },
+                                              "value": "iv",
+                                            },
+                                          },
+                                          "value": "i",
+                                        },
+                                        "is_word": null,
+                                        "next": Object {
+                                          "t": Trie {
+                                            "data": Array [],
+                                            "fail": null,
+                                            "is_word": null,
+                                            "next": Object {
+                                              " ": Trie {
+                                                "data": Array [],
+                                                "fail": null,
+                                                "is_word": null,
+                                                "next": Object {
+                                                  "o": Trie {
+                                                    "data": Array [],
+                                                    "fail": null,
+                                                    "is_word": null,
+                                                    "next": Object {
+                                                      "f": Trie {
+                                                        "data": Array [
+                                                          undefined,
+                                                        ],
+                                                        "fail": null,
+                                                        "is_word": true,
+                                                        "next": Object {},
+                                                        "value": "little bit of",
+                                                      },
+                                                    },
+                                                    "value": "little bit o",
+                                                  },
+                                                },
+                                                "value": "little bit ",
+                                              },
+                                            },
+                                            "value": "little bit",
+                                          },
+                                        },
+                                        "value": "little bi",
+                                      },
+                                    },
+                                    "value": "little b",
+                                  },
+                                },
+                                "value": "little ",
+                              },
+                            },
+                            "value": "little",
+                          },
+                        },
+                        "value": "littl",
+                      },
+                    },
+                    "value": "litt",
+                  },
+                },
+                "value": "lit",
+              },
+            },
+            "value": "li",
+          },
+        },
+        "value": "l",
+      },
+      "r": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "e": Trie {
+            "data": Array [],
+            "fail": null,
+            "is_word": null,
+            "next": Object {
+              "c": Trie {
+                "data": Array [],
+                "fail": null,
+                "is_word": null,
+                "next": Object {
+                  "e": Trie {
+                    "data": Array [],
+                    "fail": null,
+                    "is_word": null,
+                    "next": Object {
+                      "i": Trie {
+                        "data": Array [],
+                        "fail": Trie {
+                          "data": Array [],
+                          "fail": null,
+                          "is_word": null,
+                          "next": Object {
+                            "v": Trie {
+                              "data": Array [],
+                              "fail": null,
+                              "is_word": null,
+                              "next": Object {
+                                "i": Trie {
+                                  "data": Array [
+                                    undefined,
+                                  ],
+                                  "fail": [Circular],
+                                  "is_word": true,
+                                  "next": Object {},
+                                  "value": "ivi",
+                                },
+                              },
+                              "value": "iv",
+                            },
+                          },
+                          "value": "i",
+                        },
+                        "is_word": null,
+                        "next": Object {
+                          "v": Trie {
+                            "data": Array [],
+                            "fail": Trie {
+                              "data": Array [],
+                              "fail": null,
+                              "is_word": null,
+                              "next": Object {
+                                "i": Trie {
+                                  "data": Array [
+                                    undefined,
+                                  ],
+                                  "fail": Trie {
+                                    "data": Array [],
+                                    "fail": null,
+                                    "is_word": null,
+                                    "next": Object {
+                                      "v": [Circular],
+                                    },
+                                    "value": "i",
+                                  },
+                                  "is_word": true,
+                                  "next": Object {},
+                                  "value": "ivi",
+                                },
+                              },
+                              "value": "iv",
+                            },
+                            "is_word": null,
+                            "next": Object {
+                              "i": Trie {
+                                "data": Array [],
+                                "fail": Trie {
+                                  "data": Array [
+                                    undefined,
+                                  ],
+                                  "fail": Trie {
+                                    "data": Array [],
+                                    "fail": null,
+                                    "is_word": null,
+                                    "next": Object {
+                                      "v": Trie {
+                                        "data": Array [],
+                                        "fail": null,
+                                        "is_word": null,
+                                        "next": Object {
+                                          "i": [Circular],
+                                        },
+                                        "value": "iv",
+                                      },
+                                    },
+                                    "value": "i",
+                                  },
+                                  "is_word": true,
+                                  "next": Object {},
+                                  "value": "ivi",
+                                },
+                                "is_word": null,
+                                "next": Object {
+                                  "n": Trie {
+                                    "data": Array [],
+                                    "fail": null,
+                                    "is_word": null,
+                                    "next": Object {
+                                      "g": Trie {
+                                        "data": Array [],
+                                        "fail": null,
+                                        "is_word": null,
+                                        "next": Object {
+                                          "s": Trie {
+                                            "data": Array [
+                                              undefined,
+                                            ],
+                                            "fail": null,
+                                            "is_word": true,
+                                            "next": Object {},
+                                            "value": "receivings",
+                                          },
+                                        },
+                                        "value": "receiving",
+                                      },
+                                    },
+                                    "value": "receivin",
+                                  },
+                                },
+                                "value": "receivi",
+                              },
+                            },
+                            "value": "receiv",
+                          },
+                        },
+                        "value": "recei",
+                      },
+                    },
+                    "value": "rece",
+                  },
+                },
+                "value": "rec",
+              },
+            },
+            "value": "re",
+          },
+        },
+        "value": "r",
+      },
+    },
+    "value": null,
+  },
+}
+`;
+
+exports[`Picks out multiple words 2`] = `
+Object {
+  "count": Object {
+    "boot": 1,
+    "here": 1,
+    "ivi": 1,
+    "little bit of": 1,
+  },
+  "data": Object {
+    "boot": Array [
+      undefined,
+    ],
+    "here": Array [
+      undefined,
+    ],
+    "ivi": Array [
+      undefined,
+    ],
+    "little bit of": Array [
+      undefined,
+    ],
+  },
+  "matches": Object {
+    "boot": Array [
+      147,
+    ],
+    "here": Array [
+      0,
+    ],
+    "ivi": Array [
+      105,
+    ],
+    "little bit of": Array [
+      10,
+    ],
+  },
+  "positions": Object {
+    "0": Array [
+      "here",
+    ],
+    "10": Array [
+      "little bit of",
+    ],
+    "105": Array [
+      "ivi",
+    ],
+    "147": Array [
+      "boot",
+    ],
+  },
+}
+`;
+
+exports[`Test simple 1`] = `
+AhoCorasick {
+  "trie": Trie {
+    "data": Array [],
+    "fail": null,
+    "is_word": null,
+    "next": Object {
+      "a": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "b": Trie {
+            "data": Array [
+              Object {
+                "word": "ab",
+              },
+            ],
+            "fail": Trie {
+              "data": Array [],
+              "fail": null,
+              "is_word": null,
+              "next": Object {
+                "c": Trie {
+                  "data": Array [],
+                  "fail": Trie {
+                    "data": Array [],
+                    "fail": null,
+                    "is_word": null,
+                    "next": Object {
+                      "a": Trie {
+                        "data": Array [],
+                        "fail": [Circular],
+                        "is_word": null,
+                        "next": Object {
+                          "a": Trie {
+                            "data": Array [
+                              Object {
+                                "word": "caa",
+                              },
+                            ],
+                            "fail": [Circular],
+                            "is_word": true,
+                            "next": Object {},
+                            "value": "caa",
+                          },
+                        },
+                        "value": "ca",
+                      },
+                    },
+                    "value": "c",
+                  },
+                  "is_word": null,
+                  "next": Object {
+                    "r": Trie {
+                      "data": Array [
+                        Object {
+                          "word": "bcr",
+                        },
+                      ],
+                      "fail": null,
+                      "is_word": true,
+                      "next": Object {},
+                      "value": "bcr",
+                    },
+                  },
+                  "value": "bc",
+                },
+              },
+              "value": "b",
+            },
+            "is_word": true,
+            "next": Object {},
+            "value": "ab",
+          },
+        },
+        "value": "a",
+      },
+      "b": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "c": Trie {
+            "data": Array [],
+            "fail": Trie {
+              "data": Array [],
+              "fail": null,
+              "is_word": null,
+              "next": Object {
+                "a": Trie {
+                  "data": Array [],
+                  "fail": Trie {
+                    "data": Array [],
+                    "fail": null,
+                    "is_word": null,
+                    "next": Object {
+                      "b": Trie {
+                        "data": Array [
+                          Object {
+                            "word": "ab",
+                          },
+                        ],
+                        "fail": [Circular],
+                        "is_word": true,
+                        "next": Object {},
+                        "value": "ab",
+                      },
+                    },
+                    "value": "a",
+                  },
+                  "is_word": null,
+                  "next": Object {
+                    "a": Trie {
+                      "data": Array [
+                        Object {
+                          "word": "caa",
+                        },
+                      ],
+                      "fail": Trie {
+                        "data": Array [],
+                        "fail": null,
+                        "is_word": null,
+                        "next": Object {
+                          "b": Trie {
+                            "data": Array [
+                              Object {
+                                "word": "ab",
+                              },
+                            ],
+                            "fail": [Circular],
+                            "is_word": true,
+                            "next": Object {},
+                            "value": "ab",
+                          },
+                        },
+                        "value": "a",
+                      },
+                      "is_word": true,
+                      "next": Object {},
+                      "value": "caa",
+                    },
+                  },
+                  "value": "ca",
+                },
+              },
+              "value": "c",
+            },
+            "is_word": null,
+            "next": Object {
+              "r": Trie {
+                "data": Array [
+                  Object {
+                    "word": "bcr",
+                  },
+                ],
+                "fail": null,
+                "is_word": true,
+                "next": Object {},
+                "value": "bcr",
+              },
+            },
+            "value": "bc",
+          },
+        },
+        "value": "b",
+      },
+      "c": Trie {
+        "data": Array [],
+        "fail": null,
+        "is_word": null,
+        "next": Object {
+          "a": Trie {
+            "data": Array [],
+            "fail": Trie {
+              "data": Array [],
+              "fail": null,
+              "is_word": null,
+              "next": Object {
+                "b": Trie {
+                  "data": Array [
+                    Object {
+                      "word": "ab",
+                    },
+                  ],
+                  "fail": Trie {
+                    "data": Array [],
+                    "fail": null,
+                    "is_word": null,
+                    "next": Object {
+                      "c": Trie {
+                        "data": Array [],
+                        "fail": [Circular],
+                        "is_word": null,
+                        "next": Object {
+                          "r": Trie {
+                            "data": Array [
+                              Object {
+                                "word": "bcr",
+                              },
+                            ],
+                            "fail": null,
+                            "is_word": true,
+                            "next": Object {},
+                            "value": "bcr",
+                          },
+                        },
+                        "value": "bc",
+                      },
+                    },
+                    "value": "b",
+                  },
+                  "is_word": true,
+                  "next": Object {},
+                  "value": "ab",
+                },
+              },
+              "value": "a",
+            },
+            "is_word": null,
+            "next": Object {
+              "a": Trie {
+                "data": Array [
+                  Object {
+                    "word": "caa",
+                  },
+                ],
+                "fail": Trie {
+                  "data": Array [],
+                  "fail": null,
+                  "is_word": null,
+                  "next": Object {
+                    "b": Trie {
+                      "data": Array [
+                        Object {
+                          "word": "ab",
+                        },
+                      ],
+                      "fail": Trie {
+                        "data": Array [],
+                        "fail": null,
+                        "is_word": null,
+                        "next": Object {
+                          "c": Trie {
+                            "data": Array [],
+                            "fail": [Circular],
+                            "is_word": null,
+                            "next": Object {
+                              "r": Trie {
+                                "data": Array [
+                                  Object {
+                                    "word": "bcr",
+                                  },
+                                ],
+                                "fail": null,
+                                "is_word": true,
+                                "next": Object {},
+                                "value": "bcr",
+                              },
+                            },
+                            "value": "bc",
+                          },
+                        },
+                        "value": "b",
+                      },
+                      "is_word": true,
+                      "next": Object {},
+                      "value": "ab",
+                    },
+                  },
+                  "value": "a",
+                },
+                "is_word": true,
+                "next": Object {},
+                "value": "caa",
+              },
+            },
+            "value": "ca",
+          },
+        },
+        "value": "c",
+      },
+    },
+    "value": null,
+  },
+}
+`;
+
+exports[`Test simple 2`] = `
+Object {
+  "count": Object {
+    "ab": 1,
+  },
+  "data": Object {
+    "ab": Array [
+      Object {
+        "word": "ab",
+      },
+    ],
+  },
+  "matches": Object {
+    "ab": Array [
+      2,
+    ],
+  },
+  "positions": Object {
+    "2": Array [
+      "ab",
+    ],
+  },
+}
+`;
+
+exports[`Test simple 3`] = `
+Object {
+  "count": Object {
+    "caa": 1,
+  },
+  "data": Object {
+    "caa": Array [
+      Object {
+        "word": "caa",
+      },
+    ],
+  },
+  "matches": Object {
+    "caa": Array [
+      1,
+    ],
+  },
+  "positions": Object {
+    "1": Array [
+      "caa",
+    ],
+  },
+}
+`;

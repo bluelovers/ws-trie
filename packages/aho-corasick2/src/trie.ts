@@ -7,6 +7,8 @@ export class Trie<T = any>
 	value: string = null;
 	data: T[] = [];
 
+	fail?: Trie<T>
+
 	//fail?: Trie = null;
 
 	add(word: string, data?: T, original_word?: string): boolean

@@ -2,7 +2,7 @@
  * Created by user on 2018/7/4/004.
  */
 
-import AhoCorasick from 'aho-corasick2';
+import AhoCorasick from '..';
 
 let ac = new AhoCorasick();
 
@@ -64,6 +64,10 @@ list.forEach(function (word: any)
 
 ac.build_fail();
 
+test(`trie`, () => {
+	expect(ac).toMatchSnapshot();
+})
+
 search('スキュラオリジンハイドルイド');
 search('クリスタルエンプーサ');
 search('ラストローズ');
@@ -71,20 +75,19 @@ search('ホブゴブリン');
 
 function search(input: string)
 {
-	let actual = ac.search(input);
+	test(input, () => {
+		let actual = ac.search(input);
 
-	let { data, positions } = actual;
+		expect(actual).toMatchSnapshot();
 
-	let ret = {
-		input,
-		positions,
-		data,
-	};
+		let { data, positions } = actual;
 
-	console.dir(ret, {
-		depth: null,
-		colors: true,
-	});
+		let ret = {
+			input,
+			positions,
+			data,
+		};
 
-	return ret;
+		expect(ret).toMatchSnapshot();
+	})
 }
