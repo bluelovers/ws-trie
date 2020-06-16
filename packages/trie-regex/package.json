@@ -1,6 +1,6 @@
 {
   "name": "trie-regex",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Create a regular expression from trie like object",
   "keywords": [
     "data",
@@ -44,6 +44,6 @@
   "devDependencies": {
     "@types/trie-prefix-tree": "^1.5.0",
     "trie-prefix-tree": "^1.5.1",
-    "trie-prefix-tree2": "^2.0.4"
+    "trie-prefix-tree2": "^2.0.5"
   }
 }

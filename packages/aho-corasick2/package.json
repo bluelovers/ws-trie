@@ -1,6 +1,6 @@
 {
   "name": "aho-corasick2",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Aho–Corasick string matching algorithm",
   "keywords": [
     "Aho-Corasick automation",
@@ -50,7 +50,5 @@
     "prepublishOnly:update": "yarn run ncu && yarn run sort-package-json",
     "ncu": "ynpx --quiet yarn-tool -- ncu -u",
     "sort-package-json": "yarn-tool sort"
-  },
-  "dependencies": {},
-  "devDependencies": {}
+  }
 }

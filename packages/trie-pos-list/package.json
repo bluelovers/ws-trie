@@ -1,6 +1,6 @@
 {
   "name": "trie-pos-list",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "get trie position list { position: keyword[] }",
   "keywords": [
     "Aho-Corasick automation",
