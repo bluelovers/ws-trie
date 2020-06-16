@@ -1,0 +1,54 @@
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+trie.png
+
+pids
+logs
+results
+
+npm-debug.log
+*.swp
+*.*~
+
+node_modules/
+build/
+
+.DS_Store
+### git2 template
+.idea
+
+~ci.list.txt
+~ci.log.txt
+~ci.errors.txt
+
+*.stackdump
+*.bak
+*.old
+
+package-lock.json
+
+test/**/*.js
+test/**/*.d.ts
+test/*.js
+test/*.d.ts
+test/temp*
+
+tests/**/*.js
+tests/**/*.d.ts
+tests/*.js
+tests/*.d.ts
+tests/temp*### Example user template template
+### Example user template
+
+# IntelliJ project files
+*.iml
+out
+gen
+!/tests/chinese.test.js
+!/tests/test.test.js
