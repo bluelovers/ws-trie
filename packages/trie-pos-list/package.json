@@ -1,0 +1,54 @@
+{
+  "name": "trie-pos-list",
+  "version": "1.0.3",
+  "description": "get trie position list { position: keyword[] }",
+  "keywords": [
+    "Aho-Corasick automation",
+    "ac",
+    "ac automation",
+    "aca",
+    "add",
+    "aho",
+    "aho-corasick",
+    "algorithm",
+    "array",
+    "automata",
+    "corasick",
+    "data",
+    "javascript",
+    "match",
+    "multiple",
+    "pattern",
+    "remove",
+    "stream",
+    "strings",
+    "structure",
+    "tree",
+    "tree-structure",
+    "trie",
+    "trie-structure",
+    "words"
+  ],
+  "homepage": "https://github.com/bluelovers/trie-pos-list#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/trie-pos-list/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/trie-pos-list.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "array-hyper-unique": "^1.0.7",
+    "deep-eql": "^4.0.0"
+  }
+}
