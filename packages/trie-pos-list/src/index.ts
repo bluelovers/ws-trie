@@ -14,12 +14,12 @@ export function allPos(words: string, positions: {
 }
 {
 	let i = 0;
-	let ks = Object.keys(positions) as any as number[];
-	let len = words.length;
+	const ks = Object.keys(positions) as any as number[];
+	const len = words.length;
 
 	let j = 0;
 
-	let ret = {};
+	const ret = {};
 
 	while (i < len)
 	{
@@ -46,13 +46,13 @@ export function allPos(words: string, positions: {
 
 					if (positions[i3])
 					{
-						let s = w.slice(0, i2);
+						const s = w.slice(0, i2);
 
 						i4 = i3 - 1;
 
 						ret[i4] = ret[i4] || [];
 
-						ret[i4].push(s)
+						ret[i4].push(s);
 					}
 				}
 
@@ -60,22 +60,22 @@ export function allPos(words: string, positions: {
 				{
 					if (i5 > i3)
 					{
-						let s = words.slice(i3, i5);
+						const s = words.slice(i3, i5);
 
 						ret[i3] = ret[i3] || [];
 
-						ret[i3].push(s)
+						ret[i3].push(s);
 					}
 
 					if (i5 > i)
 					{
-						let s = words.slice(i, i5)
+						const s = words.slice(i, i5);
 
 						ret[i] = ret[i] || [];
 
-						ret[i].push(s)
+						ret[i].push(s);
 					}
-				})
+				});
 			});
 
 			j = i + 1;
@@ -86,14 +86,14 @@ export function allPos(words: string, positions: {
 
 	if (j != i)
 	{
-		let s = words.slice(j);
+		const s = words.slice(j);
 
 		ret[j] = ret[j] || [];
 
-		ret[j].push(s)
+		ret[j].push(s);
 	}
 
-	for (let i in ret)
+	for (const i in ret)
 	{
 		ret[i] = array_unique(ret[i]);
 		ret[i].sort();
@@ -142,7 +142,7 @@ export function validPos(positions: {
 				v.toString() === Number(v).toString()
 				&& positions[v]
 				&& Array.isArray(positions[v])
-			)
+			);
 		})
 		;
 }
@@ -163,4 +163,4 @@ triePosList.default = triePosList;
 
 Object.defineProperty(triePosList, "__esModule", { value: true });
 
-export default triePosList
+export default triePosList;

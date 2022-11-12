@@ -1,7 +1,7 @@
 /**
  * Created by user on 2018/7/4/004.
  */
-import triePosList, { allPosMax } from '..';
+import triePosList, { allPosMax } from '../src';
 import equals from 'deep-eql';
 
 let words = 'yasherhs';
