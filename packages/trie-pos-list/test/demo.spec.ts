@@ -2,6 +2,7 @@
  * Created by user on 2018/7/4/004.
  */
 import triePosList, { allPosMax } from '../src';
+// @ts-ignore
 import equals from 'deep-eql';
 
 let words = 'yasherhs';
