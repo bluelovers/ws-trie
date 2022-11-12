@@ -10,8 +10,9 @@ import { END_VALUE, END_WORD, END_DEF, PERMS_MIN_LEN } from './config';
 export { END_VALUE, END_WORD, END_DEF } from './config';
 import { permutations } from './permutations';
 import { recurseRandomWord } from './recurseRandomWord';
-import { trieToRegExp } from 'trie-regex';
-import { IOptionsAll as ITrieToRegExpOptionsAll, IOptions as ITrieToRegExpOptions } from 'trie-regex/lib/types';
+import { trieToRegExp, IOptionsAll as ITrieToRegExpOptionsAll, IOptions as ITrieToRegExpOptions } from 'trie-regex';
+
+export type { ITrieToRegExpOptionsAll, ITrieToRegExpOptions };
 
 export const SYM_RAW = Symbol('trie');
 
@@ -24,7 +25,7 @@ export type ITrieOptions = {
 	 */
 	ignoreCase?: boolean,
 	mapMode?: boolean,
-}
+};
 
 export class Trie<T = typeof END_VALUE>
 {
@@ -33,40 +34,38 @@ export class Trie<T = typeof END_VALUE>
 
 	constructor(input: IInputMap<T>, options?: ITrieOptions & {
 		mapMode: true,
-	}, ...argv)
-	constructor(input: IInput<T>, options?: ITrieOptions, ...argv)
+	}, ...argv);
+	constructor(input: IInput<T>, options?: ITrieOptions, ...argv);
 	constructor(input: IInput<T> | IInputMap<T>, options?: ITrieOptions, ...argv)
 	{
 		if (!Array.isArray(input))
 		{
-			throw(throwMsg('parameter Array', typeof input));
+			throw throwMsg('parameter Array', typeof input);
 		}
 
-		const self = this;
-
-		this.options = Object.assign({
+		this.options = Object.freeze({
 			ignoreCase: true,
-		} as ITrieOptions, options);
-		this.options = Object.freeze(this.options);
+			...this.options,
+		});
 
 		if (this.options.mapMode)
 		{
 			this[SYM_RAW] = create<T>([], ...argv);
 
-			(input as IInputMap<T>).forEach(row =>
+			(input as IInputMap<T>).forEach((row) =>
 			{
-				let [key, value] = row;
+				const [key, value] = row;
 
-				self.addWord(key, value);
+				this.addWord(key, value);
 			});
 		}
 		else
 		{
 			this[SYM_RAW] = create<T>([] as IInput<T>, ...argv);
 
-			(input as IInput<T>).forEach(key =>
+			(input as IInput<T>).forEach((key) =>
 			{
-				self.addWord(key);
+				this.addWord(key);
 			});
 		}
 	}
@@ -82,9 +81,9 @@ export class Trie<T = typeof END_VALUE>
 	/**
 	 * Get a string representation of the trie
 	 */
-	load(obj: ITrieRaw<T>): this
-	load<R>(obj: ITrieRaw<R>): this
-	load(obj): this
+	load(obj: ITrieRaw<T>): this;
+	load<R>(obj: ITrieRaw<R>): this;
+	load(obj): this;
 	load(obj)
 	{
 		this[SYM_RAW] = obj;
@@ -113,10 +112,10 @@ export class Trie<T = typeof END_VALUE>
 			return append(...params);
 		};
 
-		let key = this._key(word);
+		const key = this._key(word);
 
 		const input = split(key);
-		let node = input.reduce(reducer, this[SYM_RAW]);
+		const node = input.reduce(reducer, this[SYM_RAW]);
 
 		// @ts-ignore
 		node[END_WORD] = node[END_WORD] || {};
@@ -142,7 +141,7 @@ export class Trie<T = typeof END_VALUE>
 
 		if (prefixFound)
 		{
-			let node = prefixNode[END_WORD];
+			const node = prefixNode[END_WORD];
 
 			/**
 			 * 更改了 removeWord 行為
@@ -165,7 +164,7 @@ export class Trie<T = typeof END_VALUE>
 					bool = true;
 				}
 
-				if (bool || word == node[END_DEF])
+				if (bool || word === node[END_DEF])
 				{
 					node[END_DEF] = Object.keys(node)[0];
 				}
@@ -181,7 +180,7 @@ export class Trie<T = typeof END_VALUE>
 
 	protected _checkPrefix(prefix: string)
 	{
-		let key = this._key(prefix);
+		const key = this._key(prefix);
 		return checkPrefix(this[SYM_RAW], key);
 	}
 
@@ -208,7 +207,7 @@ export class Trie<T = typeof END_VALUE>
 
 		if (typeof sorted !== 'boolean')
 		{
-			throw(throwMsg('sort parameter as boolean', typeof sorted));
+			throw throwMsg('sort parameter as boolean', typeof sorted);
 		}
 
 		if (!this.isPrefix(strPrefix))
@@ -225,7 +224,7 @@ export class Trie<T = typeof END_VALUE>
 	 * Get a random word in the trie with the given prefix
 	 * @returns String
 	 */
-	getRandomWordWithPrefix(strPrefix?: string): string
+	getRandomWordWithPrefix(strPrefix?: string): string;
 	getRandomWordWithPrefix(...argv): string
 	{
 		let strPrefix: string;
@@ -268,7 +267,7 @@ export class Trie<T = typeof END_VALUE>
 	{
 		if (typeof sorted !== 'boolean')
 		{
-			throw(throwMsg('sort parameter as boolean', typeof sorted));
+			throw throwMsg('sort parameter as boolean', typeof sorted);
 		}
 		return recursePrefix<T>(this[SYM_RAW], '', sorted);
 	}
@@ -281,7 +280,7 @@ export class Trie<T = typeof END_VALUE>
 	{
 		if (typeof word !== 'string')
 		{
-			throw(throwMsg('string word', typeof word));
+			throw throwMsg('string word', typeof word);
 		}
 
 		if (word !== '')
@@ -311,15 +310,15 @@ export class Trie<T = typeof END_VALUE>
 		key: string,
 		value: T,
 		matched: boolean,
-	}
+	};
 	getWordData<R>(word: string, notChkDefault?: boolean): {
 		key: string,
 		value: R,
 		matched: boolean,
-	}
+	};
 	getWordData(word: string, notChkDefault?: boolean)
 	{
-		let node = this.getWordNode(word);
+		const node = this.getWordNode(word);
 
 		if (node)
 		{
@@ -328,7 +327,7 @@ export class Trie<T = typeof END_VALUE>
 				return {
 					key: word,
 					value: node[word],
-					matched: word === word,
+					matched: true as const,
 				};
 			}
 			else if (!notChkDefault && END_DEF in node)
@@ -359,13 +358,13 @@ export class Trie<T = typeof END_VALUE>
 	 * tree.getWordNode('Object.entries')
 	 * // => { 'Object.entries': null, [Symbol(default)]: 'Object.entries' }
 	 */
-	getWordNode(word: string): ITrieNodeValue<T>
-	getWordNode<R>(word: string): ITrieNodeValue<R>
+	getWordNode(word: string): ITrieNodeValue<T>;
+	getWordNode<R>(word: string): ITrieNodeValue<R>;
 	getWordNode(word: string): ITrieNodeValue<T>
 	{
 		if (typeof word !== 'string')
 		{
-			throw(throwMsg('string word', typeof word));
+			throw throwMsg('string word', typeof word);
 		}
 
 		if (word !== '')
@@ -388,7 +387,7 @@ export class Trie<T = typeof END_VALUE>
 	 */
 	getWordNodeKeys(word: string): string[]
 	{
-		let node = this.getWordNode(word);
+		const node = this.getWordNode(word);
 
 		if (node)
 		{
@@ -402,16 +401,16 @@ export class Trie<T = typeof END_VALUE>
 	{
 		if (typeof letters !== 'string')
 		{
-			throw(throwMsg('string letters', typeof letters));
+			throw throwMsg('string letters', typeof letters);
 		}
 
 		if (letters.length < PERMS_MIN_LEN)
 		{
-			throw(throwMsg(`at least ${PERMS_MIN_LEN} letters`, letters.length));
+			throw throwMsg(`at least ${PERMS_MIN_LEN} letters`, letters.length);
 		}
 
 		// @ts-ignore
-		return letters
+		return letters;
 	}
 
 	/**
@@ -440,8 +439,8 @@ export class Trie<T = typeof END_VALUE>
 		});
 	}
 
-	toRegExp<R = RegExp>(flags?: string, options?: ITrieToRegExpOptions): R
-	toRegExp<R>(flags?: string, options?: ITrieToRegExpOptionsAll<R>): ReturnType<typeof trieToRegExp>
+	toRegExp<R = RegExp>(flags?: string, options?: ITrieToRegExpOptions): R;
+	toRegExp<R>(flags?: string, options?: ITrieToRegExpOptionsAll<R>): ReturnType<typeof trieToRegExp>;
 	toRegExp<R>(flags?, options?)
 	{
 		if (!flags || !isString(flags))
@@ -472,8 +471,8 @@ export class Trie<T = typeof END_VALUE>
 
 export function createTrie<T = typeof END_VALUE>(input: IInputMap<T>, options?: ITrieOptions & {
 	mapMode: true,
-}, ...argv): Trie<T>
-export function createTrie<T = typeof END_VALUE>(input: IInput<T>, options?: ITrieOptions, ...argv): Trie<T>
+}, ...argv): Trie<T>;
+export function createTrie<T = typeof END_VALUE>(input: IInput<T>, options?: ITrieOptions, ...argv): Trie<T>;
 export function createTrie<T = typeof END_VALUE>(...argv)
 {
 	// @ts-ignore
@@ -486,6 +485,7 @@ Object.assign(createTrie, {
 
 //createTrie.prototype = Trie.prototype;
 
-export default createTrie
-export { IOptionsAll as ITrieToRegExpOptionsAll } from 'trie-regex/lib/types';
-export { IOptions as ITrieToRegExpOptions } from 'trie-regex/lib/types';
+export { createTrie as trie }
+
+export default createTrie;
+
