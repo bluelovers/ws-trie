@@ -1,4 +1,4 @@
-import append from './append';
+import { append } from './append';
 import { END_WORD, END_VALUE, END_DEF } from './config';
 import { IInput, IInputMap } from './index';
 import { split } from './utils';

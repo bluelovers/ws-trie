@@ -2,8 +2,8 @@
  * Created by user on 2020/6/16.
  */
 import Trie from './trie';
-export declare type IAhoCorasickCallback<T> = (value: string, data: T[], offset: number, node: Trie<T>) => void;
-export declare type IAhoCorasickResult<T = any> = {
+export type IAhoCorasickCallback<T> = (value: string, data: T[], offset: number, node: Trie<T>) => void;
+export type IAhoCorasickResult<T = any> = {
     /**
      * keyword: position[]
      */

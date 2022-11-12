@@ -3,50 +3,50 @@
 exports[`trie 1`] = `
 AhoCorasick {
   "trie": Trie {
-    "data": Array [],
+    "data": [],
     "fail": null,
     "is_word": null,
-    "next": Object {
+    "next": {
       "ア": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "ラ": Trie {
-            "data": Array [],
+            "data": [],
             "fail": Trie {
-              "data": Array [],
+              "data": [],
               "fail": null,
               "is_word": null,
-              "next": Object {
+              "next": {
                 "ス": Trie {
-                  "data": Array [],
+                  "data": [],
                   "fail": Trie {
-                    "data": Array [],
+                    "data": [],
                     "fail": null,
                     "is_word": null,
-                    "next": Object {
+                    "next": {
                       "キ": Trie {
-                        "data": Array [],
+                        "data": [],
                         "fail": Trie {
-                          "data": Array [],
+                          "data": [],
                           "fail": null,
                           "is_word": null,
-                          "next": Object {
+                          "next": {
                             "ン": Trie {
-                              "data": Array [],
+                              "data": [],
                               "fail": null,
                               "is_word": null,
-                              "next": Object {
+                              "next": {
                                 "グ": Trie {
-                                  "data": Array [
-                                    Array [
+                                  "data": [
+                                    [
                                       "王",
                                     ],
                                   ],
                                   "fail": null,
                                   "is_word": true,
-                                  "next": Object {},
+                                  "next": {},
                                   "value": "キング",
                                 },
                               },
@@ -56,21 +56,21 @@ AhoCorasick {
                           "value": "キ",
                         },
                         "is_word": null,
-                        "next": Object {
+                        "next": {
                           "ュ": Trie {
-                            "data": Array [],
+                            "data": [],
                             "fail": null,
                             "is_word": null,
-                            "next": Object {
+                            "next": {
                               "ラ": Trie {
-                                "data": Array [
-                                  Array [
+                                "data": [
+                                  [
                                     "斯庫拉",
                                   ],
                                 ],
                                 "fail": [Circular],
                                 "is_word": true,
-                                "next": Object {},
+                                "next": {},
                                 "value": "スキュラ",
                               },
                             },
@@ -83,37 +83,37 @@ AhoCorasick {
                     "value": "ス",
                   },
                   "is_word": null,
-                  "next": Object {
+                  "next": {
                     "ト": Trie {
-                      "data": Array [
-                        Array [
+                      "data": [
+                        [
                           "Lust 性欲 渇望 Last 最後",
                         ],
                       ],
                       "fail": null,
                       "is_word": true,
-                      "next": Object {
+                      "next": {
                         "ロ": Trie {
-                          "data": Array [],
+                          "data": [],
                           "fail": Trie {
-                            "data": Array [],
+                            "data": [],
                             "fail": null,
                             "is_word": null,
-                            "next": Object {
+                            "next": {
                               "ー": Trie {
-                                "data": Array [],
+                                "data": [],
                                 "fail": null,
                                 "is_word": null,
-                                "next": Object {
+                                "next": {
                                   "ズ": Trie {
-                                    "data": Array [
-                                      Array [
+                                    "data": [
+                                      [
                                         "薔薇 玫瑰",
                                       ],
                                     ],
                                     "fail": null,
                                     "is_word": true,
-                                    "next": Object {},
+                                    "next": {},
                                     "value": "ローズ",
                                   },
                                 },
@@ -123,49 +123,49 @@ AhoCorasick {
                             "value": "ロ",
                           },
                           "is_word": null,
-                          "next": Object {
+                          "next": {
                             "ー": Trie {
-                              "data": Array [],
+                              "data": [],
                               "fail": Trie {
-                                "data": Array [],
+                                "data": [],
                                 "fail": null,
                                 "is_word": null,
-                                "next": Object {
+                                "next": {
                                   "ズ": Trie {
-                                    "data": Array [
-                                      Array [
+                                    "data": [
+                                      [
                                         "薔薇 玫瑰",
                                       ],
                                     ],
                                     "fail": null,
                                     "is_word": true,
-                                    "next": Object {},
+                                    "next": {},
                                     "value": "ローズ",
                                   },
                                 },
                                 "value": "ロー",
                               },
                               "is_word": null,
-                              "next": Object {
+                              "next": {
                                 "ズ": Trie {
-                                  "data": Array [
-                                    Array [
+                                  "data": [
+                                    [
                                       "淫欲罗茲 最後的玫瑰",
                                     ],
                                   ],
                                   "fail": Trie {
-                                    "data": Array [
-                                      Array [
+                                    "data": [
+                                      [
                                         "薔薇 玫瑰",
                                       ],
                                     ],
                                     "fail": null,
                                     "is_word": true,
-                                    "next": Object {},
+                                    "next": {},
                                     "value": "ローズ",
                                   },
                                   "is_word": true,
-                                  "next": Object {},
+                                  "next": {},
                                   "value": "ラストローズ",
                                 },
                               },
@@ -184,33 +184,33 @@ AhoCorasick {
               "value": "ラ",
             },
             "is_word": null,
-            "next": Object {
+            "next": {
               "ク": Trie {
-                "data": Array [],
+                "data": [],
                 "fail": Trie {
-                  "data": Array [],
+                  "data": [],
                   "fail": null,
                   "is_word": null,
-                  "next": Object {
+                  "next": {
                     "ノ": Trie {
-                      "data": Array [],
+                      "data": [],
                       "fail": null,
                       "is_word": null,
-                      "next": Object {
+                      "next": {
                         "イ": Trie {
-                          "data": Array [],
+                          "data": [],
                           "fail": null,
                           "is_word": null,
-                          "next": Object {
+                          "next": {
                             "チ": Trie {
-                              "data": Array [
-                                Array [
+                              "data": [
+                                [
                                   "女忍者",
                                 ],
                               ],
                               "fail": null,
                               "is_word": true,
-                              "next": Object {},
+                              "next": {},
                               "value": "クノイチ",
                             },
                           },
@@ -220,38 +220,38 @@ AhoCorasick {
                       "value": "クノ",
                     },
                     "リ": Trie {
-                      "data": Array [],
+                      "data": [],
                       "fail": null,
                       "is_word": null,
-                      "next": Object {
+                      "next": {
                         "ス": Trie {
-                          "data": Array [],
+                          "data": [],
                           "fail": Trie {
-                            "data": Array [],
+                            "data": [],
                             "fail": null,
                             "is_word": null,
-                            "next": Object {
+                            "next": {
                               "キ": Trie {
-                                "data": Array [],
+                                "data": [],
                                 "fail": Trie {
-                                  "data": Array [],
+                                  "data": [],
                                   "fail": null,
                                   "is_word": null,
-                                  "next": Object {
+                                  "next": {
                                     "ン": Trie {
-                                      "data": Array [],
+                                      "data": [],
                                       "fail": null,
                                       "is_word": null,
-                                      "next": Object {
+                                      "next": {
                                         "グ": Trie {
-                                          "data": Array [
-                                            Array [
+                                          "data": [
+                                            [
                                               "王",
                                             ],
                                           ],
                                           "fail": null,
                                           "is_word": true,
-                                          "next": Object {},
+                                          "next": {},
                                           "value": "キング",
                                         },
                                       },
@@ -261,58 +261,58 @@ AhoCorasick {
                                   "value": "キ",
                                 },
                                 "is_word": null,
-                                "next": Object {
+                                "next": {
                                   "ュ": Trie {
-                                    "data": Array [],
+                                    "data": [],
                                     "fail": null,
                                     "is_word": null,
-                                    "next": Object {
+                                    "next": {
                                       "ラ": Trie {
-                                        "data": Array [
-                                          Array [
+                                        "data": [
+                                          [
                                             "斯庫拉",
                                           ],
                                         ],
                                         "fail": Trie {
-                                          "data": Array [],
+                                          "data": [],
                                           "fail": null,
                                           "is_word": null,
-                                          "next": Object {
+                                          "next": {
                                             "ス": Trie {
-                                              "data": Array [],
+                                              "data": [],
                                               "fail": [Circular],
                                               "is_word": null,
-                                              "next": Object {
+                                              "next": {
                                                 "ト": Trie {
-                                                  "data": Array [
-                                                    Array [
+                                                  "data": [
+                                                    [
                                                       "Lust 性欲 渇望 Last 最後",
                                                     ],
                                                   ],
                                                   "fail": null,
                                                   "is_word": true,
-                                                  "next": Object {
+                                                  "next": {
                                                     "ロ": Trie {
-                                                      "data": Array [],
+                                                      "data": [],
                                                       "fail": Trie {
-                                                        "data": Array [],
+                                                        "data": [],
                                                         "fail": null,
                                                         "is_word": null,
-                                                        "next": Object {
+                                                        "next": {
                                                           "ー": Trie {
-                                                            "data": Array [],
+                                                            "data": [],
                                                             "fail": null,
                                                             "is_word": null,
-                                                            "next": Object {
+                                                            "next": {
                                                               "ズ": Trie {
-                                                                "data": Array [
-                                                                  Array [
+                                                                "data": [
+                                                                  [
                                                                     "薔薇 玫瑰",
                                                                   ],
                                                                 ],
                                                                 "fail": null,
                                                                 "is_word": true,
-                                                                "next": Object {},
+                                                                "next": {},
                                                                 "value": "ローズ",
                                                               },
                                                             },
@@ -322,49 +322,49 @@ AhoCorasick {
                                                         "value": "ロ",
                                                       },
                                                       "is_word": null,
-                                                      "next": Object {
+                                                      "next": {
                                                         "ー": Trie {
-                                                          "data": Array [],
+                                                          "data": [],
                                                           "fail": Trie {
-                                                            "data": Array [],
+                                                            "data": [],
                                                             "fail": null,
                                                             "is_word": null,
-                                                            "next": Object {
+                                                            "next": {
                                                               "ズ": Trie {
-                                                                "data": Array [
-                                                                  Array [
+                                                                "data": [
+                                                                  [
                                                                     "薔薇 玫瑰",
                                                                   ],
                                                                 ],
                                                                 "fail": null,
                                                                 "is_word": true,
-                                                                "next": Object {},
+                                                                "next": {},
                                                                 "value": "ローズ",
                                                               },
                                                             },
                                                             "value": "ロー",
                                                           },
                                                           "is_word": null,
-                                                          "next": Object {
+                                                          "next": {
                                                             "ズ": Trie {
-                                                              "data": Array [
-                                                                Array [
+                                                              "data": [
+                                                                [
                                                                   "淫欲罗茲 最後的玫瑰",
                                                                 ],
                                                               ],
                                                               "fail": Trie {
-                                                                "data": Array [
-                                                                  Array [
+                                                                "data": [
+                                                                  [
                                                                     "薔薇 玫瑰",
                                                                   ],
                                                                 ],
                                                                 "fail": null,
                                                                 "is_word": true,
-                                                                "next": Object {},
+                                                                "next": {},
                                                                 "value": "ローズ",
                                                               },
                                                               "is_word": true,
-                                                              "next": Object {},
+                                                              "next": {},
                                                               "value": "ラストローズ",
                                                             },
                                                           },
@@ -383,7 +383,7 @@ AhoCorasick {
                                           "value": "ラ",
                                         },
                                         "is_word": true,
-                                        "next": Object {},
+                                        "next": {},
                                         "value": "スキュラ",
                                       },
                                     },
@@ -396,21 +396,21 @@ AhoCorasick {
                             "value": "ス",
                           },
                           "is_word": null,
-                          "next": Object {
+                          "next": {
                             "タ": Trie {
-                              "data": Array [],
+                              "data": [],
                               "fail": null,
                               "is_word": null,
-                              "next": Object {
+                              "next": {
                                 "ル": Trie {
-                                  "data": Array [
-                                    Array [
+                                  "data": [
+                                    [
                                       "水晶",
                                     ],
                                   ],
                                   "fail": null,
                                   "is_word": true,
-                                  "next": Object {},
+                                  "next": {},
                                   "value": "クリスタル",
                                 },
                               },
@@ -426,16 +426,16 @@ AhoCorasick {
                   "value": "ク",
                 },
                 "is_word": null,
-                "next": Object {
+                "next": {
                   "ネ": Trie {
-                    "data": Array [
-                      Array [
+                    "data": [
+                      [
                         "阿剌克涅",
                       ],
                     ],
                     "fail": null,
                     "is_word": true,
-                    "next": Object {},
+                    "next": {},
                     "value": "アラクネ",
                   },
                 },
@@ -448,60 +448,60 @@ AhoCorasick {
         "value": "ア",
       },
       "ウ": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "ェ": Trie {
-            "data": Array [],
+            "data": [],
             "fail": null,
             "is_word": null,
-            "next": Object {
+            "next": {
               "ン": Trie {
-                "data": Array [],
+                "data": [],
                 "fail": null,
                 "is_word": null,
-                "next": Object {
+                "next": {
                   "デ": Trie {
-                    "data": Array [],
+                    "data": [],
                     "fail": null,
                     "is_word": null,
-                    "next": Object {
+                    "next": {
                       "ィ": Trie {
-                        "data": Array [],
+                        "data": [],
                         "fail": null,
                         "is_word": null,
-                        "next": Object {
+                        "next": {
                           "ゴ": Trie {
-                            "data": Array [
-                              Array [
+                            "data": [
+                              [
                                 "威尔迪哥",
                               ],
                             ],
                             "fail": Trie {
-                              "data": Array [],
+                              "data": [],
                               "fail": null,
                               "is_word": null,
-                              "next": Object {
+                              "next": {
                                 "ブ": Trie {
-                                  "data": Array [],
+                                  "data": [],
                                   "fail": null,
                                   "is_word": null,
-                                  "next": Object {
+                                  "next": {
                                     "リ": Trie {
-                                      "data": Array [],
+                                      "data": [],
                                       "fail": null,
                                       "is_word": null,
-                                      "next": Object {
+                                      "next": {
                                         "ン": Trie {
-                                          "data": Array [
-                                            Array [
+                                          "data": [
+                                            [
                                               "哥布林",
                                             ],
                                           ],
                                           "fail": null,
                                           "is_word": true,
-                                          "next": Object {},
+                                          "next": {},
                                           "value": "ゴブリン",
                                         },
                                       },
@@ -514,7 +514,7 @@ AhoCorasick {
                               "value": "ゴ",
                             },
                             "is_word": true,
-                            "next": Object {},
+                            "next": {},
                             "value": "ウェンディゴ",
                           },
                         },
@@ -533,76 +533,76 @@ AhoCorasick {
         "value": "ウ",
       },
       "エ": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "ン": Trie {
-            "data": Array [],
+            "data": [],
             "fail": null,
             "is_word": null,
-            "next": Object {
+            "next": {
               "プ": Trie {
-                "data": Array [],
+                "data": [],
                 "fail": null,
                 "is_word": null,
-                "next": Object {
+                "next": {
                   "ー": Trie {
-                    "data": Array [],
+                    "data": [],
                     "fail": null,
                     "is_word": null,
-                    "next": Object {
+                    "next": {
                       "サ": Trie {
-                        "data": Array [
-                          Array [
+                        "data": [
+                          [
                             "安普莎",
                           ],
                         ],
                         "fail": Trie {
-                          "data": Array [],
+                          "data": [],
                           "fail": null,
                           "is_word": null,
-                          "next": Object {
+                          "next": {
                             "ム": Trie {
-                              "data": Array [],
+                              "data": [],
                               "fail": null,
                               "is_word": null,
-                              "next": Object {
+                              "next": {
                                 "ラ": Trie {
-                                  "data": Array [],
+                                  "data": [],
                                   "fail": Trie {
-                                    "data": Array [],
+                                    "data": [],
                                     "fail": null,
                                     "is_word": null,
-                                    "next": Object {
+                                    "next": {
                                       "ス": Trie {
-                                        "data": Array [],
+                                        "data": [],
                                         "fail": Trie {
-                                          "data": Array [],
+                                          "data": [],
                                           "fail": null,
                                           "is_word": null,
-                                          "next": Object {
+                                          "next": {
                                             "キ": Trie {
-                                              "data": Array [],
+                                              "data": [],
                                               "fail": Trie {
-                                                "data": Array [],
+                                                "data": [],
                                                 "fail": null,
                                                 "is_word": null,
-                                                "next": Object {
+                                                "next": {
                                                   "ン": Trie {
-                                                    "data": Array [],
+                                                    "data": [],
                                                     "fail": null,
                                                     "is_word": null,
-                                                    "next": Object {
+                                                    "next": {
                                                       "グ": Trie {
-                                                        "data": Array [
-                                                          Array [
+                                                        "data": [
+                                                          [
                                                             "王",
                                                           ],
                                                         ],
                                                         "fail": null,
                                                         "is_word": true,
-                                                        "next": Object {},
+                                                        "next": {},
                                                         "value": "キング",
                                                       },
                                                     },
@@ -612,21 +612,21 @@ AhoCorasick {
                                                 "value": "キ",
                                               },
                                               "is_word": null,
-                                              "next": Object {
+                                              "next": {
                                                 "ュ": Trie {
-                                                  "data": Array [],
+                                                  "data": [],
                                                   "fail": null,
                                                   "is_word": null,
-                                                  "next": Object {
+                                                  "next": {
                                                     "ラ": Trie {
-                                                      "data": Array [
-                                                        Array [
+                                                      "data": [
+                                                        [
                                                           "斯庫拉",
                                                         ],
                                                       ],
                                                       "fail": [Circular],
                                                       "is_word": true,
-                                                      "next": Object {},
+                                                      "next": {},
                                                       "value": "スキュラ",
                                                     },
                                                   },
@@ -639,37 +639,37 @@ AhoCorasick {
                                           "value": "ス",
                                         },
                                         "is_word": null,
-                                        "next": Object {
+                                        "next": {
                                           "ト": Trie {
-                                            "data": Array [
-                                              Array [
+                                            "data": [
+                                              [
                                                 "Lust 性欲 渇望 Last 最後",
                                               ],
                                             ],
                                             "fail": null,
                                             "is_word": true,
-                                            "next": Object {
+                                            "next": {
                                               "ロ": Trie {
-                                                "data": Array [],
+                                                "data": [],
                                                 "fail": Trie {
-                                                  "data": Array [],
+                                                  "data": [],
                                                   "fail": null,
                                                   "is_word": null,
-                                                  "next": Object {
+                                                  "next": {
                                                     "ー": Trie {
-                                                      "data": Array [],
+                                                      "data": [],
                                                       "fail": null,
                                                       "is_word": null,
-                                                      "next": Object {
+                                                      "next": {
                                                         "ズ": Trie {
-                                                          "data": Array [
-                                                            Array [
+                                                          "data": [
+                                                            [
                                                               "薔薇 玫瑰",
                                                             ],
                                                           ],
                                                           "fail": null,
                                                           "is_word": true,
-                                                          "next": Object {},
+                                                          "next": {},
                                                           "value": "ローズ",
                                                         },
                                                       },
@@ -679,49 +679,49 @@ AhoCorasick {
                                                   "value": "ロ",
                                                 },
                                                 "is_word": null,
-                                                "next": Object {
+                                                "next": {
                                                   "ー": Trie {
-                                                    "data": Array [],
+                                                    "data": [],
                                                     "fail": Trie {
-                                                      "data": Array [],
+                                                      "data": [],
                                                       "fail": null,
                                                       "is_word": null,
-                                                      "next": Object {
+                                                      "next": {
                                                         "ズ": Trie {
-                                                          "data": Array [
-                                                            Array [
+                                                          "data": [
+                                                            [
                                                               "薔薇 玫瑰",
                                                             ],
                                                           ],
                                                           "fail": null,
                                                           "is_word": true,
-                                                          "next": Object {},
+                                                          "next": {},
                                                           "value": "ローズ",
                                                         },
                                                       },
                                                       "value": "ロー",
                                                     },
                                                     "is_word": null,
-                                                    "next": Object {
+                                                    "next": {
                                                       "ズ": Trie {
-                                                        "data": Array [
-                                                          Array [
+                                                        "data": [
+                                                          [
                                                             "淫欲罗茲 最後的玫瑰",
                                                           ],
                                                         ],
                                                         "fail": Trie {
-                                                          "data": Array [
-                                                            Array [
+                                                          "data": [
+                                                            [
                                                               "薔薇 玫瑰",
                                                             ],
                                                           ],
                                                           "fail": null,
                                                           "is_word": true,
-                                                          "next": Object {},
+                                                          "next": {},
                                                           "value": "ローズ",
                                                         },
                                                         "is_word": true,
-                                                        "next": Object {},
+                                                        "next": {},
                                                         "value": "ラストローズ",
                                                       },
                                                     },
@@ -740,16 +740,16 @@ AhoCorasick {
                                     "value": "ラ",
                                   },
                                   "is_word": null,
-                                  "next": Object {
+                                  "next": {
                                     "イ": Trie {
-                                      "data": Array [
-                                        Array [
+                                      "data": [
+                                        [
                                           "武士",
                                         ],
                                       ],
                                       "fail": null,
                                       "is_word": true,
-                                      "next": Object {},
+                                      "next": {},
                                       "value": "サムライ",
                                     },
                                   },
@@ -762,7 +762,7 @@ AhoCorasick {
                           "value": "サ",
                         },
                         "is_word": true,
-                        "next": Object {},
+                        "next": {},
                         "value": "エンプーサ",
                       },
                     },
@@ -778,29 +778,29 @@ AhoCorasick {
         "value": "エ",
       },
       "オ": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "リ": Trie {
-            "data": Array [],
+            "data": [],
             "fail": null,
             "is_word": null,
-            "next": Object {
+            "next": {
               "ジ": Trie {
-                "data": Array [],
+                "data": [],
                 "fail": null,
                 "is_word": null,
-                "next": Object {
+                "next": {
                   "ン": Trie {
-                    "data": Array [
-                      Array [
+                    "data": [
+                      [
                         "起源",
                       ],
                     ],
                     "fail": null,
                     "is_word": true,
-                    "next": Object {},
+                    "next": {},
                     "value": "オリジン",
                   },
                 },
@@ -813,24 +813,24 @@ AhoCorasick {
         "value": "オ",
       },
       "キ": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "ン": Trie {
-            "data": Array [],
+            "data": [],
             "fail": null,
             "is_word": null,
-            "next": Object {
+            "next": {
               "グ": Trie {
-                "data": Array [
-                  Array [
+                "data": [
+                  [
                     "王",
                   ],
                 ],
                 "fail": null,
                 "is_word": true,
-                "next": Object {},
+                "next": {},
                 "value": "キング",
               },
             },
@@ -840,29 +840,29 @@ AhoCorasick {
         "value": "キ",
       },
       "ク": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "ノ": Trie {
-            "data": Array [],
+            "data": [],
             "fail": null,
             "is_word": null,
-            "next": Object {
+            "next": {
               "イ": Trie {
-                "data": Array [],
+                "data": [],
                 "fail": null,
                 "is_word": null,
-                "next": Object {
+                "next": {
                   "チ": Trie {
-                    "data": Array [
-                      Array [
+                    "data": [
+                      [
                         "女忍者",
                       ],
                     ],
                     "fail": null,
                     "is_word": true,
-                    "next": Object {},
+                    "next": {},
                     "value": "クノイチ",
                   },
                 },
@@ -872,38 +872,38 @@ AhoCorasick {
             "value": "クノ",
           },
           "リ": Trie {
-            "data": Array [],
+            "data": [],
             "fail": null,
             "is_word": null,
-            "next": Object {
+            "next": {
               "ス": Trie {
-                "data": Array [],
+                "data": [],
                 "fail": Trie {
-                  "data": Array [],
+                  "data": [],
                   "fail": null,
                   "is_word": null,
-                  "next": Object {
+                  "next": {
                     "キ": Trie {
-                      "data": Array [],
+                      "data": [],
                       "fail": Trie {
-                        "data": Array [],
+                        "data": [],
                         "fail": null,
                         "is_word": null,
-                        "next": Object {
+                        "next": {
                           "ン": Trie {
-                            "data": Array [],
+                            "data": [],
                             "fail": null,
                             "is_word": null,
-                            "next": Object {
+                            "next": {
                               "グ": Trie {
-                                "data": Array [
-                                  Array [
+                                "data": [
+                                  [
                                     "王",
                                   ],
                                 ],
                                 "fail": null,
                                 "is_word": true,
-                                "next": Object {},
+                                "next": {},
                                 "value": "キング",
                               },
                             },
@@ -913,58 +913,58 @@ AhoCorasick {
                         "value": "キ",
                       },
                       "is_word": null,
-                      "next": Object {
+                      "next": {
                         "ュ": Trie {
-                          "data": Array [],
+                          "data": [],
                           "fail": null,
                           "is_word": null,
-                          "next": Object {
+                          "next": {
                             "ラ": Trie {
-                              "data": Array [
-                                Array [
+                              "data": [
+                                [
                                   "斯庫拉",
                                 ],
                               ],
                               "fail": Trie {
-                                "data": Array [],
+                                "data": [],
                                 "fail": null,
                                 "is_word": null,
-                                "next": Object {
+                                "next": {
                                   "ス": Trie {
-                                    "data": Array [],
+                                    "data": [],
                                     "fail": [Circular],
                                     "is_word": null,
-                                    "next": Object {
+                                    "next": {
                                       "ト": Trie {
-                                        "data": Array [
-                                          Array [
+                                        "data": [
+                                          [
                                             "Lust 性欲 渇望 Last 最後",
                                           ],
                                         ],
                                         "fail": null,
                                         "is_word": true,
-                                        "next": Object {
+                                        "next": {
                                           "ロ": Trie {
-                                            "data": Array [],
+                                            "data": [],
                                             "fail": Trie {
-                                              "data": Array [],
+                                              "data": [],
                                               "fail": null,
                                               "is_word": null,
-                                              "next": Object {
+                                              "next": {
                                                 "ー": Trie {
-                                                  "data": Array [],
+                                                  "data": [],
                                                   "fail": null,
                                                   "is_word": null,
-                                                  "next": Object {
+                                                  "next": {
                                                     "ズ": Trie {
-                                                      "data": Array [
-                                                        Array [
+                                                      "data": [
+                                                        [
                                                           "薔薇 玫瑰",
                                                         ],
                                                       ],
                                                       "fail": null,
                                                       "is_word": true,
-                                                      "next": Object {},
+                                                      "next": {},
                                                       "value": "ローズ",
                                                     },
                                                   },
@@ -974,49 +974,49 @@ AhoCorasick {
                                               "value": "ロ",
                                             },
                                             "is_word": null,
-                                            "next": Object {
+                                            "next": {
                                               "ー": Trie {
-                                                "data": Array [],
+                                                "data": [],
                                                 "fail": Trie {
-                                                  "data": Array [],
+                                                  "data": [],
                                                   "fail": null,
                                                   "is_word": null,
-                                                  "next": Object {
+                                                  "next": {
                                                     "ズ": Trie {
-                                                      "data": Array [
-                                                        Array [
+                                                      "data": [
+                                                        [
                                                           "薔薇 玫瑰",
                                                         ],
                                                       ],
                                                       "fail": null,
                                                       "is_word": true,
-                                                      "next": Object {},
+                                                      "next": {},
                                                       "value": "ローズ",
                                                     },
                                                   },
                                                   "value": "ロー",
                                                 },
                                                 "is_word": null,
-                                                "next": Object {
+                                                "next": {
                                                   "ズ": Trie {
-                                                    "data": Array [
-                                                      Array [
+                                                    "data": [
+                                                      [
                                                         "淫欲罗茲 最後的玫瑰",
                                                       ],
                                                     ],
                                                     "fail": Trie {
-                                                      "data": Array [
-                                                        Array [
+                                                      "data": [
+                                                        [
                                                           "薔薇 玫瑰",
                                                         ],
                                                       ],
                                                       "fail": null,
                                                       "is_word": true,
-                                                      "next": Object {},
+                                                      "next": {},
                                                       "value": "ローズ",
                                                     },
                                                     "is_word": true,
-                                                    "next": Object {},
+                                                    "next": {},
                                                     "value": "ラストローズ",
                                                   },
                                                 },
@@ -1035,7 +1035,7 @@ AhoCorasick {
                                 "value": "ラ",
                               },
                               "is_word": true,
-                              "next": Object {},
+                              "next": {},
                               "value": "スキュラ",
                             },
                           },
@@ -1048,21 +1048,21 @@ AhoCorasick {
                   "value": "ス",
                 },
                 "is_word": null,
-                "next": Object {
+                "next": {
                   "タ": Trie {
-                    "data": Array [],
+                    "data": [],
                     "fail": null,
                     "is_word": null,
-                    "next": Object {
+                    "next": {
                       "ル": Trie {
-                        "data": Array [
-                          Array [
+                        "data": [
+                          [
                             "水晶",
                           ],
                         ],
                         "fail": null,
                         "is_word": true,
-                        "next": Object {},
+                        "next": {},
                         "value": "クリスタル",
                       },
                     },
@@ -1078,29 +1078,29 @@ AhoCorasick {
         "value": "ク",
       },
       "コ": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "ボ": Trie {
-            "data": Array [],
+            "data": [],
             "fail": null,
             "is_word": null,
-            "next": Object {
+            "next": {
               "ル": Trie {
-                "data": Array [],
+                "data": [],
                 "fail": null,
                 "is_word": null,
-                "next": Object {
+                "next": {
                   "ト": Trie {
-                    "data": Array [
-                      Array [
+                    "data": [
+                      [
                         "狗头人",
                       ],
                     ],
                     "fail": null,
                     "is_word": true,
-                    "next": Object {},
+                    "next": {},
                     "value": "コボルト",
                   },
                 },
@@ -1113,29 +1113,29 @@ AhoCorasick {
         "value": "コ",
       },
       "ゴ": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "ブ": Trie {
-            "data": Array [],
+            "data": [],
             "fail": null,
             "is_word": null,
-            "next": Object {
+            "next": {
               "リ": Trie {
-                "data": Array [],
+                "data": [],
                 "fail": null,
                 "is_word": null,
-                "next": Object {
+                "next": {
                   "ン": Trie {
-                    "data": Array [
-                      Array [
+                    "data": [
+                      [
                         "哥布林",
                       ],
                     ],
                     "fail": null,
                     "is_word": true,
-                    "next": Object {},
+                    "next": {},
                     "value": "ゴブリン",
                   },
                 },
@@ -1148,50 +1148,50 @@ AhoCorasick {
         "value": "ゴ",
       },
       "サ": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "ム": Trie {
-            "data": Array [],
+            "data": [],
             "fail": null,
             "is_word": null,
-            "next": Object {
+            "next": {
               "ラ": Trie {
-                "data": Array [],
+                "data": [],
                 "fail": Trie {
-                  "data": Array [],
+                  "data": [],
                   "fail": null,
                   "is_word": null,
-                  "next": Object {
+                  "next": {
                     "ス": Trie {
-                      "data": Array [],
+                      "data": [],
                       "fail": Trie {
-                        "data": Array [],
+                        "data": [],
                         "fail": null,
                         "is_word": null,
-                        "next": Object {
+                        "next": {
                           "キ": Trie {
-                            "data": Array [],
+                            "data": [],
                             "fail": Trie {
-                              "data": Array [],
+                              "data": [],
                               "fail": null,
                               "is_word": null,
-                              "next": Object {
+                              "next": {
                                 "ン": Trie {
-                                  "data": Array [],
+                                  "data": [],
                                   "fail": null,
                                   "is_word": null,
-                                  "next": Object {
+                                  "next": {
                                     "グ": Trie {
-                                      "data": Array [
-                                        Array [
+                                      "data": [
+                                        [
                                           "王",
                                         ],
                                       ],
                                       "fail": null,
                                       "is_word": true,
-                                      "next": Object {},
+                                      "next": {},
                                       "value": "キング",
                                     },
                                   },
@@ -1201,21 +1201,21 @@ AhoCorasick {
                               "value": "キ",
                             },
                             "is_word": null,
-                            "next": Object {
+                            "next": {
                               "ュ": Trie {
-                                "data": Array [],
+                                "data": [],
                                 "fail": null,
                                 "is_word": null,
-                                "next": Object {
+                                "next": {
                                   "ラ": Trie {
-                                    "data": Array [
-                                      Array [
+                                    "data": [
+                                      [
                                         "斯庫拉",
                                       ],
                                     ],
                                     "fail": [Circular],
                                     "is_word": true,
-                                    "next": Object {},
+                                    "next": {},
                                     "value": "スキュラ",
                                   },
                                 },
@@ -1228,37 +1228,37 @@ AhoCorasick {
                         "value": "ス",
                       },
                       "is_word": null,
-                      "next": Object {
+                      "next": {
                         "ト": Trie {
-                          "data": Array [
-                            Array [
+                          "data": [
+                            [
                               "Lust 性欲 渇望 Last 最後",
                             ],
                           ],
                           "fail": null,
                           "is_word": true,
-                          "next": Object {
+                          "next": {
                             "ロ": Trie {
-                              "data": Array [],
+                              "data": [],
                               "fail": Trie {
-                                "data": Array [],
+                                "data": [],
                                 "fail": null,
                                 "is_word": null,
-                                "next": Object {
+                                "next": {
                                   "ー": Trie {
-                                    "data": Array [],
+                                    "data": [],
                                     "fail": null,
                                     "is_word": null,
-                                    "next": Object {
+                                    "next": {
                                       "ズ": Trie {
-                                        "data": Array [
-                                          Array [
+                                        "data": [
+                                          [
                                             "薔薇 玫瑰",
                                           ],
                                         ],
                                         "fail": null,
                                         "is_word": true,
-                                        "next": Object {},
+                                        "next": {},
                                         "value": "ローズ",
                                       },
                                     },
@@ -1268,49 +1268,49 @@ AhoCorasick {
                                 "value": "ロ",
                               },
                               "is_word": null,
-                              "next": Object {
+                              "next": {
                                 "ー": Trie {
-                                  "data": Array [],
+                                  "data": [],
                                   "fail": Trie {
-                                    "data": Array [],
+                                    "data": [],
                                     "fail": null,
                                     "is_word": null,
-                                    "next": Object {
+                                    "next": {
                                       "ズ": Trie {
-                                        "data": Array [
-                                          Array [
+                                        "data": [
+                                          [
                                             "薔薇 玫瑰",
                                           ],
                                         ],
                                         "fail": null,
                                         "is_word": true,
-                                        "next": Object {},
+                                        "next": {},
                                         "value": "ローズ",
                                       },
                                     },
                                     "value": "ロー",
                                   },
                                   "is_word": null,
-                                  "next": Object {
+                                  "next": {
                                     "ズ": Trie {
-                                      "data": Array [
-                                        Array [
+                                      "data": [
+                                        [
                                           "淫欲罗茲 最後的玫瑰",
                                         ],
                                       ],
                                       "fail": Trie {
-                                        "data": Array [
-                                          Array [
+                                        "data": [
+                                          [
                                             "薔薇 玫瑰",
                                           ],
                                         ],
                                         "fail": null,
                                         "is_word": true,
-                                        "next": Object {},
+                                        "next": {},
                                         "value": "ローズ",
                                       },
                                       "is_word": true,
-                                      "next": Object {},
+                                      "next": {},
                                       "value": "ラストローズ",
                                     },
                                   },
@@ -1329,16 +1329,16 @@ AhoCorasick {
                   "value": "ラ",
                 },
                 "is_word": null,
-                "next": Object {
+                "next": {
                   "イ": Trie {
-                    "data": Array [
-                      Array [
+                    "data": [
+                      [
                         "武士",
                       ],
                     ],
                     "fail": null,
                     "is_word": true,
-                    "next": Object {},
+                    "next": {},
                     "value": "サムライ",
                   },
                 },
@@ -1351,31 +1351,31 @@ AhoCorasick {
         "value": "サ",
       },
       "ス": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "キ": Trie {
-            "data": Array [],
+            "data": [],
             "fail": Trie {
-              "data": Array [],
+              "data": [],
               "fail": null,
               "is_word": null,
-              "next": Object {
+              "next": {
                 "ン": Trie {
-                  "data": Array [],
+                  "data": [],
                   "fail": null,
                   "is_word": null,
-                  "next": Object {
+                  "next": {
                     "グ": Trie {
-                      "data": Array [
-                        Array [
+                      "data": [
+                        [
                           "王",
                         ],
                       ],
                       "fail": null,
                       "is_word": true,
-                      "next": Object {},
+                      "next": {},
                       "value": "キング",
                     },
                   },
@@ -1385,58 +1385,58 @@ AhoCorasick {
               "value": "キ",
             },
             "is_word": null,
-            "next": Object {
+            "next": {
               "ュ": Trie {
-                "data": Array [],
+                "data": [],
                 "fail": null,
                 "is_word": null,
-                "next": Object {
+                "next": {
                   "ラ": Trie {
-                    "data": Array [
-                      Array [
+                    "data": [
+                      [
                         "斯庫拉",
                       ],
                     ],
                     "fail": Trie {
-                      "data": Array [],
+                      "data": [],
                       "fail": null,
                       "is_word": null,
-                      "next": Object {
+                      "next": {
                         "ス": Trie {
-                          "data": Array [],
+                          "data": [],
                           "fail": [Circular],
                           "is_word": null,
-                          "next": Object {
+                          "next": {
                             "ト": Trie {
-                              "data": Array [
-                                Array [
+                              "data": [
+                                [
                                   "Lust 性欲 渇望 Last 最後",
                                 ],
                               ],
                               "fail": null,
                               "is_word": true,
-                              "next": Object {
+                              "next": {
                                 "ロ": Trie {
-                                  "data": Array [],
+                                  "data": [],
                                   "fail": Trie {
-                                    "data": Array [],
+                                    "data": [],
                                     "fail": null,
                                     "is_word": null,
-                                    "next": Object {
+                                    "next": {
                                       "ー": Trie {
-                                        "data": Array [],
+                                        "data": [],
                                         "fail": null,
                                         "is_word": null,
-                                        "next": Object {
+                                        "next": {
                                           "ズ": Trie {
-                                            "data": Array [
-                                              Array [
+                                            "data": [
+                                              [
                                                 "薔薇 玫瑰",
                                               ],
                                             ],
                                             "fail": null,
                                             "is_word": true,
-                                            "next": Object {},
+                                            "next": {},
                                             "value": "ローズ",
                                           },
                                         },
@@ -1446,49 +1446,49 @@ AhoCorasick {
                                     "value": "ロ",
                                   },
                                   "is_word": null,
-                                  "next": Object {
+                                  "next": {
                                     "ー": Trie {
-                                      "data": Array [],
+                                      "data": [],
                                       "fail": Trie {
-                                        "data": Array [],
+                                        "data": [],
                                         "fail": null,
                                         "is_word": null,
-                                        "next": Object {
+                                        "next": {
                                           "ズ": Trie {
-                                            "data": Array [
-                                              Array [
+                                            "data": [
+                                              [
                                                 "薔薇 玫瑰",
                                               ],
                                             ],
                                             "fail": null,
                                             "is_word": true,
-                                            "next": Object {},
+                                            "next": {},
                                             "value": "ローズ",
                                           },
                                         },
                                         "value": "ロー",
                                       },
                                       "is_word": null,
-                                      "next": Object {
+                                      "next": {
                                         "ズ": Trie {
-                                          "data": Array [
-                                            Array [
+                                          "data": [
+                                            [
                                               "淫欲罗茲 最後的玫瑰",
                                             ],
                                           ],
                                           "fail": Trie {
-                                            "data": Array [
-                                              Array [
+                                            "data": [
+                                              [
                                                 "薔薇 玫瑰",
                                               ],
                                             ],
                                             "fail": null,
                                             "is_word": true,
-                                            "next": Object {},
+                                            "next": {},
                                             "value": "ローズ",
                                           },
                                           "is_word": true,
-                                          "next": Object {},
+                                          "next": {},
                                           "value": "ラストローズ",
                                         },
                                       },
@@ -1507,7 +1507,7 @@ AhoCorasick {
                       "value": "ラ",
                     },
                     "is_word": true,
-                    "next": Object {},
+                    "next": {},
                     "value": "スキュラ",
                   },
                 },
@@ -1520,34 +1520,34 @@ AhoCorasick {
         "value": "ス",
       },
       "ダ": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "ン": Trie {
-            "data": Array [],
+            "data": [],
             "fail": null,
             "is_word": null,
-            "next": Object {
+            "next": {
               "ピ": Trie {
-                "data": Array [],
+                "data": [],
                 "fail": null,
                 "is_word": null,
-                "next": Object {
+                "next": {
                   "ー": Trie {
-                    "data": Array [],
+                    "data": [],
                     "fail": null,
                     "is_word": null,
-                    "next": Object {
+                    "next": {
                       "ル": Trie {
-                        "data": Array [
-                          Array [
+                        "data": [
+                          [
                             "丹皮尔",
                           ],
                         ],
                         "fail": null,
                         "is_word": true,
-                        "next": Object {},
+                        "next": {},
                         "value": "ダンピール",
                       },
                     },
@@ -1563,29 +1563,29 @@ AhoCorasick {
         "value": "ダ",
       },
       "ド": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "ル": Trie {
-            "data": Array [],
+            "data": [],
             "fail": null,
             "is_word": null,
-            "next": Object {
+            "next": {
               "イ": Trie {
-                "data": Array [],
+                "data": [],
                 "fail": null,
                 "is_word": null,
-                "next": Object {
+                "next": {
                   "ド": Trie {
-                    "data": Array [
-                      Array [
+                    "data": [
+                      [
                         "德魯伊",
                       ],
                     ],
                     "fail": [Circular],
                     "is_word": true,
-                    "next": Object {},
+                    "next": {},
                     "value": "ドルイド",
                   },
                 },
@@ -1598,67 +1598,67 @@ AhoCorasick {
         "value": "ド",
       },
       "ハ": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "イ": Trie {
-            "data": Array [
-              Array [
+            "data": [
+              [
                 "高等",
               ],
             ],
             "fail": null,
             "is_word": true,
-            "next": Object {},
+            "next": {},
             "value": "ハイ",
           },
         },
         "value": "ハ",
       },
       "ホ": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "ブ": Trie {
-            "data": Array [
-              Array [
+            "data": [
+              [
                 "滚刀",
               ],
             ],
             "fail": null,
             "is_word": true,
-            "next": Object {},
+            "next": {},
             "value": "ホブ",
           },
         },
         "value": "ホ",
       },
       "ポ": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "イ": Trie {
-            "data": Array [],
+            "data": [],
             "fail": null,
             "is_word": null,
-            "next": Object {
+            "next": {
               "ズ": Trie {
-                "data": Array [],
+                "data": [],
                 "fail": null,
                 "is_word": null,
-                "next": Object {
+                "next": {
                   "ン": Trie {
-                    "data": Array [
-                      Array [
+                    "data": [
+                      [
                         "劇毒",
                       ],
                     ],
                     "fail": null,
                     "is_word": true,
-                    "next": Object {},
+                    "next": {},
                     "value": "ポイズン",
                   },
                 },
@@ -1671,38 +1671,38 @@ AhoCorasick {
         "value": "ポ",
       },
       "マ": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "ス": Trie {
-            "data": Array [],
+            "data": [],
             "fail": Trie {
-              "data": Array [],
+              "data": [],
               "fail": null,
               "is_word": null,
-              "next": Object {
+              "next": {
                 "キ": Trie {
-                  "data": Array [],
+                  "data": [],
                   "fail": Trie {
-                    "data": Array [],
+                    "data": [],
                     "fail": null,
                     "is_word": null,
-                    "next": Object {
+                    "next": {
                       "ン": Trie {
-                        "data": Array [],
+                        "data": [],
                         "fail": null,
                         "is_word": null,
-                        "next": Object {
+                        "next": {
                           "グ": Trie {
-                            "data": Array [
-                              Array [
+                            "data": [
+                              [
                                 "王",
                               ],
                             ],
                             "fail": null,
                             "is_word": true,
-                            "next": Object {},
+                            "next": {},
                             "value": "キング",
                           },
                         },
@@ -1712,58 +1712,58 @@ AhoCorasick {
                     "value": "キ",
                   },
                   "is_word": null,
-                  "next": Object {
+                  "next": {
                     "ュ": Trie {
-                      "data": Array [],
+                      "data": [],
                       "fail": null,
                       "is_word": null,
-                      "next": Object {
+                      "next": {
                         "ラ": Trie {
-                          "data": Array [
-                            Array [
+                          "data": [
+                            [
                               "斯庫拉",
                             ],
                           ],
                           "fail": Trie {
-                            "data": Array [],
+                            "data": [],
                             "fail": null,
                             "is_word": null,
-                            "next": Object {
+                            "next": {
                               "ス": Trie {
-                                "data": Array [],
+                                "data": [],
                                 "fail": [Circular],
                                 "is_word": null,
-                                "next": Object {
+                                "next": {
                                   "ト": Trie {
-                                    "data": Array [
-                                      Array [
+                                    "data": [
+                                      [
                                         "Lust 性欲 渇望 Last 最後",
                                       ],
                                     ],
                                     "fail": null,
                                     "is_word": true,
-                                    "next": Object {
+                                    "next": {
                                       "ロ": Trie {
-                                        "data": Array [],
+                                        "data": [],
                                         "fail": Trie {
-                                          "data": Array [],
+                                          "data": [],
                                           "fail": null,
                                           "is_word": null,
-                                          "next": Object {
+                                          "next": {
                                             "ー": Trie {
-                                              "data": Array [],
+                                              "data": [],
                                               "fail": null,
                                               "is_word": null,
-                                              "next": Object {
+                                              "next": {
                                                 "ズ": Trie {
-                                                  "data": Array [
-                                                    Array [
+                                                  "data": [
+                                                    [
                                                       "薔薇 玫瑰",
                                                     ],
                                                   ],
                                                   "fail": null,
                                                   "is_word": true,
-                                                  "next": Object {},
+                                                  "next": {},
                                                   "value": "ローズ",
                                                 },
                                               },
@@ -1773,49 +1773,49 @@ AhoCorasick {
                                           "value": "ロ",
                                         },
                                         "is_word": null,
-                                        "next": Object {
+                                        "next": {
                                           "ー": Trie {
-                                            "data": Array [],
+                                            "data": [],
                                             "fail": Trie {
-                                              "data": Array [],
+                                              "data": [],
                                               "fail": null,
                                               "is_word": null,
-                                              "next": Object {
+                                              "next": {
                                                 "ズ": Trie {
-                                                  "data": Array [
-                                                    Array [
+                                                  "data": [
+                                                    [
                                                       "薔薇 玫瑰",
                                                     ],
                                                   ],
                                                   "fail": null,
                                                   "is_word": true,
-                                                  "next": Object {},
+                                                  "next": {},
                                                   "value": "ローズ",
                                                 },
                                               },
                                               "value": "ロー",
                                             },
                                             "is_word": null,
-                                            "next": Object {
+                                            "next": {
                                               "ズ": Trie {
-                                                "data": Array [
-                                                  Array [
+                                                "data": [
+                                                  [
                                                     "淫欲罗茲 最後的玫瑰",
                                                   ],
                                                 ],
                                                 "fail": Trie {
-                                                  "data": Array [
-                                                    Array [
+                                                  "data": [
+                                                    [
                                                       "薔薇 玫瑰",
                                                     ],
                                                   ],
                                                   "fail": null,
                                                   "is_word": true,
-                                                  "next": Object {},
+                                                  "next": {},
                                                   "value": "ローズ",
                                                 },
                                                 "is_word": true,
-                                                "next": Object {},
+                                                "next": {},
                                                 "value": "ラストローズ",
                                               },
                                             },
@@ -1834,7 +1834,7 @@ AhoCorasick {
                             "value": "ラ",
                           },
                           "is_word": true,
-                          "next": Object {},
+                          "next": {},
                           "value": "スキュラ",
                         },
                       },
@@ -1847,21 +1847,21 @@ AhoCorasick {
               "value": "ス",
             },
             "is_word": null,
-            "next": Object {
+            "next": {
               "タ": Trie {
-                "data": Array [],
+                "data": [],
                 "fail": null,
                 "is_word": null,
-                "next": Object {
+                "next": {
                   "ー": Trie {
-                    "data": Array [
-                      Array [
+                    "data": [
+                      [
                         "大師",
                       ],
                     ],
                     "fail": null,
                     "is_word": true,
-                    "next": Object {},
+                    "next": {},
                     "value": "マスター",
                   },
                 },
@@ -1874,38 +1874,38 @@ AhoCorasick {
         "value": "マ",
       },
       "ラ": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "ス": Trie {
-            "data": Array [],
+            "data": [],
             "fail": Trie {
-              "data": Array [],
+              "data": [],
               "fail": null,
               "is_word": null,
-              "next": Object {
+              "next": {
                 "キ": Trie {
-                  "data": Array [],
+                  "data": [],
                   "fail": Trie {
-                    "data": Array [],
+                    "data": [],
                     "fail": null,
                     "is_word": null,
-                    "next": Object {
+                    "next": {
                       "ン": Trie {
-                        "data": Array [],
+                        "data": [],
                         "fail": null,
                         "is_word": null,
-                        "next": Object {
+                        "next": {
                           "グ": Trie {
-                            "data": Array [
-                              Array [
+                            "data": [
+                              [
                                 "王",
                               ],
                             ],
                             "fail": null,
                             "is_word": true,
-                            "next": Object {},
+                            "next": {},
                             "value": "キング",
                           },
                         },
@@ -1915,21 +1915,21 @@ AhoCorasick {
                     "value": "キ",
                   },
                   "is_word": null,
-                  "next": Object {
+                  "next": {
                     "ュ": Trie {
-                      "data": Array [],
+                      "data": [],
                       "fail": null,
                       "is_word": null,
-                      "next": Object {
+                      "next": {
                         "ラ": Trie {
-                          "data": Array [
-                            Array [
+                          "data": [
+                            [
                               "斯庫拉",
                             ],
                           ],
                           "fail": [Circular],
                           "is_word": true,
-                          "next": Object {},
+                          "next": {},
                           "value": "スキュラ",
                         },
                       },
@@ -1942,37 +1942,37 @@ AhoCorasick {
               "value": "ス",
             },
             "is_word": null,
-            "next": Object {
+            "next": {
               "ト": Trie {
-                "data": Array [
-                  Array [
+                "data": [
+                  [
                     "Lust 性欲 渇望 Last 最後",
                   ],
                 ],
                 "fail": null,
                 "is_word": true,
-                "next": Object {
+                "next": {
                   "ロ": Trie {
-                    "data": Array [],
+                    "data": [],
                     "fail": Trie {
-                      "data": Array [],
+                      "data": [],
                       "fail": null,
                       "is_word": null,
-                      "next": Object {
+                      "next": {
                         "ー": Trie {
-                          "data": Array [],
+                          "data": [],
                           "fail": null,
                           "is_word": null,
-                          "next": Object {
+                          "next": {
                             "ズ": Trie {
-                              "data": Array [
-                                Array [
+                              "data": [
+                                [
                                   "薔薇 玫瑰",
                                 ],
                               ],
                               "fail": null,
                               "is_word": true,
-                              "next": Object {},
+                              "next": {},
                               "value": "ローズ",
                             },
                           },
@@ -1982,49 +1982,49 @@ AhoCorasick {
                       "value": "ロ",
                     },
                     "is_word": null,
-                    "next": Object {
+                    "next": {
                       "ー": Trie {
-                        "data": Array [],
+                        "data": [],
                         "fail": Trie {
-                          "data": Array [],
+                          "data": [],
                           "fail": null,
                           "is_word": null,
-                          "next": Object {
+                          "next": {
                             "ズ": Trie {
-                              "data": Array [
-                                Array [
+                              "data": [
+                                [
                                   "薔薇 玫瑰",
                                 ],
                               ],
                               "fail": null,
                               "is_word": true,
-                              "next": Object {},
+                              "next": {},
                               "value": "ローズ",
                             },
                           },
                           "value": "ロー",
                         },
                         "is_word": null,
-                        "next": Object {
+                        "next": {
                           "ズ": Trie {
-                            "data": Array [
-                              Array [
+                            "data": [
+                              [
                                 "淫欲罗茲 最後的玫瑰",
                               ],
                             ],
                             "fail": Trie {
-                              "data": Array [
-                                Array [
+                              "data": [
+                                [
                                   "薔薇 玫瑰",
                                 ],
                               ],
                               "fail": null,
                               "is_word": true,
-                              "next": Object {},
+                              "next": {},
                               "value": "ローズ",
                             },
                             "is_word": true,
-                            "next": Object {},
+                            "next": {},
                             "value": "ラストローズ",
                           },
                         },
@@ -2043,24 +2043,24 @@ AhoCorasick {
         "value": "ラ",
       },
       "ロ": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "ー": Trie {
-            "data": Array [],
+            "data": [],
             "fail": null,
             "is_word": null,
-            "next": Object {
+            "next": {
               "ズ": Trie {
-                "data": Array [
-                  Array [
+                "data": [
+                  [
                     "薔薇 玫瑰",
                   ],
                 ],
                 "fail": null,
                 "is_word": true,
-                "next": Object {},
+                "next": {},
                 "value": "ローズ",
               },
             },
@@ -2076,36 +2076,36 @@ AhoCorasick {
 `;
 
 exports[`クリスタルエンプーサ 1`] = `
-Object {
-  "count": Object {
+{
+  "count": {
     "エンプーサ": 1,
     "クリスタル": 1,
   },
-  "data": Object {
-    "エンプーサ": Array [
-      Array [
+  "data": {
+    "エンプーサ": [
+      [
         "安普莎",
       ],
     ],
-    "クリスタル": Array [
-      Array [
+    "クリスタル": [
+      [
         "水晶",
       ],
     ],
   },
-  "matches": Object {
-    "エンプーサ": Array [
+  "matches": {
+    "エンプーサ": [
       5,
     ],
-    "クリスタル": Array [
+    "クリスタル": [
       0,
     ],
   },
-  "positions": Object {
-    "0": Array [
+  "positions": {
+    "0": [
       "クリスタル",
     ],
-    "5": Array [
+    "5": [
       "エンプーサ",
     ],
   },
@@ -2113,25 +2113,25 @@ Object {
 `;
 
 exports[`クリスタルエンプーサ 2`] = `
-Object {
-  "data": Object {
-    "エンプーサ": Array [
-      Array [
+{
+  "data": {
+    "エンプーサ": [
+      [
         "安普莎",
       ],
     ],
-    "クリスタル": Array [
-      Array [
+    "クリスタル": [
+      [
         "水晶",
       ],
     ],
   },
   "input": "クリスタルエンプーサ",
-  "positions": Object {
-    "0": Array [
+  "positions": {
+    "0": [
       "クリスタル",
     ],
-    "5": Array [
+    "5": [
       "エンプーサ",
     ],
   },
@@ -2139,60 +2139,60 @@ Object {
 `;
 
 exports[`スキュラオリジンハイドルイド 1`] = `
-Object {
-  "count": Object {
+{
+  "count": {
     "オリジン": 1,
     "スキュラ": 1,
     "ドルイド": 1,
     "ハイ": 1,
   },
-  "data": Object {
-    "オリジン": Array [
-      Array [
+  "data": {
+    "オリジン": [
+      [
         "起源",
       ],
     ],
-    "スキュラ": Array [
-      Array [
+    "スキュラ": [
+      [
         "斯庫拉",
       ],
     ],
-    "ドルイド": Array [
-      Array [
+    "ドルイド": [
+      [
         "德魯伊",
       ],
     ],
-    "ハイ": Array [
-      Array [
+    "ハイ": [
+      [
         "高等",
       ],
     ],
   },
-  "matches": Object {
-    "オリジン": Array [
+  "matches": {
+    "オリジン": [
       4,
     ],
-    "スキュラ": Array [
+    "スキュラ": [
       0,
     ],
-    "ドルイド": Array [
+    "ドルイド": [
       10,
     ],
-    "ハイ": Array [
+    "ハイ": [
       8,
     ],
   },
-  "positions": Object {
-    "0": Array [
+  "positions": {
+    "0": [
       "スキュラ",
     ],
-    "10": Array [
+    "10": [
       "ドルイド",
     ],
-    "4": Array [
+    "4": [
       "オリジン",
     ],
-    "8": Array [
+    "8": [
       "ハイ",
     ],
   },
@@ -2200,41 +2200,41 @@ Object {
 `;
 
 exports[`スキュラオリジンハイドルイド 2`] = `
-Object {
-  "data": Object {
-    "オリジン": Array [
-      Array [
+{
+  "data": {
+    "オリジン": [
+      [
         "起源",
       ],
     ],
-    "スキュラ": Array [
-      Array [
+    "スキュラ": [
+      [
         "斯庫拉",
       ],
     ],
-    "ドルイド": Array [
-      Array [
+    "ドルイド": [
+      [
         "德魯伊",
       ],
     ],
-    "ハイ": Array [
-      Array [
+    "ハイ": [
+      [
         "高等",
       ],
     ],
   },
   "input": "スキュラオリジンハイドルイド",
-  "positions": Object {
-    "0": Array [
+  "positions": {
+    "0": [
       "スキュラ",
     ],
-    "10": Array [
+    "10": [
       "ドルイド",
     ],
-    "4": Array [
+    "4": [
       "オリジン",
     ],
-    "8": Array [
+    "8": [
       "ハイ",
     ],
   },
@@ -2242,36 +2242,36 @@ Object {
 `;
 
 exports[`ホブゴブリン 1`] = `
-Object {
-  "count": Object {
+{
+  "count": {
     "ゴブリン": 1,
     "ホブ": 1,
   },
-  "data": Object {
-    "ゴブリン": Array [
-      Array [
+  "data": {
+    "ゴブリン": [
+      [
         "哥布林",
       ],
     ],
-    "ホブ": Array [
-      Array [
+    "ホブ": [
+      [
         "滚刀",
       ],
     ],
   },
-  "matches": Object {
-    "ゴブリン": Array [
+  "matches": {
+    "ゴブリン": [
       2,
     ],
-    "ホブ": Array [
+    "ホブ": [
       0,
     ],
   },
-  "positions": Object {
-    "0": Array [
+  "positions": {
+    "0": [
       "ホブ",
     ],
-    "2": Array [
+    "2": [
       "ゴブリン",
     ],
   },
@@ -2279,25 +2279,25 @@ Object {
 `;
 
 exports[`ホブゴブリン 2`] = `
-Object {
-  "data": Object {
-    "ゴブリン": Array [
-      Array [
+{
+  "data": {
+    "ゴブリン": [
+      [
         "哥布林",
       ],
     ],
-    "ホブ": Array [
-      Array [
+    "ホブ": [
+      [
         "滚刀",
       ],
     ],
   },
   "input": "ホブゴブリン",
-  "positions": Object {
-    "0": Array [
+  "positions": {
+    "0": [
       "ホブ",
     ],
-    "2": Array [
+    "2": [
       "ゴブリン",
     ],
   },
@@ -2305,46 +2305,46 @@ Object {
 `;
 
 exports[`ラストローズ 1`] = `
-Object {
-  "count": Object {
+{
+  "count": {
     "ラスト": 1,
     "ラストローズ": 1,
     "ローズ": 1,
   },
-  "data": Object {
-    "ラスト": Array [
-      Array [
+  "data": {
+    "ラスト": [
+      [
         "Lust 性欲 渇望 Last 最後",
       ],
     ],
-    "ラストローズ": Array [
-      Array [
+    "ラストローズ": [
+      [
         "淫欲罗茲 最後的玫瑰",
       ],
     ],
-    "ローズ": Array [
-      Array [
+    "ローズ": [
+      [
         "薔薇 玫瑰",
       ],
     ],
   },
-  "matches": Object {
-    "ラスト": Array [
+  "matches": {
+    "ラスト": [
       0,
     ],
-    "ラストローズ": Array [
+    "ラストローズ": [
       0,
     ],
-    "ローズ": Array [
+    "ローズ": [
       3,
     ],
   },
-  "positions": Object {
-    "0": Array [
+  "positions": {
+    "0": [
       "ラスト",
       "ラストローズ",
     ],
-    "3": Array [
+    "3": [
       "ローズ",
     ],
   },
@@ -2352,31 +2352,31 @@ Object {
 `;
 
 exports[`ラストローズ 2`] = `
-Object {
-  "data": Object {
-    "ラスト": Array [
-      Array [
+{
+  "data": {
+    "ラスト": [
+      [
         "Lust 性欲 渇望 Last 最後",
       ],
     ],
-    "ラストローズ": Array [
-      Array [
+    "ラストローズ": [
+      [
         "淫欲罗茲 最後的玫瑰",
       ],
     ],
-    "ローズ": Array [
-      Array [
+    "ローズ": [
+      [
         "薔薇 玫瑰",
       ],
     ],
   },
   "input": "ラストローズ",
-  "positions": Object {
-    "0": Array [
+  "positions": {
+    "0": [
       "ラスト",
       "ラストローズ",
     ],
-    "3": Array [
+    "3": [
       "ローズ",
     ],
   },

@@ -1,16 +1,16 @@
-import create, { ITrieRaw, ITrieNode, ITrie, ITrieNodeValue } from './create';
+import { create, ITrieRaw, ITrieNode, ITrie, ITrieNodeValue } from './create';
 
 export { ITrieRaw, ITrieNode, ITrie, ITrieNodeValue } from './create';
-import append from './append';
-import checkPrefix from './checkPrefix';
-import recursePrefix from './recursePrefix';
+import { append } from './append';
+import { checkPrefix } from './checkPrefix';
+import { recursePrefix } from './recursePrefix';
 import utils, { hasEndpoint, isEndpoint, isString, split, throwMsg } from './utils';
 import { END_VALUE, END_WORD, END_DEF, PERMS_MIN_LEN } from './config';
 
 export { END_VALUE, END_WORD, END_DEF } from './config';
-import permutations from './permutations';
-import recurseRandomWord from './recurseRandomWord';
-import trieToRegExp from 'trie-regex';
+import { permutations } from './permutations';
+import { recurseRandomWord } from './recurseRandomWord';
+import { trieToRegExp } from 'trie-regex';
 import { IOptionsAll as ITrieToRegExpOptionsAll, IOptions as ITrieToRegExpOptions } from 'trie-regex/lib/types';
 
 export const SYM_RAW = Symbol('trie');

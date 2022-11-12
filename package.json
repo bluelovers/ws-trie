@@ -2,35 +2,86 @@
   "name": "ws-trie",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://github.com/bluelovers/ws-trie#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/ws-trie/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/ws-trie.git"
+  },
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lerna:publish": "npx lerna publish",
-    "lerna:publish:yes": "npx lerna publish --yes --cd-version patch",
-    "prepublish:lockfile": "npx sync-lockfile .",
-    "ncu": "yarn run ncu:root && yarn run ncu:ws",
-    "ncu:root": "npx yarn-tool ncu -u",
-    "ncu:ws": "npx yarn-tool ws exec yarn-tool ncu -- -u",
+    "review:all": "yarn-tool ws run review --concurrency 1",
+    "review:since": "yarn run review:all -- --since",
+    "coverage:all": "yarn-tool ws run coverage --concurrency 1",
+    "coverage:since": "yarn run coverage:all -- --since",
+    "lint:all": "yarn-tool ws run lint --concurrency 1",
+    "lint:since": "yarn run lint:all -- --since",
+    "pretest": "echo pretest",
+    "test": "yarn run test:since",
+    "test:all": "yarn-tool ws run test --concurrency 1",
+    "test:jest:clearCache": "jest --clearCache",
+    "test:since": "yarn run test:all -- --since",
+    "test:snapshot:all": "yarn-tool ws run test:snapshot --concurrency 1",
+    "test:snapshot:since": "yarn run test:snapshot:all -- --since",
+    "test:tsd:all": "yarn-tool ws run test:tsd --concurrency 1",
+    "test:tsd:since": "yarn run test:tsd:all -- --since",
+    "install:frozenLockfile": "yarn-tool install --frozen-lockfile",
+    "install:resetLockfile": "yarn-tool install --reset-lockfile",
+    "build:all": "yarn-tool ws run build --concurrency 1",
+    "build:since": "yarn run build:all -- --since",
+    "ci:install": "yarn install --frozen-lockfile && yarn add -W yarn-tool lerna ynpx ts-node ts-jest jest typescript@next @bluelovers/jest-config",
+    "ci:build": "echo ci:build",
+    "lerna:publish": "yarn run prepublishOnly:root && lerna publish && yarn run postpublishOnly",
+    "lerna:publish:yes": "yarn run prepublishOnly:root && lerna publish --yes --bump patch && yarn run postpublishOnly",
+    "ws:fix-all": "yarn-tool fix-all  --overwriteHostedGitInfo",
+    "ws:fix-all:resetStaticFiles": "yarn run ws:fix-all -- --resetStaticFiles",
+    "preversion": "yarn run test",
+    "version": "echo version",
+    "postversion": "yarn-tool fix-all",
+    "prepublish": "echo prepublish",
+    "prepare": "echo prepare",
+    "prepare:fix-ws-links": "ynpx --quiet @yarn-tool/fix-ws-links",
+    "prepublishOnly": "echo prepublishOnly",
+    "prepublishOnly:check-bin": "ynpx --quiet @yarn-tool/check-pkg-bin",
+    "prepublishOnly:lockfile": "ynpx --quiet sync-lockfile",
+    "prepublishOnly:root": "yarn run prepublishOnly:check-bin && yarn run prepare:fix-ws-links",
+    "prepublishOnly:update": "yarn run ncu && yarn run sort-package-json",
+    "prepack": "echo prepack",
+    "pack": "echo pack",
+    "postpack": "echo postpack",
+    "publish": "echo publish",
+    "postpublish": "echo postpublish",
+    "postpublishOnly": "yarn run postpublishOnly:ws-root-changelog & echo postpublishOnly",
+    "postpublishOnly:ws-root-changelog": "ynpx ws-root-changelog & git add ./CHANGELOG.md & git commit ./CHANGELOG.md -m \"chore(changelog): update changelog toc in workspaces root\" & echo update changelog toc in workspaces root",
+    "ncu": "yarn run ncu:ws",
+    "ncu:ws": "yarn-tool ncu -u --AA",
+    "ncu:root": "yarn-tool ncu -u",
     "sort-package-json": "yarn run sort-package-json:root && yarn run sort-package-json:ws",
-    "sort-package-json:root": "npx yarn-tool sort",
-    "sort-package-json:ws": "npx yarn-tool ws exec yarn-tool sort"
+    "sort-package-json:root": "yarn-tool sort",
+    "sort-package-json:ws": "yarn-tool ws sort",
+    "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "resolutions": {},
+  "dependencies": {
+    "jest": "^29.3.1",
+    "ts-jest": "^29.0.3",
+    "trie-prefix-tree": "^1.5.1"
+  },
   "devDependencies": {
-    "@bluelovers/tsconfig": "^1.0.19",
-    "@types/jest": "^25.2.3",
-    "@types/jsesc": "^2.5.1",
+    "@types/trie-prefix-tree": "^1.5.0",
+    "@bluelovers/tsconfig": "^1.0.32",
+    "@types/jest": "^29.2.2",
+    "@types/jsesc": "^3.0.1",
     "@types/node": "*",
-    "jsesc": "^3.0.1",
-    "regenerate": "^1.4.1"
+    "@yarn-tool/ws-find-up-paths": "*",
+    "jsesc": "^3.0.2",
+    "regenerate": "^1.4.2"
   },
   "peerDependencies": {
-    "lerna": "^3"
-  },
-  "dependencies": {
-    "jest": "^26.0.1",
-    "ts-jest": "^26.1.0"
+    "lerna": "^6"
   }
 }

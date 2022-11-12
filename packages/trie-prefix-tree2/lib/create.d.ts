@@ -1,6 +1,6 @@
 import { END_WORD, END_VALUE, END_DEF } from './config';
 import { IInput } from './index';
-export declare type ITrie<T = typeof END_VALUE> = ITrieNode<T> | ITrieRaw<T>;
+export type ITrie<T = typeof END_VALUE> = ITrieNode<T> | ITrieRaw<T>;
 export interface ITrieNode<T = typeof END_VALUE> {
     [k: string]: ITrieNode<T>;
     '$$'?: ITrieNodeValue<T>;

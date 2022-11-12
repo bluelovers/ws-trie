@@ -4,20 +4,21 @@
  */
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
 }));
 var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) __createBinding(exports, m, p);
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.trieToRegExpSource = exports.trieToRegExp = void 0;
-const string_natural_compare_1 = __importDefault(require("string-natural-compare"));
+const string_natural_compare2_1 = require("string-natural-compare2");
 const util_1 = require("./lib/util");
 __exportStar(require("./lib/types"), exports);
 function trieToRegExp(data, flags, options) {
@@ -51,7 +52,7 @@ function trieToRegExpSource(data, options = {}) {
                 return;
             }
             walk_result =
-                util_1._quotemeta(_key, options) + _walk_trie(trie[_key], _key);
+                (0, util_1._quotemeta)(_key, options) + _walk_trie(trie[_key], _key);
             // When we have more than one key, `insert` references
             // the alternative regexp group, otherwise it points to
             // the char class group.
@@ -61,7 +62,7 @@ function trieToRegExpSource(data, options = {}) {
         });
         //alt_group.sort();
         alt_group.sort(function (a, b) {
-            return (b.length - a.length) || string_natural_compare_1.default(a, b);
+            return (b.length - a.length) || (0, string_natural_compare2_1.naturalCompare)(a, b);
         });
         return toRegexString(alt_group, char_class, end);
     }

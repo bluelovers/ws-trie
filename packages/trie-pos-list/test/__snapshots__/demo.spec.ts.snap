@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`allPosMax(words, positions) 1`] = `
-Object {
-  "0": Array [
+{
+  "0": [
     "y",
     "ya",
     "yas",
@@ -11,7 +11,7 @@ Object {
     "yasher",
     "yasherh",
   ],
-  "1": Array [
+  "1": [
     "a",
     "as",
     "ash",
@@ -19,40 +19,40 @@ Object {
     "asher",
     "asherh",
   ],
-  "2": Array [
+  "2": [
     "s",
     "sh",
     "she",
     "sher",
     "sherh",
   ],
-  "3": Array [
+  "3": [
     "h",
     "he",
     "her",
     "herh",
   ],
-  "4": Array [
+  "4": [
     "e",
     "er",
     "erh",
   ],
-  "5": Array [
+  "5": [
     "r",
     "rh",
   ],
-  "6": Array [
+  "6": [
     "h",
   ],
-  "7": Array [
+  "7": [
     "s",
   ],
 }
 `;
 
 exports[`allPosMax(words, ret1) 1`] = `
-Object {
-  "0": Array [
+{
+  "0": [
     "y",
     "ya",
     "yas",
@@ -61,7 +61,7 @@ Object {
     "yasher",
     "yasherh",
   ],
-  "1": Array [
+  "1": [
     "a",
     "as",
     "ash",
@@ -69,62 +69,62 @@ Object {
     "asher",
     "asherh",
   ],
-  "2": Array [
+  "2": [
     "s",
     "sh",
     "she",
     "sher",
     "sherh",
   ],
-  "3": Array [
+  "3": [
     "h",
     "he",
     "her",
     "herh",
   ],
-  "4": Array [
+  "4": [
     "e",
     "er",
     "erh",
   ],
-  "5": Array [
+  "5": [
     "r",
     "rh",
   ],
-  "6": Array [
+  "6": [
     "h",
   ],
-  "7": Array [
+  "7": [
     "s",
   ],
 }
 `;
 
 exports[`triePosList(words, positions) 1`] = `
-Object {
-  "0": Array [
+{
+  "0": [
     "ya",
   ],
-  "2": Array [
+  "2": [
     "s",
     "she",
     "sher",
   ],
-  "3": Array [
+  "3": [
     "h",
     "he",
     "her",
   ],
-  "4": Array [
+  "4": [
     "er",
   ],
-  "5": Array [
+  "5": [
     "r",
   ],
-  "6": Array [
+  "6": [
     "h",
   ],
-  "7": Array [
+  "7": [
     "s",
   ],
 }

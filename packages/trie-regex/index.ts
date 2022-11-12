@@ -2,7 +2,7 @@
  * Created by user on 2018/6/8/008.
  */
 
-import naturalCompare from 'string-natural-compare';
+import { naturalCompare } from 'string-natural-compare2';
 import { _quotemeta, _to_regex, isDefaultEndpoint } from './lib/util';
 import { IOptionsAll, IOptions } from './lib/types';
 export * from './lib/types';

@@ -13,7 +13,7 @@ function permutations(letters, trie, opts = {
         const wordIsEmpty = word.length === 0;
         const wordFound = words.includes(prefix);
         //const endWordFound = node[config.END_WORD] === 1;
-        const endWordFound = utils_1.hasEndpoint(node);
+        const endWordFound = (0, utils_1.hasEndpoint)(node);
         if (wordIsEmpty && endWordFound && !wordFound) {
             words.push(prefix);
         }

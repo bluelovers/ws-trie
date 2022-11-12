@@ -2,12 +2,12 @@ import { ITrieRaw, ITrieNode, ITrieNodeValue } from './create';
 export { ITrieRaw, ITrieNode, ITrie, ITrieNodeValue } from './create';
 import { END_VALUE } from './config';
 export { END_VALUE, END_WORD, END_DEF } from './config';
-import trieToRegExp from 'trie-regex';
+import { trieToRegExp } from 'trie-regex';
 import { IOptionsAll as ITrieToRegExpOptionsAll, IOptions as ITrieToRegExpOptions } from 'trie-regex/lib/types';
 export declare const SYM_RAW: unique symbol;
-export declare type IInput<T> = string[];
-export declare type IInputMap<T> = [string, T][];
-export declare type ITrieOptions = {
+export type IInput<T> = string[];
+export type IInputMap<T> = [string, T][];
+export type ITrieOptions = {
     /**
      * @default true
      */

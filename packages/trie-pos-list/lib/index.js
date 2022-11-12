@@ -59,7 +59,7 @@ function allPos(words, positions) {
         ret[j].push(s);
     }
     for (let i in ret) {
-        ret[i] = array_hyper_unique_1.array_unique(ret[i]);
+        ret[i] = (0, array_hyper_unique_1.array_unique)(ret[i]);
         ret[i].sort();
     }
     return ret;
@@ -74,7 +74,7 @@ function allPosMax(words, positions, limit = 5) {
     limit = limit > 0 ? limit : 5;
     while (_do && limit > i++) {
         ret2 = allPos(words, ret);
-        _do = !deep_eql_1.default(ret, ret2);
+        _do = !(0, deep_eql_1.default)(ret, ret2);
         ret = ret2;
     }
     return ret;

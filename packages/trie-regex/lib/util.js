@@ -54,9 +54,10 @@ function _quotemeta(phrase, options = {}) {
     if (!options.disableEscaped) {
         let jo = Object.assign({
             'es6': true,
+            //'minimal': true,
         }, options.jsescOptions);
         s = s.replace(/[^\x20-\x7E]+/ug, function (s) {
-            return jsesc_1.default(s, jo);
+            return (0, jsesc_1.default)(s, jo);
         });
     }
     return s;

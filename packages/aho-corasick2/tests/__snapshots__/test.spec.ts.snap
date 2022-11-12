@@ -3,28 +3,28 @@
 exports[`Allow attaching multiple bits of data 1`] = `
 AhoCorasick {
   "trie": Trie {
-    "data": Array [],
+    "data": [],
     "fail": null,
     "is_word": null,
-    "next": Object {
+    "next": {
       "f": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "o": Trie {
-            "data": Array [],
+            "data": [],
             "fail": null,
             "is_word": null,
-            "next": Object {
+            "next": {
               "o": Trie {
-                "data": Array [
+                "data": [
                   "data1",
                   "data2",
                 ],
                 "fail": null,
                 "is_word": true,
-                "next": Object {},
+                "next": {},
                 "value": "foo",
               },
             },
@@ -40,23 +40,23 @@ AhoCorasick {
 `;
 
 exports[`Allow attaching multiple bits of data 2`] = `
-Object {
-  "count": Object {
+{
+  "count": {
     "foo": 1,
   },
-  "data": Object {
-    "foo": Array [
+  "data": {
+    "foo": [
       "data1",
       "data2",
     ],
   },
-  "matches": Object {
-    "foo": Array [
+  "matches": {
+    "foo": [
       0,
     ],
   },
-  "positions": Object {
-    "0": Array [
+  "positions": {
+    "0": [
       "foo",
     ],
   },
@@ -66,49 +66,49 @@ Object {
 exports[`Match every 1`] = `
 AhoCorasick {
   "trie": Trie {
-    "data": Array [],
+    "data": [],
     "fail": null,
     "is_word": null,
-    "next": Object {
+    "next": {
       "f": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "o": Trie {
-            "data": Array [],
+            "data": [],
             "fail": null,
             "is_word": null,
-            "next": Object {
+            "next": {
               "o": Trie {
-                "data": Array [
+                "data": [
                   undefined,
                 ],
                 "fail": null,
                 "is_word": true,
-                "next": Object {
+                "next": {
                   " ": Trie {
-                    "data": Array [],
+                    "data": [],
                     "fail": null,
                     "is_word": null,
-                    "next": Object {
+                    "next": {
                       "b": Trie {
-                        "data": Array [],
+                        "data": [],
                         "fail": null,
                         "is_word": null,
-                        "next": Object {
+                        "next": {
                           "a": Trie {
-                            "data": Array [],
+                            "data": [],
                             "fail": null,
                             "is_word": null,
-                            "next": Object {
+                            "next": {
                               "r": Trie {
-                                "data": Array [
+                                "data": [
                                   undefined,
                                 ],
                                 "fail": null,
                                 "is_word": true,
-                                "next": Object {},
+                                "next": {},
                                 "value": "foo bar",
                               },
                             },
@@ -136,22 +136,22 @@ AhoCorasick {
 `;
 
 exports[`Match every 2`] = `
-Object {
-  "count": Object {
+{
+  "count": {
     "foo": 1,
   },
-  "data": Object {
-    "foo": Array [
+  "data": {
+    "foo": [
       undefined,
     ],
   },
-  "matches": Object {
-    "foo": Array [
+  "matches": {
+    "foo": [
       0,
     ],
   },
-  "positions": Object {
-    "0": Array [
+  "positions": {
+    "0": [
       "foo",
     ],
   },
@@ -159,29 +159,29 @@ Object {
 `;
 
 exports[`Match every 3`] = `
-Object {
-  "count": Object {
+{
+  "count": {
     "foo": 1,
     "foo bar": 1,
   },
-  "data": Object {
-    "foo": Array [
+  "data": {
+    "foo": [
       undefined,
     ],
-    "foo bar": Array [
+    "foo bar": [
       undefined,
     ],
   },
-  "matches": Object {
-    "foo": Array [
+  "matches": {
+    "foo": [
       0,
     ],
-    "foo bar": Array [
+    "foo bar": [
       0,
     ],
   },
-  "positions": Object {
-    "0": Array [
+  "positions": {
+    "0": [
       "foo",
       "foo bar",
     ],
@@ -192,33 +192,33 @@ Object {
 exports[`Multiple matches 1`] = `
 AhoCorasick {
   "trie": Trie {
-    "data": Array [],
+    "data": [],
     "fail": null,
     "is_word": null,
-    "next": Object {
+    "next": {
       "h": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "e": Trie {
-            "data": Array [
-              Object {
+            "data": [
+              {
                 "word": "he",
               },
             ],
             "fail": null,
             "is_word": true,
-            "next": Object {
+            "next": {
               "r": Trie {
-                "data": Array [
-                  Object {
+                "data": [
+                  {
                     "word": "her",
                   },
                 ],
                 "fail": null,
                 "is_word": true,
-                "next": Object {},
+                "next": {},
                 "value": "her",
               },
             },
@@ -228,54 +228,54 @@ AhoCorasick {
         "value": "h",
       },
       "s": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "a": Trie {
-            "data": Array [],
+            "data": [],
             "fail": null,
             "is_word": null,
-            "next": Object {
+            "next": {
               "y": Trie {
-                "data": Array [
-                  Object {
+                "data": [
+                  {
                     "word": "say",
                   },
                 ],
                 "fail": null,
                 "is_word": true,
-                "next": Object {},
+                "next": {},
                 "value": "say",
               },
             },
             "value": "sa",
           },
           "h": Trie {
-            "data": Array [],
+            "data": [],
             "fail": Trie {
-              "data": Array [],
+              "data": [],
               "fail": null,
               "is_word": null,
-              "next": Object {
+              "next": {
                 "e": Trie {
-                  "data": Array [
-                    Object {
+                  "data": [
+                    {
                       "word": "he",
                     },
                   ],
                   "fail": null,
                   "is_word": true,
-                  "next": Object {
+                  "next": {
                     "r": Trie {
-                      "data": Array [
-                        Object {
+                      "data": [
+                        {
                           "word": "her",
                         },
                       ],
                       "fail": null,
                       "is_word": true,
-                      "next": Object {},
+                      "next": {},
                       "value": "her",
                     },
                   },
@@ -285,49 +285,49 @@ AhoCorasick {
               "value": "h",
             },
             "is_word": null,
-            "next": Object {
+            "next": {
               "e": Trie {
-                "data": Array [
-                  Object {
+                "data": [
+                  {
                     "word": "she",
                   },
                 ],
                 "fail": Trie {
-                  "data": Array [
-                    Object {
+                  "data": [
+                    {
                       "word": "he",
                     },
                   ],
                   "fail": null,
                   "is_word": true,
-                  "next": Object {
+                  "next": {
                     "r": Trie {
-                      "data": Array [
-                        Object {
+                      "data": [
+                        {
                           "word": "her",
                         },
                       ],
                       "fail": null,
                       "is_word": true,
-                      "next": Object {},
+                      "next": {},
                       "value": "her",
                     },
                   },
                   "value": "he",
                 },
                 "is_word": true,
-                "next": Object {},
+                "next": {},
                 "value": "she",
               },
               "r": Trie {
-                "data": Array [
-                  Object {
+                "data": [
+                  {
                     "word": "shr",
                   },
                 ],
                 "fail": null,
                 "is_word": true,
-                "next": Object {},
+                "next": {},
                 "value": "shr",
               },
             },
@@ -343,45 +343,45 @@ AhoCorasick {
 `;
 
 exports[`Multiple matches 2`] = `
-Object {
-  "count": Object {
+{
+  "count": {
     "he": 1,
     "her": 1,
     "she": 1,
   },
-  "data": Object {
-    "he": Array [
-      Object {
+  "data": {
+    "he": [
+      {
         "word": "he",
       },
     ],
-    "her": Array [
-      Object {
+    "her": [
+      {
         "word": "her",
       },
     ],
-    "she": Array [
-      Object {
+    "she": [
+      {
         "word": "she",
       },
     ],
   },
-  "matches": Object {
-    "he": Array [
+  "matches": {
+    "he": [
       3,
     ],
-    "her": Array [
+    "her": [
       3,
     ],
-    "she": Array [
+    "she": [
       2,
     ],
   },
-  "positions": Object {
-    "2": Array [
+  "positions": {
+    "2": [
       "she",
     ],
-    "3": Array [
+    "3": [
       "he",
       "her",
     ],
@@ -392,32 +392,32 @@ Object {
 exports[`Picks out multiple words 1`] = `
 AhoCorasick {
   "trie": Trie {
-    "data": Array [],
+    "data": [],
     "fail": null,
     "is_word": null,
-    "next": Object {
+    "next": {
       "b": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "o": Trie {
-            "data": Array [],
+            "data": [],
             "fail": null,
             "is_word": null,
-            "next": Object {
+            "next": {
               "o": Trie {
-                "data": Array [],
+                "data": [],
                 "fail": null,
                 "is_word": null,
-                "next": Object {
+                "next": {
                   "t": Trie {
-                    "data": Array [
+                    "data": [
                       undefined,
                     ],
                     "fail": null,
                     "is_word": true,
-                    "next": Object {},
+                    "next": {},
                     "value": "boot",
                   },
                 },
@@ -430,56 +430,56 @@ AhoCorasick {
         "value": "b",
       },
       "h": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "e": Trie {
-            "data": Array [],
+            "data": [],
             "fail": null,
             "is_word": null,
-            "next": Object {
+            "next": {
               "r": Trie {
-                "data": Array [],
+                "data": [],
                 "fail": Trie {
-                  "data": Array [],
+                  "data": [],
                   "fail": null,
                   "is_word": null,
-                  "next": Object {
+                  "next": {
                     "e": Trie {
-                      "data": Array [],
+                      "data": [],
                       "fail": null,
                       "is_word": null,
-                      "next": Object {
+                      "next": {
                         "c": Trie {
-                          "data": Array [],
+                          "data": [],
                           "fail": null,
                           "is_word": null,
-                          "next": Object {
+                          "next": {
                             "e": Trie {
-                              "data": Array [],
+                              "data": [],
                               "fail": null,
                               "is_word": null,
-                              "next": Object {
+                              "next": {
                                 "i": Trie {
-                                  "data": Array [],
+                                  "data": [],
                                   "fail": Trie {
-                                    "data": Array [],
+                                    "data": [],
                                     "fail": null,
                                     "is_word": null,
-                                    "next": Object {
+                                    "next": {
                                       "v": Trie {
-                                        "data": Array [],
+                                        "data": [],
                                         "fail": null,
                                         "is_word": null,
-                                        "next": Object {
+                                        "next": {
                                           "i": Trie {
-                                            "data": Array [
+                                            "data": [
                                               undefined,
                                             ],
                                             "fail": [Circular],
                                             "is_word": true,
-                                            "next": Object {},
+                                            "next": {},
                                             "value": "ivi",
                                           },
                                         },
@@ -489,52 +489,52 @@ AhoCorasick {
                                     "value": "i",
                                   },
                                   "is_word": null,
-                                  "next": Object {
+                                  "next": {
                                     "v": Trie {
-                                      "data": Array [],
+                                      "data": [],
                                       "fail": Trie {
-                                        "data": Array [],
+                                        "data": [],
                                         "fail": null,
                                         "is_word": null,
-                                        "next": Object {
+                                        "next": {
                                           "i": Trie {
-                                            "data": Array [
+                                            "data": [
                                               undefined,
                                             ],
                                             "fail": Trie {
-                                              "data": Array [],
+                                              "data": [],
                                               "fail": null,
                                               "is_word": null,
-                                              "next": Object {
+                                              "next": {
                                                 "v": [Circular],
                                               },
                                               "value": "i",
                                             },
                                             "is_word": true,
-                                            "next": Object {},
+                                            "next": {},
                                             "value": "ivi",
                                           },
                                         },
                                         "value": "iv",
                                       },
                                       "is_word": null,
-                                      "next": Object {
+                                      "next": {
                                         "i": Trie {
-                                          "data": Array [],
+                                          "data": [],
                                           "fail": Trie {
-                                            "data": Array [
+                                            "data": [
                                               undefined,
                                             ],
                                             "fail": Trie {
-                                              "data": Array [],
+                                              "data": [],
                                               "fail": null,
                                               "is_word": null,
-                                              "next": Object {
+                                              "next": {
                                                 "v": Trie {
-                                                  "data": Array [],
+                                                  "data": [],
                                                   "fail": null,
                                                   "is_word": null,
-                                                  "next": Object {
+                                                  "next": {
                                                     "i": [Circular],
                                                   },
                                                   "value": "iv",
@@ -543,28 +543,28 @@ AhoCorasick {
                                               "value": "i",
                                             },
                                             "is_word": true,
-                                            "next": Object {},
+                                            "next": {},
                                             "value": "ivi",
                                           },
                                           "is_word": null,
-                                          "next": Object {
+                                          "next": {
                                             "n": Trie {
-                                              "data": Array [],
+                                              "data": [],
                                               "fail": null,
                                               "is_word": null,
-                                              "next": Object {
+                                              "next": {
                                                 "g": Trie {
-                                                  "data": Array [],
+                                                  "data": [],
                                                   "fail": null,
                                                   "is_word": null,
-                                                  "next": Object {
+                                                  "next": {
                                                     "s": Trie {
-                                                      "data": Array [
+                                                      "data": [
                                                         undefined,
                                                       ],
                                                       "fail": null,
                                                       "is_word": true,
-                                                      "next": Object {},
+                                                      "next": {},
                                                       "value": "receivings",
                                                     },
                                                   },
@@ -595,45 +595,45 @@ AhoCorasick {
                   "value": "r",
                 },
                 "is_word": null,
-                "next": Object {
+                "next": {
                   "e": Trie {
-                    "data": Array [
+                    "data": [
                       undefined,
                     ],
                     "fail": Trie {
-                      "data": Array [],
+                      "data": [],
                       "fail": null,
                       "is_word": null,
-                      "next": Object {
+                      "next": {
                         "c": Trie {
-                          "data": Array [],
+                          "data": [],
                           "fail": null,
                           "is_word": null,
-                          "next": Object {
+                          "next": {
                             "e": Trie {
-                              "data": Array [],
+                              "data": [],
                               "fail": null,
                               "is_word": null,
-                              "next": Object {
+                              "next": {
                                 "i": Trie {
-                                  "data": Array [],
+                                  "data": [],
                                   "fail": Trie {
-                                    "data": Array [],
+                                    "data": [],
                                     "fail": null,
                                     "is_word": null,
-                                    "next": Object {
+                                    "next": {
                                       "v": Trie {
-                                        "data": Array [],
+                                        "data": [],
                                         "fail": null,
                                         "is_word": null,
-                                        "next": Object {
+                                        "next": {
                                           "i": Trie {
-                                            "data": Array [
+                                            "data": [
                                               undefined,
                                             ],
                                             "fail": [Circular],
                                             "is_word": true,
-                                            "next": Object {},
+                                            "next": {},
                                             "value": "ivi",
                                           },
                                         },
@@ -643,52 +643,52 @@ AhoCorasick {
                                     "value": "i",
                                   },
                                   "is_word": null,
-                                  "next": Object {
+                                  "next": {
                                     "v": Trie {
-                                      "data": Array [],
+                                      "data": [],
                                       "fail": Trie {
-                                        "data": Array [],
+                                        "data": [],
                                         "fail": null,
                                         "is_word": null,
-                                        "next": Object {
+                                        "next": {
                                           "i": Trie {
-                                            "data": Array [
+                                            "data": [
                                               undefined,
                                             ],
                                             "fail": Trie {
-                                              "data": Array [],
+                                              "data": [],
                                               "fail": null,
                                               "is_word": null,
-                                              "next": Object {
+                                              "next": {
                                                 "v": [Circular],
                                               },
                                               "value": "i",
                                             },
                                             "is_word": true,
-                                            "next": Object {},
+                                            "next": {},
                                             "value": "ivi",
                                           },
                                         },
                                         "value": "iv",
                                       },
                                       "is_word": null,
-                                      "next": Object {
+                                      "next": {
                                         "i": Trie {
-                                          "data": Array [],
+                                          "data": [],
                                           "fail": Trie {
-                                            "data": Array [
+                                            "data": [
                                               undefined,
                                             ],
                                             "fail": Trie {
-                                              "data": Array [],
+                                              "data": [],
                                               "fail": null,
                                               "is_word": null,
-                                              "next": Object {
+                                              "next": {
                                                 "v": Trie {
-                                                  "data": Array [],
+                                                  "data": [],
                                                   "fail": null,
                                                   "is_word": null,
-                                                  "next": Object {
+                                                  "next": {
                                                     "i": [Circular],
                                                   },
                                                   "value": "iv",
@@ -697,28 +697,28 @@ AhoCorasick {
                                               "value": "i",
                                             },
                                             "is_word": true,
-                                            "next": Object {},
+                                            "next": {},
                                             "value": "ivi",
                                           },
                                           "is_word": null,
-                                          "next": Object {
+                                          "next": {
                                             "n": Trie {
-                                              "data": Array [],
+                                              "data": [],
                                               "fail": null,
                                               "is_word": null,
-                                              "next": Object {
+                                              "next": {
                                                 "g": Trie {
-                                                  "data": Array [],
+                                                  "data": [],
                                                   "fail": null,
                                                   "is_word": null,
-                                                  "next": Object {
+                                                  "next": {
                                                     "s": Trie {
-                                                      "data": Array [
+                                                      "data": [
                                                         undefined,
                                                       ],
                                                       "fail": null,
                                                       "is_word": true,
-                                                      "next": Object {},
+                                                      "next": {},
                                                       "value": "receivings",
                                                     },
                                                   },
@@ -746,7 +746,7 @@ AhoCorasick {
                       "value": "re",
                     },
                     "is_word": true,
-                    "next": Object {},
+                    "next": {},
                     "value": "here",
                   },
                 },
@@ -759,22 +759,22 @@ AhoCorasick {
         "value": "h",
       },
       "i": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "v": Trie {
-            "data": Array [],
+            "data": [],
             "fail": null,
             "is_word": null,
-            "next": Object {
+            "next": {
               "i": Trie {
-                "data": Array [
+                "data": [
                   undefined,
                 ],
                 "fail": [Circular],
                 "is_word": true,
-                "next": Object {},
+                "next": {},
                 "value": "ivi",
               },
             },
@@ -784,29 +784,29 @@ AhoCorasick {
         "value": "i",
       },
       "l": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "i": Trie {
-            "data": Array [],
+            "data": [],
             "fail": Trie {
-              "data": Array [],
+              "data": [],
               "fail": null,
               "is_word": null,
-              "next": Object {
+              "next": {
                 "v": Trie {
-                  "data": Array [],
+                  "data": [],
                   "fail": null,
                   "is_word": null,
-                  "next": Object {
+                  "next": {
                     "i": Trie {
-                      "data": Array [
+                      "data": [
                         undefined,
                       ],
                       "fail": [Circular],
                       "is_word": true,
-                      "next": Object {},
+                      "next": {},
                       "value": "ivi",
                     },
                   },
@@ -816,56 +816,56 @@ AhoCorasick {
               "value": "i",
             },
             "is_word": null,
-            "next": Object {
+            "next": {
               "t": Trie {
-                "data": Array [],
+                "data": [],
                 "fail": null,
                 "is_word": null,
-                "next": Object {
+                "next": {
                   "t": Trie {
-                    "data": Array [],
+                    "data": [],
                     "fail": null,
                     "is_word": null,
-                    "next": Object {
+                    "next": {
                       "l": Trie {
-                        "data": Array [],
+                        "data": [],
                         "fail": [Circular],
                         "is_word": null,
-                        "next": Object {
+                        "next": {
                           "e": Trie {
-                            "data": Array [],
+                            "data": [],
                             "fail": null,
                             "is_word": null,
-                            "next": Object {
+                            "next": {
                               " ": Trie {
-                                "data": Array [],
+                                "data": [],
                                 "fail": null,
                                 "is_word": null,
-                                "next": Object {
+                                "next": {
                                   "b": Trie {
-                                    "data": Array [],
+                                    "data": [],
                                     "fail": Trie {
-                                      "data": Array [],
+                                      "data": [],
                                       "fail": null,
                                       "is_word": null,
-                                      "next": Object {
+                                      "next": {
                                         "o": Trie {
-                                          "data": Array [],
+                                          "data": [],
                                           "fail": null,
                                           "is_word": null,
-                                          "next": Object {
+                                          "next": {
                                             "o": Trie {
-                                              "data": Array [],
+                                              "data": [],
                                               "fail": null,
                                               "is_word": null,
-                                              "next": Object {
+                                              "next": {
                                                 "t": Trie {
-                                                  "data": Array [
+                                                  "data": [
                                                     undefined,
                                                   ],
                                                   "fail": null,
                                                   "is_word": true,
-                                                  "next": Object {},
+                                                  "next": {},
                                                   "value": "boot",
                                                 },
                                               },
@@ -878,26 +878,26 @@ AhoCorasick {
                                       "value": "b",
                                     },
                                     "is_word": null,
-                                    "next": Object {
+                                    "next": {
                                       "i": Trie {
-                                        "data": Array [],
+                                        "data": [],
                                         "fail": Trie {
-                                          "data": Array [],
+                                          "data": [],
                                           "fail": null,
                                           "is_word": null,
-                                          "next": Object {
+                                          "next": {
                                             "v": Trie {
-                                              "data": Array [],
+                                              "data": [],
                                               "fail": null,
                                               "is_word": null,
-                                              "next": Object {
+                                              "next": {
                                                 "i": Trie {
-                                                  "data": Array [
+                                                  "data": [
                                                     undefined,
                                                   ],
                                                   "fail": [Circular],
                                                   "is_word": true,
-                                                  "next": Object {},
+                                                  "next": {},
                                                   "value": "ivi",
                                                 },
                                               },
@@ -907,29 +907,29 @@ AhoCorasick {
                                           "value": "i",
                                         },
                                         "is_word": null,
-                                        "next": Object {
+                                        "next": {
                                           "t": Trie {
-                                            "data": Array [],
+                                            "data": [],
                                             "fail": null,
                                             "is_word": null,
-                                            "next": Object {
+                                            "next": {
                                               " ": Trie {
-                                                "data": Array [],
+                                                "data": [],
                                                 "fail": null,
                                                 "is_word": null,
-                                                "next": Object {
+                                                "next": {
                                                   "o": Trie {
-                                                    "data": Array [],
+                                                    "data": [],
                                                     "fail": null,
                                                     "is_word": null,
-                                                    "next": Object {
+                                                    "next": {
                                                       "f": Trie {
-                                                        "data": Array [
+                                                        "data": [
                                                           undefined,
                                                         ],
                                                         "fail": null,
                                                         "is_word": true,
-                                                        "next": Object {},
+                                                        "next": {},
                                                         "value": "little bit of",
                                                       },
                                                     },
@@ -969,44 +969,44 @@ AhoCorasick {
         "value": "l",
       },
       "r": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "e": Trie {
-            "data": Array [],
+            "data": [],
             "fail": null,
             "is_word": null,
-            "next": Object {
+            "next": {
               "c": Trie {
-                "data": Array [],
+                "data": [],
                 "fail": null,
                 "is_word": null,
-                "next": Object {
+                "next": {
                   "e": Trie {
-                    "data": Array [],
+                    "data": [],
                     "fail": null,
                     "is_word": null,
-                    "next": Object {
+                    "next": {
                       "i": Trie {
-                        "data": Array [],
+                        "data": [],
                         "fail": Trie {
-                          "data": Array [],
+                          "data": [],
                           "fail": null,
                           "is_word": null,
-                          "next": Object {
+                          "next": {
                             "v": Trie {
-                              "data": Array [],
+                              "data": [],
                               "fail": null,
                               "is_word": null,
-                              "next": Object {
+                              "next": {
                                 "i": Trie {
-                                  "data": Array [
+                                  "data": [
                                     undefined,
                                   ],
                                   "fail": [Circular],
                                   "is_word": true,
-                                  "next": Object {},
+                                  "next": {},
                                   "value": "ivi",
                                 },
                               },
@@ -1016,52 +1016,52 @@ AhoCorasick {
                           "value": "i",
                         },
                         "is_word": null,
-                        "next": Object {
+                        "next": {
                           "v": Trie {
-                            "data": Array [],
+                            "data": [],
                             "fail": Trie {
-                              "data": Array [],
+                              "data": [],
                               "fail": null,
                               "is_word": null,
-                              "next": Object {
+                              "next": {
                                 "i": Trie {
-                                  "data": Array [
+                                  "data": [
                                     undefined,
                                   ],
                                   "fail": Trie {
-                                    "data": Array [],
+                                    "data": [],
                                     "fail": null,
                                     "is_word": null,
-                                    "next": Object {
+                                    "next": {
                                       "v": [Circular],
                                     },
                                     "value": "i",
                                   },
                                   "is_word": true,
-                                  "next": Object {},
+                                  "next": {},
                                   "value": "ivi",
                                 },
                               },
                               "value": "iv",
                             },
                             "is_word": null,
-                            "next": Object {
+                            "next": {
                               "i": Trie {
-                                "data": Array [],
+                                "data": [],
                                 "fail": Trie {
-                                  "data": Array [
+                                  "data": [
                                     undefined,
                                   ],
                                   "fail": Trie {
-                                    "data": Array [],
+                                    "data": [],
                                     "fail": null,
                                     "is_word": null,
-                                    "next": Object {
+                                    "next": {
                                       "v": Trie {
-                                        "data": Array [],
+                                        "data": [],
                                         "fail": null,
                                         "is_word": null,
-                                        "next": Object {
+                                        "next": {
                                           "i": [Circular],
                                         },
                                         "value": "iv",
@@ -1070,28 +1070,28 @@ AhoCorasick {
                                     "value": "i",
                                   },
                                   "is_word": true,
-                                  "next": Object {},
+                                  "next": {},
                                   "value": "ivi",
                                 },
                                 "is_word": null,
-                                "next": Object {
+                                "next": {
                                   "n": Trie {
-                                    "data": Array [],
+                                    "data": [],
                                     "fail": null,
                                     "is_word": null,
-                                    "next": Object {
+                                    "next": {
                                       "g": Trie {
-                                        "data": Array [],
+                                        "data": [],
                                         "fail": null,
                                         "is_word": null,
-                                        "next": Object {
+                                        "next": {
                                           "s": Trie {
-                                            "data": Array [
+                                            "data": [
                                               undefined,
                                             ],
                                             "fail": null,
                                             "is_word": true,
-                                            "next": Object {},
+                                            "next": {},
                                             "value": "receivings",
                                           },
                                         },
@@ -1128,52 +1128,52 @@ AhoCorasick {
 `;
 
 exports[`Picks out multiple words 2`] = `
-Object {
-  "count": Object {
+{
+  "count": {
     "boot": 1,
     "here": 1,
     "ivi": 1,
     "little bit of": 1,
   },
-  "data": Object {
-    "boot": Array [
+  "data": {
+    "boot": [
       undefined,
     ],
-    "here": Array [
+    "here": [
       undefined,
     ],
-    "ivi": Array [
+    "ivi": [
       undefined,
     ],
-    "little bit of": Array [
+    "little bit of": [
       undefined,
     ],
   },
-  "matches": Object {
-    "boot": Array [
+  "matches": {
+    "boot": [
       147,
     ],
-    "here": Array [
+    "here": [
       0,
     ],
-    "ivi": Array [
+    "ivi": [
       105,
     ],
-    "little bit of": Array [
+    "little bit of": [
       10,
     ],
   },
-  "positions": Object {
-    "0": Array [
+  "positions": {
+    "0": [
       "here",
     ],
-    "10": Array [
+    "10": [
       "little bit of",
     ],
-    "105": Array [
+    "105": [
       "ivi",
     ],
-    "147": Array [
+    "147": [
       "boot",
     ],
   },
@@ -1183,47 +1183,47 @@ Object {
 exports[`Test simple 1`] = `
 AhoCorasick {
   "trie": Trie {
-    "data": Array [],
+    "data": [],
     "fail": null,
     "is_word": null,
-    "next": Object {
+    "next": {
       "a": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "b": Trie {
-            "data": Array [
-              Object {
+            "data": [
+              {
                 "word": "ab",
               },
             ],
             "fail": Trie {
-              "data": Array [],
+              "data": [],
               "fail": null,
               "is_word": null,
-              "next": Object {
+              "next": {
                 "c": Trie {
-                  "data": Array [],
+                  "data": [],
                   "fail": Trie {
-                    "data": Array [],
+                    "data": [],
                     "fail": null,
                     "is_word": null,
-                    "next": Object {
+                    "next": {
                       "a": Trie {
-                        "data": Array [],
+                        "data": [],
                         "fail": [Circular],
                         "is_word": null,
-                        "next": Object {
+                        "next": {
                           "a": Trie {
-                            "data": Array [
-                              Object {
+                            "data": [
+                              {
                                 "word": "caa",
                               },
                             ],
                             "fail": [Circular],
                             "is_word": true,
-                            "next": Object {},
+                            "next": {},
                             "value": "caa",
                           },
                         },
@@ -1233,16 +1233,16 @@ AhoCorasick {
                     "value": "c",
                   },
                   "is_word": null,
-                  "next": Object {
+                  "next": {
                     "r": Trie {
-                      "data": Array [
-                        Object {
+                      "data": [
+                        {
                           "word": "bcr",
                         },
                       ],
                       "fail": null,
                       "is_word": true,
-                      "next": Object {},
+                      "next": {},
                       "value": "bcr",
                     },
                   },
@@ -1252,74 +1252,74 @@ AhoCorasick {
               "value": "b",
             },
             "is_word": true,
-            "next": Object {},
+            "next": {},
             "value": "ab",
           },
         },
         "value": "a",
       },
       "b": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "c": Trie {
-            "data": Array [],
+            "data": [],
             "fail": Trie {
-              "data": Array [],
+              "data": [],
               "fail": null,
               "is_word": null,
-              "next": Object {
+              "next": {
                 "a": Trie {
-                  "data": Array [],
+                  "data": [],
                   "fail": Trie {
-                    "data": Array [],
+                    "data": [],
                     "fail": null,
                     "is_word": null,
-                    "next": Object {
+                    "next": {
                       "b": Trie {
-                        "data": Array [
-                          Object {
+                        "data": [
+                          {
                             "word": "ab",
                           },
                         ],
                         "fail": [Circular],
                         "is_word": true,
-                        "next": Object {},
+                        "next": {},
                         "value": "ab",
                       },
                     },
                     "value": "a",
                   },
                   "is_word": null,
-                  "next": Object {
+                  "next": {
                     "a": Trie {
-                      "data": Array [
-                        Object {
+                      "data": [
+                        {
                           "word": "caa",
                         },
                       ],
                       "fail": Trie {
-                        "data": Array [],
+                        "data": [],
                         "fail": null,
                         "is_word": null,
-                        "next": Object {
+                        "next": {
                           "b": Trie {
-                            "data": Array [
-                              Object {
+                            "data": [
+                              {
                                 "word": "ab",
                               },
                             ],
                             "fail": [Circular],
                             "is_word": true,
-                            "next": Object {},
+                            "next": {},
                             "value": "ab",
                           },
                         },
                         "value": "a",
                       },
                       "is_word": true,
-                      "next": Object {},
+                      "next": {},
                       "value": "caa",
                     },
                   },
@@ -1329,16 +1329,16 @@ AhoCorasick {
               "value": "c",
             },
             "is_word": null,
-            "next": Object {
+            "next": {
               "r": Trie {
-                "data": Array [
-                  Object {
+                "data": [
+                  {
                     "word": "bcr",
                   },
                 ],
                 "fail": null,
                 "is_word": true,
-                "next": Object {},
+                "next": {},
                 "value": "bcr",
               },
             },
@@ -1348,42 +1348,42 @@ AhoCorasick {
         "value": "b",
       },
       "c": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "a": Trie {
-            "data": Array [],
+            "data": [],
             "fail": Trie {
-              "data": Array [],
+              "data": [],
               "fail": null,
               "is_word": null,
-              "next": Object {
+              "next": {
                 "b": Trie {
-                  "data": Array [
-                    Object {
+                  "data": [
+                    {
                       "word": "ab",
                     },
                   ],
                   "fail": Trie {
-                    "data": Array [],
+                    "data": [],
                     "fail": null,
                     "is_word": null,
-                    "next": Object {
+                    "next": {
                       "c": Trie {
-                        "data": Array [],
+                        "data": [],
                         "fail": [Circular],
                         "is_word": null,
-                        "next": Object {
+                        "next": {
                           "r": Trie {
-                            "data": Array [
-                              Object {
+                            "data": [
+                              {
                                 "word": "bcr",
                               },
                             ],
                             "fail": null,
                             "is_word": true,
-                            "next": Object {},
+                            "next": {},
                             "value": "bcr",
                           },
                         },
@@ -1393,50 +1393,50 @@ AhoCorasick {
                     "value": "b",
                   },
                   "is_word": true,
-                  "next": Object {},
+                  "next": {},
                   "value": "ab",
                 },
               },
               "value": "a",
             },
             "is_word": null,
-            "next": Object {
+            "next": {
               "a": Trie {
-                "data": Array [
-                  Object {
+                "data": [
+                  {
                     "word": "caa",
                   },
                 ],
                 "fail": Trie {
-                  "data": Array [],
+                  "data": [],
                   "fail": null,
                   "is_word": null,
-                  "next": Object {
+                  "next": {
                     "b": Trie {
-                      "data": Array [
-                        Object {
+                      "data": [
+                        {
                           "word": "ab",
                         },
                       ],
                       "fail": Trie {
-                        "data": Array [],
+                        "data": [],
                         "fail": null,
                         "is_word": null,
-                        "next": Object {
+                        "next": {
                           "c": Trie {
-                            "data": Array [],
+                            "data": [],
                             "fail": [Circular],
                             "is_word": null,
-                            "next": Object {
+                            "next": {
                               "r": Trie {
-                                "data": Array [
-                                  Object {
+                                "data": [
+                                  {
                                     "word": "bcr",
                                   },
                                 ],
                                 "fail": null,
                                 "is_word": true,
-                                "next": Object {},
+                                "next": {},
                                 "value": "bcr",
                               },
                             },
@@ -1446,14 +1446,14 @@ AhoCorasick {
                         "value": "b",
                       },
                       "is_word": true,
-                      "next": Object {},
+                      "next": {},
                       "value": "ab",
                     },
                   },
                   "value": "a",
                 },
                 "is_word": true,
-                "next": Object {},
+                "next": {},
                 "value": "caa",
               },
             },
@@ -1469,24 +1469,24 @@ AhoCorasick {
 `;
 
 exports[`Test simple 2`] = `
-Object {
-  "count": Object {
+{
+  "count": {
     "ab": 1,
   },
-  "data": Object {
-    "ab": Array [
-      Object {
+  "data": {
+    "ab": [
+      {
         "word": "ab",
       },
     ],
   },
-  "matches": Object {
-    "ab": Array [
+  "matches": {
+    "ab": [
       2,
     ],
   },
-  "positions": Object {
-    "2": Array [
+  "positions": {
+    "2": [
       "ab",
     ],
   },
@@ -1494,24 +1494,24 @@ Object {
 `;
 
 exports[`Test simple 3`] = `
-Object {
-  "count": Object {
+{
+  "count": {
     "caa": 1,
   },
-  "data": Object {
-    "caa": Array [
-      Object {
+  "data": {
+    "caa": [
+      {
         "word": "caa",
       },
     ],
   },
-  "matches": Object {
-    "caa": Array [
+  "matches": {
+    "caa": [
       1,
     ],
   },
-  "positions": Object {
-    "1": Array [
+  "positions": {
+    "1": [
       "caa",
     ],
   },

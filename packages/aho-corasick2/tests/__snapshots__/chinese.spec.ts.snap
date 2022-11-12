@@ -3,23 +3,23 @@
 exports[`Picks out chinese words 1`] = `
 AhoCorasick {
   "trie": Trie {
-    "data": Array [],
+    "data": [],
     "is_word": null,
-    "next": Object {
+    "next": {
       "五": Trie {
-        "data": Array [],
+        "data": [],
         "is_word": null,
-        "next": Object {
+        "next": {
           "毛": Trie {
-            "data": Array [],
+            "data": [],
             "is_word": null,
-            "next": Object {
+            "next": {
               "党": Trie {
-                "data": Array [
+                "data": [
                   undefined,
                 ],
                 "is_word": true,
-                "next": Object {},
+                "next": {},
                 "value": "五毛党",
               },
             },
@@ -29,49 +29,49 @@ AhoCorasick {
         "value": "五",
       },
       "党": Trie {
-        "data": Array [],
+        "data": [],
         "is_word": null,
-        "next": Object {
+        "next": {
           "国": Trie {
-            "data": Array [
+            "data": [
               undefined,
             ],
             "is_word": true,
-            "next": Object {},
+            "next": {},
             "value": "党国",
           },
         },
         "value": "党",
       },
       "国": Trie {
-        "data": Array [],
+        "data": [],
         "is_word": null,
-        "next": Object {
+        "next": {
           "家": Trie {
-            "data": Array [
+            "data": [
               undefined,
             ],
             "is_word": true,
-            "next": Object {},
+            "next": {},
             "value": "国家",
           },
         },
         "value": "国",
       },
       "毛": Trie {
-        "data": Array [],
+        "data": [],
         "is_word": null,
-        "next": Object {
+        "next": {
           "五": Trie {
-            "data": Array [],
+            "data": [],
             "is_word": null,
-            "next": Object {
+            "next": {
               "贴": Trie {
-                "data": Array [
+                "data": [
                   undefined,
                 ],
                 "is_word": true,
-                "next": Object {},
+                "next": {},
                 "value": "毛五贴",
               },
             },
@@ -81,19 +81,19 @@ AhoCorasick {
         "value": "毛",
       },
       "黑": Trie {
-        "data": Array [],
+        "data": [],
         "is_word": null,
-        "next": Object {
+        "next": {
           "手": Trie {
-            "data": Array [],
+            "data": [],
             "is_word": null,
-            "next": Object {
+            "next": {
               "党": Trie {
-                "data": Array [
+                "data": [
                   undefined,
                 ],
                 "is_word": true,
-                "next": Object {},
+                "next": {},
                 "value": "黑手党",
               },
             },
@@ -111,34 +111,34 @@ AhoCorasick {
 exports[`Picks out chinese words 2`] = `
 AhoCorasick {
   "trie": Trie {
-    "data": Array [],
+    "data": [],
     "fail": null,
     "is_word": null,
-    "next": Object {
+    "next": {
       "五": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "毛": Trie {
-            "data": Array [],
+            "data": [],
             "fail": Trie {
-              "data": Array [],
+              "data": [],
               "fail": null,
               "is_word": null,
-              "next": Object {
+              "next": {
                 "五": Trie {
-                  "data": Array [],
+                  "data": [],
                   "fail": [Circular],
                   "is_word": null,
-                  "next": Object {
+                  "next": {
                     "贴": Trie {
-                      "data": Array [
+                      "data": [
                         undefined,
                       ],
                       "fail": null,
                       "is_word": true,
-                      "next": Object {},
+                      "next": {},
                       "value": "毛五贴",
                     },
                   },
@@ -148,46 +148,46 @@ AhoCorasick {
               "value": "毛",
             },
             "is_word": null,
-            "next": Object {
+            "next": {
               "党": Trie {
-                "data": Array [
+                "data": [
                   undefined,
                 ],
                 "fail": Trie {
-                  "data": Array [],
+                  "data": [],
                   "fail": null,
                   "is_word": null,
-                  "next": Object {
+                  "next": {
                     "国": Trie {
-                      "data": Array [
+                      "data": [
                         undefined,
                       ],
                       "fail": Trie {
-                        "data": Array [],
+                        "data": [],
                         "fail": null,
                         "is_word": null,
-                        "next": Object {
+                        "next": {
                           "家": Trie {
-                            "data": Array [
+                            "data": [
                               undefined,
                             ],
                             "fail": null,
                             "is_word": true,
-                            "next": Object {},
+                            "next": {},
                             "value": "国家",
                           },
                         },
                         "value": "国",
                       },
                       "is_word": true,
-                      "next": Object {},
+                      "next": {},
                       "value": "党国",
                     },
                   },
                   "value": "党",
                 },
                 "is_word": true,
-                "next": Object {},
+                "next": {},
                 "value": "五毛党",
               },
             },
@@ -197,111 +197,111 @@ AhoCorasick {
         "value": "五",
       },
       "党": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "国": Trie {
-            "data": Array [
+            "data": [
               undefined,
             ],
             "fail": Trie {
-              "data": Array [],
+              "data": [],
               "fail": null,
               "is_word": null,
-              "next": Object {
+              "next": {
                 "家": Trie {
-                  "data": Array [
+                  "data": [
                     undefined,
                   ],
                   "fail": null,
                   "is_word": true,
-                  "next": Object {},
+                  "next": {},
                   "value": "国家",
                 },
               },
               "value": "国",
             },
             "is_word": true,
-            "next": Object {},
+            "next": {},
             "value": "党国",
           },
         },
         "value": "党",
       },
       "国": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "家": Trie {
-            "data": Array [
+            "data": [
               undefined,
             ],
             "fail": null,
             "is_word": true,
-            "next": Object {},
+            "next": {},
             "value": "国家",
           },
         },
         "value": "国",
       },
       "毛": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "五": Trie {
-            "data": Array [],
+            "data": [],
             "fail": Trie {
-              "data": Array [],
+              "data": [],
               "fail": null,
               "is_word": null,
-              "next": Object {
+              "next": {
                 "毛": Trie {
-                  "data": Array [],
+                  "data": [],
                   "fail": [Circular],
                   "is_word": null,
-                  "next": Object {
+                  "next": {
                     "党": Trie {
-                      "data": Array [
+                      "data": [
                         undefined,
                       ],
                       "fail": Trie {
-                        "data": Array [],
+                        "data": [],
                         "fail": null,
                         "is_word": null,
-                        "next": Object {
+                        "next": {
                           "国": Trie {
-                            "data": Array [
+                            "data": [
                               undefined,
                             ],
                             "fail": Trie {
-                              "data": Array [],
+                              "data": [],
                               "fail": null,
                               "is_word": null,
-                              "next": Object {
+                              "next": {
                                 "家": Trie {
-                                  "data": Array [
+                                  "data": [
                                     undefined,
                                   ],
                                   "fail": null,
                                   "is_word": true,
-                                  "next": Object {},
+                                  "next": {},
                                   "value": "国家",
                                 },
                               },
                               "value": "国",
                             },
                             "is_word": true,
-                            "next": Object {},
+                            "next": {},
                             "value": "党国",
                           },
                         },
                         "value": "党",
                       },
                       "is_word": true,
-                      "next": Object {},
+                      "next": {},
                       "value": "五毛党",
                     },
                   },
@@ -311,14 +311,14 @@ AhoCorasick {
               "value": "五",
             },
             "is_word": null,
-            "next": Object {
+            "next": {
               "贴": Trie {
-                "data": Array [
+                "data": [
                   undefined,
                 ],
                 "fail": null,
                 "is_word": true,
-                "next": Object {},
+                "next": {},
                 "value": "毛五贴",
               },
             },
@@ -328,54 +328,54 @@ AhoCorasick {
         "value": "毛",
       },
       "黑": Trie {
-        "data": Array [],
+        "data": [],
         "fail": null,
         "is_word": null,
-        "next": Object {
+        "next": {
           "手": Trie {
-            "data": Array [],
+            "data": [],
             "fail": null,
             "is_word": null,
-            "next": Object {
+            "next": {
               "党": Trie {
-                "data": Array [
+                "data": [
                   undefined,
                 ],
                 "fail": Trie {
-                  "data": Array [],
+                  "data": [],
                   "fail": null,
                   "is_word": null,
-                  "next": Object {
+                  "next": {
                     "国": Trie {
-                      "data": Array [
+                      "data": [
                         undefined,
                       ],
                       "fail": Trie {
-                        "data": Array [],
+                        "data": [],
                         "fail": null,
                         "is_word": null,
-                        "next": Object {
+                        "next": {
                           "家": Trie {
-                            "data": Array [
+                            "data": [
                               undefined,
                             ],
                             "fail": null,
                             "is_word": true,
-                            "next": Object {},
+                            "next": {},
                             "value": "国家",
                           },
                         },
                         "value": "国",
                       },
                       "is_word": true,
-                      "next": Object {},
+                      "next": {},
                       "value": "党国",
                     },
                   },
                   "value": "党",
                 },
                 "is_word": true,
-                "next": Object {},
+                "next": {},
                 "value": "黑手党",
               },
             },
@@ -391,52 +391,52 @@ AhoCorasick {
 `;
 
 exports[`Picks out chinese words 3`] = `
-Object {
-  "count": Object {
+{
+  "count": {
     "五毛党": 1,
     "党国": 1,
     "国家": 1,
     "毛五贴": 1,
   },
-  "data": Object {
-    "五毛党": Array [
+  "data": {
+    "五毛党": [
       undefined,
     ],
-    "党国": Array [
+    "党国": [
       undefined,
     ],
-    "国家": Array [
+    "国家": [
       undefined,
     ],
-    "毛五贴": Array [
+    "毛五贴": [
       undefined,
     ],
   },
-  "matches": Object {
-    "五毛党": Array [
+  "matches": {
+    "五毛党": [
       5,
     ],
-    "党国": Array [
+    "党国": [
       7,
     ],
-    "国家": Array [
+    "国家": [
       8,
     ],
-    "毛五贴": Array [
+    "毛五贴": [
       2,
     ],
   },
-  "positions": Object {
-    "2": Array [
+  "positions": {
+    "2": [
       "毛五贴",
     ],
-    "5": Array [
+    "5": [
       "五毛党",
     ],
-    "7": Array [
+    "7": [
       "党国",
     ],
-    "8": Array [
+    "8": [
       "国家",
     ],
   },
