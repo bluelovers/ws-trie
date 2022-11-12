@@ -1,5 +1,5 @@
 import trie from 'trie-prefix-tree';
-import trieToRegExp from '../index';
+import trieToRegExp from '../src/index';
 
 const arr = ['trea', 'tr2a', 'trie', '1', 'foobar', 'foobaz', 'foozap', 'fooza', '$'];
 

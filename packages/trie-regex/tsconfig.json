@@ -1,0 +1,10 @@
+{
+  "extends": "@bluelovers/tsconfig/tsdx/lazy.json",
+  "compilerOptions": {
+    "noImplicitAny": false
+  },
+  "exclude": [
+    "dist",
+    "test"
+  ]
+}

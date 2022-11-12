@@ -5,16 +5,16 @@
 import jsesc from 'jsesc';
 import { IOptions } from './types';
 
-const END_WORD = '$$';
+const END_WORD = '$$' as const;
 
 export function _to_regex(alt_group: string[], char_class: string[], end: boolean): string
 {
 
-	let group_has_one_element = function (el)
-		{
-			return el.length === 1;
-		},
-		result = "";
+	const group_has_one_element = function (el: string)
+	{
+		return el.length === 1;
+	};
+	let result = "";
 
 	// Once we've finished walking through the tree we need to build
 	// the regex match groups...
@@ -31,12 +31,12 @@ export function _to_regex(alt_group: string[], char_class: string[], end: boolea
 			// When every single array in the alternative group is
 			// a single element array, this gets flattened in to
 			// a character class.
-			result += ('[' + alt_group.join('') + ']');
+			result += '[' + alt_group.join('') + ']';
 		}
 		else
 		{
 			// Finally, build a non-capturing alternative group.
-			result += ('(?:' + alt_group.join('|') + ')');
+			result += '(?:' + alt_group.join('|') + ')';
 		}
 	}
 	else if (char_class.length > 0)
@@ -72,7 +72,7 @@ export function _quotemeta(phrase: string, options: IOptions = {})
 
 	if (!options.disableEscaped)
 	{
-		let jo = Object.assign({
+		const jo = Object.assign({
 			'es6': true,
 			//'minimal': true,
 		}, options.jsescOptions);
@@ -86,13 +86,13 @@ export function _quotemeta(phrase: string, options: IOptions = {})
 	return s;
 }
 
-export function _is_phrase_valid(phrase): phrase is string
+export function _is_phrase_valid(phrase: unknown): phrase is string
 {
-	return (typeof phrase === 'string' && phrase.length > 0);
+	return typeof phrase === 'string' && phrase.length > 0;
 }
 
-export function isDefaultEndpoint(value, key, trie)
+export function isDefaultEndpoint(value: unknown, key: unknown, trie: unknown): key is typeof END_WORD
 {
 	//return (key === END_WORD) && (trie[key] === 1);
-	return (key === END_WORD);
+	return key === END_WORD;
 }
