@@ -1,5 +1,7 @@
-import Trie from './trie';
-import { IAhoCorasickResult, IAhoCorasickCallback, IAhoCorasickCallback as _IAhoCorasickCallback, IAhoCorasickResult as _IAhoCorasickResult } from './types';
+import { Trie } from './trie';
+import { IAhoCorasickResult, IAhoCorasickCallback } from './types';
+
+export { Trie };
 
 export class AhoCorasick<T = any>
 {
@@ -17,7 +19,7 @@ export class AhoCorasick<T = any>
 		node.fail = null;
 		if (node.value)
 		{
-			for (i = j = 1, ref = node.value.length; (1 <= ref ? j < ref : j > ref); i = 1 <= ref ? ++j : --j)
+			for (i = j = 1, ref = node.value.length; 1 <= ref ? j < ref : j > ref; i = 1 <= ref ? ++j : --j)
 			{
 				fail_node = this.trie.explore_fail_link(node.value.substring(i));
 				if (fail_node)
@@ -51,15 +53,15 @@ export class AhoCorasick<T = any>
 		return this;
 	}
 
-	search(string: string, callback?: IAhoCorasickCallback<T>): IAhoCorasickResult<T>
-	search<R = IAhoCorasickResult<T>>(string: string, callback?: IAhoCorasickCallback<T>): R
+	search(string: string, callback?: IAhoCorasickCallback<T>): IAhoCorasickResult<T>;
+	search<R = IAhoCorasickResult<T>>(string: string, callback?: IAhoCorasickCallback<T>): R;
 	search(string: string, callback?: IAhoCorasickCallback<T>)
 	{
 		/**
 		 * 參考 aca 回傳的資料結構
 		 * @see https://www.npmjs.com/package/aca
 		 */
-		let result: IAhoCorasickResult<T> = {
+		const result: IAhoCorasickResult<T> = {
 			matches: {},
 			positions: {},
 			count: {},
@@ -72,7 +74,7 @@ export class AhoCorasick<T = any>
 		{
 			callbackResult = function (...argv)
 			{
-				let [value, data, offset, node] = argv;
+				const [value, data, offset, node] = argv;
 
 				result.matches[value] = result.matches[value] || [];
 
@@ -98,7 +100,7 @@ export class AhoCorasick<T = any>
 		{
 			callbackResult = function (...argv)
 			{
-				let [value, data, offset, node] = argv;
+				const [value, data, offset, node] = argv;
 
 				result.matches[value] = result.matches[value] || [];
 
@@ -120,7 +122,7 @@ export class AhoCorasick<T = any>
 
 		let chr, current, idx, j, ref;
 		current = this.trie;
-		for (idx = j = 0, ref = string.length; (0 <= ref ? j < ref : j > ref); idx = 0 <= ref ? ++j : --j)
+		for (idx = j = 0, ref = string.length; 0 <= ref ? j < ref : j > ref; idx = 0 <= ref ? ++j : --j)
 		{
 			chr = string.charAt(idx);
 			while (current && !current.next[chr])
@@ -153,10 +155,9 @@ export class AhoCorasick<T = any>
 			{
 				return `"${node.value}"`;
 			}
-			else
-			{
+
 				return "\"\"";
-			}
+
 		};
 		last_chr = function (str)
 		{
@@ -197,16 +198,17 @@ export class AhoCorasick<T = any>
 		dot.push('}');
 		return dot.join("\n");
 	}
-
-	static AhoCorasick = AhoCorasick
-	static Trie = Trie
-	static default = AhoCorasick
 }
 
-export namespace AhoCorasick
+// @ts-ignore
+if (process.env.TSDX_FORMAT !== 'esm')
 {
-	export type IAhoCorasickCallback<T> = _IAhoCorasickCallback<T>
-	export type IAhoCorasickResult<T = any> = _IAhoCorasickResult<T>
+	Object.defineProperty(AhoCorasick, "__esModule", { value: true });
+
+	Object.defineProperty(AhoCorasick, 'AhoCorasick', { value: AhoCorasick });
+	Object.defineProperty(AhoCorasick, 'default', { value: AhoCorasick });
+
+	Object.defineProperty(AhoCorasick, 'Trie', { value: Trie });
 }
 
-export default AhoCorasick
+export default AhoCorasick;

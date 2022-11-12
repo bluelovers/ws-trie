@@ -2,7 +2,7 @@
  * Created by user on 2018/7/3/003.
  */
 
-import AhoCorasick from '..';
+import AhoCorasick from '../src';
 
 // @ts-ignore
 it(`Test simple`, () =>

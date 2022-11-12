@@ -2,7 +2,7 @@
  * Created by user on 2018/7/4/004.
  */
 
-import AhoCorasick from '..';
+import AhoCorasick from '../src';
 
 let ac = new AhoCorasick();
 

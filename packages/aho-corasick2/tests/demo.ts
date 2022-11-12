@@ -1,4 +1,4 @@
-import AhoCorasick from '..';
+import AhoCorasick from '../src';
 
 var i, len, ref, word;
 
