@@ -1,6 +1,6 @@
 {
   "name": "trie-prefix-tree2",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "Create and modify trie prefix structures, extract word lists including anagrams and sub-anagrams",
   "keywords": [
     "add",
@@ -42,7 +42,7 @@
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "dependencies": {
-    "trie-regex": "^1.1.5",
+    "trie-regex": "^1.1.6",
     "uni-string": "^2.0.3"
   }
 }

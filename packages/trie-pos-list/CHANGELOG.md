@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.5](https://github.com/bluelovers/ws-trie/compare/trie-pos-list@1.0.4...trie-pos-list@1.0.5) (2022-11-12)
+
+
+
+### 🛠　Build System
+
+* update build ([e15ea13](https://github.com/bluelovers/ws-trie/commit/e15ea13308387969d0f4755af5c9273596a1d123))
+
+
+
 ## 1.0.4 (2020-06-16)
 
 
