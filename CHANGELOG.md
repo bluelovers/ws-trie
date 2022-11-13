@@ -6,4 +6,6 @@ Please see the individual package changelogs for what's new:
 * 🌏 [`trie-pos-list`](./packages/trie-pos-list/CHANGELOG.md "packages/trie-pos-list") *packages/trie-pos-list*
 * 🌏 [`trie-prefix-tree2`](./packages/trie-prefix-tree2/CHANGELOG.md "packages/trie-prefix-tree2") *packages/trie-prefix-tree2*
 * 🌏 [`trie-regex`](./packages/trie-regex/CHANGELOG.md "packages/trie-regex") *packages/trie-regex*
+* 🌏 [`@lazy-trie/types`](./packages/@lazy-trie/types/CHANGELOG.md "packages/@lazy-trie/types") *packages/@lazy-trie/types*
+* 🌏 [`@lazy-trie/util`](./packages/@lazy-trie/util/CHANGELOG.md "packages/@lazy-trie/util") *packages/@lazy-trie/util*
 
