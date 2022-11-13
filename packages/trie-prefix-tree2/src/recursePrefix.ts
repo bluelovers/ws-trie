@@ -1,5 +1,5 @@
-import { END_WORD } from './config';
-import { ITrie, ITrieNode, ITrieRaw } from './create';
+import { END_WORD } from '@lazy-trie/types';
+import { ITrie } from './create';
 
 // sort items as they're being found
 // to prevent slow .sort() in NodeJs
@@ -46,4 +46,4 @@ export function recursePrefix<T>(node: ITrie<T>, prefix: string, sorted: boolean
 	return prefixes;
 }
 
-export default recursePrefix
+export default recursePrefix;

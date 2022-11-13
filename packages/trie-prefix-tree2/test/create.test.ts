@@ -1,6 +1,7 @@
-import { END_VALUE, END_WORD } from '../lib/config';
-import create from '../lib/create';
-import trie from '../lib';
+import { END_VALUE } from '../src/config';
+import { END_WORD } from '@lazy-trie/types';
+import create from '../src/create';
+import trie from '../src';
 
 describe('Creating the Trie', () =>
 {

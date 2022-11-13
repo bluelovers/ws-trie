@@ -1,5 +1,4 @@
-
-import { hasEndpoint } from './utils';
+import { hasEndpoint } from './create';
 
 export function permutations(letters, trie, opts = {
 	type: 'anagram',
@@ -7,10 +6,10 @@ export function permutations(letters, trie, opts = {
 {
 	if (typeof letters !== 'string')
 	{
-		throw(`Permutations expects string letters, received ${typeof letters}`);
+		throw new TypeError(`Permutations expects string letters, received ${typeof letters}`);
 	}
 
-	let words = [];
+	const words = [];
 
 	const permute = (word, node, prefix = '') =>
 	{
@@ -50,4 +49,4 @@ export function permutations(letters, trie, opts = {
 	return permute(letters, trie);
 }
 
-export default permutations
+export default permutations;

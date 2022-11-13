@@ -1,5 +1,5 @@
 import { ITrie, ITrieNode } from './create';
-import utils, { split } from './utils';
+import { split } from '@lazy-trie/util';
 
 export function checkPrefix<T>(prefixNode: ITrie<T>, prefix: string)
 {
@@ -22,7 +22,7 @@ export function checkPrefix<T>(prefixNode: ITrie<T>, prefix: string)
 	} as {
 		prefixFound: boolean;
 		prefixNode: ITrieNode<T>;
-	}
+	};
 }
 
-export default checkPrefix
+export default checkPrefix;

@@ -2,9 +2,9 @@
  * Created by user on 2018/6/9/009.
  */
 
-import { END_WORD } from '../lib/config';
+import { END_WORD } from '@lazy-trie/types';
 
-import trie from '../lib';
+import trie from '../src';
 
 let actual = trie([
 	'𠬠典',

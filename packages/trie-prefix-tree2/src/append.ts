@@ -1,6 +1,5 @@
-import { END_VALUE, END_WORD } from './config';
-import { ITrieRaw, ITrieNode, ITrie } from './create';
-import utils from './utils';
+import { END_WORD } from '@lazy-trie/types';
+import { ITrie, ITrieNode } from './create';
 
 export function append<T>(trie: ITrie<T>, letter: string, index: number, array: string[]): ITrieNode<T>
 {
@@ -9,11 +8,10 @@ export function append<T>(trie: ITrie<T>, letter: string, index: number, array: 
 
 	if (index === array.length - 1)
 	{
-		// @ts-ignore
 		trie[END_WORD] = null;
 	}
 
 	return trie;
 }
 
-export default append
+export default append;

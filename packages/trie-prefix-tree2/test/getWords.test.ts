@@ -1,4 +1,4 @@
-import trie from '../lib';
+import trie from '../src';
 
 describe('Retrieving a full list of words in the trie', () =>
 {

@@ -1,4 +1,4 @@
-import trie from '../lib';
+import trie from '../src';
 
 const input = trie(['aah', 'aahs', 'aardvark', 'aalii', 'aal', 'baa', 'baal']);
 

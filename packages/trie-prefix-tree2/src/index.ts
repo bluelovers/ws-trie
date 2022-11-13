@@ -1,18 +1,17 @@
-import { create, ITrieRaw, ITrieNode, ITrie, ITrieNodeValue } from './create';
-
-export { ITrieRaw, ITrieNode, ITrie, ITrieNodeValue } from './create';
+import { create, ITrie, ITrieNode, ITrieNodeValue, ITrieRaw, isEndpoint, hasEndpoint } from './create';
 import { append } from './append';
 import { checkPrefix } from './checkPrefix';
 import { recursePrefix } from './recursePrefix';
-import utils, { hasEndpoint, isEndpoint, isString, split, throwMsg } from './utils';
-import { END_VALUE, END_WORD, END_DEF, PERMS_MIN_LEN } from './config';
-
-export { END_VALUE, END_WORD, END_DEF } from './config';
+import { isString, split, stringify, throwMsg } from '@lazy-trie/util';
+import { END_DEF, END_VALUE, PERMS_MIN_LEN } from './config';
+import { END_WORD } from '@lazy-trie/types';
 import { permutations } from './permutations';
 import { recurseRandomWord } from './recurseRandomWord';
-import { trieToRegExp, IOptionsAll as ITrieToRegExpOptionsAll, IOptions as ITrieToRegExpOptions } from 'trie-regex';
+import { IOptions, IOptionsAll, trieToRegExp } from 'trie-regex';
 
-export type { ITrieToRegExpOptionsAll, ITrieToRegExpOptions };
+export { ITrieRaw, ITrieNode, ITrie, ITrieNodeValue, isEndpoint, hasEndpoint };
+
+export { END_VALUE, END_WORD, END_DEF };
 
 export const SYM_RAW = Symbol('trie');
 
@@ -34,9 +33,9 @@ export class Trie<T = typeof END_VALUE>
 
 	constructor(input: IInputMap<T>, options?: ITrieOptions & {
 		mapMode: true,
-	}, ...argv);
-	constructor(input: IInput<T>, options?: ITrieOptions, ...argv);
-	constructor(input: IInput<T> | IInputMap<T>, options?: ITrieOptions, ...argv)
+	}, ...argv: any[]);
+	constructor(input: IInput<T>, options?: ITrieOptions, ...argv: any[]);
+	constructor(input: IInput<T> | IInputMap<T>, options?: ITrieOptions, ...argv: any[])
 	{
 		if (!Array.isArray(input))
 		{
@@ -83,8 +82,8 @@ export class Trie<T = typeof END_VALUE>
 	 */
 	load(obj: ITrieRaw<T>): this;
 	load<R>(obj: ITrieRaw<R>): this;
-	load(obj): this;
-	load(obj)
+	load(obj: unknown): this;
+	load(obj: any)
 	{
 		this[SYM_RAW] = obj;
 
@@ -96,7 +95,7 @@ export class Trie<T = typeof END_VALUE>
 	 */
 	dump(spacer: string | number = 0)
 	{
-		return utils.stringify(this[SYM_RAW], spacer);
+		return stringify(this[SYM_RAW], spacer);
 	}
 
 	/**
@@ -106,7 +105,7 @@ export class Trie<T = typeof END_VALUE>
 	{
 		isString(word, 'word is string');
 
-		const reducer = (...params) =>
+		const reducer = (...params: any[]) =>
 		{
 			// @ts-ignore
 			return append(...params);
@@ -225,7 +224,7 @@ export class Trie<T = typeof END_VALUE>
 	 * @returns String
 	 */
 	getRandomWordWithPrefix(strPrefix?: string): string;
-	getRandomWordWithPrefix(...argv): string
+	getRandomWordWithPrefix(...argv: any[]): string
 	{
 		let strPrefix: string;
 
@@ -439,8 +438,8 @@ export class Trie<T = typeof END_VALUE>
 		});
 	}
 
-	toRegExp<R = RegExp>(flags?: string, options?: ITrieToRegExpOptions): R;
-	toRegExp<R>(flags?: string, options?: ITrieToRegExpOptionsAll<R>): ReturnType<typeof trieToRegExp>;
+	toRegExp<R = RegExp>(flags?: string, options?: IOptions): R;
+	toRegExp<R>(flags?: string, options?: IOptionsAll<R>): ReturnType<typeof trieToRegExp>;
 	toRegExp<R>(flags?, options?)
 	{
 		if (!flags || !isString(flags))
@@ -485,7 +484,27 @@ Object.assign(createTrie, {
 
 //createTrie.prototype = Trie.prototype;
 
-export { createTrie as trie }
+export { createTrie as trie };
+
+// @ts-ignore
+if (process.env.TSDX_FORMAT !== 'esm')
+{
+	Object.defineProperty(createTrie, "__esModule", { value: true });
+
+	Object.defineProperty(createTrie, 'createTrie', { value: createTrie });
+	Object.defineProperty(createTrie, 'default', { value: createTrie });
+
+	Object.defineProperty(createTrie, 'trie', { value: createTrie });
+	Object.defineProperty(createTrie, 'Trie', { value: Trie });
+
+	Object.defineProperty(createTrie, 'SYM_RAW', { value: SYM_RAW });
+
+	Object.defineProperty(createTrie, 'END_VALUE', { value: END_VALUE });
+	Object.defineProperty(createTrie, 'END_WORD', { value: END_WORD });
+	Object.defineProperty(createTrie, 'END_DEF', { value: END_DEF });
+
+	Object.defineProperty(createTrie, 'isEndpoint', { value: isEndpoint });
+	Object.defineProperty(createTrie, 'hasEndpoint', { value: hasEndpoint });
+}
 
 export default createTrie;
-

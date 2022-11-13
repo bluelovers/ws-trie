@@ -1,5 +1,5 @@
-import { END_VALUE, END_WORD } from '../lib/config';
-import trie from '../lib';
+import { END_WORD } from '@lazy-trie/types';
+import trie from '../src';
 
 it('Adding a word to the trie', () =>
 {

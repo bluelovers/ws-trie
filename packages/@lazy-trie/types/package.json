@@ -1,32 +1,22 @@
 {
-  "name": "trie-prefix-tree2",
-  "version": "3.0.0",
-  "description": "Create and modify trie prefix structures, extract word lists including anagrams and sub-anagrams",
+  "name": "@lazy-trie/types",
+  "version": "1.0.0",
+  "description": "",
   "keywords": [
-    "add",
-    "data",
-    "javascript",
-    "remove",
-    "structure",
-    "tree",
-    "tree-structure",
-    "trie",
-    "trie-structure",
-    "words",
     "create-by-yarn-tool",
     "create-by-tsdx"
   ],
-  "homepage": "https://github.com/bluelovers/ws-trie/tree/master/packages/trie-prefix-tree2#readme",
+  "homepage": "https://github.com/bluelovers/ws-trie/tree/master/packages/@lazy-trie/types#readme",
   "bugs": {
     "url": "https://github.com/bluelovers/ws-trie/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bluelovers/ws-trie.git",
-    "directory": "packages/trie-prefix-tree2"
+    "directory": "packages/@lazy-trie/types"
   },
-  "license": "MIT",
-  "author": "Lyndsey Browning <lbrowning86@gmail.com> (http://lyndseyb.co.uk/)",
+  "license": "ISC",
+  "author": "bluelovers",
   "sideEffects": false,
   "exports": {
     ".": {
@@ -42,28 +32,33 @@
   "module": "dist/index.esm.mjs",
   "types": "dist/index.d.ts",
   "typings": "dist/index.d.ts",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
+    "review": "yarn run review:coverage",
+    "review:coverage": "yarn run lint && yarn run coverage",
+    "review:test": "yarn run lint && yarn run test",
     "coverage": "yarn run test -- --coverage",
+    "lint": "yarn run lint:eslint",
+    "lint:eslint": "ynpx eslint --ext .ts,.tsx,.mts,.cts ./",
     "pretest": "echo pretest",
-    "test": "yarn run test:jest",
+    "test": "jest --passWithNoTests",
     "test:jest": "jest --passWithNoTests",
     "test:jest:coverage": "yarn run test:jest -- --coverage",
     "test:jest:snapshot": "yarn run test:jest -- -u",
+    "test:mocha": "ynpx --quiet -p ts-node -p mocha mocha -- --require ts-node/register \"!(node_modules)/**/*.{test,spec}.{ts,tsx}\"",
     "test:snapshot": "yarn run test -- -u",
     "test:tsd": "ynpx tsd",
+    "test:tsdx": "ynpx @bluelovers/tsdx test --passWithNoTests",
     "posttest": "yarn run build",
     "build": "yarn run build:tsdx && yarn run build:dts:bundle",
-    "build:dts:bundle": "ynpx @bluelovers/dts-bundle-generator --external-imports=trie-regex -o ./dist/index.d.ts ./src/index.ts --no-banner --disable-symlinks-following --external-imports @lazy-trie/types & echo build:dts:bundle",
+    "build:dts:bundle": "ynpx @bluelovers/dts-bundle-generator -o ./dist/index.d.ts ./src/index.ts --no-banner --inline-declare-global & echo build:dts:bundle",
     "build:dts:copy": "copy .\\src\\index.d.ts .\\dist\\index.d.ts & echo build:dts",
-    "build:dts:tsc": "yarn run build:dts:copy && yarn run build:dts:tsc:emit && yarn run build:dts:copy",
+    "build:dts:tsc": "yarn run build:dts:tsc:emit && yarn run build:dts:copy",
     "build:dts:tsc:emit": "tsc --emitDeclarationOnly --declaration --noEmit false",
-    "build:tsdx": "ynpx @bluelovers/tsdx build --target node",
+    "build:microbundle": "ynpx microbundle --target node",
+    "build:tsdx": "ynpx @bluelovers/tsdx build --target node --name index",
     "ci:install": "echo ci:install",
     "ci:build": "echo ci:build",
-    "preversion": "yarn run test",
+    "preversion": "echo preversion && yarn run test",
     "version": "echo version",
     "postversion": "echo postversion",
     "prepublish": "echo prepublish",
@@ -75,12 +70,16 @@
     "publish": "echo publish",
     "postpublish": "echo postpublish",
     "postpublishOnly": "echo postpublishOnly",
+    "sort-package-json": "yarn-tool sort",
+    "tsc:default": "tsc -p tsconfig.json",
+    "tsc:esm": "tsc -p tsconfig.esm.json",
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
-  "dependencies": {
-    "@lazy-trie/types": "^1.0.0",
-    "@lazy-trie/util": "^1.0.0",
-    "trie-regex": "^2.0.0"
-  },
-  "packageManager": "yarn@1.22.19"
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {},
+  "packageManager": "yarn@1.22.19",
+  "publishConfig": {
+    "access": "public"
+  }
 }

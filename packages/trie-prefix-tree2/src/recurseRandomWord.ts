@@ -1,5 +1,5 @@
-import { END_WORD } from './config';
-import { ITrieRaw, ITrieNode, ITrie } from './create';
+import { END_WORD } from '@lazy-trie/types';
+import { ITrie } from './create';
 
 export function recurseRandomWord<T>(node: ITrie<T>, prefix: string): string
 {
@@ -14,4 +14,4 @@ export function recurseRandomWord<T>(node: ITrie<T>, prefix: string): string
 	return recurseRandomWord(node[branch], prefix + branch);
 }
 
-export default recurseRandomWord
+export default recurseRandomWord;

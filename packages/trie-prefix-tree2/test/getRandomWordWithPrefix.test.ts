@@ -1,4 +1,4 @@
-import trie from '../lib';
+import trie from '../src';
 
 describe('Retrieving a random words in the trie', () =>
 {

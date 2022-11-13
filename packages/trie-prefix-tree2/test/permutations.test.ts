@@ -1,4 +1,4 @@
-import permutations from '../lib/permutations';
+import permutations from '../src/permutations';
 
 describe('string permutations', () =>
 {

@@ -1,4 +1,4 @@
-import trie from '../lib';
+import trie from '../src';
 
 describe('Finding valid sub-anagrams from the Trie given a set of letters', () =>
 {

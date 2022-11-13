@@ -4,8 +4,7 @@
 
 import jsesc from 'jsesc';
 import { IOptions } from './types';
-
-const END_WORD = '$$' as const;
+import { END_WORD } from '@lazy-trie/types';
 
 export function _to_regex(alt_group: string[], char_class: string[], end: boolean): string
 {
