@@ -4,8 +4,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var stringNaturalCompare2 = require('string-natural-compare2');
 var jsesc = require('jsesc');
+var types = require('@lazy-trie/types');
 
-const END_WORD = '$$';
 function _to_regex(alt_group, char_class, end) {
   const group_has_one_element = function (el) {
     return el.length === 1;
@@ -51,7 +51,7 @@ function _is_phrase_valid(phrase) {
   return typeof phrase === 'string' && phrase.length > 0;
 }
 function isDefaultEndpoint(value, key, trie) {
-  return key === END_WORD;
+  return key === types.END_WORD;
 }
 
 function trieToRegExp(data, flags, options) {

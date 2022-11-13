@@ -10,15 +10,8 @@ describe('Creating the Trie', () =>
 		const input = '';
 		const expected = `Expected parameter Array, received ${typeof input}`;
 
-		try
-		{
-			// @ts-ignore
-			create(input);
-		}
-		catch (error)
-		{
-			expect(error).toEqual(expected);
-		}
+		// @ts-ignore
+		expect(() => create(input)).toThrow(expected)
 	});
 
 	test('returns a Trie object structure converted to lowercase', () =>

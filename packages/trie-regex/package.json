@@ -78,6 +78,7 @@
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "dependencies": {
+    "@lazy-trie/types": "^1.0.0",
     "jsesc": "^3.0.2",
     "string-natural-compare2": "^3.0.1"
   },

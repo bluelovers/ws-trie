@@ -2,6 +2,8 @@ import { naturalCompare as e } from "string-natural-compare2";
 
 import t from "jsesc";
 
+import { END_WORD as n } from "@lazy-trie/types";
+
 function _to_regex(e, t, n) {
   let r = "";
   return e.length > 0 ? 1 === e.length ? r += e[0] : e.every((function(e) {
@@ -29,8 +31,8 @@ function _is_phrase_valid(e) {
   return "string" == typeof e && e.length > 0;
 }
 
-function isDefaultEndpoint(e, t, n) {
-  return "$$" === t;
+function isDefaultEndpoint(e, t, r) {
+  return t === n;
 }
 
 function trieToRegExp(e, t, n) {
@@ -43,19 +45,19 @@ function trieToRegExp(e, t, n) {
 function trieToRegExpSource(t) {
   var n, r, o;
   let i = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
-  const u = null !== (n = i.getKeys) && void 0 !== n ? n : function(e) {
+  const l = null !== (n = i.getKeys) && void 0 !== n ? n : function(e) {
     return Object.keys(e);
-  }, l = null !== (r = i.isEndpoint) && void 0 !== r ? r : isDefaultEndpoint, c = null !== (o = i.toRegexString) && void 0 !== o ? o : _to_regex, g = [].push;
+  }, u = null !== (r = i.isEndpoint) && void 0 !== r ? r : isDefaultEndpoint, c = null !== (o = i.toRegexString) && void 0 !== o ? o : _to_regex, g = [].push;
   function _walk_trie(n, r, o) {
-    const s = u(n, r, t), a = [], f = [];
-    let p = !1;
+    const s = l(n, r, t), a = [], p = [];
+    let f = !1;
     return s.forEach((function(e) {
-      if (l(n[e], e, n)) return void (p = !0);
+      if (u(n[e], e, n)) return void (f = !0);
       const t = _quotemeta(e, i) + _walk_trie(n[e], e);
-      g.call(s.length > 1 ? a : f, t);
+      g.call(s.length > 1 ? a : p, t);
     })), a.sort((function(t, n) {
       return n.length - t.length || e(t, n);
-    })), c(a, f, p);
+    })), c(a, p, f);
   }
   return _walk_trie(t, void 0);
 }

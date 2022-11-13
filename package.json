@@ -11,7 +11,8 @@
     "url": "git+https://github.com/bluelovers/ws-trie.git"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "packages/@lazy-trie/*"
   ],
   "scripts": {
     "review:all": "yarn-tool ws run review --concurrency 1",
@@ -68,15 +69,16 @@
   "resolutions": {},
   "dependencies": {
     "jest": "^29.3.1",
-    "ts-jest": "^29.0.3",
-    "trie-prefix-tree": "^1.5.1"
+    "trie-prefix-tree": "^1.5.1",
+    "ts-jest": "^29.0.3"
   },
   "devDependencies": {
-    "@types/trie-prefix-tree": "^1.5.0",
     "@bluelovers/tsconfig": "^1.0.32",
+    "@types/deep-eql": "^4.0.0",
     "@types/jest": "^29.2.2",
     "@types/jsesc": "^3.0.1",
     "@types/node": "*",
+    "@types/trie-prefix-tree": "^1.5.0",
     "@yarn-tool/ws-find-up-paths": "*",
     "jsesc": "^3.0.2",
     "regenerate": "^1.4.2"

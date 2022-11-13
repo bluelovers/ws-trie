@@ -1,4 +1,4 @@
-import utils from '@lazy-trie/util';
+import * as utils from '@lazy-trie/util';
 
 describe('Utility methods', () =>
 {

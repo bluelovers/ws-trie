@@ -1,9 +1,12 @@
 {
   "packages": [
-    "packages/*"
+    "packages/*",
+    "packages/@lazy-trie/*"
   ],
   "command": {
     "publish": {
+      "concurrency": 1,
+      "loglevel": "silly",
       "ignoreChanges": [
         "**/node_modules/**",
         "**/__snapshots__/**",
@@ -22,25 +25,23 @@
       ],
       "message": "chore(release): publish",
       "bump": "patch",
+      "noPrivate": true,
       "conventionalCommits": true,
-      "conventionalGraduate": false,
-      "concurrency": 1,
-      "loglevel": "silly",
-      "noPrivate": true
+      "conventionalGraduate": false
     },
     "version": {
-      "conventionalCommits": true,
-      "changelogPreset": "@bluelovers/conventional-changelog-bluelovers",
       "concurrency": 1,
-      "noPrivate": true
+      "noPrivate": true,
+      "conventionalCommits": true,
+      "changelogPreset": "@bluelovers/conventional-changelog-bluelovers"
     },
     "run": {
-      "stream": true,
-      "concurrency": 1
+      "concurrency": 1,
+      "stream": true
     },
     "exec": {
-      "stream": true,
-      "concurrency": 1
+      "concurrency": 1,
+      "stream": true
     },
     "add": {
       "concurrency": 1,
