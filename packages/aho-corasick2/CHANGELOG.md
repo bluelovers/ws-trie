@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/bluelovers/ws-trie/compare/aho-corasick2@1.0.4...aho-corasick2@2.0.1) (2022-11-13)
+
+
+### BREAKING CHANGES
+
+* use tsdx
+
+
+
+### 📦　Code Refactoring
+
+* use tsdx ([7bd82bc](https://github.com/bluelovers/ws-trie/commit/7bd82bcb915f6679ee30ddcbccafbc015b4ab88f))
+
+
+### 🛠　Build System
+
+* update build ([09c2537](https://github.com/bluelovers/ws-trie/commit/09c2537f0a986e374bf68f5053635480bb1f8ab2))
+
+
+### 🔖　Miscellaneous
+
+* . ([9bc7478](https://github.com/bluelovers/ws-trie/commit/9bc7478b0162ab65a32f0746cab98b5960fc3a42))
+
+
+
 ## [1.0.4](https://github.com/bluelovers/ws-trie/compare/aho-corasick2@1.0.3...aho-corasick2@1.0.4) (2022-11-12)
 
 

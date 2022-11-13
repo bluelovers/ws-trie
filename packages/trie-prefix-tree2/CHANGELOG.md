@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com/bluelovers/ws-trie/compare/trie-prefix-tree2@2.0.6...trie-prefix-tree2@3.0.1) (2022-11-13)
+
+
+### BREAKING CHANGES
+
+* use tsdx
+
+
+
+### 📦　Code Refactoring
+
+* use tsdx ([b8a821b](https://github.com/bluelovers/ws-trie/commit/b8a821b3bd0ea3e639be0e9a18623f4e569874fb))
+
+
+### 🔖　Miscellaneous
+
+* . ([9bc7478](https://github.com/bluelovers/ws-trie/commit/9bc7478b0162ab65a32f0746cab98b5960fc3a42))
+* . ([34dd63a](https://github.com/bluelovers/ws-trie/commit/34dd63ad6676303a1243ac3a12bc3b64ed763483))
+
+
+
 ## [2.0.6](https://github.com/bluelovers/ws-trie/compare/trie-prefix-tree2@2.0.5...trie-prefix-tree2@2.0.6) (2022-11-12)
 
 

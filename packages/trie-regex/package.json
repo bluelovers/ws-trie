@@ -1,6 +1,6 @@
 {
   "name": "trie-regex",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Create a regular expression from trie like object",
   "keywords": [
     "data",
@@ -78,7 +78,7 @@
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "dependencies": {
-    "@lazy-trie/types": "^1.0.0",
+    "@lazy-trie/types": "^1.0.1",
     "jsesc": "^3.0.2",
     "string-natural-compare2": "^3.0.1"
   },

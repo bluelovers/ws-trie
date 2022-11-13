@@ -1,6 +1,6 @@
 {
   "name": "trie-prefix-tree2",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Create and modify trie prefix structures, extract word lists including anagrams and sub-anagrams",
   "keywords": [
     "add",
@@ -78,9 +78,9 @@
     "tsc:showConfig": "ynpx get-current-tsconfig -p"
   },
   "dependencies": {
-    "@lazy-trie/types": "^1.0.0",
-    "@lazy-trie/util": "^1.0.0",
-    "trie-regex": "^2.0.0"
+    "@lazy-trie/types": "^1.0.1",
+    "@lazy-trie/util": "^1.0.1",
+    "trie-regex": "^2.0.1"
   },
   "packageManager": "yarn@1.22.19"
 }
